@@ -8,24 +8,37 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-/**
- * The Class Main of the Vehicle Design Init.
- */
-public class Main extends Thread {
+import redis.clients.jedis.Jedis;
+import threads.TSystemInfo;
+import threads.TWatchdog;
 
-	/**
-	 * The main method.
-	 *
-	 * @param args the arguments
-	 * @throws InterruptedException the interrupted exception
-	 */
+public class Main {
+
 	public static void main(String[] args) {
 		Logger LOGGER = setUpLogger();
+		LOGGER.info("-- Main started --");
 
-		System.out.println("-- main method starts --");
-		LOGGER.info("-- Application started --");
+		Jedis jedis = new Jedis("localhost", 32768);
+		jedis.set("var1", "100");
+		System.out.println(jedis.ping());
 
-		LOGGER.info("-- Application closed --");
+		TSystemInfo systemInfoThread = new TSystemInfo();
+		systemInfoThread.start();
+
+		TWatchdog watchdogThread = new TWatchdog(systemInfoThread);
+		watchdogThread.start();
+
+		try {
+			systemInfoThread.join();
+		} catch (InterruptedException e) {
+			LOGGER.log(Level.SEVERE, "Error occur while Threads.join()", e);
+		}
+
+		System.out.println("VAR1 = " + jedis.get("var1"));
+
+		jedis.close();
+
+		LOGGER.info("-- Main closed --");
 	}
 
 	/**
@@ -51,7 +64,7 @@ public class Main extends Thread {
 				}
 			});
 			LOGGER.setLevel(Level.ALL);
-			LOGGER.info("logger stated");
+			LOGGER.info("-- LOGGER stated --");
 			// LOGGER.setUseParentHandlers(false);
 
 		} catch (SecurityException e) {
@@ -61,5 +74,4 @@ public class Main extends Thread {
 		}
 		return LOGGER;
 	}
-
 }

@@ -38,7 +38,7 @@ public class Main {
 
 		jedis.close();
 
-		LOGGER.info("-- Main closed --");
+		LOGGER.info("--- Main closed ---");
 	}
 
 	/**

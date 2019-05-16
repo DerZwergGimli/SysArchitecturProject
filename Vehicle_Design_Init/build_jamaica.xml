@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project basedir="." default="build_main.Main" name="main.Main">
+  <!-- aicas GmbH, Karlsruhe -->
+  <!-- Jamaica Buildfile for application 'main.Main' -->
+  <!-- JAMAICA_ANT_EDITOR_VERSION=1.4.1.201903191203 -->
+  <property environment="env"/>
+  <condition property="jamaica" value="${env.JAMAICA}">
+    <isset property="env.JAMAICA"/>
+  </condition>
+  <fail message="Please set the JAMAICA environment variable to a Jamaica installation!" unless="jamaica"/>
+  <taskdef classname="com.aicas.jamaica.tools.ant.JamaicaTask" classpath="${jamaica}/lib/JamaicaTools.jar" name="jamaicabuilder"/>
+  <taskdef classname="com.aicas.jamaica.tools.ant.JamaicahTask" classpath="${jamaica}/lib/JamaicaTools.jar" name="jamaicah"/>
+  
+  
+  <target name="build_main.Main" unless="jamaica.executable_of_build_main.Main_available">
+    <jamaicabuilder jamaica="${jamaica}">
+      <option append="false" enabled="true" name="target" value="linux-x86_64"/>
+      <option append="false" enabled="true" name="main" value="main.Main"/>
+      <option append="false" enabled="true" name="tmpdir" value="tmp"/>
+      <option append="false" enabled="true" name="interpret" value="true"/>
+      <option append="true" enabled="true" name="classpath" value="bin:libs/jedis-3.1.0-m1.jar"/>
+    </jamaicabuilder>
+    <echo>
+      The executable has been created successfully:
+        /home/yannick/eclipse-workspace/SysArchitecturProject/Vehicle_Design_Init/Main
+      You can launch it using the "Overview" page in this editor.
+    </echo>
+  </target>
+  
+  <target name="launch_main.Main">
+    <available file="Main" property="jamaica.executable_of_build_main.Main_available"/>
+    <antcall target="build_main.Main"/>
+    <exec executable="Main" resolveexecutable="true"/>
+  </target>
+  
+</project>

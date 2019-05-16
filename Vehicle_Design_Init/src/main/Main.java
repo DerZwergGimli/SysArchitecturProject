@@ -2,11 +2,11 @@ package main;
 
 import java.io.IOException;
 import java.util.Date;
-import java.util.logging.*;
-
-
-
-import accuumulatorSystem.*;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.LogRecord;
+import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
 
 /**
  * The Class Main of the Vehicle Design Init.
@@ -19,21 +19,11 @@ public class Main extends Thread {
 	 * @param args the arguments
 	 * @throws InterruptedException the interrupted exception
 	 */
-	public static void main(String[] args){
+	public static void main(String[] args) {
 		Logger LOGGER = setUpLogger();
 
 		System.out.println("-- main method starts --");
 		LOGGER.info("-- Application started --");
-		
-		try {
-			// Code in here
-			AccumulatorSystem accumulatorSystem_Thread = new AccumulatorSystem();
-			accumulatorSystem_Thread.start();
-			accumulatorSystem_Thread.setPriority(MAX_PRIORITY);
-			accumulatorSystem_Thread.join();
-		} catch (InterruptedException e) {
-			LOGGER.log(Level.SEVERE, "Error occur in Threads (join).", e);
-		}
 
 		LOGGER.info("-- Application closed --");
 	}

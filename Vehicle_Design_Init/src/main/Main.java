@@ -23,10 +23,14 @@ public class Main {
 		System.out.println(jedis.ping());
 
 		TSystemInfo systemInfoThread = new TSystemInfo();
+		systemInfoThread.setName("TSystemInfo");
 		systemInfoThread.start();
 
 		TWatchdog watchdogThread = new TWatchdog(systemInfoThread);
+		watchdogThread.setName("TWatchdog");
 		watchdogThread.start();
+
+		// Map<Thread, StackTraceElement[]> hello = Thread.getAllStackTraces();
 
 		try {
 			systemInfoThread.join();

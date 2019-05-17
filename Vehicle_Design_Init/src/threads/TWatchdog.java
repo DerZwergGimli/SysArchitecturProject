@@ -1,5 +1,7 @@
 package threads;
 
+import java.util.Map;
+
 import javax.realtime.RealtimeThread;
 
 public class TWatchdog extends RealtimeThread {
@@ -15,6 +17,17 @@ public class TWatchdog extends RealtimeThread {
 	public void run() {
 		long startTimeNano = 0;
 		long endTimeNano = 0;
+
+		long time = endTimeNano - startTimeNano;
+
+		Map<Thread, StackTraceElement[]> threads_StackTrace = getAllStackTraces();
+
+		try {
+			super.sleep(10000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 //		while (Thread.State.TERMINATED != sysRealtimeThread.getState()) {
 //			if (Thread.State.RUNNABLE == sysRealtimeThread.getState()) {

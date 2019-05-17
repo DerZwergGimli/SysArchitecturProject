@@ -20,6 +20,7 @@ public class Main {
 
 		Jedis jedis = new Jedis("localhost", 32768);
 		jedis.set("var1", "100");
+
 		System.out.println(jedis.ping());
 
 		TSystemInfo systemInfoThread = new TSystemInfo();

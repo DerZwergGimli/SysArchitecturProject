@@ -1,32 +1,26 @@
 package threads;
 
-import java.util.Map;
-
 import javax.realtime.RealtimeThread;
 
 public class TWatchdog extends RealtimeThread {
 
-	RealtimeThread sysRealtimeThread;
+	RealtimeThread systemInfoRealtimeThread;
 
-	public TWatchdog(RealtimeThread sysRealtimeThread) {
-		this.sysRealtimeThread = sysRealtimeThread;
+	public TWatchdog(RealtimeThread systemInfoRealtimeThread) {
+		this.systemInfoRealtimeThread = systemInfoRealtimeThread;
 
 	}
 
 	@Override
 	public void run() {
-		long startTimeNano = 0;
-		long endTimeNano = 0;
+		// Map<Thread, StackTraceElement[]> threads_StackTrace = getAllStackTraces();
+		// TODO Watchdog_Timer
 
-		long time = endTimeNano - startTimeNano;
+		StackTraceElement[] systemInfoRT_Stack = systemInfoRealtimeThread.getStackTrace();
 
-		Map<Thread, StackTraceElement[]> threads_StackTrace = getAllStackTraces();
+		while (Thread.State.TERMINATED != systemInfoRealtimeThread.getState()) {
 
-		try {
-			super.sleep(10000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(systemInfoRealtimeThread.getState());
 		}
 
 //		while (Thread.State.TERMINATED != sysRealtimeThread.getState()) {

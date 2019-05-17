@@ -23,11 +23,12 @@ public class TSystemInfo extends RealtimeThread {
 		// TODO: somehow we have to ensure that our theard is running only 20 ms
 
 		int n = 1;
-		// while (waitForNextPeriod() && (n < 100)) {
-		while (waitForNextPeriod()) {
+		while (waitForNextPeriod() && (n < 100)) {
+			// while (waitForNextPeriod()) {
 			System.out.println(n);
 
 			n++;
+
 		}
 
 	}

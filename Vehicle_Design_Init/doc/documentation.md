@@ -1,7 +1,7 @@
 # Vehicle Doc
 ## using JamaicaVM
 
-#Links to helpful webseites
+# Links to helpful webseites
 
 * JamaicaVM - [API](http://www.aicas.com/jamaica/8.2/doc/jamaica_api/index.html)
 * Redis - [Jedis](https://www.javadoc.io/doc/redis.clients/jedis/3.1.0-m1)
@@ -11,7 +11,7 @@ http://www.aicas.com/jamaica/3.2/doc/html/x3672.html
  
 
 
-###Logger-Info
+### Logger-Info
 
 
 The following lists the Log Levels in descending order:
@@ -27,7 +27,7 @@ The following lists the Log Levels in descending order:
 additionally you have OFF and ALL!
 
 
-###Thread-Info
+### Thread-Info
 
 There are 3 static variables defined in Thread class for priority.
 

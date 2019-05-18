@@ -1,0 +1,879 @@
+[
+    {
+        "id": "e0e8e281.8b134",
+        "type": "tab",
+        "label": "DB Controller",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "8fd41ebe.5ff24",
+        "type": "tab",
+        "label": "Simoulator",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "5cdf40c6.8d85a",
+        "type": "redis-config",
+        "z": "",
+        "host": "localhost",
+        "port": "6379",
+        "dbase": "0",
+        "pass": "{{REDIS_PASSWORD}}"
+    },
+    {
+        "id": "e845cbcc.63b5a8",
+        "type": "redis-config",
+        "z": "",
+        "host": "localhost",
+        "port": "6379",
+        "dbase": "1",
+        "pass": "{{REDIS_PASSWORD}}"
+    },
+    {
+        "id": "5fbc3cf0.917fa4",
+        "type": "redis-config",
+        "z": "",
+        "host": "{{REDIS_SERVER}}",
+        "port": "{{REDIS_PORT}}",
+        "dbase": "{{REDIS_DB}}",
+        "pass": "{{REDIS_PASSWORD}}"
+    },
+    {
+        "id": "83d56137.37f74",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "31e7cf83.d893a",
+        "type": "ui_group",
+        "z": "",
+        "name": "Stats",
+        "tab": "83d56137.37f74",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "87430462.9c7e98",
+        "type": "ui_group",
+        "z": "",
+        "name": "Driver",
+        "tab": "83d56137.37f74",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "390b0307.f58fac",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-dark",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#0ec1ca",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false,
+                "reset": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#097479",
+                    "value": "#0ec1ca",
+                    "edited": true
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0ec1ca",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#34e8f1",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0ec1ca",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "4b146290.cdc09c",
+        "type": "ui_group",
+        "z": "",
+        "name": "System Control",
+        "tab": "83d56137.37f74",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "59ad581d.a55aa8",
+        "type": "redis-command",
+        "z": "e0e8e281.8b134",
+        "server": "5cdf40c6.8d85a",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 446.5,
+        "y": 92,
+        "wires": [
+            [
+                "f956f306.5bd48"
+            ]
+        ]
+    },
+    {
+        "id": "e12c2fdc.cbe43",
+        "type": "function",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "func": "msg.payload = ['jitter']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 298,
+        "y": 91,
+        "wires": [
+            [
+                "59ad581d.a55aa8"
+            ]
+        ]
+    },
+    {
+        "id": "49de73a9.e3402c",
+        "type": "inject",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 139,
+        "y": 91,
+        "wires": [
+            [
+                "e12c2fdc.cbe43",
+                "b9b7ca37.8db678"
+            ]
+        ]
+    },
+    {
+        "id": "7f34348b.80637c",
+        "type": "redis-command",
+        "z": "8fd41ebe.5ff24",
+        "server": "5cdf40c6.8d85a",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 560,
+        "y": 187,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "562e328.c61fbcc",
+        "type": "inject",
+        "z": "8fd41ebe.5ff24",
+        "name": "setStats",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 165,
+        "y": 181,
+        "wires": [
+            [
+                "ae0d1da9.09e13",
+                "4eedf7d0.423578"
+            ]
+        ]
+    },
+    {
+        "id": "ae0d1da9.09e13",
+        "type": "function",
+        "z": "8fd41ebe.5ff24",
+        "name": "Jitter",
+        "func": "var rand = Math.floor(Math.random() * 11);\nmsg.payload = ['jitter',rand]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 364,
+        "y": 185,
+        "wires": [
+            [
+                "7f34348b.80637c"
+            ]
+        ]
+    },
+    {
+        "id": "f956f306.5bd48",
+        "type": "ui_chart",
+        "z": "e0e8e281.8b134",
+        "name": "JitterChart",
+        "group": "31e7cf83.d893a",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Jitter",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "20",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 676.5,
+        "y": 90,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e7bf5ed0.bc9b9",
+        "type": "ui_text",
+        "z": "e0e8e281.8b134",
+        "group": "87430462.9c7e98",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "ID_Text",
+        "label": "Driver ID",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 668.5,
+        "y": 270,
+        "wires": []
+    },
+    {
+        "id": "8ab46768.f860a8",
+        "type": "function",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "func": "msg.payload = ['Driver:ID']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 287,
+        "y": 258,
+        "wires": [
+            [
+                "8c1f23c2.9c3a9"
+            ]
+        ]
+    },
+    {
+        "id": "8c1f23c2.9c3a9",
+        "type": "redis-command",
+        "z": "e0e8e281.8b134",
+        "server": "5cdf40c6.8d85a",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 430.5,
+        "y": 273,
+        "wires": [
+            [
+                "e7bf5ed0.bc9b9"
+            ]
+        ]
+    },
+    {
+        "id": "d829ea55.64da58",
+        "type": "inject",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "60",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 116,
+        "y": 254,
+        "wires": [
+            [
+                "8ab46768.f860a8",
+                "3e42d0db.a564c",
+                "f838cf1b.6f8"
+            ]
+        ]
+    },
+    {
+        "id": "84786765.dd0658",
+        "type": "redis-command",
+        "z": "8fd41ebe.5ff24",
+        "server": "5cdf40c6.8d85a",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 526,
+        "y": 287,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "beef05a.fb263f8",
+        "type": "inject",
+        "z": "8fd41ebe.5ff24",
+        "name": "setDriver",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 169,
+        "y": 280,
+        "wires": [
+            [
+                "d2d386ba.b7d908",
+                "52bcffe3.daec8",
+                "6cf5d872.367ec8"
+            ]
+        ]
+    },
+    {
+        "id": "d2d386ba.b7d908",
+        "type": "function",
+        "z": "8fd41ebe.5ff24",
+        "name": "",
+        "func": "var rand = Math.floor(Math.random() * 1000);\nmsg.payload = ['Driver:ID',rand]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 283,
+        "wires": [
+            [
+                "84786765.dd0658"
+            ]
+        ]
+    },
+    {
+        "id": "98a35c79.18051",
+        "type": "ui_text",
+        "z": "e0e8e281.8b134",
+        "group": "87430462.9c7e98",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "firstNameText",
+        "label": "Driver Firstname",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 678.5,
+        "y": 314,
+        "wires": []
+    },
+    {
+        "id": "3e42d0db.a564c",
+        "type": "function",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "func": "msg.payload = ['Driver:firstName']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 279,
+        "y": 304,
+        "wires": [
+            [
+                "1bc2757b.2b92cb"
+            ]
+        ]
+    },
+    {
+        "id": "1bc2757b.2b92cb",
+        "type": "redis-command",
+        "z": "e0e8e281.8b134",
+        "server": "5cdf40c6.8d85a",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 422.5,
+        "y": 314,
+        "wires": [
+            [
+                "98a35c79.18051"
+            ]
+        ]
+    },
+    {
+        "id": "f838cf1b.6f8",
+        "type": "function",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "func": "msg.payload = ['Driver:lastName']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 265,
+        "y": 353,
+        "wires": [
+            [
+                "c7796ad.c0b0698"
+            ]
+        ]
+    },
+    {
+        "id": "c7796ad.c0b0698",
+        "type": "redis-command",
+        "z": "e0e8e281.8b134",
+        "server": "5cdf40c6.8d85a",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 408.5,
+        "y": 363,
+        "wires": [
+            [
+                "50a7de3.85b262"
+            ]
+        ]
+    },
+    {
+        "id": "50a7de3.85b262",
+        "type": "ui_text",
+        "z": "e0e8e281.8b134",
+        "group": "87430462.9c7e98",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "lastNameText",
+        "label": "Driver Lastname",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 664.5,
+        "y": 364,
+        "wires": []
+    },
+    {
+        "id": "4f0fb412.a69ebc",
+        "type": "redis-command",
+        "z": "8fd41ebe.5ff24",
+        "server": "5cdf40c6.8d85a",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 526,
+        "y": 333,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52bcffe3.daec8",
+        "type": "function",
+        "z": "8fd41ebe.5ff24",
+        "name": "",
+        "func": "\nmsg.payload = ['Driver:firstName','Mouaad']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 350,
+        "y": 326,
+        "wires": [
+            [
+                "4f0fb412.a69ebc"
+            ]
+        ]
+    },
+    {
+        "id": "be525e01.d80de",
+        "type": "redis-command",
+        "z": "8fd41ebe.5ff24",
+        "server": "5cdf40c6.8d85a",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 524,
+        "y": 385,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6cf5d872.367ec8",
+        "type": "function",
+        "z": "8fd41ebe.5ff24",
+        "name": "",
+        "func": "msg.payload = ['Driver:lastName','Gssair']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 348,
+        "y": 369,
+        "wires": [
+            [
+                "be525e01.d80de"
+            ]
+        ]
+    },
+    {
+        "id": "67316807.6f1368",
+        "type": "ui_switch",
+        "z": "e0e8e281.8b134",
+        "name": "LidarSensorSwitch",
+        "label": "switch",
+        "tooltip": "",
+        "group": "4b146290.cdc09c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 145.5,
+        "y": 435,
+        "wires": [
+            [
+                "1be99f2b.ce9711",
+                "8fc80cdd.8a868"
+            ]
+        ]
+    },
+    {
+        "id": "1be99f2b.ce9711",
+        "type": "function",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['LidarSensorState',msg.payload]\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 357,
+        "y": 431,
+        "wires": [
+            [
+                "795e9a6c.e27e04"
+            ]
+        ]
+    },
+    {
+        "id": "795e9a6c.e27e04",
+        "type": "redis-command",
+        "z": "e0e8e281.8b134",
+        "server": "5cdf40c6.8d85a",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 518,
+        "y": 431,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "753b4195.2848a",
+        "type": "ui_text",
+        "z": "e0e8e281.8b134",
+        "group": "4b146290.cdc09c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "LidarSensorState",
+        "label": "Lidar Sensor is ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 516,
+        "y": 490,
+        "wires": []
+    },
+    {
+        "id": "a0f3e49b.2f8a38",
+        "type": "ui_switch",
+        "z": "e0e8e281.8b134",
+        "name": "CPUTempSwitch",
+        "label": "switch",
+        "tooltip": "",
+        "group": "4b146290.cdc09c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 144,
+        "y": 528,
+        "wires": [
+            [
+                "8915e2e3.0530c",
+                "de7b3264.4c9a2"
+            ]
+        ]
+    },
+    {
+        "id": "8915e2e3.0530c",
+        "type": "function",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['CPUTempState',msg.payload]\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340.5,
+        "y": 536,
+        "wires": [
+            [
+                "517bd8f1.ea18d8"
+            ]
+        ]
+    },
+    {
+        "id": "517bd8f1.ea18d8",
+        "type": "redis-command",
+        "z": "e0e8e281.8b134",
+        "server": "5cdf40c6.8d85a",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 494.5,
+        "y": 535,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d1824814.06b9f8",
+        "type": "ui_text",
+        "z": "e0e8e281.8b134",
+        "group": "4b146290.cdc09c",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "CPUTempState",
+        "label": "CPU Temperature Monitor is ",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 504.5,
+        "y": 583,
+        "wires": []
+    },
+    {
+        "id": "7893d064.d95f5",
+        "type": "redis-command",
+        "z": "e0e8e281.8b134",
+        "server": "5cdf40c6.8d85a",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 452.5,
+        "y": 171,
+        "wires": [
+            [
+                "196d4f97.81048"
+            ]
+        ]
+    },
+    {
+        "id": "b9b7ca37.8db678",
+        "type": "function",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "func": "msg.payload = ['CPUTemp']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 298,
+        "y": 133,
+        "wires": [
+            [
+                "7893d064.d95f5"
+            ]
+        ]
+    },
+    {
+        "id": "d61f9254.a78bc",
+        "type": "redis-command",
+        "z": "8fd41ebe.5ff24",
+        "server": "5cdf40c6.8d85a",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 560,
+        "y": 227,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4eedf7d0.423578",
+        "type": "function",
+        "z": "8fd41ebe.5ff24",
+        "name": "CPUTemp",
+        "func": "var rand = Math.floor(Math.random() * 10 +30);\nmsg.payload = ['CPUTemp',rand]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 381,
+        "y": 227,
+        "wires": [
+            [
+                "d61f9254.a78bc"
+            ]
+        ]
+    },
+    {
+        "id": "196d4f97.81048",
+        "type": "ui_gauge",
+        "z": "e0e8e281.8b134",
+        "name": "TempChart",
+        "group": "31e7cf83.d893a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "CPU Temperature",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "60",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 695.5,
+        "y": 167,
+        "wires": []
+    },
+    {
+        "id": "8fc80cdd.8a868",
+        "type": "function",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nif(msg.payload){\n    newMsg.payload = 'ON'\n}\nelse{\n    newMsg.payload = 'OFF'\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 333,
+        "y": 467,
+        "wires": [
+            [
+                "753b4195.2848a"
+            ]
+        ]
+    },
+    {
+        "id": "de7b3264.4c9a2",
+        "type": "function",
+        "z": "e0e8e281.8b134",
+        "name": "",
+        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nif(msg.payload){\n    newMsg.payload = 'ON'\n}\nelse{\n    newMsg.payload = 'OFF'\n}\nreturn newMsg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 340,
+        "y": 569,
+        "wires": [
+            [
+                "d1824814.06b9f8"
+            ]
+        ]
+    }
+]

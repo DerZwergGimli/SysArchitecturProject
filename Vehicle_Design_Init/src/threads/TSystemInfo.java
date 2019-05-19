@@ -30,7 +30,7 @@ public class TSystemInfo extends RealtimeThread {
 		int n = 1;
 		while (waitForNextPeriod() && (n < 100)) {
 			// while (waitForNextPeriod()) {
-			this.watchdogCounter.countUP();
+			this.watchdogCounter.countReset();
 			System.out.println(n);
 
 			n++;

@@ -13,19 +13,19 @@ public class WatchdogCounter {
 
 	}
 
-	public void countUP() {
+	public void countDown() {
 		queueLock.lock();
 		try {
-			this.counter++;
+			this.counter--;
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {
 			queueLock.unlock();
-			System.out.println("CounterUP=" + this.counter);
+			System.out.println("Counter_down=" + this.counter);
 		}
 	}
 
-	public void countDOWN() {
+	public void countReset() {
 		queueLock.lock();
 		try {
 			this.counter = 100;
@@ -33,7 +33,7 @@ public class WatchdogCounter {
 			// TODO: handle exception
 		} finally {
 			queueLock.unlock();
-			System.out.println("CounterDOWN=" + this.counter);
+			System.out.println("Counter_reset=" + this.counter);
 		}
 	}
 

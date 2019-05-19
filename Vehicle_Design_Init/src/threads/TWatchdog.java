@@ -24,23 +24,19 @@ public class TWatchdog extends RealtimeThread {
 		PeriodicParameters releaseParameter = new PeriodicParameters(null, period, null, null, null, null);
 		setSchedulingParameters(schedulingParameter);
 		setReleaseParameters(releaseParameter);
+		setDaemon(true);
 
 	}
 
 	@Override
 	public void run() {
-		while (Thread.State.TERMINATED != systemInfoRealtimeThread.getState()) {
-			this.watchdogCounter.countDOWN();
+		while (waitForNextPeriod()) {
+			// while (Thread.State.TERMINATED != systemInfoRealtimeThread.getState()) {
+			this.watchdogCounter.countDown();
 
 			if (watchdogCounter.getCounter() <= 0) {
 				System.out.println("Error with realtimeThread");
 
-			}
-			try {
-				Thread.sleep(100);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		}
 		// Map<Thread, StackTraceElement[]> threads_StackTrace = getAllStackTraces();

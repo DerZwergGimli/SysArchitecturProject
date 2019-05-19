@@ -6,9 +6,14 @@ import javax.realtime.PriorityScheduler;
 import javax.realtime.RealtimeThread;
 import javax.realtime.RelativeTime;
 
+import objects.WatchdogCounter;
+
 public class TSystemInfo extends RealtimeThread {
 
-	public TSystemInfo() {
+	WatchdogCounter watchdogCounter;
+
+	public TSystemInfo(WatchdogCounter watchdogCounter) {
+		this.watchdogCounter = watchdogCounter;
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10;
 		PriorityParameters schedulingParameter = new PriorityParameters(threadPriority);
 		RelativeTime period = new RelativeTime(20 /* ms */, 0 /* ns */); /* period: 20ms */
@@ -25,6 +30,7 @@ public class TSystemInfo extends RealtimeThread {
 		int n = 1;
 		while (waitForNextPeriod() && (n < 100)) {
 			// while (waitForNextPeriod()) {
+			this.watchdogCounter.countUP();
 			System.out.println(n);
 
 			n++;

@@ -8,6 +8,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+import objects.WatchdogCounter;
 import redis.clients.jedis.Jedis;
 import threads.TSystemInfo;
 import threads.TWatchdog;
@@ -23,11 +24,13 @@ public class Main {
 
 		System.out.println(jedis.ping());
 
-		TSystemInfo systemInfoThread = new TSystemInfo();
+		WatchdogCounter watchdogCounter = new WatchdogCounter(100);
+
+		TSystemInfo systemInfoThread = new TSystemInfo(watchdogCounter);
 		systemInfoThread.setName("TSystemInfo");
 		systemInfoThread.start();
 
-		TWatchdog watchdogThread = new TWatchdog(systemInfoThread);
+		TWatchdog watchdogThread = new TWatchdog(systemInfoThread, watchdogCounter);
 		watchdogThread.setName("TWatchdog");
 		watchdogThread.start();
 

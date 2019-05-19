@@ -28,7 +28,7 @@ public class WatchdogCounter {
 	public void countDOWN() {
 		queueLock.lock();
 		try {
-			this.counter--;
+			this.counter = 100;
 		} catch (Exception e) {
 			// TODO: handle exception
 		} finally {

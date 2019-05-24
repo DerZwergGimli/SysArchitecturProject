@@ -8,6 +8,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
+import objects.RuntimeMeasure;
 import objects.WatchdogCounter;
 import redis.clients.jedis.Jedis;
 import threads.TSystemInfo;
@@ -25,10 +26,22 @@ public class Main {
 		System.out.println(jedis.ping());
 
 		WatchdogCounter watchdogCounter = new WatchdogCounter(100);
+		RuntimeMeasure sysInfoTime = new RuntimeMeasure();
 
-		TSystemInfo systemInfoThread = new TSystemInfo(watchdogCounter);
+		TSystemInfo systemInfoThread = new TSystemInfo(watchdogCounter, sysInfoTime);
 		systemInfoThread.setName("TSystemInfo");
+		System.out.println("RT_State" + systemInfoThread.getState());
 		systemInfoThread.start();
+
+		for (int i = 0; i < 100; i++) {
+			System.out.println("RT_State" + systemInfoThread.getState());
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 
 		TWatchdog watchdogThread = new TWatchdog(systemInfoThread, watchdogCounter);
 		watchdogThread.setName("TWatchdog");
@@ -40,6 +53,7 @@ public class Main {
 			systemInfoThread.join();
 		} catch (InterruptedException e) {
 			LOGGER.log(Level.SEVERE, "Error occur while Threads.join()", e);
+
 		}
 
 		System.out.println("VAR1 = " + jedis.get("var1"));

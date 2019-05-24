@@ -4,6 +4,7 @@
 # Links to helpful webseites
 
 * JamaicaVM - [API](http://www.aicas.com/jamaica/8.2/doc/jamaica_api/index.html)
+* JamaicaVM - [MANUAL](https://www.aicas.com/cms/sites/default/files/JamaicaVM-8.2-manual-web.pdf)
 * Redis - [Jedis](https://www.javadoc.io/doc/redis.clients/jedis/3.1.0-m1)
 
 Some info about memory and GBC in JVM

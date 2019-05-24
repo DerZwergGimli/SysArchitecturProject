@@ -27,7 +27,7 @@ public class NetworkInterface {
 
 	}
 
-	public void ReadNetworkInterface() {
+	public void readNetworkInterface() {
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		String bashString = "ip -statistics link show dev " + this.networkInterfaceName + " | grep RX -A 4";
 

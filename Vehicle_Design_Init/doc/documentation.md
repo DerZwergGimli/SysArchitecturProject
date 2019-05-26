@@ -35,3 +35,28 @@ There are 3 static variables defined in Thread class for priority.
 public static int MIN_PRIORITY		: 	This is minimum priority that a thread can have. Value for this is 1.
 public static int NORM_PRIORITY		: 	This is default priority of a thread if do not explicitly define it. Value for this is 5.
 public static int MAX_PRIORITY		: 	This is maximum priority of a thread. Value for this is 10.
+
+### Data Structure
+#### 1. Driver Info
+* Driver
+  * ID                (:int)
+  * firstName         (:string) 
+  * lastName          (:string) 
+  * authLevel         (Authentification Level :int) 
+
+#### 2. System Statics
+* System
+  * CPU              
+    * CPUTemp        (in °C :int)
+    * CPULoad        (in  % :int)
+    * CPUActiveCores (:int, optional)
+  * Net
+    * tbd
+  * RT
+    * jitter
+    * numOfRTThreads (int)
+#### 3. Sensors States
+* Sensors
+  * LidarSensorState (ON/OFF: bool)
+  * TempSensorState  (ON/OFF: bool)
+  * MotorRPM         (Rotation/min: int)

@@ -33,16 +33,6 @@ public class Main {
 		System.out.println("RT_State" + systemInfoThread.getState());
 		systemInfoThread.start();
 
-		for (int i = 0; i < 100; i++) {
-			System.out.println("RT_State" + systemInfoThread.getState());
-			try {
-				Thread.sleep(1);
-			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
-				e1.printStackTrace();
-			}
-		}
-
 		TWatchdog watchdogThread = new TWatchdog(systemInfoThread, watchdogCounter);
 		watchdogThread.setName("TWatchdog");
 		watchdogThread.start();

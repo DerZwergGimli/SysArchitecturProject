@@ -122,6 +122,7 @@
       
       <option append="true" enabled="true" name="classpath" value="bin:libs/jedis-3.1.0-m1.jar"/>
       <option append="false" enabled="true" name="analyze" value="5"/>
+      <option append="true" enabled="true" name="includeClasses" value="java.lang..."/>
                                         
     
     
@@ -179,61 +180,6 @@
                           
   
   
-  
-  
-  
-  </target>
-            
-  
-  
-  
-  
-  <target depends="" name="build_main.MainForARM">
-                    
-    
-    
-    
-    <jamaicabuilder jamaica="${jamaica}">
-                              
-      
-      
-      
-      <option append="false" enabled="true" name="target" value="linux-armv7-le"/>
-                              
-      
-      
-      
-      <option append="false" enabled="true" name="main" value="main.Main"/>
-                              
-      
-      
-      
-      <option append="true" enabled="true" name="classpath" value="bin:libs/jedis-3.1.0-m1.jar:libs/org.eclipse.paho.client.mqttv3-1.2.1.jar"/>
-                              
-      
-      
-      
-      <option append="false" enabled="true" name="tmpdir" value="tmp"/>
-                              
-      
-      
-      
-      <option append="false" enabled="true" name="interpret" value="true"/>
-                            
-    
-    
-    
-    </jamaicabuilder>
-                    
-    
-    
-    
-    <echo>
-      The executable has been created successfully:
-        /home/yannick/eclipse-workspace/SysArchitecturProject/Vehicle_Design_Init/Main
-      Please transfer it to your target device manually.
-    </echo>
-                  
   
   
   

@@ -20,9 +20,10 @@ public class ASHanderRTOverrun extends AsyncEventHandler {
 	@Override
 	public void handleAsyncEvent() {
 		logger.log(Level.SEVERE, "----------------------OVERRUN DETECTED-----------------------------");
-		realtimeThread.interrupt();
+		// realtimeThread.interrupt();
+		System.out.println("IS Interrupted_overrun: " + realtimeThread.isInterrupted());
 		while (this.getAndDecrementPendingFireCount() != 0) {
-			System.out.println("FireCount = " + this.getPendingFireCount());
+			System.out.println("FireCount_overrun = " + this.getPendingFireCount());
 		}
 
 	}

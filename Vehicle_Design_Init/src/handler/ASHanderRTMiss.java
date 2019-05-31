@@ -20,13 +20,21 @@ public class ASHanderRTMiss extends AsyncEventHandler {
 	@Override
 	public void handleAsyncEvent() {
 
-		// System.out.println("----------------___MISS DETETECTED-------------");
 		logger.log(Level.SEVERE, "----------------------____MISS DETETECTED-----------------------------");
 		realtimeThread.interrupt();
+		System.out.println("IS Interrupted_miss: " + realtimeThread.isInterrupted());
 		while (this.getAndDecrementPendingFireCount() != 0) {
-			System.out.println("FireCount = " + this.getPendingFireCount());
+			System.out.println("FireCount_miss = " + this.getPendingFireCount());
 		}
-		realtimeThread.start();
+		// realtimeThread.start();
+//		while (this.realtimeThread.isInterrupted() != true) {
+//			try {
+//				realtimeThread.interrupt();
+//			} catch (Exception e) {
+//				System.out.println("Error while interruping thread");
+//			}
+//			System.out.println("...trying interrupting");
+//		}
 
 	}
 

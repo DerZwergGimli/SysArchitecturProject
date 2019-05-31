@@ -38,6 +38,7 @@ public class TRealTime extends RealtimeThread {
 
 	@Override
 	public void run() {
+
 		int n = 1;
 //		try {
 //			while (waitForNextRelease() && (n < 100)) {
@@ -57,19 +58,22 @@ public class TRealTime extends RealtimeThread {
 //		}
 
 		while (waitForNextPeriod() && (n < 100)) {
-			long startTime = System.nanoTime();
+			while (!this.isInterrupted()) {
 
-			System.out.print(n + " - ");
-			for (int i = 0; i < 1000; i++) {
-				for (int j = 0; j < 1000; j++) {
+				long startTime = System.nanoTime();
 
+				System.out.print(n + " - ");
+				for (int i = 0; i < n * 10; i++) {
+					for (int j = 0; j < 1000; j++) {
+
+					}
 				}
+
+				n++;
+				long endTime = System.nanoTime();
+				System.out.println((endTime - startTime) / 1000);
+
 			}
-
-			n++;
-			long endTime = System.nanoTime();
-			System.out.println((endTime - startTime) / 1000);
-
 		}
 	}
 

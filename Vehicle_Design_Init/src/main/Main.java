@@ -32,24 +32,14 @@ public class Main {
 
 		}
 
-		long i = 0;
-		// for (int i = 0; i < 10000; i++) {
-		while (realtimeThread.getState() == Thread.State.RUNNABLE
-				|| realtimeThread.getState() == Thread.State.TIMED_WAITING) {
-			System.out.println(realtimeThread.getState() + String.valueOf(i));
-			i++;
+//		try {
+//			realtimeThread.join();
+//		} catch (InterruptedException e) {
+//			logger.log(Level.SEVERE, "Error occur while Threads.join()", e);
+//
+//		}
 
-		}
-		realtimeThread.interrupt();
-
-		try {
-			realtimeThread.join();
-		} catch (InterruptedException e) {
-			logger.log(Level.SEVERE, "Error occur while Threads.join()", e);
-
-		}
-
-		System.out.println("VAR1 = " + jedis.get("var1"));
+		// System.out.println("VAR1 = " + jedis.get("var1"));
 
 		jedis.close();
 

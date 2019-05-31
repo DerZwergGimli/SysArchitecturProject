@@ -21,13 +21,16 @@ public class Main {
 		Logger logger = setUpLogger();
 		logger.info("-- Main started --");
 
-		Jedis jedis = new Jedis("localhost", 32768);
+		Jedis jedis = new Jedis("localhost", 32769);
 		jedis.set("var1", "100");
 		System.out.println(jedis.ping());
 
 		TRealTime realtimeThread = new TRealTime(logger);
 		realtimeThread.setName("TSystemInfo");
 		realtimeThread.start();
+		while (realtimeThread.isAlive()) {
+
+		}
 
 		long i = 0;
 		// for (int i = 0; i < 10000; i++) {

@@ -5,18 +5,26 @@ import java.util.logging.Logger;
 
 import javax.realtime.AsyncEventHandler;
 
+import threads.TRealTime;
+
 public class ASHanderRTOverrun extends AsyncEventHandler {
 
 	Logger logger;
+	TRealTime realtimeThread;
 
-	public ASHanderRTOverrun(Logger logger, long threadID) {
+	public ASHanderRTOverrun(Logger logger, TRealTime realtimeThread) {
 		this.logger = logger;
+		this.realtimeThread = realtimeThread;
 	}
 
 	@Override
 	public void handleAsyncEvent() {
-		System.out.println();
 		logger.log(Level.SEVERE, "----------------------OVERRUN DETECTED-----------------------------");
+		realtimeThread.interrupt();
+		while (this.getAndDecrementPendingFireCount() != 0) {
+			System.out.println("FireCount = " + this.getPendingFireCount());
+		}
+
 	}
 
 }

@@ -5,21 +5,28 @@ import java.util.logging.Logger;
 
 import javax.realtime.AsyncEventHandler;
 
+import threads.TRealTime;
+
 public class ASHanderRTMiss extends AsyncEventHandler {
 
 	Logger logger;
-	long threadID;
+	TRealTime realtimeThread;
 
-	public ASHanderRTMiss(Logger logger, long threadID) {
+	public ASHanderRTMiss(Logger logger, TRealTime realtimeThread) {
 		this.logger = logger;
-		this.threadID = threadID;
+		this.realtimeThread = realtimeThread;
 	}
 
 	@Override
 	public void handleAsyncEvent() {
 
-		System.out.println("----------------___MISS DETETECTED-------------");
+		// System.out.println("----------------___MISS DETETECTED-------------");
 		logger.log(Level.SEVERE, "----------------------____MISS DETETECTED-----------------------------");
+		realtimeThread.interrupt();
+		while (this.getAndDecrementPendingFireCount() != 0) {
+			System.out.println("FireCount = " + this.getPendingFireCount());
+		}
+		realtimeThread.start();
 
 	}
 

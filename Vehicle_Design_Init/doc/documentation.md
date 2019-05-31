@@ -9,6 +9,9 @@
 
 Some info about memory and GBC in JVM
 http://www.aicas.com/jamaica/3.2/doc/html/x3672.html
+
+-- SomeNiceSlides
+https://slideplayer.com/slide/12774547/
  
 
 
@@ -35,6 +38,12 @@ There are 3 static variables defined in Thread class for priority.
 public static int MIN_PRIORITY		: 	This is minimum priority that a thread can have. Value for this is 1.
 public static int NORM_PRIORITY		: 	This is default priority of a thread if do not explicitly define it. Value for this is 5.
 public static int MAX_PRIORITY		: 	This is maximum priority of a thread. Value for this is 10.
+
+
+### Memory config stuff
+- TODO: work to do
+
+
 
 ### Data Structure
 #### 1. Driver Info

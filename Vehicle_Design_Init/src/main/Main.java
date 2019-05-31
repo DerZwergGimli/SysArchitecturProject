@@ -8,41 +8,41 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-import objects.RuntimeMeasure;
-import objects.WatchdogCounter;
 import redis.clients.jedis.Jedis;
-import threads.TSystemInfo;
-import threads.TWatchdog;
+import threads.TRealTime;
 
 public class Main {
 
 	public static void main(String[] args) {
-		Logger LOGGER = setUpLogger();
-		LOGGER.info("-- Main started --");
+		/**
+		 * !!! THIS CODE IS STILL UNDER CONSTRUCTION !!!
+		 */
+
+		Logger logger = setUpLogger();
+		logger.info("-- Main started --");
 
 		Jedis jedis = new Jedis("localhost", 32768);
 		jedis.set("var1", "100");
-
 		System.out.println(jedis.ping());
 
-		WatchdogCounter watchdogCounter = new WatchdogCounter(100);
-		RuntimeMeasure sysInfoTime = new RuntimeMeasure();
+		TRealTime realtimeThread = new TRealTime(logger);
+		realtimeThread.setName("TSystemInfo");
+		realtimeThread.start();
 
-		TSystemInfo systemInfoThread = new TSystemInfo(watchdogCounter, sysInfoTime);
-		systemInfoThread.setName("TSystemInfo");
-		System.out.println("RT_State" + systemInfoThread.getState());
-		systemInfoThread.start();
+		long i = 0;
+		// for (int i = 0; i < 10000; i++) {
+		while (realtimeThread.getState() == Thread.State.RUNNABLE
+				|| realtimeThread.getState() == Thread.State.TIMED_WAITING) {
+			System.out.println(realtimeThread.getState() + String.valueOf(i));
+			i++;
 
-		TWatchdog watchdogThread = new TWatchdog(systemInfoThread, watchdogCounter);
-		watchdogThread.setName("TWatchdog");
-		watchdogThread.start();
-
-		// Map<Thread, StackTraceElement[]> hello = Thread.getAllStackTraces();
+		}
+		realtimeThread.interrupt();
 
 		try {
-			systemInfoThread.join();
+			realtimeThread.join();
 		} catch (InterruptedException e) {
-			LOGGER.log(Level.SEVERE, "Error occur while Threads.join()", e);
+			logger.log(Level.SEVERE, "Error occur while Threads.join()", e);
 
 		}
 
@@ -50,7 +50,7 @@ public class Main {
 
 		jedis.close();
 
-		LOGGER.info("--- Main closed ---");
+		logger.info("--- Main closed ---");
 	}
 
 	/**

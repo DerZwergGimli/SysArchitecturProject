@@ -5,14 +5,14 @@ import java.util.logging.Logger;
 
 import javax.realtime.AsyncEventHandler;
 
-import threads.TRealTime;
+import threads.TLidar;
 
 public class ASHanderRTMiss extends AsyncEventHandler {
 
 	Logger logger;
-	TRealTime realtimeThread;
+	TLidar realtimeThread;
 
-	public ASHanderRTMiss(Logger logger, TRealTime realtimeThread) {
+	public ASHanderRTMiss(Logger logger, TLidar realtimeThread) {
 		this.logger = logger;
 		this.realtimeThread = realtimeThread;
 	}

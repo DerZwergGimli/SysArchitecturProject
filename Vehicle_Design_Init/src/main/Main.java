@@ -8,8 +8,7 @@ import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
-import redis.clients.jedis.Jedis;
-import threads.TRealTime;
+import objects.ManagementClass;
 
 public class Main {
 
@@ -21,27 +20,21 @@ public class Main {
 		Logger logger = setUpLogger();
 		logger.info("-- Main started --");
 
-		Jedis jedis = new Jedis("localhost", 32769);
-		jedis.set("var1", "100");
-		System.out.println(jedis.ping());
+		ManagementClass management = new ManagementClass(logger);
 
-		TRealTime realtimeThread = new TRealTime(logger);
-		realtimeThread.setName("TSystemInfo");
-		realtimeThread.start();
-		while (realtimeThread.isAlive()) {
+		while (management.isRunning()) {
+			management.startAllThreads();
 
+			// Just to make sure that we don't get an endless loop...
+			try {
+				Thread.sleep(10000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			management.killAllThreads();
+			management.kill();
 		}
-
-//		try {
-//			realtimeThread.join();
-//		} catch (InterruptedException e) {
-//			logger.log(Level.SEVERE, "Error occur while Threads.join()", e);
-//
-//		}
-
-		// System.out.println("VAR1 = " + jedis.get("var1"));
-
-		jedis.close();
 
 		logger.info("--- Main closed ---");
 	}

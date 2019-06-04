@@ -11,6 +11,8 @@ import objects.TimingClass;
 
 public class TDatabaseCommunication extends RealtimeThread {
 
+	private volatile boolean isRunning = true;
+
 	TimingClass realtimeTiming;
 	JedisDBInterface jedisDatabase;
 
@@ -33,20 +35,21 @@ public class TDatabaseCommunication extends RealtimeThread {
 
 	@Override
 	public void run() {
-		while (!this.isInterrupted()) {
+		while (!this.isInterrupted() && isRunning) {
 			waitForNextPeriod();
-			writeToDatabase();
+			// writeToDatabase();
 		}
+
+	}
+
+	public void kill() {
+		this.isRunning = false;
 	}
 
 	private void writeToDatabase() {
 		if (String.valueOf(realtimeTiming.getDurationNanoSecounds()) != null) {
 			jedisDatabase.set("realtimeThreadTimeNano", String.valueOf(realtimeTiming.getDurationNanoSecounds()));
 		}
-
-	}
-
-	private void readFromDatabase() {
 
 	}
 

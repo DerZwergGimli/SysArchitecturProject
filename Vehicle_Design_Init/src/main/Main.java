@@ -17,22 +17,20 @@ public class Main {
 		 * !!! THIS CODE IS STILL UNDER CONSTRUCTION !!!
 		 */
 
-		Logger logger = setUpLogger();
+		Logger logger = setupLogger();
 		logger.info("-- Main started --");
 
 		ManagementClass management = new ManagementClass(logger);
 
-		while (management.isRunning()) {
+		while (management.isActive()) {
+			management.createAllThreads();
 			management.startAllThreads();
 
 			// Just to make sure that we don't get an endless loop...
-			try {
-				Thread.sleep(10000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+
 			management.killAllThreads();
+			// management.joinAll();
+			management.destroyAllThreads();
 			management.kill();
 		}
 
@@ -44,7 +42,7 @@ public class Main {
 	 *
 	 * @return the logger
 	 */
-	private static Logger setUpLogger() {
+	private static Logger setupLogger() {
 		Logger LOGGER = Logger.getLogger(Main.class.getName());
 		FileHandler fh;
 

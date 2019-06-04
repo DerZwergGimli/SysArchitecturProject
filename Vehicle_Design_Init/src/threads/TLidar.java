@@ -14,6 +14,7 @@ import objects.TimingClass;
 
 public class TLidar extends RealtimeThread {
 
+	private boolean isRunning = true;
 	Logger logger;
 	TimingClass timing;
 
@@ -46,19 +47,28 @@ public class TLidar extends RealtimeThread {
 
 		int n = 1;
 
-		while ((n < 1000) && !this.isInterrupted()) {
+		while ((n < 100) && isRunning && !this.isInterrupted()) {
 			waitForNextPeriod();
 
 			timing.start();
-
 			System.out.print(n + " - ");
 			n++;
+
+			for (int i = 0; i < 10000; i++) {
+				for (int j = 0; j < 1000; j++) {
+
+				}
+			}
 
 			timing.stop();
 			System.out.println("TimeConsumption: " + timing.getDurationMicroSecounds() + "us");
 
 		}
 
+	}
+
+	public void kill() {
+		this.isRunning = true;
 	}
 
 }

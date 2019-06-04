@@ -1,45 +1,110 @@
-[2019-06-01 17:34:00] [INFO   ] -- Main started -- 
-[2019-06-01 17:34:00] [INFO   ] --- Main closed --- 
-[2019-06-01 17:35:23] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 17:35:23] [INFO   ] -- Main started -- 
-[2019-06-01 17:35:24] [INFO   ] --- Main closed --- 
-[2019-06-01 17:41:22] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 17:41:22] [INFO   ] -- Main started -- 
-[2019-06-01 17:49:01] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 17:49:01] [INFO   ] -- Main started -- 
-[2019-06-01 17:49:11] [INFO   ] --- Main closed --- 
-[2019-06-01 17:52:32] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 17:52:32] [INFO   ] -- Main started -- 
-[2019-06-01 17:52:43] [INFO   ] --- Main closed --- 
-[2019-06-01 17:55:17] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 17:55:17] [INFO   ] -- Main started -- 
-[2019-06-01 17:55:27] [INFO   ] --- Main closed --- 
-[2019-06-01 18:10:46] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 18:10:46] [INFO   ] -- Main started -- 
-[2019-06-01 18:10:56] [INFO   ] --- Main closed --- 
-[2019-06-01 18:48:34] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 18:48:34] [INFO   ] -- Main started -- 
-[2019-06-01 18:49:16] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 18:49:16] [INFO   ] -- Main started -- 
-[2019-06-01 18:49:26] [INFO   ] --- Main closed --- 
-[2019-06-01 18:52:41] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 18:52:41] [INFO   ] -- Main started -- 
-[2019-06-01 18:52:51] [INFO   ] --- Main closed --- 
-[2019-06-01 18:53:21] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 18:53:21] [INFO   ] -- Main started -- 
-[2019-06-01 18:53:31] [INFO   ] --- Main closed --- 
-[2019-06-01 18:59:57] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 18:59:57] [INFO   ] -- Main started -- 
-[2019-06-01 19:00:07] [INFO   ] --- Main closed --- 
-[2019-06-01 19:03:52] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 19:03:52] [INFO   ] -- Main started -- 
-[2019-06-01 19:04:02] [INFO   ] --- Main closed --- 
-[2019-06-01 19:11:32] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 19:11:33] [INFO   ] -- Main started -- 
-[2019-06-01 19:11:43] [INFO   ] --- Main closed --- 
-[2019-06-01 19:13:23] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 19:13:24] [INFO   ] -- Main started -- 
-[2019-06-01 19:13:34] [INFO   ] --- Main closed --- 
-[2019-06-01 19:14:40] [INFO   ] -- LOGGER stated -- 
-[2019-06-01 19:14:40] [INFO   ] -- Main started -- 
-[2019-06-01 19:14:50] [INFO   ] --- Main closed --- 
+[2019-06-03 17:59:30] [INFO   ] -- LOGGER stated -- 
+[2019-06-03 17:59:30] [INFO   ] -- Main started -- 
+[2019-06-03 17:59:30] [INFO   ] ManagerThread is running? true 
+[2019-06-03 17:59:30] [INFO   ] all threads created 
+[2019-06-03 17:59:30] [INFO   ] stopped all Threads 
+[2019-06-03 17:59:40] [INFO   ] killed all Threads 
+[2019-06-03 17:59:50] [INFO   ] joinded all Threads 
+[2019-06-03 17:59:50] [INFO   ] all Threads destroyed 
+[2019-06-03 17:59:50] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-03 17:59:50] [INFO   ] ManagerThread is running? false 
+[2019-06-03 17:59:50] [INFO   ] --- Main closed --- 
+[2019-06-03 18:01:36] [INFO   ] -- LOGGER stated -- 
+[2019-06-03 18:01:36] [INFO   ] -- Main started -- 
+[2019-06-03 18:01:36] [INFO   ] ManagerThread is running? true 
+[2019-06-03 18:01:36] [INFO   ] all threads created 
+[2019-06-03 18:01:36] [INFO   ] All Threads started 
+[2019-06-03 18:01:46] [INFO   ] killed all Threads 
+[2019-06-03 18:01:56] [INFO   ] joined all Threads 
+[2019-06-03 18:01:56] [INFO   ] all Threads destroyed 
+[2019-06-03 18:01:56] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-03 18:01:56] [INFO   ] ManagerThread is running? false 
+[2019-06-03 18:01:56] [INFO   ] --- Main closed --- 
+[2019-06-03 18:05:15] [INFO   ] -- LOGGER stated -- 
+[2019-06-03 18:05:15] [INFO   ] -- Main started -- 
+[2019-06-03 18:05:15] [INFO   ] Manager is active? true 
+[2019-06-03 18:05:15] [INFO   ] all threads created 
+[2019-06-03 18:05:15] [INFO   ] All Threads started 
+[2019-06-03 18:05:23] [SEVERE ] ----------------------____MISS DETETECTED----------------------------- 
+[2019-06-03 18:05:45] [INFO   ] killed all Threads 
+[2019-06-03 18:05:45] [INFO   ] joined all Threads 
+[2019-06-03 18:05:45] [INFO   ] all Threads destroyed 
+[2019-06-03 18:05:45] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-03 18:05:45] [INFO   ] Manager is active? false 
+[2019-06-03 18:05:45] [INFO   ] --- Main closed --- 
+[2019-06-04 15:51:11] [INFO   ] -- LOGGER stated -- 
+[2019-06-04 15:51:11] [INFO   ] -- Main started -- 
+[2019-06-04 15:51:11] [INFO   ] Manager is active? true 
+[2019-06-04 15:51:11] [INFO   ] all threads created 
+[2019-06-04 15:51:11] [INFO   ] All Threads started 
+[2019-06-04 15:51:41] [INFO   ] killed all Threads 
+[2019-06-04 15:51:41] [INFO   ] joined all Threads 
+[2019-06-04 15:51:41] [INFO   ] all Threads destroyed 
+[2019-06-04 15:51:42] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-04 15:51:42] [INFO   ] Manager is active? false 
+[2019-06-04 15:51:42] [INFO   ] --- Main closed --- 
+[2019-06-04 15:55:17] [INFO   ] -- LOGGER stated -- 
+[2019-06-04 15:55:17] [INFO   ] -- Main started -- 
+[2019-06-04 15:55:17] [INFO   ] Manager is active? true 
+[2019-06-04 15:55:17] [INFO   ] all threads created 
+[2019-06-04 15:55:17] [INFO   ] All Threads started 
+[2019-06-04 15:55:47] [INFO   ] killed all Threads 
+[2019-06-04 15:55:47] [INFO   ] joined all Threads 
+[2019-06-04 15:55:47] [INFO   ] all Threads destroyed 
+[2019-06-04 15:55:47] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-04 15:55:47] [INFO   ] Manager is active? false 
+[2019-06-04 15:55:47] [INFO   ] --- Main closed --- 
+[2019-06-04 15:56:31] [INFO   ] -- LOGGER stated -- 
+[2019-06-04 15:56:31] [INFO   ] -- Main started -- 
+[2019-06-04 15:56:31] [INFO   ] Manager is active? true 
+[2019-06-04 15:56:31] [INFO   ] all threads created 
+[2019-06-04 15:56:31] [INFO   ] All Threads started 
+[2019-06-04 15:57:01] [INFO   ] killed all Threads 
+[2019-06-04 15:57:01] [INFO   ] joined all Threads 
+[2019-06-04 15:57:01] [INFO   ] all Threads destroyed 
+[2019-06-04 15:57:01] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-04 15:57:01] [INFO   ] Manager is active? false 
+[2019-06-04 15:57:01] [INFO   ] --- Main closed --- 
+[2019-06-04 15:57:36] [INFO   ] -- LOGGER stated -- 
+[2019-06-04 15:57:36] [INFO   ] -- Main started -- 
+[2019-06-04 15:57:36] [INFO   ] Manager is active? true 
+[2019-06-04 15:57:36] [INFO   ] all threads created 
+[2019-06-04 15:57:36] [INFO   ] All Threads started 
+[2019-06-04 15:57:37] [SEVERE ] ----------------------____MISS DETETECTED----------------------------- 
+[2019-06-04 15:57:37] [SEVERE ] ----------------------OVERRUN DETECTED----------------------------- 
+[2019-06-04 15:58:06] [INFO   ] killed all Threads 
+[2019-06-04 16:00:08] [INFO   ] -- LOGGER stated -- 
+[2019-06-04 16:00:08] [INFO   ] -- Main started -- 
+[2019-06-04 16:00:08] [INFO   ] Manager is active? true 
+[2019-06-04 16:00:08] [INFO   ] all threads created 
+[2019-06-04 16:00:08] [INFO   ] All Threads started 
+[2019-06-04 16:00:08] [INFO   ] killed all Threads 
+[2019-06-04 16:00:08] [INFO   ] all Threads destroyed 
+[2019-06-04 16:00:08] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-04 16:00:08] [INFO   ] Manager is active? false 
+[2019-06-04 16:00:08] [INFO   ] --- Main closed --- 
+[2019-06-04 16:00:09] [SEVERE ] ----------------------____MISS DETETECTED----------------------------- 
+[2019-06-04 16:00:09] [SEVERE ] ----------------------OVERRUN DETECTED----------------------------- 
+[2019-06-04 16:58:24] [INFO   ] -- LOGGER stated -- 
+[2019-06-04 16:58:24] [INFO   ] -- Main started -- 
+[2019-06-04 16:58:24] [INFO   ] Manager is active? true 
+[2019-06-04 16:58:24] [INFO   ] all threads created 
+[2019-06-04 16:58:24] [INFO   ] All Threads started 
+[2019-06-04 16:58:24] [INFO   ] killed all Threads 
+[2019-06-04 16:58:24] [INFO   ] all Threads destroyed 
+[2019-06-04 16:58:24] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-04 16:58:24] [INFO   ] Manager is active? false 
+[2019-06-04 16:58:24] [INFO   ] --- Main closed --- 
+[2019-06-04 16:58:24] [SEVERE ] ----------------------____MISS DETETECTED----------------------------- 
+[2019-06-04 16:58:24] [SEVERE ] ----------------------OVERRUN DETECTED----------------------------- 
+[2019-06-04 16:59:56] [INFO   ] -- LOGGER stated -- 
+[2019-06-04 16:59:56] [INFO   ] -- Main started -- 
+[2019-06-04 16:59:56] [INFO   ] Manager is active? true 
+[2019-06-04 16:59:56] [INFO   ] all threads created 
+[2019-06-04 16:59:56] [INFO   ] All Threads started 
+[2019-06-04 16:59:56] [INFO   ] killed all Threads 
+[2019-06-04 16:59:56] [INFO   ] all Threads destroyed 
+[2019-06-04 16:59:56] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-04 16:59:56] [INFO   ] Manager is active? false 
+[2019-06-04 16:59:56] [INFO   ] --- Main closed --- 
+[2019-06-04 16:59:56] [SEVERE ] ----------------------____MISS DETETECTED----------------------------- 

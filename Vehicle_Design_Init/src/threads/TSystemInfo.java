@@ -11,6 +11,8 @@ import operatingSystemInterfaces.NetworkInterface;
 
 public class TSystemInfo extends RealtimeThread {
 
+	private boolean isRunning;
+
 	NetworkInterface networkInterface;
 	CpuInterface cpuInterface;
 
@@ -35,11 +37,15 @@ public class TSystemInfo extends RealtimeThread {
 
 	@Override
 	public void run() {
-		while (!isInterrupted()) {
+		while (!isInterrupted() && isRunning) {
 			waitForNextPeriod();
 			networkInterface.readNetworkInterface();
 
 		}
+	}
+
+	public void kill() {
+		this.isRunning = false;
 	}
 
 }

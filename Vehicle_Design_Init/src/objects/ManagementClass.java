@@ -11,7 +11,8 @@ public class ManagementClass {
 
 	private Logger logger;
 
-	private boolean mainProcessActive = true;
+	private boolean managementActive = true;
+
 	public boolean liadarThreadActive = true;
 	public boolean systemThreadActive = true;
 
@@ -92,13 +93,13 @@ public class ManagementClass {
 //	}
 
 	public boolean isActive() {
-		logger.info("Manager is active? " + mainProcessActive);
-		return mainProcessActive;
+		logger.info("Manager is active? " + managementActive);
+		return managementActive;
 
 	}
 
 	public void kill() {
-		mainProcessActive = false;
+		managementActive = false;
 		logger.info("ManagerThread running is set to 'FALSE'");
 	}
 

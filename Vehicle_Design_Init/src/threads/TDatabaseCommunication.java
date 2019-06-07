@@ -35,8 +35,8 @@ public class TDatabaseCommunication extends RealtimeThread {
 
 	@Override
 	public void run() {
-		while (!this.isInterrupted() && isRunning) {
-			waitForNextPeriod();
+		while (!this.isInterrupted() && isRunning && waitForNextPeriod()) {
+
 			// writeToDatabase();
 		}
 

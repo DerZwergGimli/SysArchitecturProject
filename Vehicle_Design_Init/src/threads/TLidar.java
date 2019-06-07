@@ -47,8 +47,7 @@ public class TLidar extends RealtimeThread {
 
 		int n = 1;
 
-		while ((n < 100) && isRunning && !this.isInterrupted()) {
-			waitForNextPeriod();
+		while ((n < 100) && isRunning && !this.isInterrupted() && waitForNextPeriod()) {
 
 			timing.start();
 			System.out.print(n + " - ");

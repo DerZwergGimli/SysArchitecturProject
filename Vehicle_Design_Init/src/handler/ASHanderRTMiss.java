@@ -5,14 +5,14 @@ import java.util.logging.Logger;
 
 import javax.realtime.AsyncEventHandler;
 
-import threads.TRealTime;
+import threads.TLidar;
 
 public class ASHanderRTMiss extends AsyncEventHandler {
 
 	Logger logger;
-	TRealTime realtimeThread;
+	TLidar realtimeThread;
 
-	public ASHanderRTMiss(Logger logger, TRealTime realtimeThread) {
+	public ASHanderRTMiss(Logger logger, TLidar realtimeThread) {
 		this.logger = logger;
 		this.realtimeThread = realtimeThread;
 	}
@@ -21,11 +21,13 @@ public class ASHanderRTMiss extends AsyncEventHandler {
 	public void handleAsyncEvent() {
 
 		logger.log(Level.SEVERE, "----------------------____MISS DETETECTED-----------------------------");
-		realtimeThread.interrupt();
+		realtimeThread.kill();
+		// realtimeThread.interrupt();
 		System.out.println("IS Interrupted_miss: " + realtimeThread.isInterrupted());
 		while (this.getAndDecrementPendingFireCount() != 0) {
 			System.out.println("FireCount_miss = " + this.getPendingFireCount());
 		}
+
 		// realtimeThread.start();
 //		while (this.realtimeThread.isInterrupted() != true) {
 //			try {
@@ -35,6 +37,8 @@ public class ASHanderRTMiss extends AsyncEventHandler {
 //			}
 //			System.out.println("...trying interrupting");
 //		}
+
+		// return;
 
 	}
 

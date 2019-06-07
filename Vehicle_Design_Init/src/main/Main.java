@@ -1,15 +1,9 @@
 package main;
 
-import java.io.IOException;
-import java.util.Date;
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
 import java.util.logging.Logger;
-import java.util.logging.SimpleFormatter;
 
-import redis.clients.jedis.Jedis;
-import threads.TRealTime;
+import logger.Logging;
+import objects.ManagementClass;
 
 public class Main {
 
@@ -18,65 +12,30 @@ public class Main {
 		 * !!! THIS CODE IS STILL UNDER CONSTRUCTION !!!
 		 */
 
-		Logger logger = setUpLogger();
+		Logger logger = Logging.setupLogger();
 		logger.info("-- Main started --");
 
-		Jedis jedis = new Jedis("localhost", 32769);
-		jedis.set("var1", "100");
-		System.out.println(jedis.ping());
+		ManagementClass management = new ManagementClass(logger);
 
-		TRealTime realtimeThread = new TRealTime(logger);
-		realtimeThread.setName("TSystemInfo");
-		realtimeThread.start();
-		while (realtimeThread.isAlive()) {
+		while (management.isActive()) {
+			management.createAllThreads();
+			management.startAllThreads();
 
+			// Just to make sure that we don't get an endless loop...
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			management.killAllThreads();
+			// management.joinAll();
+			management.destroyAllThreads();
+			management.kill();
 		}
-
-//		try {
-//			realtimeThread.join();
-//		} catch (InterruptedException e) {
-//			logger.log(Level.SEVERE, "Error occur while Threads.join()", e);
-//
-//		}
-
-		// System.out.println("VAR1 = " + jedis.get("var1"));
-
-		jedis.close();
 
 		logger.info("--- Main closed ---");
 	}
 
-	/**
-	 * Sets the up logger.
-	 *
-	 * @return the logger
-	 */
-	private static Logger setUpLogger() {
-		Logger LOGGER = Logger.getLogger(Main.class.getName());
-		FileHandler fh;
-
-		try {
-			fh = new FileHandler("mainLog.log", 10000, 3, true);
-			LOGGER.addHandler(fh);
-
-			fh.setFormatter(new SimpleFormatter() {
-				private static final String format = "[%1$tF %1$tT] [%2$-7s] %3$s %n";
-
-				@Override
-				public synchronized String format(LogRecord lr) {
-					return String.format(format, new Date(lr.getMillis()), lr.getLevel().getLocalizedName(),
-							lr.getMessage());
-				}
-			});
-			LOGGER.setLevel(Level.ALL);
-			LOGGER.info("-- LOGGER stated --");
-			// LOGGER.setUseParentHandlers(false);
-
-		} catch (SecurityException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return LOGGER;
-	}
 }

@@ -132,3 +132,15 @@
 [2019-06-05 14:11:46] [INFO   ] --- Main closed --- 
 [2019-06-05 14:11:46] [SEVERE ] ----------------------____MISS DETETECTED----------------------------- 
 [2019-06-05 14:11:46] [SEVERE ] ----------------------OVERRUN DETECTED----------------------------- 
+[2019-06-08 16:26:02] [INFO   ] -- LOGGER stated -- 
+[2019-06-08 16:26:02] [INFO   ] -- Main started -- 
+[2019-06-08 16:26:02] [INFO   ] Manager is active? true 
+[2019-06-08 16:26:02] [INFO   ] all threads created 
+[2019-06-08 16:26:02] [INFO   ] All Threads started 
+[2019-06-08 16:26:02] [SEVERE ] ----------------------____MISS DETETECTED----------------------------- 
+[2019-06-08 16:26:02] [SEVERE ] ----------------------OVERRUN DETECTED----------------------------- 
+[2019-06-08 16:26:03] [INFO   ] killed all Threads 
+[2019-06-08 16:26:03] [INFO   ] all Threads destroyed 
+[2019-06-08 16:26:03] [INFO   ] ManagerThread running is set to 'FALSE' 
+[2019-06-08 16:26:03] [INFO   ] Manager is active? false 
+[2019-06-08 16:26:03] [INFO   ] --- Main closed --- 

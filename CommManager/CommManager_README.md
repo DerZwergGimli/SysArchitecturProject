@@ -1,6 +1,6 @@
-## Communication Manager
+## com.AutonomV.Communication Manager
 #### Abstact
-This Application will run on the normal JVM to communicate with the Webserver Management System.
+This Application will run on the normal JVM to communicate with the Webserver com.AutonomV.Management System.
 It has an interface to the MQTT Broker and an interface to the Redis Local DB.
 
 #### Dependencies

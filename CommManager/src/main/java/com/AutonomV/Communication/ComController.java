@@ -1,5 +1,7 @@
 package com.AutonomV.Communication;
 
+import com.AutonomV.Entity.Driver;
+import com.AutonomV.Util.Converter;
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -8,14 +10,14 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public class ComController {
 
-    private String topic = "MQTT Examples";
-    private String content = "Message from MqttPublishSample";
-    private int qos = 2;
     private String broker = "tcp://iot.eclipse.org:1883";
     private String clientId = "V1";
     private MemoryPersistence persistence = new MemoryPersistence();
     private MqttClient sampleClient;
     private MqttConnectOptions connOpts;
+
+
+    private Driver driver;
 
     private boolean connectionStatus = false;
 
@@ -49,11 +51,16 @@ public class ComController {
      * @param topic
      * @param msg
      */
-    public void publish(String topic, String msg) {
+    public void publish(String topic, String msg, int qos) {
+        if (qos < 0 || qos > 2) {
+            System.out.println("Invalid QoS: "+qos);
+            // printHelp();
+            return;
+        }
         if (connectionStatus) {
-            MqttMessage message = new MqttMessage(content.getBytes());
+            MqttMessage message = new MqttMessage(msg.getBytes());
             message.setQos(qos);
-            System.out.println("Publishing message: " + content);
+            System.out.println("Publishing message: " + msg);
             try {
                 sampleClient.publish(topic, message);
             } catch (MqttException e) {
@@ -78,5 +85,20 @@ public class ComController {
         }
     }
 
+    /**
+     * Callback function to be called when the Authentification of the driver was successful
+     */
+    private void driverAuthCallback(){
+        String msgString = null;
+        this.driver = (Driver) Converter.json2pojo(msgString, driver);
+    }
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
 
 }

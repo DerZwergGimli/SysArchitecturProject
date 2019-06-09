@@ -71,7 +71,18 @@ public class Driver {
         this.additionalProperties.put(name, value);
     }
 
-//    @Override
+    @Override
+    public String toString() {
+        return "Driver{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", authLevel=" + authLevel +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
+
+    //    @Override
 //    public String toString() {
 //        return new ToStringBuilder(this).append("id", id).append("firstName", firstName).append("lastName", lastName).append("authLevel", authLevel).append("additionalProperties", additionalProperties).toString();
 //    }

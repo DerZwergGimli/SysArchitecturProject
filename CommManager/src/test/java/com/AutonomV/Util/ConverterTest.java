@@ -1,6 +1,6 @@
 package com.AutonomV.Util;
 
-import com.AutonomV.Entity.Driver;
+import com.AutonomV.Entity.Passengers.Driver;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONObject;
 import org.junit.Assert;
@@ -47,7 +47,7 @@ public class ConverterTest {
     @Test
     public void testJson2pojo() {
         Driver testDriver = new Driver();
-        testDriver = (Driver) Converter.json2pojo(jsonString,testDriver);
+        testDriver = (Driver) Converter.json2pojo(jsonString, testDriver);
         System.out.println("testDriver: "+ testDriver.toString());
         Assert.assertEquals("Driver ID not found or not identical", this.driver.getId(), testDriver.getId());
         Assert.assertEquals("Driver AuthLevel not found or not identical", this.driver.getAuthLevel(), testDriver.getAuthLevel());

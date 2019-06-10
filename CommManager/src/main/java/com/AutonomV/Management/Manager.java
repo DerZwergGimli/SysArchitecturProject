@@ -1,19 +1,23 @@
 package com.AutonomV.Management;
 
 
-import com.AutonomV.Communication.DBController;
+import com.AutonomV.Communication.ComController;
 
 public class Manager {
 
 
     public static void main(String[] args) {
 
-        DBThread dbThread = new DBThread();
+        ManagementThread managementThread = new ManagementThread();
+        DataPersistanceThread dataPersistanceThread = new DataPersistanceThread();
+        ComController comController = new ComController("localhost","1883","V1");
+        comController.init("/V1/Driver/AuthResponse/",true);
 
 
+        managementThread.start();
+        dataPersistanceThread.start();
 
-        dbThread.start();
-
-        System.out.println("hello wordl!");
+        
+        return;
     }
 }

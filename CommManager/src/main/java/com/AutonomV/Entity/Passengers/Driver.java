@@ -1,4 +1,4 @@
-package com.AutonomV.Entity;
+package com.AutonomV.Entity.Passengers;
 
 import java.util.HashMap;
 import java.util.Map;

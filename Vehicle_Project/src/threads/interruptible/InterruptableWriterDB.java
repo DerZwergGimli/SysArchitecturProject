@@ -55,7 +55,7 @@ public class InterruptableWriterDB implements Interruptible {
 	private void writeLidarValuesToDatabase() {
 		LidarSensor sensorLidar;
 		try {
-			sensorLidar = lidarSensorQueue.poll(1, TimeUnit.SECONDS);
+			sensorLidar = lidarSensorQueue.poll(10, TimeUnit.MILLISECONDS);
 			if (sensorLidar != null) {
 				sensorLidar.writeToDB(redis);
 			}

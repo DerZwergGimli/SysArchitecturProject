@@ -18,12 +18,12 @@ public class Manager extends RealtimeThread {
 	private ManagementControl management;
 
 	volatile private Logger logger;
-	MissCollisonAvoidance missCollisonAvoidance;// = new MissCollisonAvoidance();
-	ArrayBlockingQueue<LidarSensor> lidarSensorQueue; // = new ArrayBlockingQueue<LidarSensor>(1);
-	TCollisionAvoidance threadCollisionAvoidance; // = new TCollisionAvoidance(logger, missCollisonAvoidance,
+	private MissCollisonAvoidance missCollisonAvoidance;// = new MissCollisonAvoidance();
+	private ArrayBlockingQueue<LidarSensor> lidarSensorQueue; // = new ArrayBlockingQueue<LidarSensor>(1);
+	private TCollisionAvoidance threadCollisionAvoidance; // = new TCollisionAvoidance(logger, missCollisonAvoidance,
 	// lidarSensorQueue);
-	TWriteDB threadWriterDB;
-	TReaderDB threadReaderDB;
+	private TWriteDB threadWriterDB;
+	private TReaderDB threadReaderDB;
 
 	public Manager(Logger logger) {
 		this.logger = logger;
@@ -110,7 +110,8 @@ public class Manager extends RealtimeThread {
 		}
 
 		if (!management.isManagemnetThreadRunnable()) {
-			logger.log(Level.WARNING, "Managemt diabled the programm will now close!");
+			logger.log(Level.WARNING, "Managemt diabled the programm will now close! And stop all threads clean!");
+
 			management.makeCollisonAvoidanceThreadUnrunnable();
 			management.makeDatabaseWriterThreadUnrunnable();
 			management.makeDatabaseReaderThreadUnrunnable();
@@ -118,11 +119,10 @@ public class Manager extends RealtimeThread {
 			try {
 				threadCollisionAvoidance.join();
 				threadReaderDB.join();
-				threadReaderDB.join();
+				threadWriterDB.join();
 			} catch (InterruptedException e) {
 				logger.log(Level.SEVERE, "Error while trying to cancel and join the threads!", e);
 			}
-			// this.interrupt();
 		}
 	}
 
@@ -161,13 +161,10 @@ public class Manager extends RealtimeThread {
 	public void manageDatabaseWriterThread() {
 		if (null == threadWriterDB && management.isDatabaseWriterThreadRunnable()) {
 			threadWriterDB = new TWriteDB(logger, management, lidarSensorQueue);
-			System.out.println("NULL");
 		}
 		if (Thread.State.NEW == threadWriterDB.getState()) {
 			if (management.isDatabaseWriterThreadRunnable()) {
 				threadWriterDB.start();
-
-				System.out.println("NEW");
 			}
 		}
 		if (Thread.State.RUNNABLE == threadWriterDB.getState()) {
@@ -176,8 +173,6 @@ public class Manager extends RealtimeThread {
 		if (Thread.State.TERMINATED == threadWriterDB.getState()) {
 			if (management.isDatabaseWriterThreadRunnable()) {
 				threadWriterDB = new TWriteDB(logger, management, lidarSensorQueue);
-
-				System.out.println("TERMITAED");
 			}
 		}
 		if (Thread.State.TIMED_WAITING == threadWriterDB.getState()) {

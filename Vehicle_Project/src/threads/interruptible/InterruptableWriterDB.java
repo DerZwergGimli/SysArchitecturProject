@@ -37,19 +37,18 @@ public class InterruptableWriterDB implements Interruptible {
 
 	@Override
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
-		while (management.isDatabaseWriterThreadRunnable()) {
-			do {
+		while (management.isDatabaseWriterThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 
-				redis = new RedisDBInterface(logger);
+			System.out.println("Hello from Writer");
+			redis = new RedisDBInterface(logger);
+			writeLidarValuesToDatabase();
+			writeNetworkDataToDatabase();
+			writeOSSensorsToDatabase();
 
-				writeLidarValuesToDatabase();
-				writeNetworkDataToDatabase();
-				writeOSSensorsToDatabase();
+			redis.close();
 
-				redis.close();
-			} while (RealtimeThread.waitForNextPeriod() && management.isDatabaseWriterThreadRunnable());
 		}
-		logger.log(Level.WARNING, "DatabaseWriter was closed!");
+		logger.log(Level.WARNING, "DatabaseWriter was exited!");
 
 	}
 
@@ -62,7 +61,8 @@ public class InterruptableWriterDB implements Interruptible {
 			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Error while trying to get sensorLidarValues form Queue and writing it to the DB",
+					e);
 		}
 		// LidarSensor sensorLidar = lidarSensorQueue.poll();
 

@@ -29,7 +29,7 @@ public class ManagementControl {
 	}
 
 	public void makeManagementThreadRunnable() {
-		managementThreadRunnable = false;
+		managementThreadRunnable = true;
 	}
 
 	public void makeManegementThreadUnrunnable() {
@@ -42,7 +42,7 @@ public class ManagementControl {
 	}
 
 	public void makeCollisonAvoidanceThreadRunnable() {
-		collisionAvoidanceThreadRunnable = false;
+		collisionAvoidanceThreadRunnable = true;
 	}
 
 	public void makeCollisonAvoidanceThreadUnrunnable() {
@@ -55,11 +55,24 @@ public class ManagementControl {
 	}
 
 	public void makeDatabaseWriterThreadRunnbale() {
-		databaseWriterThreadRunnable = false;
+		databaseWriterThreadRunnable = true;
 	}
 
 	public void makeDatabaseWriterThreadUnrunnable() {
 		databaseWriterThreadRunnable = false;
+	}
+
+	// databaseReader
+	public Boolean isDatabaseReaderThreadRunnable() {
+		return databaseReaderThreadRunnable;
+	}
+
+	public void makeDatabaseReaderThreadRunnbale() {
+		databaseReaderThreadRunnable = true;
+	}
+
+	public void makeDatabaseReaderThreadUnrunnable() {
+		databaseReaderThreadRunnable = false;
 	}
 
 	public void writeEntriesToDatabase(RedisDBInterface redis) {

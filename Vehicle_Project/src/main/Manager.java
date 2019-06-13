@@ -31,17 +31,9 @@ public class Manager extends RealtimeThread {
 		management = new ManagementControl();
 		management.writeEntriesToDatabase(new RedisDBInterface(logger));
 
-		// LIDAR
-		missCollisonAvoidance = new MissCollisonAvoidance(logger);
 		lidarSensorQueue = new ArrayBlockingQueue<LidarSensor>(1);
-		threadCollisionAvoidance = new TCollisionAvoidance(logger, missCollisonAvoidance, lidarSensorQueue);
-		missCollisonAvoidance.setThread(threadCollisionAvoidance);
-
-		// Redis DB Writer
-		threadWriterDB = new TWriteDB(logger, management, lidarSensorQueue);
 
 		// Controller (redis-read)
-		threadReaderDB = new TReaderDB(logger);
 
 	}
 
@@ -102,11 +94,12 @@ public class Manager extends RealtimeThread {
 	public void manage() {
 		management.readEntriesFormDatabase(new RedisDBInterface(logger));
 		management.printAll();
-		// threadWriterDB.start();
+
 		while (management.isManagemnetThreadRunnable()) {
+			management.readEntriesFormDatabase(new RedisDBInterface(logger));
 			manageCollisonAvoidanceThread();
 			manageDatabaseWriterThread();
-			management.readEntriesFormDatabase(new RedisDBInterface(logger));
+			manageDatabaseReaderThread();
 
 			try {
 				sleep(1000);
@@ -115,9 +108,31 @@ public class Manager extends RealtimeThread {
 				e.printStackTrace();
 			}
 		}
+
+		if (!management.isManagemnetThreadRunnable()) {
+			logger.log(Level.WARNING, "Managemt diabled the programm will now close!");
+			management.makeCollisonAvoidanceThreadUnrunnable();
+			management.makeDatabaseWriterThreadUnrunnable();
+			management.makeDatabaseReaderThreadUnrunnable();
+
+			try {
+				threadCollisionAvoidance.join();
+				threadReaderDB.join();
+				threadReaderDB.join();
+			} catch (InterruptedException e) {
+				logger.log(Level.SEVERE, "Error while trying to cancel and join the threads!", e);
+			}
+			// this.interrupt();
+		}
 	}
 
 	public void manageCollisonAvoidanceThread() {
+		if (null == threadCollisionAvoidance && management.isCollisonAvoidanceThreadRunnable()) {
+			missCollisonAvoidance = new MissCollisonAvoidance(logger);
+			threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance,
+					lidarSensorQueue);
+			missCollisonAvoidance.setThread(threadCollisionAvoidance);
+		}
 		if (Thread.State.NEW == threadCollisionAvoidance.getState()) {
 			if (management.isCollisonAvoidanceThreadRunnable()) {
 				threadCollisionAvoidance.start();
@@ -129,8 +144,8 @@ public class Manager extends RealtimeThread {
 		if (Thread.State.TERMINATED == threadCollisionAvoidance.getState()) {
 			if (management.isCollisonAvoidanceThreadRunnable()) {
 				missCollisonAvoidance = new MissCollisonAvoidance(logger);
-				lidarSensorQueue = new ArrayBlockingQueue<LidarSensor>(1);
-				threadCollisionAvoidance = new TCollisionAvoidance(logger, missCollisonAvoidance, lidarSensorQueue);
+				threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance,
+						lidarSensorQueue);
 				missCollisonAvoidance.setThread(threadCollisionAvoidance);
 			}
 		}
@@ -144,9 +159,15 @@ public class Manager extends RealtimeThread {
 	}
 
 	public void manageDatabaseWriterThread() {
+		if (null == threadWriterDB && management.isDatabaseWriterThreadRunnable()) {
+			threadWriterDB = new TWriteDB(logger, management, lidarSensorQueue);
+			System.out.println("NULL");
+		}
 		if (Thread.State.NEW == threadWriterDB.getState()) {
 			if (management.isDatabaseWriterThreadRunnable()) {
 				threadWriterDB.start();
+
+				System.out.println("NEW");
 			}
 		}
 		if (Thread.State.RUNNABLE == threadWriterDB.getState()) {
@@ -155,6 +176,8 @@ public class Manager extends RealtimeThread {
 		if (Thread.State.TERMINATED == threadWriterDB.getState()) {
 			if (management.isDatabaseWriterThreadRunnable()) {
 				threadWriterDB = new TWriteDB(logger, management, lidarSensorQueue);
+
+				System.out.println("TERMITAED");
 			}
 		}
 		if (Thread.State.TIMED_WAITING == threadWriterDB.getState()) {
@@ -162,6 +185,32 @@ public class Manager extends RealtimeThread {
 		if (Thread.State.WAITING == threadWriterDB.getState()) {
 		}
 		if (Thread.State.BLOCKED == threadWriterDB.getState()) {
+		}
+
+	}
+
+	public void manageDatabaseReaderThread() {
+		if (null == threadReaderDB && management.isDatabaseReaderThreadRunnable()) {
+			threadReaderDB = new TReaderDB(logger, management);
+		}
+		if (Thread.State.NEW == threadReaderDB.getState()) {
+			if (management.isDatabaseReaderThreadRunnable()) {
+				threadReaderDB.start();
+			}
+		}
+		if (Thread.State.RUNNABLE == threadReaderDB.getState()) {
+
+		}
+		if (Thread.State.TERMINATED == threadReaderDB.getState()) {
+			if (management.isDatabaseReaderThreadRunnable()) {
+				threadReaderDB = new TReaderDB(logger, management);
+			}
+		}
+		if (Thread.State.TIMED_WAITING == threadReaderDB.getState()) {
+		}
+		if (Thread.State.WAITING == threadReaderDB.getState()) {
+		}
+		if (Thread.State.BLOCKED == threadReaderDB.getState()) {
 		}
 
 	}

@@ -34,7 +34,7 @@ public class TWriteDB extends RealtimeThread {
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 4;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
-		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(500, 0), null,
+		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(300, 0), null,
 				null, null, null);
 
 		setSchedulingParameters(schedulingParameters);

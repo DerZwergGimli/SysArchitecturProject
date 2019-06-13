@@ -2,6 +2,7 @@
 
 
 ##REDIS topics in ASCII
+```shell
 .
 +-- management
 |   +-- threads
@@ -32,3 +33,4 @@
 |      +-- temperature
 |          +-- cpu0
 |          +-- unit
+```

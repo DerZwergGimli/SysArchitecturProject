@@ -2,7 +2,7 @@ package objects;
 
 public class ManagementControlling {
 
-	public Boolean lidarThreadActive;
+	public Boolean collisionAvoidanceThreadActive = true;
 	public Boolean lidarSpinning;
 	public Boolean redisThreadWriterActive;
 	public Boolean redisThreadReaderActive;

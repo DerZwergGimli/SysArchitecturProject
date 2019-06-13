@@ -14,11 +14,12 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 
 	public InterruptableCollisionAvoidance(ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
 		this.lidarSensorQueue = lidarSensorQueue;
+
 	}
 
 	@Override
 	public void interruptAction(AsynchronouslyInterruptedException exception) {
-		System.out.println("Overrun of Thread detected -- do something here");
+		System.out.println("Thread was interrupted in its execution");
 
 	}
 

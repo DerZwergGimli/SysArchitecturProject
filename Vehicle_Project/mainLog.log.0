@@ -1,78 +1,100 @@
-[2019-06-12 19:37:42] [INFO   ] -- LOGGER stated --
+[2019-06-12 20:14:50] [INFO   ] ---Application closed--
  null 
-[2019-06-12 19:37:42] [INFO   ] --Application stared--
+[2019-06-12 20:15:06] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 19:37:42] [INFO   ] Successfuly connected to Redis DB
+[2019-06-12 20:15:06] [INFO   ] --Application stared--
  null 
-[2019-06-12 19:37:42] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-12 20:15:06] [INFO   ] Successfuly connected to Redis DB
  null 
-[2019-06-12 19:37:44] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:15:06] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 19:37:44] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:15:07] [INFO   ] ---Application closed--
  null 
-[2019-06-12 19:37:44] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:15:57] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 19:37:45] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:15:57] [INFO   ] --Application stared--
  null 
-[2019-06-12 19:37:45] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:15:57] [INFO   ] Successfuly connected to Redis DB
  null 
-[2019-06-12 19:37:45] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:15:57] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 19:37:45] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:15:58] [INFO   ] ---Application closed--
  null 
-[2019-06-12 19:37:46] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:16:26] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 19:37:46] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:16:26] [INFO   ] --Application stared--
  null 
-[2019-06-12 19:37:46] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:16:26] [INFO   ] Successfuly connected to Redis DB
  null 
-[2019-06-12 19:37:47] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+[2019-06-12 20:16:26] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 19:37:47] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:16:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-12 19:37:47] [INFO   ] ---Application closed--
+[2019-06-12 20:16:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-12 19:49:26] [INFO   ] -- LOGGER stated --
+[2019-06-12 20:16:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-12 19:49:27] [INFO   ] --Application stared--
+[2019-06-12 20:16:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-12 19:49:27] [INFO   ] Successfuly connected to Redis DB
+[2019-06-12 20:16:43] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 19:49:27] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-12 20:16:43] [INFO   ] --Application stared--
  null 
-[2019-06-12 19:49:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:16:43] [INFO   ] Successfuly connected to Redis DB
  null 
-[2019-06-12 19:49:29] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:16:43] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 19:49:29] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:16:44] [INFO   ] ---Application closed--
  null 
-[2019-06-12 19:49:29] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:17:18] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 19:49:30] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:17:18] [INFO   ] --Application stared--
  null 
-[2019-06-12 19:49:30] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:17:18] [INFO   ] Successfuly connected to Redis DB
  null 
-[2019-06-12 19:49:30] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:17:18] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 19:49:30] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-12 20:17:19] [INFO   ] ---Application closed--
  null 
-[2019-06-12 19:49:31] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 14:27:20] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 19:49:31] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 14:27:21] [INFO   ] --Application stared--
  null 
-[2019-06-12 19:49:31] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 14:27:21] [SEVERE ] Error while trying to connect to Jedis
+ redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to host localhost:32769 
+[2019-06-13 14:27:21] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 19:49:31] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 14:27:22] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-12 19:49:32] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 14:27:22] [INFO   ] ---Application closed--
  null 
-[2019-06-12 19:49:32] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 14:28:49] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 19:49:32] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 14:28:49] [INFO   ] --Application stared--
  null 
-[2019-06-12 19:49:32] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+[2019-06-13 14:28:49] [INFO   ] Successfuly connected to Redis DB
  null 
-[2019-06-12 19:49:33] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 14:28:49] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 19:49:33] [INFO   ] ---Application closed--
+[2019-06-13 14:28:50] [INFO   ] ---Application closed--
+ null 
+[2019-06-13 14:29:58] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 14:29:58] [INFO   ] --Application stared--
+ null 
+[2019-06-13 14:29:58] [INFO   ] Successfuly connected to Redis DB
+ null 
+[2019-06-13 14:29:58] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-13 14:29:59] [INFO   ] ---Application closed--
+ null 
+[2019-06-13 14:37:53] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 14:37:53] [INFO   ] --Application stared--
+ null 
+[2019-06-13 14:37:54] [INFO   ] Successfuly connected to Redis DB
+ null 
+[2019-06-13 14:37:54] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-13 14:37:55] [INFO   ] ---Application closed--
  null 

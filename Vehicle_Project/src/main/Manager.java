@@ -7,12 +7,15 @@ import java.util.logging.Logger;
 import javax.realtime.RealtimeThread;
 
 import objects.LidarSensor;
+import objects.ManagementControlling;
 import threads.TCollisionAvoidance;
 import threads.TRedisReader;
 import threads.TRedisWriter;
 import threads.handler.MissCollisonAvoidance;
 
 public class Manager extends RealtimeThread {
+	ManagementControlling managementController = new ManagementControlling();
+
 	Logger logger;
 	MissCollisonAvoidance missCollisonAvoidance = new MissCollisonAvoidance();
 	ArrayBlockingQueue<LidarSensor> lidarSensorQueue = new ArrayBlockingQueue<LidarSensor>(1);
@@ -56,7 +59,18 @@ public class Manager extends RealtimeThread {
 
 	@Override
 	public void run() {
-		startThreads();
+		// threadCollisionAvoidance.activate();
+		threadCollisionAvoidance.start();
+		threadRedisWriter.start();
+		try {
+			sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		threadRedisWriter.interrupt();
+		threadCollisionAvoidance.interrupt();
+
 		joinThreads();
 	}
 

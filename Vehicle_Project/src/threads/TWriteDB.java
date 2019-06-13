@@ -14,17 +14,22 @@ import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
 import objects.LidarSensor;
+import objects.ManagementControl;
 import threads.interruptible.InterruptableWriterDB;
 
-public class TRedisWriter extends RealtimeThread {
+public class TWriteDB extends RealtimeThread {
 
 	Logger logger;
+	ManagementControl management;
+
 	ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
 	Boolean running;
 
-	public TRedisWriter(Logger logger, ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
+	public TWriteDB(Logger logger, ManagementControl management, ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
 		this.logger = logger;
+		this.management = management;
 		this.lidarSensorQueue = lidarSensorQueue;
+		setName("DatabaseWriterThread");
 
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 4;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
@@ -43,7 +48,7 @@ public class TRedisWriter extends RealtimeThread {
 		try {
 			logger.info("Creating InterruptableWriterDB");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
-			InterruptableWriterDB inWriterDB = new InterruptableWriterDB(logger, lidarSensorQueue);
+			InterruptableWriterDB inWriterDB = new InterruptableWriterDB(logger, management, lidarSensorQueue);
 			asInterruptedException.doInterruptible(inWriterDB);
 
 		} catch (Exception e) {

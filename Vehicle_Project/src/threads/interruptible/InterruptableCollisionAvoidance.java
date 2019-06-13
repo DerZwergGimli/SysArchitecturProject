@@ -32,8 +32,6 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 		int bound = 0;
 		double f = 0;
 		int ct = 0;
-		RealtimeThread realtimeThread = RealtimeThread.currentRealtimeThread();
-
 		while (true) {
 			do {
 				LidarSensor lidarSensor = new LidarSensor();
@@ -45,16 +43,16 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 				for (f = 0.0; f < bound; f += 1.0)
 					;
 				bound += 100000;
-				System.out.println("Ding! " + bound);
+				System.out.println("DONG! " + bound);
 				try {
 					Thread.sleep(1);
 				} catch (Exception ie) {
 				}
-			} while (realtimeThread.waitForNextPeriod());
+			} while (RealtimeThread.waitForNextPeriod());
 			System.out.println("RESETTING BOUND..");
 			bound -= 150000;
 
-			while (!realtimeThread.waitForNextPeriod()) {
+			while (!RealtimeThread.waitForNextPeriod()) {
 				System.out.println(".");
 			}
 			System.out.println();

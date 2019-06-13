@@ -2,6 +2,7 @@ package threads;
 
 import java.util.logging.Logger;
 
+import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.PeriodicParameters;
 import javax.realtime.PriorityParameters;
 import javax.realtime.PriorityScheduler;
@@ -11,15 +12,16 @@ import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
 import redis.RedisDBInterface;
+import threads.interruptible.InterruptableReaderDB;
 
-public class TRedisReader extends RealtimeThread {
+public class TReaderDB extends RealtimeThread {
 
-	private Boolean running;
 	private Logger logger;
 	private RedisDBInterface redis;
 
-	public TRedisReader(Logger logger) {
+	public TReaderDB(Logger logger) {
 		this.logger = logger;
+		setName("DatabseReaderThread");
 
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 5;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
@@ -31,19 +33,18 @@ public class TRedisReader extends RealtimeThread {
 		setReleaseParameters(releaseParameters);
 	}
 
-	public void active() {
-		this.running = true;
-	}
-
-	public void deactivate() {
-		this.running = false;
-	}
-
 	@Override
 	public void run() {
-		while (waitForNextPeriod() && running) {
+		try {
+			logger.info("");
+			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
+			InterruptableReaderDB inReaderDB = new InterruptableReaderDB(logger);
+			asInterruptedException.doInterruptible(inReaderDB);
 
+		} catch (Exception e) {
+			// TODO: handle exception
 		}
+
 	}
 
 }

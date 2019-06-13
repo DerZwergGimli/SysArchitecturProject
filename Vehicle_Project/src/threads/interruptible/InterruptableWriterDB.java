@@ -1,6 +1,7 @@
 package threads.interruptible;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -9,17 +10,21 @@ import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 
 import objects.LidarSensor;
+import objects.ManagementControl;
 import os.NetworkInterface;
 import os.OSSensorInterface;
 import redis.RedisDBInterface;
 
 public class InterruptableWriterDB implements Interruptible {
 	private Logger logger;
+	private ManagementControl management;
 	private RedisDBInterface redis;
 	private ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
 
-	public InterruptableWriterDB(Logger logger, ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
+	public InterruptableWriterDB(Logger logger, ManagementControl management,
+			ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
 		this.logger = logger;
+		this.management = management;
 		this.lidarSensorQueue = lidarSensorQueue;
 
 	}
@@ -32,10 +37,9 @@ public class InterruptableWriterDB implements Interruptible {
 
 	@Override
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
-		RealtimeThread realtimeThread = RealtimeThread.currentRealtimeThread();
-
-		while (true) {
+		while (management.isDatabaseWriterThreadRunnable()) {
 			do {
+
 				redis = new RedisDBInterface(logger);
 
 				writeLidarValuesToDatabase();
@@ -43,15 +47,25 @@ public class InterruptableWriterDB implements Interruptible {
 				writeOSSensorsToDatabase();
 
 				redis.close();
-			} while (RealtimeThread.waitForNextPeriod());
-
+			} while (RealtimeThread.waitForNextPeriod() && management.isDatabaseWriterThreadRunnable());
 		}
+		logger.log(Level.WARNING, "DatabaseWriter was closed!");
 
 	}
 
 	private void writeLidarValuesToDatabase() {
-		LidarSensor sensorLidar = lidarSensorQueue.poll();
-		sensorLidar.writeToDB(redis);
+		LidarSensor sensorLidar;
+		try {
+			sensorLidar = lidarSensorQueue.poll(1, TimeUnit.SECONDS);
+			if (sensorLidar != null) {
+				sensorLidar.writeToDB(redis);
+			}
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		// LidarSensor sensorLidar = lidarSensorQueue.poll();
+
 	}
 
 	private void writeNetworkDataToDatabase() {

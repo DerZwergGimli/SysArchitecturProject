@@ -27,7 +27,7 @@ public class RedisDBInterface {
 		try {
 			String answer = jedisDB.ping();
 			if (answer.contains("PONG")) {
-				logger.info("Successfuly connected to Redis DB");
+				;
 			}
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Error while trying to connect to Jedis", e);

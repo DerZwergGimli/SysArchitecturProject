@@ -1,8 +1,10 @@
 package threads;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.PeriodicParameters;
 import javax.realtime.PriorityParameters;
 import javax.realtime.PriorityScheduler;
@@ -12,22 +14,17 @@ import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
 import objects.LidarSensor;
-import os.NetworkInterface;
-import os.OSSensorInterface;
-import redis.RedisDBInterface;
+import threads.interruptible.InterruptableWriterDB;
 
 public class TRedisWriter extends RealtimeThread {
 
-	RedisDBInterface redis;
 	Logger logger;
 	ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
 	Boolean running;
-	int redisExpireTime = 1000;
 
 	public TRedisWriter(Logger logger, ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
 		this.logger = logger;
 		this.lidarSensorQueue = lidarSensorQueue;
-		redis = new RedisDBInterface(logger);
 
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 4;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
@@ -40,38 +37,19 @@ public class TRedisWriter extends RealtimeThread {
 
 	}
 
-	public void activate() {
-		this.running = true;
-	}
-
-	public void disable() {
-		this.running = false;
-	}
-
 	@Override
 	public void run() {
-		while (waitForNextPeriod() && running) {
-			writeLidarValuesToDatabase();
-			writeNetworkDataToDatabase();
-			writeOSSensorsToDatabase();
+
+		try {
+			logger.info("Creating InterruptableWriterDB");
+			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
+			InterruptableWriterDB inWriterDB = new InterruptableWriterDB(logger, lidarSensorQueue);
+			asInterruptedException.doInterruptible(inWriterDB);
+
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, "Error occured while creating InterruptableWriterDB", e);
 		}
-	}
 
-	public void writeLidarValuesToDatabase() {
-		LidarSensor sensorLidar = lidarSensorQueue.poll();
-		sensorLidar.writeToDB(redis);
-	}
-
-	public void writeNetworkDataToDatabase() {
-		NetworkInterface networkInterface0 = new NetworkInterface("wlp2s0");
-		networkInterface0.readNetworkInterface();
-		networkInterface0.writeToDatabase(redis);
-	}
-
-	public void writeOSSensorsToDatabase() {
-		OSSensorInterface osSensors = new OSSensorInterface();
-		osSensors.readOSSensors();
-		osSensors.writeToDatabase(redis);
 	}
 
 }

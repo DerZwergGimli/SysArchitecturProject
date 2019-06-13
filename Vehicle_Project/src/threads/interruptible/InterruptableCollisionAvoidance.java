@@ -1,6 +1,8 @@
 package threads.interruptible;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
@@ -10,16 +12,18 @@ import objects.LidarSensor;
 
 public class InterruptableCollisionAvoidance implements Interruptible {
 
-	ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
+	private Logger logger;
+	private ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
 
-	public InterruptableCollisionAvoidance(ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
+	public InterruptableCollisionAvoidance(Logger logger, ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
+		this.logger = logger;
 		this.lidarSensorQueue = lidarSensorQueue;
 
 	}
 
 	@Override
 	public void interruptAction(AsynchronouslyInterruptedException exception) {
-		System.out.println("Thread was interrupted in its execution");
+		logger.log(Level.WARNING, "CollisonAvoidance was interrupted in its execution");
 
 	}
 

@@ -29,8 +29,9 @@ public class MissCollisonAvoidance extends AsyncEventHandler {
 		this.logger = logger;
 	}
 
-	public MissCollisonAvoidance() {
+	public MissCollisonAvoidance(Logger logger) {
 		super(new PriorityParameters(priorityParameters), null, null, null, null, null);
+		this.logger = logger;
 
 	}
 

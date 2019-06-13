@@ -20,15 +20,19 @@ import threads.interruptible.InterruptableCollisionAvoidance;
 
 public class TCollisionAvoidance extends RealtimeThread {
 
-	volatile OverrunCollisonAvoidance overrunHandler = new OverrunCollisonAvoidance();
+	volatile OverrunCollisonAvoidance overrunHandler;
 	MissCollisonAvoidance missHandler;
-	volatile Logger logger;
+	private volatile Logger logger;
 	ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
 
-	public TCollisionAvoidance(MissCollisonAvoidance missHandler, ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
-
+	public TCollisionAvoidance(Logger logger, MissCollisonAvoidance missHandler,
+			ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
+		this.setName("TCollisionAvoidance");
+		this.logger = logger;
 		this.missHandler = missHandler;
 		this.lidarSensorQueue = lidarSensorQueue;
+
+		overrunHandler = new OverrunCollisonAvoidance(logger);
 
 		overrunHandler.setThread(this);
 
@@ -43,7 +47,7 @@ public class TCollisionAvoidance extends RealtimeThread {
 
 	}
 
-	public void setLogger(Logger logger) {
+	public void setOverrunLogger(Logger logger) {
 		this.logger = logger;
 		overrunHandler.setLogger(logger);
 	}
@@ -54,8 +58,9 @@ public class TCollisionAvoidance extends RealtimeThread {
 			logger.info("Creating InterruptableCollisionAvoidance");
 			AsynchronouslyInterruptedException asInterruptExeption = new AsynchronouslyInterruptedException();
 			missHandler.setInterruptExeption(asInterruptExeption);
-			InterruptableCollisionAvoidance inCollisionAvoidanc = new InterruptableCollisionAvoidance(lidarSensorQueue);
-			asInterruptExeption.doInterruptible(inCollisionAvoidanc);
+			InterruptableCollisionAvoidance inCollisionAvoidance = new InterruptableCollisionAvoidance(logger,
+					lidarSensorQueue);
+			asInterruptExeption.doInterruptible(inCollisionAvoidance);
 
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Error occured while creating Interruptable", e);

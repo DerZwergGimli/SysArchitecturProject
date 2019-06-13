@@ -1,100 +1,234 @@
-[2019-06-12 20:14:50] [INFO   ] ---Application closed--
+[2019-06-13 15:27:34] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
  null 
-[2019-06-12 20:15:06] [INFO   ] -- LOGGER stated --
+[2019-06-13 15:27:56] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 20:15:06] [INFO   ] --Application stared--
+[2019-06-13 15:27:56] [INFO   ] --Application stared--
  null 
-[2019-06-12 20:15:06] [INFO   ] Successfuly connected to Redis DB
+[2019-06-13 15:27:56] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 20:15:06] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-13 15:27:57] [SEVERE ] Error occured while creating Interruptable
+ java.lang.NullPointerException 
+[2019-06-13 15:27:57] [INFO   ] ---Application closed--
  null 
-[2019-06-12 20:15:07] [INFO   ] ---Application closed--
+[2019-06-13 15:28:48] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 20:15:57] [INFO   ] -- LOGGER stated --
+[2019-06-13 15:28:48] [INFO   ] --Application stared--
  null 
-[2019-06-12 20:15:57] [INFO   ] --Application stared--
+[2019-06-13 15:28:48] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 20:15:57] [INFO   ] Successfuly connected to Redis DB
+[2019-06-13 15:28:49] [SEVERE ] Error occured while creating Interruptable
+ java.lang.NullPointerException 
+[2019-06-13 15:28:49] [INFO   ] ---Application closed--
  null 
-[2019-06-12 20:15:57] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-13 15:29:20] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 20:15:58] [INFO   ] ---Application closed--
+[2019-06-13 15:29:20] [INFO   ] --Application stared--
  null 
-[2019-06-12 20:16:26] [INFO   ] -- LOGGER stated --
+[2019-06-13 15:29:20] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 20:16:26] [INFO   ] --Application stared--
+[2019-06-13 15:29:21] [WARNING] CollisonAvoidance was interrupted in its execution
  null 
-[2019-06-12 20:16:26] [INFO   ] Successfuly connected to Redis DB
+[2019-06-13 15:29:21] [INFO   ] ---Application closed--
  null 
-[2019-06-12 20:16:26] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-13 15:35:13] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 20:16:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 15:35:13] [INFO   ] --Application stared--
  null 
-[2019-06-12 20:16:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 15:35:13] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 20:16:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 15:35:14] [WARNING] CollisonAvoidance was interrupted in its execution
  null 
-[2019-06-12 20:16:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 15:35:14] [INFO   ] ---Application closed--
  null 
-[2019-06-12 20:16:43] [INFO   ] -- LOGGER stated --
+[2019-06-13 15:35:50] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 20:16:43] [INFO   ] --Application stared--
+[2019-06-13 15:35:50] [INFO   ] --Application stared--
  null 
-[2019-06-12 20:16:43] [INFO   ] Successfuly connected to Redis DB
+[2019-06-13 15:35:50] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 20:16:43] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-13 15:35:51] [WARNING] CollisonAvoidance was interrupted in its execution
  null 
-[2019-06-12 20:16:44] [INFO   ] ---Application closed--
+[2019-06-13 15:35:51] [INFO   ] ---Application closed--
  null 
-[2019-06-12 20:17:18] [INFO   ] -- LOGGER stated --
+[2019-06-13 15:35:59] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-12 20:17:18] [INFO   ] --Application stared--
+[2019-06-13 15:35:59] [INFO   ] --Application stared--
  null 
-[2019-06-12 20:17:18] [INFO   ] Successfuly connected to Redis DB
+[2019-06-13 15:35:59] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-12 20:17:18] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-13 15:36:00] [WARNING] CollisonAvoidance was interrupted in its execution
  null 
-[2019-06-12 20:17:19] [INFO   ] ---Application closed--
+[2019-06-13 15:36:00] [INFO   ] ---Application closed--
  null 
-[2019-06-13 14:27:20] [INFO   ] -- LOGGER stated --
+[2019-06-13 15:36:30] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-13 14:27:21] [INFO   ] --Application stared--
+[2019-06-13 15:36:30] [INFO   ] --Application stared--
  null 
-[2019-06-13 14:27:21] [SEVERE ] Error while trying to connect to Jedis
- redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to host localhost:32769 
-[2019-06-13 14:27:21] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-13 15:36:31] [INFO   ] ---Application closed--
  null 
-[2019-06-13 14:27:22] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-13 15:36:32] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-13 14:27:22] [INFO   ] ---Application closed--
+[2019-06-13 15:36:32] [INFO   ] --Application stared--
  null 
-[2019-06-13 14:28:49] [INFO   ] -- LOGGER stated --
+[2019-06-13 15:36:33] [INFO   ] ---Application closed--
  null 
-[2019-06-13 14:28:49] [INFO   ] --Application stared--
+[2019-06-13 15:36:55] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-13 14:28:49] [INFO   ] Successfuly connected to Redis DB
+[2019-06-13 15:36:55] [INFO   ] --Application stared--
  null 
-[2019-06-13 14:28:49] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-13 15:36:56] [INFO   ] ---Application closed--
  null 
-[2019-06-13 14:28:50] [INFO   ] ---Application closed--
+[2019-06-13 15:37:03] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-13 14:29:58] [INFO   ] -- LOGGER stated --
+[2019-06-13 15:37:03] [INFO   ] --Application stared--
  null 
-[2019-06-13 14:29:58] [INFO   ] --Application stared--
+[2019-06-13 15:37:03] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-13 14:29:58] [INFO   ] Successfuly connected to Redis DB
+[2019-06-13 15:37:05] [WARNING] CollisonAvoidance was interrupted in its execution
  null 
-[2019-06-13 14:29:58] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-13 15:37:05] [INFO   ] ---Application closed--
  null 
-[2019-06-13 14:29:59] [INFO   ] ---Application closed--
+[2019-06-13 15:38:52] [INFO   ] -- LOGGER stated --
  null 
-[2019-06-13 14:37:53] [INFO   ] -- LOGGER stated --
+[2019-06-13 15:38:52] [INFO   ] --Application stared--
  null 
-[2019-06-13 14:37:53] [INFO   ] --Application stared--
+[2019-06-13 15:38:52] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-13 14:37:54] [INFO   ] Successfuly connected to Redis DB
+[2019-06-13 15:38:53] [WARNING] CollisonAvoidance was interrupted in its execution
  null 
-[2019-06-13 14:37:54] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-13 15:38:54] [INFO   ] ---Application closed--
  null 
-[2019-06-13 14:37:55] [INFO   ] ---Application closed--
+[2019-06-13 15:39:12] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 15:39:12] [INFO   ] --Application stared--
+ null 
+[2019-06-13 15:39:13] [INFO   ] ---Application closed--
+ null 
+[2019-06-13 15:41:32] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 15:41:33] [INFO   ] --Application stared--
+ null 
+[2019-06-13 15:41:33] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-13 15:41:34] [WARNING] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-13 15:41:34] [INFO   ] ---Application closed--
+ null 
+[2019-06-13 16:01:18] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 16:01:18] [INFO   ] --Application stared--
+ null 
+[2019-06-13 16:01:18] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-13 16:01:19] [WARNING] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-13 16:01:19] [INFO   ] ---Application closed--
+ null 
+[2019-06-13 16:02:40] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 16:02:40] [INFO   ] --Application stared--
+ null 
+[2019-06-13 16:02:40] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-13 16:02:41] [WARNING] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-13 16:02:41] [INFO   ] ---Application closed--
+ null 
+[2019-06-13 16:03:04] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 16:03:04] [INFO   ] --Application stared--
+ null 
+[2019-06-13 16:03:04] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-13 16:03:06] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:06] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:06] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:07] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:07] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:07] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:07] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:08] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:08] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:08] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:08] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:09] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:09] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:09] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:09] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:10] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-13 16:03:10] [WARNING] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-13 16:03:10] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-13 16:03:10] [INFO   ] ---Application closed--
+ null 
+[2019-06-13 16:03:50] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 16:03:50] [INFO   ] --Application stared--
+ null 
+[2019-06-13 16:03:50] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-13 16:03:50] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-06-13 16:03:50] [INFO   ] Successfuly connected to Redis DB
+ null 
+[2019-06-13 16:03:51] [INFO   ] Successfuly connected to Redis DB
+ null 
+[2019-06-13 16:03:51] [WARNING] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-13 16:03:51] [WARNING] DB writer thread was interrupted in its execution
+ null 
+[2019-06-13 16:03:51] [INFO   ] ---Application closed--
+ null 
+[2019-06-13 16:04:36] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 16:04:36] [INFO   ] --Application stared--
+ null 
+[2019-06-13 16:04:36] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-13 16:04:36] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-06-13 16:04:36] [INFO   ] Successfuly connected to Redis DB
+ null 
+[2019-06-13 16:04:36] [INFO   ] Successfuly connected to Redis DB
+ null 
+[2019-06-13 16:04:37] [WARNING] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-13 16:04:37] [WARNING] DB writer thread was interrupted in its execution
+ null 
+[2019-06-13 16:04:37] [INFO   ] ---Application closed--
+ null 
+[2019-06-13 16:05:01] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-13 16:05:01] [INFO   ] --Application stared--
+ null 
+[2019-06-13 16:05:01] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-13 16:05:01] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-06-13 16:05:01] [INFO   ] Successfuly connected to Redis DB
+ null 
+[2019-06-13 16:05:02] [INFO   ] Successfuly connected to Redis DB
+ null 
+[2019-06-13 16:05:02] [WARNING] DB writer thread was interrupted in its execution
+ null 
+[2019-06-13 16:05:02] [WARNING] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-13 16:05:02] [INFO   ] ---Application closed--
  null 

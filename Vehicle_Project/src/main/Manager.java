@@ -16,10 +16,11 @@ import threads.handler.MissCollisonAvoidance;
 public class Manager extends RealtimeThread {
 	ManagementControlling managementController = new ManagementControlling();
 
-	Logger logger;
-	MissCollisonAvoidance missCollisonAvoidance = new MissCollisonAvoidance();
-	ArrayBlockingQueue<LidarSensor> lidarSensorQueue = new ArrayBlockingQueue<LidarSensor>(1);
-	TCollisionAvoidance threadCollisionAvoidance = new TCollisionAvoidance(missCollisonAvoidance, lidarSensorQueue);
+	volatile private Logger logger;
+	MissCollisonAvoidance missCollisonAvoidance;// = new MissCollisonAvoidance();
+	ArrayBlockingQueue<LidarSensor> lidarSensorQueue; // = new ArrayBlockingQueue<LidarSensor>(1);
+	TCollisionAvoidance threadCollisionAvoidance; // = new TCollisionAvoidance(logger, missCollisonAvoidance,
+	// lidarSensorQueue);
 	TRedisWriter threadRedisWriter;
 	TRedisReader threadController;
 
@@ -27,9 +28,12 @@ public class Manager extends RealtimeThread {
 		this.logger = logger;
 
 		// LIDAR
+		missCollisonAvoidance = new MissCollisonAvoidance(logger);
+		lidarSensorQueue = new ArrayBlockingQueue<LidarSensor>(1);
+		threadCollisionAvoidance = new TCollisionAvoidance(logger, missCollisonAvoidance, lidarSensorQueue);
 		missCollisonAvoidance.setThread(threadCollisionAvoidance);
-		missCollisonAvoidance.setLogger(logger);
-		threadCollisionAvoidance.setLogger(logger);
+		// missCollisonAvoidance.setLogger(logger);
+		// threadCollisionAvoidance.setOverrunLogger(logger);
 
 		// Redis DB Writer
 		threadRedisWriter = new TRedisWriter(logger, lidarSensorQueue);
@@ -41,14 +45,12 @@ public class Manager extends RealtimeThread {
 
 	public void startThreads() {
 		threadCollisionAvoidance.start();
-		threadRedisWriter.activate();
 		threadRedisWriter.start();
 	}
 
 	public void joinThreads() {
 		try {
 			threadCollisionAvoidance.join();
-			threadRedisWriter.disable();
 			threadRedisWriter.join();
 		} catch (InterruptedException e) {
 			logger.log(Level.SEVERE, "Error while joining thread", e);

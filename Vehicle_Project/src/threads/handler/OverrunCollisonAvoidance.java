@@ -10,6 +10,10 @@ import javax.realtime.ReleaseParameters;
 
 public class OverrunCollisonAvoidance extends AsyncEventHandler {
 
+	public OverrunCollisonAvoidance(Logger logger) {
+		this.logger = logger;
+	}
+
 	RealtimeThread realtimeThread;
 	Logger logger;
 

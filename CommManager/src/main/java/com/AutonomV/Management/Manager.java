@@ -17,7 +17,7 @@ public class Manager {
         managementThread.start();
         dataPersistanceThread.start();
 
-        
+
         return;
     }
 }

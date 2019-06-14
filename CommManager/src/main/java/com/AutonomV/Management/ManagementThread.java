@@ -83,13 +83,8 @@ public class ManagementThread extends Thread {
                     isDriverPresent = false;
                     ManagementThread.updateDriver(false, null);
                     // Send Logout Notification to the Management Server
-                    // TODO: Change instead the variable isPresent in the passengers json
-//                    if (comController.getConnectionStatus()) {
-//                        // TODO: create request JSON
-//                        String reqJson = new String();
-//                        comController.publish("/V1/Driver/AuthRequest/", reqJson, 2);
-//                        state = NO_DRIVER;
-//                    }
+                    // Change instead the variable isPresent in the passengers json
+                    // =>This is done automatically by the RFID interface.
                     state = NO_DRIVER;
                     break;
                 default:
@@ -108,7 +103,7 @@ public class ManagementThread extends Thread {
         if (comController.getConnectionStatus()) {
             comController.publish("/V1/Driver/AuthRequest/", authRequest, 2);
             /* Small Delay for Authentication Response*/
-            Thread.sleep(100);
+            Thread.sleep(1000);
             if (isDriverAllowed) {
                 // Write Driver Info in DB
                 writeDriverInfoInDB();

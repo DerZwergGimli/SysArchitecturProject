@@ -13,13 +13,11 @@ public class RealTimeData {
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public RealTimeData() {
     }
 
     /**
-     *
      * @param sensor
      * @param numOfRTThreads
      */

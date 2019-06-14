@@ -1,5 +1,8 @@
 package com.AutonomV.Entity;
 
+import com.AutonomV.Entity.Passengers.Passenger;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -8,6 +11,7 @@ import java.util.Map;
 public class Vehicle {
 
     private List<Sensor> sensors = null;
+    private List<Passenger> passengers = null;
     private Lidar lidar;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -27,6 +31,24 @@ public class Vehicle {
         this.lidar = lidar;
     }
 
+    public void addSensors(Sensor sensor) {
+        if (sensors.size() != 0 && sensors != null) {
+            sensors.add(sensor);
+        } else {
+            sensors = new ArrayList<Sensor>();
+            sensors.add(sensor);
+        }
+    }
+
+    public void addPassengers(Passenger passenger) {
+        if (passengers.size() != 0 && passengers != null) {
+            passengers.add(passenger);
+        } else {
+            passengers = new ArrayList<Passenger>();
+            passengers.add(passenger);
+        }
+    }
+
     public List<Sensor> getSensors() {
         return sensors;
     }
@@ -41,6 +63,14 @@ public class Vehicle {
 
     public void setLidar(Lidar lidar) {
         this.lidar = lidar;
+    }
+
+    public List<Passenger> getPassengers() {
+        return passengers;
+    }
+
+    public void setPassengers(List<Passenger> passengers) {
+        this.passengers = passengers;
     }
 
     public Map<String, Object> getAdditionalProperties() {

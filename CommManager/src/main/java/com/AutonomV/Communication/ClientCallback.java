@@ -13,12 +13,17 @@ public class ClientCallback implements MqttCallback {
 
     @Override
     public void connectionLost(Throwable throwable) {
+        System.out.println("Lost Connection to the server !..");
+        System.out.println(throwable.getStackTrace());
+        System.out.println("Cause: " + throwable.getCause());
+
+        // TODO: Log Severe Error
+
 
     }
 
     @Override
     public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
-        // TODO: Check if msg valide
         // TODO: check if use of .equalsIgnoreCase() is neccessairy gere
         /* Check if topic is: /V1/Driver/AuthResponse/ */
         if (topic.equals("/V1/Driver/AuthResponse/")) {

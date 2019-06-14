@@ -7,14 +7,17 @@ import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 
+import objects.ManagementControl;
 import redis.RedisDBInterface;
 
 public class InterruptableReaderDB implements Interruptible {
 	private Logger logger;
+	private ManagementControl management;
 	private RedisDBInterface redis;
 
-	public InterruptableReaderDB(Logger logger) {
+	public InterruptableReaderDB(Logger logger, ManagementControl management) {
 		this.logger = logger;
+		this.management = management;
 	}
 
 	@Override
@@ -25,16 +28,16 @@ public class InterruptableReaderDB implements Interruptible {
 
 	@Override
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
-		while (true) {
-			do {
-				redis = new RedisDBInterface(logger);
+		while (management.isDatabaseReaderThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 
-				System.out.println("Hello from DB-Reader");
+			redis = new RedisDBInterface(logger);
 
-				redis.close();
-			} while (RealtimeThread.waitForNextPeriod());
+			System.out.println("Hello from DB-Reader");
+
+			redis.close();
 
 		}
+		logger.log(Level.WARNING, "DatabaseReader was exited!");
 
 	}
 

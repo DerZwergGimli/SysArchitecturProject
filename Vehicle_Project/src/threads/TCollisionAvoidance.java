@@ -14,21 +14,23 @@ import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
 import objects.LidarSensor;
+import objects.ManagementControl;
 import threads.handler.MissCollisonAvoidance;
 import threads.handler.OverrunCollisonAvoidance;
 import threads.interruptible.InterruptableCollisionAvoidance;
 
 public class TCollisionAvoidance extends RealtimeThread {
-
+	private volatile Logger logger;
+	private ManagementControl management;
 	volatile OverrunCollisonAvoidance overrunHandler;
 	MissCollisonAvoidance missHandler;
-	private volatile Logger logger;
 	ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
 
-	public TCollisionAvoidance(Logger logger, MissCollisonAvoidance missHandler,
+	public TCollisionAvoidance(Logger logger, ManagementControl management, MissCollisonAvoidance missHandler,
 			ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
 		this.setName("TCollisionAvoidance");
 		this.logger = logger;
+		this.management = management;
 		this.missHandler = missHandler;
 		this.lidarSensorQueue = lidarSensorQueue;
 
@@ -59,7 +61,7 @@ public class TCollisionAvoidance extends RealtimeThread {
 			AsynchronouslyInterruptedException asInterruptExeption = new AsynchronouslyInterruptedException();
 			missHandler.setInterruptExeption(asInterruptExeption);
 			InterruptableCollisionAvoidance inCollisionAvoidance = new InterruptableCollisionAvoidance(logger,
-					lidarSensorQueue);
+					management, lidarSensorQueue);
 			asInterruptExeption.doInterruptible(inCollisionAvoidance);
 
 		} catch (Exception e) {

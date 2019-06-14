@@ -30,7 +30,7 @@ public class RedisDBInterface {
 				;
 			}
 		} catch (Exception e) {
-			logger.log(Level.SEVERE, "Error while trying to connect to Jedis", e);
+			logger.log(Level.SEVERE, "Error while trying to connect to Redis-Server", e);
 		}
 
 	}

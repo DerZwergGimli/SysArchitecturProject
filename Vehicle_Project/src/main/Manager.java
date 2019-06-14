@@ -18,12 +18,12 @@ public class Manager extends RealtimeThread {
 	private ManagementControl management;
 
 	volatile private Logger logger;
-	MissCollisonAvoidance missCollisonAvoidance;// = new MissCollisonAvoidance();
-	ArrayBlockingQueue<LidarSensor> lidarSensorQueue; // = new ArrayBlockingQueue<LidarSensor>(1);
-	TCollisionAvoidance threadCollisionAvoidance; // = new TCollisionAvoidance(logger, missCollisonAvoidance,
+	private MissCollisonAvoidance missCollisonAvoidance;// = new MissCollisonAvoidance();
+	private ArrayBlockingQueue<LidarSensor> lidarSensorQueue; // = new ArrayBlockingQueue<LidarSensor>(1);
+	private TCollisionAvoidance threadCollisionAvoidance; // = new TCollisionAvoidance(logger, missCollisonAvoidance,
 	// lidarSensorQueue);
-	TWriteDB threadWriterDB;
-	TReaderDB threadReaderDB;
+	private TWriteDB threadWriterDB;
+	private TReaderDB threadReaderDB;
 
 	public Manager(Logger logger) {
 		this.logger = logger;
@@ -31,17 +31,9 @@ public class Manager extends RealtimeThread {
 		management = new ManagementControl();
 		management.writeEntriesToDatabase(new RedisDBInterface(logger));
 
-		// LIDAR
-		missCollisonAvoidance = new MissCollisonAvoidance(logger);
 		lidarSensorQueue = new ArrayBlockingQueue<LidarSensor>(1);
-		threadCollisionAvoidance = new TCollisionAvoidance(logger, missCollisonAvoidance, lidarSensorQueue);
-		missCollisonAvoidance.setThread(threadCollisionAvoidance);
-
-		// Redis DB Writer
-		threadWriterDB = new TWriteDB(logger, management, lidarSensorQueue);
 
 		// Controller (redis-read)
-		threadReaderDB = new TReaderDB(logger);
 
 	}
 
@@ -102,11 +94,12 @@ public class Manager extends RealtimeThread {
 	public void manage() {
 		management.readEntriesFormDatabase(new RedisDBInterface(logger));
 		management.printAll();
-		// threadWriterDB.start();
+
 		while (management.isManagemnetThreadRunnable()) {
+			management.readEntriesFormDatabase(new RedisDBInterface(logger));
 			manageCollisonAvoidanceThread();
 			manageDatabaseWriterThread();
-			management.readEntriesFormDatabase(new RedisDBInterface(logger));
+			manageDatabaseReaderThread();
 
 			try {
 				sleep(1000);
@@ -115,9 +108,31 @@ public class Manager extends RealtimeThread {
 				e.printStackTrace();
 			}
 		}
+
+		if (!management.isManagemnetThreadRunnable()) {
+			logger.log(Level.WARNING, "Managemt diabled the programm will now close! And stop all threads clean!");
+
+			management.makeCollisonAvoidanceThreadUnrunnable();
+			management.makeDatabaseWriterThreadUnrunnable();
+			management.makeDatabaseReaderThreadUnrunnable();
+
+			try {
+				threadCollisionAvoidance.join();
+				threadReaderDB.join();
+				threadWriterDB.join();
+			} catch (InterruptedException e) {
+				logger.log(Level.SEVERE, "Error while trying to cancel and join the threads!", e);
+			}
+		}
 	}
 
 	public void manageCollisonAvoidanceThread() {
+		if (null == threadCollisionAvoidance && management.isCollisonAvoidanceThreadRunnable()) {
+			missCollisonAvoidance = new MissCollisonAvoidance(logger);
+			threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance,
+					lidarSensorQueue);
+			missCollisonAvoidance.setThread(threadCollisionAvoidance);
+		}
 		if (Thread.State.NEW == threadCollisionAvoidance.getState()) {
 			if (management.isCollisonAvoidanceThreadRunnable()) {
 				threadCollisionAvoidance.start();
@@ -129,8 +144,8 @@ public class Manager extends RealtimeThread {
 		if (Thread.State.TERMINATED == threadCollisionAvoidance.getState()) {
 			if (management.isCollisonAvoidanceThreadRunnable()) {
 				missCollisonAvoidance = new MissCollisonAvoidance(logger);
-				lidarSensorQueue = new ArrayBlockingQueue<LidarSensor>(1);
-				threadCollisionAvoidance = new TCollisionAvoidance(logger, missCollisonAvoidance, lidarSensorQueue);
+				threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance,
+						lidarSensorQueue);
 				missCollisonAvoidance.setThread(threadCollisionAvoidance);
 			}
 		}
@@ -144,6 +159,9 @@ public class Manager extends RealtimeThread {
 	}
 
 	public void manageDatabaseWriterThread() {
+		if (null == threadWriterDB && management.isDatabaseWriterThreadRunnable()) {
+			threadWriterDB = new TWriteDB(logger, management, lidarSensorQueue);
+		}
 		if (Thread.State.NEW == threadWriterDB.getState()) {
 			if (management.isDatabaseWriterThreadRunnable()) {
 				threadWriterDB.start();
@@ -162,6 +180,32 @@ public class Manager extends RealtimeThread {
 		if (Thread.State.WAITING == threadWriterDB.getState()) {
 		}
 		if (Thread.State.BLOCKED == threadWriterDB.getState()) {
+		}
+
+	}
+
+	public void manageDatabaseReaderThread() {
+		if (null == threadReaderDB && management.isDatabaseReaderThreadRunnable()) {
+			threadReaderDB = new TReaderDB(logger, management);
+		}
+		if (Thread.State.NEW == threadReaderDB.getState()) {
+			if (management.isDatabaseReaderThreadRunnable()) {
+				threadReaderDB.start();
+			}
+		}
+		if (Thread.State.RUNNABLE == threadReaderDB.getState()) {
+
+		}
+		if (Thread.State.TERMINATED == threadReaderDB.getState()) {
+			if (management.isDatabaseReaderThreadRunnable()) {
+				threadReaderDB = new TReaderDB(logger, management);
+			}
+		}
+		if (Thread.State.TIMED_WAITING == threadReaderDB.getState()) {
+		}
+		if (Thread.State.WAITING == threadReaderDB.getState()) {
+		}
+		if (Thread.State.BLOCKED == threadReaderDB.getState()) {
 		}
 
 	}

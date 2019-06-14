@@ -1,5 +1,6 @@
 package threads;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.realtime.AsynchronouslyInterruptedException;
@@ -11,16 +12,19 @@ import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
+import objects.ManagementControl;
 import redis.RedisDBInterface;
 import threads.interruptible.InterruptableReaderDB;
 
 public class TReaderDB extends RealtimeThread {
 
 	private Logger logger;
+	private ManagementControl management;
 	private RedisDBInterface redis;
 
-	public TReaderDB(Logger logger) {
+	public TReaderDB(Logger logger, ManagementControl management) {
 		this.logger = logger;
+		this.management = management;
 		setName("DatabseReaderThread");
 
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 5;
@@ -36,13 +40,13 @@ public class TReaderDB extends RealtimeThread {
 	@Override
 	public void run() {
 		try {
-			logger.info("");
+			logger.info("Creating InterruptableReaderDB");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
-			InterruptableReaderDB inReaderDB = new InterruptableReaderDB(logger);
+			InterruptableReaderDB inReaderDB = new InterruptableReaderDB(logger, management);
 			asInterruptedException.doInterruptible(inReaderDB);
 
 		} catch (Exception e) {
-			// TODO: handle exception
+			logger.log(Level.SEVERE, "Error occured while creating InterruptableReaderDB", e);
 		}
 
 	}

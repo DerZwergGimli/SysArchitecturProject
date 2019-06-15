@@ -35,15 +35,22 @@ public class DataPersistanceThread extends Thread {
 
     @Override
     public void run() {
+        while (true) {
+            sendVehicle();
+            sendVehicleOS();
 
-        sendVehicle();
-        sendVehicleOS();
+            if (ManagementThread.getManagementState() == ManagementThread.NO_DRIVER) {
+                interval_ms = 30000; // 30s
+            } else {
+                interval_ms = 5000; // 5s
+            }
 
+            try {
+                Thread.sleep(interval_ms);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
 
-        try {
-            Thread.sleep(interval_ms);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
 
     }
@@ -56,13 +63,12 @@ public class DataPersistanceThread extends Thread {
     }
 
     private Vehicle getVehicleData() {
-        // TODO: set the attributes of the sensors and ..
-        Sensor tempSensor = new Sensor();
-        Sensor humiditySensor = new Sensor();
-        Sensor speedSensor = new Sensor();
-        Passenger driverPassenger = new Passenger();
-        Passenger frontSeatPassenger = new Passenger();
-        Lidar lidarSensor = new Lidar();
+        Sensor tempSensor = new Sensor("Temperature",dbController.get("Sensors:TempValue"),"°C",dbController.get("Sensors:TempState"),dbController.get("Sensors:TempTimestamp"));
+        Sensor humiditySensor = new Sensor("Humidity",dbController.get("Sensors:HumidityValue"),"%",dbController.get("Sensors:HumidityState"),dbController.get("Sensors:HumidityTimestamp"));
+        Sensor speedSensor = new Sensor("Speed",dbController.get("Sensors:SpeedValue"),"km/h",dbController.get("Sensors:SpeedState"),dbController.get("Sensors:SpeedTimestamp"));
+        Passenger driverPassenger = new Passenger("Driver",dbController.get("Driver:isPresent"),"timestamp"); // TODO: Timestamp
+        Passenger frontSeatPassenger = new Passenger("front-seat passenger",dbController.get("Passenger:isPresent"),"timestamp"); // TODO: Timestamp
+        Lidar lidarSensor = new Lidar(dbController.get("Sensors:Lidar:angles"),"°",dbController.get("Sensors:Lidar:distances"),"cm", dbController.get("management:threads:collisonAvoidanceRunnable"),dbController.get("sensors:lidar:timestamp"));
 
         Vehicle vehicle = new Vehicle();
         vehicle.addSensors(tempSensor);
@@ -95,7 +101,7 @@ public class DataPersistanceThread extends Thread {
         RealTimeData realTimeData = new RealTimeData(jitterSensor, dbController.get("RT:numOfRTThreads"));
 
         Received received = new Received(dbController.get("rx_bytes"), dbController.get("rx_packages"), dbController.get("rx_errors"), dbController.get("rx_dropped"), dbController.get("rx_overrun"), dbController.get("rx_mcast"));
-        Transmitted transmitted = new Transmitted(dbController.get("received:bytes"), dbController.get("received:packages"), dbController.get("received:errors"), dbController.get("received:dropped"), dbController.get("received:carrier"), dbController.get("received:collsns"));
+        Transmitted transmitted = new Transmitted(dbController.get("tx_bytes"), dbController.get("tx_packages"), dbController.get("tx_errors"), dbController.get("tx_dropped"), dbController.get("tx_carrier"), dbController.get("tx_collsns"));
         NetworkInfo networkInfo = new NetworkInfo(received, transmitted);
 
         return new VehicleOS(cpu, networkInfo, realTimeData);

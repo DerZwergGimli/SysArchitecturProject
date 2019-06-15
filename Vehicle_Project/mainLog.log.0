@@ -1,12 +1,36 @@
-[2019-06-13 22:42:49] [INFO   ] -- LOGGER stated --
+[2019-06-15 20:32:20] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-13 22:42:49] [INFO   ] --Application stared--
+[2019-06-15 20:32:22] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-13 22:42:49] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-15 20:32:22] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-13 22:42:49] [INFO   ] Creating InterruptableWriterDB
+[2019-06-15 20:32:22] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-13 22:42:49] [INFO   ] Creating InterruptableReaderDB
+[2019-06-15 20:32:23] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-13 22:42:51] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-15 20:32:23] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:23] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:23] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:24] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:24] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:24] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:24] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:25] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:25] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:25] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-15 20:32:25] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-15 20:32:25] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-15 20:32:25] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 

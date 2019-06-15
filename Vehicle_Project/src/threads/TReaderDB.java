@@ -22,6 +22,11 @@ public class TReaderDB extends RealtimeThread {
 	private ManagementControl management;
 	private RedisDBInterface redis;
 
+	private static int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 5;
+	private static SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
+	private static ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(),
+			new RelativeTime(300, 0), null, null, null, null);
+
 	public TReaderDB(Logger logger, ManagementControl management) {
 		this.logger = logger;
 		this.management = management;
@@ -30,12 +35,20 @@ public class TReaderDB extends RealtimeThread {
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 5;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
-		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(300, 0), null,
-				null, null, null);
+		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(1000, 0),
+				null, null, null, null);
 
 		setSchedulingParameters(schedulingParameters);
 		setReleaseParameters(releaseParameters);
 	}
+
+//	public TReaderDB(Logger logger, ManagementControl management) {
+//		super(schedulingParameters, releaseParameters, null, ImmortalMemory.instance(), null, null);
+//		this.logger = logger;
+//		this.management = management;
+//		setName("DatabseReaderThread");
+//
+//	}
 
 	@Override
 	public void run() {

@@ -13,8 +13,8 @@ import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
-import objects.LidarSensor;
 import objects.ManagementControl;
+import objects.QCollisonControl;
 import threads.interruptible.InterruptableWriterDB;
 
 public class TWriteDB extends RealtimeThread {
@@ -22,20 +22,22 @@ public class TWriteDB extends RealtimeThread {
 	Logger logger;
 	ManagementControl management;
 
-	ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
+	// ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
+	ArrayBlockingQueue<QCollisonControl> qCollisonControl;
 	Boolean running;
 
-	public TWriteDB(Logger logger, ManagementControl management, ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
+	public TWriteDB(Logger logger, ManagementControl management,
+			ArrayBlockingQueue<QCollisonControl> qCollisonControl) {
 		this.logger = logger;
 		this.management = management;
-		this.lidarSensorQueue = lidarSensorQueue;
+		this.qCollisonControl = qCollisonControl;
 		setName("DatabaseWriterThread");
 
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 4;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
-		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(300, 0), null,
-				null, null, null);
+		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(1000, 0),
+				null, null, null, null);
 
 		setSchedulingParameters(schedulingParameters);
 		setReleaseParameters(releaseParameters);
@@ -48,7 +50,7 @@ public class TWriteDB extends RealtimeThread {
 		try {
 			logger.info("Creating InterruptableWriterDB");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
-			InterruptableWriterDB inWriterDB = new InterruptableWriterDB(logger, management, lidarSensorQueue);
+			InterruptableWriterDB inWriterDB = new InterruptableWriterDB(logger, management, qCollisonControl);
 			asInterruptedException.doInterruptible(inWriterDB);
 
 		} catch (Exception e) {

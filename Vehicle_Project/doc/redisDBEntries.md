@@ -7,14 +7,14 @@
 +-- management
 |   +-- threads
 |       +-- managementRunnable 			(true/false)
-|       +-- collisonAvoidanceRunnable	(true/false)
+|       +-- collisonAvoidanceRunnable		(true/false)
 |       +-- databaseReaderRunnable		(true/false)
 |       +-- databaseWriterRunnable		(true/false)
 |
 +-- sensors
 |   +-- lidar
 |       +-- angles 		(all values are seperated by a semicolon)
-|       +-- distances 	(all values are seperated by a semicolon)
+|       +-- distances 		(all values are seperated by a semicolon)
 |   +-- os
 |       +-- network
 |           +-- wlp2s0

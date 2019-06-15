@@ -6,14 +6,16 @@ import java.util.logging.Logger;
 import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
+import javax.realtime.memory.LTMemory;
 
 import objects.ManagementControl;
 import redis.RedisDBInterface;
 
 public class InterruptableReaderDB implements Interruptible {
-	private Logger logger;
-	private ManagementControl management;
-	private RedisDBInterface redis;
+	private volatile Logger logger;
+	private volatile ManagementControl management;
+	private volatile LTMemory ma = null;
+	private volatile RedisDBInterface redis;
 
 	public InterruptableReaderDB(Logger logger, ManagementControl management) {
 		this.logger = logger;
@@ -28,14 +30,67 @@ public class InterruptableReaderDB implements Interruptible {
 
 	@Override
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
+//		while (management.isDatabaseReaderThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
+//
+//			System.out.println("Inside of asMehtode");
+//
+//			try {
+//				ma = new LTMemory(1024 * 1000);
+//				if (!(ma instanceof MemoryArea)) {
+//					throw new Exception("Return object is not instance of Memory Area");
+//				}
+//				long size = ma.size();
+//				if (size < 0) {
+//					throw new Exception("Memeroy size is less than 0");
+//				}
+//				System.out.println("Successfully created Memeory");
+//
+//			} catch (Exception e) {
+//				System.out.println("Error with memory");
+//			}
+//			try {
+//				ma.enter(new Runnable() {
+//
+//					@Override
+//					public void run() {
+//
+//						try {
+//							// RedisDBInterface redis = new RedisDBInterface(logger);
+//
+//							System.out.println("Hello from DB-Reader");
+//							System.out.println(LTMemory.getMemoryArea(this).memoryRemaining());
+//
+//							// redis.close();
+//							// redis = null;
+//						} catch (Exception e) {
+//							// TODO Auto-generated catch block
+//							System.out.println("----_ERROR HERE");
+//							// e.printStackTrace();
+//						}
+//
+//					}
+//				});
+//			} catch (Exception e) {
+//				System.out.println("enter(Runnable)_failed");
+//			}
+//		}
+//		logger.log(Level.WARNING, "DatabaseReader was exited!");
+
 		while (management.isDatabaseReaderThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 
-			redis = new RedisDBInterface(logger);
+			try {
+				RedisDBInterface redis = new RedisDBInterface(logger);
 
-			System.out.println("Hello from DB-Reader");
+				System.out.println("Hello from DB-Reader");
+				// System.out.println(LTMemory.getMemoryArea(ma).memoryRemaining());
 
-			redis.close();
-
+				redis.close();
+				// redis = null;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				System.out.println("----_ERROR HERE");
+				// e.printStackTrace();
+			}
 		}
 		logger.log(Level.WARNING, "DatabaseReader was exited!");
 

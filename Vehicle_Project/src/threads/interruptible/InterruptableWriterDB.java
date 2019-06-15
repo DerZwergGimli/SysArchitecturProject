@@ -11,7 +11,10 @@ import javax.realtime.RealtimeThread;
 
 import objects.LidarSensor;
 import objects.ManagementControl;
+import objects.QCollisonControl;
+import objects.StopWatch;
 import os.NetworkInterface;
+import os.OSLinuxTopInterface;
 import os.OSSensorInterface;
 import redis.RedisDBInterface;
 
@@ -19,13 +22,13 @@ public class InterruptableWriterDB implements Interruptible {
 	private Logger logger;
 	private ManagementControl management;
 	private RedisDBInterface redis;
-	private ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
+	private ArrayBlockingQueue<QCollisonControl> qCollisonControl;
 
 	public InterruptableWriterDB(Logger logger, ManagementControl management,
-			ArrayBlockingQueue<LidarSensor> lidarSensorQueue) {
+			ArrayBlockingQueue<QCollisonControl> qCollisonControl) {
 		this.logger = logger;
 		this.management = management;
-		this.lidarSensorQueue = lidarSensorQueue;
+		this.qCollisonControl = qCollisonControl;
 
 	}
 
@@ -41,9 +44,10 @@ public class InterruptableWriterDB implements Interruptible {
 
 			System.out.println("Hello from Writer");
 			redis = new RedisDBInterface(logger);
-			writeLidarValuesToDatabase();
+			writeQueueDataToDatabase();
 			writeNetworkDataToDatabase();
 			writeOSSensorsToDatabase();
+			writeLinuxTopInterfaceToDatabase();
 
 			redis.close();
 
@@ -52,12 +56,17 @@ public class InterruptableWriterDB implements Interruptible {
 
 	}
 
-	private void writeLidarValuesToDatabase() {
-		LidarSensor sensorLidar;
+	private void writeQueueDataToDatabase() {
+		// LidarSensor sensorLidar;
+		QCollisonControl qCollisonControlObject;
+
 		try {
-			sensorLidar = lidarSensorQueue.poll(10, TimeUnit.MILLISECONDS);
-			if (sensorLidar != null) {
-				sensorLidar.writeToDB(redis);
+			qCollisonControlObject = qCollisonControl.poll(10, TimeUnit.MILLISECONDS);
+			if (qCollisonControlObject != null) {
+				LidarSensor lidarSensor = qCollisonControlObject.getLidarSensor();
+				StopWatch stopWatch = qCollisonControlObject.getStopWatch();
+				lidarSensor.writeToDB(redis);
+				stopWatch.writeToDB(redis);
 			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -78,6 +87,12 @@ public class InterruptableWriterDB implements Interruptible {
 		OSSensorInterface osSensors = new OSSensorInterface();
 		osSensors.readOSSensors();
 		osSensors.writeToDatabase(redis);
+	}
+
+	private void writeLinuxTopInterfaceToDatabase() {
+		OSLinuxTopInterface topInterface = new OSLinuxTopInterface();
+		topInterface.readOSLinuxTopInterface();
+		topInterface.writeToDatabase(redis);
 	}
 
 }

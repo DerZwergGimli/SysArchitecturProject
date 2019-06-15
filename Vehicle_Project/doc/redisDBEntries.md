@@ -35,7 +35,34 @@
 |          +-- unit
 |      +-- top
 |           +-- timestamp
-|           +-- 
-
-
+|           +-- systemTime
+|           +-- uptime
+|           +-- uptimeUnit
+|           +-- users_active
+|           +-- loadAverage_1min
+|           +-- loadAverage_5min
+|           +-- loadAverage_15min
+|           +-- cpu_user
+|           +-- cpu_system
+|           +-- cpu_nice
+|           +-- cpu_idle
+|           +-- cpu_wait
+|           +-- cpu_hardwareInterrupts
+|           +-- cpu_softwareInterrupts
+|           +-- cpu_stolenTimeByHypervisor
+|           +-- memory_total
+|           +-- memory_free
+|           +-- memory_used
+|           +-- memory_bufferCache
+|           +-- memory_unit
+|           +-- swap_total
+|           +-- swap_free
+|           +-- swap_used
+|           +-- swap_bufferCache
+|           +-- swap_unit
+|       +-- thread
+|           +-- collionControll
+|               +-- startTimeNano
+|               +-- endTimeNano
+|               +-- diffTimeNano
 ```

@@ -39,6 +39,7 @@ public class DataPersistanceThread extends Thread {
         sendVehicle();
         sendVehicleOS();
 
+
         try {
             Thread.sleep(interval_ms);
         } catch (InterruptedException e) {
@@ -93,7 +94,7 @@ public class DataPersistanceThread extends Thread {
         Sensor jitterSensor = new Sensor("Jitter", dbController.get("RT:JitterValue"), "ms", dbController.get("RT:JitterStater"), dbController.get("RT:JitterTimestamp"));
         RealTimeData realTimeData = new RealTimeData(jitterSensor, dbController.get("RT:numOfRTThreads"));
 
-        Received received = new Received(dbController.get("received:bytes"), dbController.get("received:packages"), dbController.get("received:errors"), dbController.get("received:dropped"), dbController.get("received:overrun"), dbController.get("received:mcast"));
+        Received received = new Received(dbController.get("rx_bytes"), dbController.get("rx_packages"), dbController.get("rx_errors"), dbController.get("rx_dropped"), dbController.get("rx_overrun"), dbController.get("rx_mcast"));
         Transmitted transmitted = new Transmitted(dbController.get("received:bytes"), dbController.get("received:packages"), dbController.get("received:errors"), dbController.get("received:dropped"), dbController.get("received:carrier"), dbController.get("received:collsns"));
         NetworkInfo networkInfo = new NetworkInfo(received, transmitted);
 

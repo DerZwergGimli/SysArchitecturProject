@@ -19,10 +19,10 @@ public class ManagementThread extends Thread {
     private static boolean isDriverAllowed;
 
     private int state;
-    private static final int NO_DRIVER = 0;
-    private static final int LOGIN = 1;
-    private static final int IS_LOGGED_IN = 2;
-    private static final int LOGOUT = 3;
+    public static final int NO_DRIVER = 0;
+    public static final int AUTHENTIFICATE = 1;
+    public static final int IS_LOGGED_IN = 2;
+    public static final int LOGOUT = 3;
 
     public ManagementThread() {
         this.dbController = DBController.getInstance();
@@ -52,12 +52,12 @@ public class ManagementThread extends Thread {
                     // TODO: Make a seperate Thread for Data Persistance
                     // Idea : Thread with attribute interval, which can be set accordingly to the state.
                     if (checkDriver()) {
-                        state = LOGIN;
+                        state = AUTHENTIFICATE;
                     }
                     break;
-                case LOGIN:
+                case AUTHENTIFICATE:
                     try {
-                        if (login()) {
+                        if (authenticate()) {
                             state = IS_LOGGED_IN;
                         }
                     } catch (InterruptedException e) {
@@ -95,7 +95,7 @@ public class ManagementThread extends Thread {
         }
     }
 
-    private boolean login() throws InterruptedException {
+    private boolean authenticate() throws InterruptedException {
         // Send ID to the Management System
         // Get Driver ID and the timestamp of the Login from DB
         DriverAuth driverAut = new DriverAuth(dbController.get("Driver:id"), dbController.get("Driver:timeStamp"));

@@ -19,10 +19,10 @@ public class ManagementThread extends Thread {
     private static boolean isDriverAllowed;
 
     private int state;
-    private static final int NO_DRIVER = 0;
-    private static final int LOGIN = 1;
-    private static final int IS_LOGGED_IN = 2;
-    private static final int LOGOUT = 3;
+    public static final int NO_DRIVER = 0;
+    public static final int AUTHENTIFICATE = 1;
+    public static final int IS_LOGGED_IN = 2;
+    public static final int LOGOUT = 3;
 
     public ManagementThread() {
         this.dbController = DBController.getInstance();
@@ -52,12 +52,12 @@ public class ManagementThread extends Thread {
                     // TODO: Make a seperate Thread for Data Persistance
                     // Idea : Thread with attribute interval, which can be set accordingly to the state.
                     if (checkDriver()) {
-                        state = LOGIN;
+                        state = AUTHENTIFICATE;
                     }
                     break;
-                case LOGIN:
+                case AUTHENTIFICATE:
                     try {
-                        if (login()) {
+                        if (authenticate()) {
                             state = IS_LOGGED_IN;
                         }
                     } catch (InterruptedException e) {
@@ -83,13 +83,8 @@ public class ManagementThread extends Thread {
                     isDriverPresent = false;
                     ManagementThread.updateDriver(false, null);
                     // Send Logout Notification to the Management Server
-                    // TODO: Change instead the variable isPresent in the passengers json
-//                    if (comController.getConnectionStatus()) {
-//                        // TODO: create request JSON
-//                        String reqJson = new String();
-//                        comController.publish("/V1/Driver/AuthRequest/", reqJson, 2);
-//                        state = NO_DRIVER;
-//                    }
+                    // Change instead the variable isPresent in the passengers json
+                    // =>This is done automatically by the RFID interface.
                     state = NO_DRIVER;
                     break;
                 default:
@@ -100,7 +95,7 @@ public class ManagementThread extends Thread {
         }
     }
 
-    private boolean login() throws InterruptedException {
+    private boolean authenticate() throws InterruptedException {
         // Send ID to the Management System
         // Get Driver ID and the timestamp of the Login from DB
         DriverAuth driverAut = new DriverAuth(dbController.get("Driver:id"), dbController.get("Driver:timeStamp"));
@@ -108,7 +103,7 @@ public class ManagementThread extends Thread {
         if (comController.getConnectionStatus()) {
             comController.publish("/V1/Driver/AuthRequest/", authRequest, 2);
             /* Small Delay for Authentication Response*/
-            Thread.sleep(100);
+            Thread.sleep(1000);
             if (isDriverAllowed) {
                 // Write Driver Info in DB
                 writeDriverInfoInDB();

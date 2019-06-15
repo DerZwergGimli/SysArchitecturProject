@@ -33,7 +33,7 @@ public class ComController {
         this.port = port;
         this.clientId = clientId;
         this.broker = host + ":" + port;
-        this.connectionStatus = false;
+        this.connectionStatus = true;
     }
 
     public void init(String topicFilter, boolean cleanSession) {
@@ -42,6 +42,8 @@ public class ComController {
             persistence = new MemoryPersistence();
             connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(cleanSession);
+            connOpts.setAutomaticReconnect(true);
+            connOpts.setWill("/V1/Driver/LogoutRequest/","Client got disconnected suddently".getBytes(),2,true);
             mqttClient = new MqttClient(broker, clientId, persistence);
             if (connect()) {
                 // subscribe to /V1/Driver/AuthResponse/

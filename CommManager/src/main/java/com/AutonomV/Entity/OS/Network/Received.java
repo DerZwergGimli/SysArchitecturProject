@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class Received {
 
-    private int bytes;
-    private int packages;
-    private int errors;
-    private int dropped;
-    private int overrun;
+    private String bytes;
+    private String packages;
+    private String errors;
+    private String dropped;
+    private String overrun;
     private String mcast;   // TODO: Change to Int ?
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -27,7 +27,7 @@ public class Received {
      * @param overrun
      * @param mcast
      */
-    public Received(int bytes, int packages, int errors, int dropped, int overrun, String mcast) {
+    public Received(String bytes, String packages, String errors, String dropped, String overrun, String mcast) {
         super();
         this.bytes = bytes;
         this.packages = packages;
@@ -37,43 +37,43 @@ public class Received {
         this.mcast = mcast;
     }
 
-    public int getBytes() {
+    public String getBytes() {
         return bytes;
     }
 
-    public void setBytes(int bytes) {
+    public void setBytes(String bytes) {
         this.bytes = bytes;
     }
 
-    public int getPackages() {
+    public String getPackages() {
         return packages;
     }
 
-    public void setPackages(int packages) {
+    public void setPackages(String packages) {
         this.packages = packages;
     }
 
-    public int getErrors() {
+    public String getErrors() {
         return errors;
     }
 
-    public void setErrors(int errors) {
+    public void setErrors(String errors) {
         this.errors = errors;
     }
 
-    public int getDropped() {
+    public String getDropped() {
         return dropped;
     }
 
-    public void setDropped(int dropped) {
+    public void setDropped(String dropped) {
         this.dropped = dropped;
     }
 
-    public int getOverrun() {
+    public String getOverrun() {
         return overrun;
     }
 
-    public void setOverrun(int overrun) {
+    public void setOverrun(String overrun) {
         this.overrun = overrun;
     }
 

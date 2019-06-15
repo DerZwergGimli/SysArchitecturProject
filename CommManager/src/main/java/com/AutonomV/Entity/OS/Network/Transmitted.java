@@ -5,12 +5,12 @@ import java.util.Map;
 
 public class Transmitted {
 
-    private int bytes;
-    private int packages;
-    private int errors;
-    private int dropped;
+    private String bytes;
+    private String packages;
+    private String errors;
+    private String dropped;
     private String carrier;         // TODO: Change to Int ?
-    private int collsns;
+    private String collsns;
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
@@ -27,7 +27,7 @@ public class Transmitted {
      * @param collsns
      * @param carrier
      */
-    public Transmitted(int bytes, int packages, int errors, int dropped, String carrier, int collsns) {
+    public Transmitted(String bytes, String packages, String errors, String dropped, String carrier, String collsns) {
         super();
         this.bytes = bytes;
         this.packages = packages;
@@ -37,35 +37,35 @@ public class Transmitted {
         this.collsns = collsns;
     }
 
-    public int getBytes() {
+    public String getBytes() {
         return bytes;
     }
 
-    public void setBytes(int bytes) {
+    public void setBytes(String bytes) {
         this.bytes = bytes;
     }
 
-    public int getPackages() {
+    public String getPackages() {
         return packages;
     }
 
-    public void setPackages(int packages) {
+    public void setPackages(String packages) {
         this.packages = packages;
     }
 
-    public int getErrors() {
+    public String getErrors() {
         return errors;
     }
 
-    public void setErrors(int errors) {
+    public void setErrors(String errors) {
         this.errors = errors;
     }
 
-    public int getDropped() {
+    public String getDropped() {
         return dropped;
     }
 
-    public void setDropped(int dropped) {
+    public void setDropped(String dropped) {
         this.dropped = dropped;
     }
 
@@ -77,11 +77,11 @@ public class Transmitted {
         this.carrier = carrier;
     }
 
-    public int getCollsns() {
+    public String getCollsns() {
         return collsns;
     }
 
-    public void setCollsns(int collsns) {
+    public void setCollsns(String collsns) {
         this.collsns = collsns;
     }
 

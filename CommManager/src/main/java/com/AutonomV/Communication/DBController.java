@@ -5,15 +5,22 @@ import redis.clients.jedis.Jedis;
 /**
  * This Class is a Child class of the Redis DB Controller "Jedis", and extends its fonctionality to fit in this Application
  */
-public class DBController extends Jedis {
+public class DBController {
 
     private static DBController instance = null;
+    private Jedis jedis;
+
+    private DBController(String host, int port){
+        this.jedis = new Jedis(host,port);
+    }
 
     public static DBController getInstance() {
         if (instance != null) {
+            System.out.println("Jedis Controller exists");
             return instance;
         } else {
-            instance = (DBController) new Jedis("localhost", 6380);
+            System.out.println("Initiating Jedis Controller");
+            instance = new DBController("localhost", 6380);
             return instance;
         }
     }
@@ -25,7 +32,7 @@ public class DBController extends Jedis {
      */
     public String ping() {
 
-        return super.ping();
+        return jedis.ping();
     }
 
     /**
@@ -37,7 +44,7 @@ public class DBController extends Jedis {
      * @return
      */
     public String set(String key, String variable) {
-        return super.set(key, variable);
+        return jedis.set(key, variable);
     }
 
     /**
@@ -48,12 +55,12 @@ public class DBController extends Jedis {
      * @return
      */
     public String get(String key) {
-        return super.get(key);
+        return jedis.get(key);
     }
 
 
     public Long expire(String variableName, int timeSecounds) {
-        System.out.println("Expire_: " + super.expire(variableName, timeSecounds));
+        System.out.println("Expire_: " + jedis.expire(variableName, timeSecounds));
         return null;
     }
 
@@ -61,6 +68,7 @@ public class DBController extends Jedis {
      * Close the connection between the client and the DB
      */
     public void close() {
-        super.close();
+        System.out.println("Closing DBController Connection");
+        jedis.close();
     }
 }

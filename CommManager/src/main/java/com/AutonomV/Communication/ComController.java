@@ -32,8 +32,8 @@ public class ComController {
         this.host = host;
         this.port = port;
         this.clientId = clientId;
-        this.broker = host + ":" + port;
-        this.connectionStatus = true;
+        this.broker = "tcp://" + host + ":" + port;
+        this.connectionStatus = false;
     }
 
     public void init(String topicFilter, boolean cleanSession) {
@@ -43,12 +43,12 @@ public class ComController {
             connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(cleanSession);
             connOpts.setAutomaticReconnect(true);
-            connOpts.setWill("/V1/Driver/LogoutRequest/","Client got disconnected suddently".getBytes(),2,true);
+            connOpts.setWill("/V1/Driver/LogoutRequest/", "Client got disconnected suddently".getBytes(), 2, true);
             mqttClient = new MqttClient(broker, clientId, persistence);
+            mqttClient.setCallback(new ClientCallback());
             if (connect()) {
                 // subscribe to /V1/Driver/AuthResponse/
                 mqttClient.subscribe(topicFilter, 2);
-                mqttClient.setCallback(new ClientCallback());
             } else {
                 System.out.println("Client couldn't connect to the Server");
             }
@@ -66,13 +66,21 @@ public class ComController {
      */
     private boolean connect() {
         try {
-            mqttClient.connect(connOpts);
-            connectionStatus = true;
-            return true;
+            if (mqttClient != null){
+                System.out.println("Trying to connect..");
+                mqttClient.connect(connOpts);
+                connectionStatus = true;
+                return true;
+            }else {
+                System.out.println("Client is null !");
+                return false;
+            }
+
         } catch (MqttException e) {
             e.printStackTrace();
+            connectionStatus = false;
+            return false;
         }
-        return false;
     }
 
     /**
@@ -87,7 +95,7 @@ public class ComController {
             // printHelp();
             return;
         }
-        if (connectionStatus) {
+        if (connectionStatus && mqttClient != null) {
             MqttMessage message = new MqttMessage(msg.getBytes());
             message.setQos(qos);
             System.out.println("Publishing message: " + msg);
@@ -99,7 +107,7 @@ public class ComController {
                 close();
             }
         } else {
-            System.out.println("Connection is lost");
+            System.out.println("Connection is lost or client is null");
         }
 
     }
@@ -165,5 +173,13 @@ public class ComController {
 
     public void setClientId(String clientId) {
         this.clientId = clientId;
+    }
+
+    public String getBroker() {
+        return broker;
+    }
+
+    public void setBroker(String broker) {
+        this.broker = broker;
     }
 }

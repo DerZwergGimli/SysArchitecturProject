@@ -13,11 +13,8 @@ public class Manager {
         DataPersistanceThread dataPersistanceThread = new DataPersistanceThread(1000,comController);
         comController.init("/V1/Driver/AuthResponse/",true);
 
-
         managementThread.start();
         dataPersistanceThread.start();
 
-
-        return;
     }
 }

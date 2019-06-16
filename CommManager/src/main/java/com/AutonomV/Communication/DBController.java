@@ -10,8 +10,8 @@ public class DBController {
     private static DBController instance = null;
     private Jedis jedis;
 
-    private DBController(String host, int port){
-        this.jedis = new Jedis(host,port);
+    private DBController(String host, int port) {
+        this.jedis = new Jedis(host, port);
     }
 
     public static DBController getInstance() {

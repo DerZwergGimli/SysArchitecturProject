@@ -2,9 +2,6 @@ package com.AutonomV.Entity.OS;
 
 import com.AutonomV.Entity.OS.Network.NetworkInfo;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class VehicleOS {
 
     private CPU cPU;

@@ -2,9 +2,6 @@ package com.AutonomV.Entity.OS;
 
 import com.AutonomV.Entity.Sensor;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class RealTimeData {
 
     private Sensor sensor;

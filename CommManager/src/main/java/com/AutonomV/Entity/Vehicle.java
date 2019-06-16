@@ -3,9 +3,7 @@ package com.AutonomV.Entity;
 import com.AutonomV.Entity.Passengers.Passenger;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 // import org.apache.commons.lang.builder.ToStringBuilder;
 
 public class Vehicle {
@@ -31,7 +29,7 @@ public class Vehicle {
     }
 
     public void addSensors(Sensor sensor) {
-        if ( sensors != null) {
+        if (sensors != null) {
             sensors.add(sensor);
         } else {
             sensors = new ArrayList<Sensor>();
@@ -40,7 +38,7 @@ public class Vehicle {
     }
 
     public void addPassengers(Passenger passenger) {
-        if ( passengers != null) {
+        if (passengers != null) {
             passengers.add(passenger);
         } else {
             passengers = new ArrayList<Passenger>();

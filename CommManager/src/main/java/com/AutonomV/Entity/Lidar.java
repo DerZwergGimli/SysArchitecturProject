@@ -1,8 +1,5 @@
 package com.AutonomV.Entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Lidar {
 
     private String angleValue;
@@ -11,6 +8,7 @@ public class Lidar {
     private String distanceUnit;
     private String state;
     private String timestamp;
+
     /**
      * No args constructor for use in serialization
      */

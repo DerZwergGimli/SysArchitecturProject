@@ -26,7 +26,7 @@ public class ManagementThread extends Thread {
 
     public ManagementThread() {
         this.dbController = DBController.getInstance();
-        this.comController = new ComController("localhost","1880","AutonomV");
+        this.comController = new ComController("localhost", "1880", "AutonomV");
         state = NO_DRIVER;
         this.isDriverPresent = false;
     }

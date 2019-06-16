@@ -1,8 +1,5 @@
 package com.AutonomV.Entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Sensor {
 
     private String name;
@@ -10,6 +7,7 @@ public class Sensor {
     private String unit;
     private String state;
     private String timestamp;
+
     /**
      * No args constructor for use in serialization
      */

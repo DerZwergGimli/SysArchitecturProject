@@ -18,7 +18,7 @@ public class ConverterTest {
 
     @Before
     public void setUp() throws Exception {
-        this.driver = new Driver(2334,"pojo1FirstName","pojo1LastName",345);
+        this.driver = new Driver(2334, "pojo1FirstName", "pojo1LastName", 345);
 
         jsonString = "{ \n" +
                 " \"id\" : \"2334\",                    \n" +
@@ -31,12 +31,12 @@ public class ConverterTest {
     @Test
     public void testPojo2json() {
         String driverString = Converter.pojo2json(this.driver);
-        System.out.println("JSONString:"+driverString);
+        System.out.println("JSONString:" + driverString);
         try {
             Driver newDriver = new ObjectMapper().readValue(driverString, Driver.class);
             // objectMapper.configure(Feature.AUTO_CLOSE_SOURCE, true);
-            System.out.println("id:"+newDriver.getId());
-            System.out.println("AuthLevel:"+newDriver.getAuthLevel());
+            System.out.println("id:" + newDriver.getId());
+            System.out.println("AuthLevel:" + newDriver.getAuthLevel());
             Assert.assertEquals("Driver ID not found or not identical", this.driver.getId(), newDriver.getId());
             Assert.assertEquals("Driver AuthLevel not found or not identical", this.driver.getAuthLevel(), newDriver.getAuthLevel());
         } catch (IOException e) {
@@ -48,7 +48,7 @@ public class ConverterTest {
     public void testJson2pojo() {
         Driver testDriver = new Driver();
         testDriver = (Driver) Converter.json2pojo(jsonString, testDriver);
-        System.out.println("testDriver: "+ testDriver.toString());
+        System.out.println("testDriver: " + testDriver.toString());
         Assert.assertEquals("Driver ID not found or not identical", this.driver.getId(), testDriver.getId());
         Assert.assertEquals("Driver AuthLevel not found or not identical", this.driver.getAuthLevel(), testDriver.getAuthLevel());
 

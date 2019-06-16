@@ -1,8 +1,5 @@
 package com.AutonomV.Entity.OS.Network;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Transmitted {
 
     private String bytes;

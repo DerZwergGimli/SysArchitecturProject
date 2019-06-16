@@ -9,9 +9,8 @@ public class Transmitted {
     private String packages;
     private String errors;
     private String dropped;
-    private String carrier;         // TODO: Change to Int ?
+    private String carrier;
     private String collsns;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * No args constructor for use in serialization
@@ -83,14 +82,6 @@ public class Transmitted {
 
     public void setCollsns(String collsns) {
         this.collsns = collsns;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

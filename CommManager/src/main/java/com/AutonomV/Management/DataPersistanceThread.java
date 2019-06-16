@@ -31,6 +31,7 @@ public class DataPersistanceThread extends Thread {
     public DataPersistanceThread(int interval_ms, ComController comController) {
         this.interval_ms = interval_ms;
         this.comController = comController;
+        dbController = DBController.getInstance();
     }
 
     @Override
@@ -95,9 +96,10 @@ public class DataPersistanceThread extends Thread {
         CPUtempSensor.setState(dbController.get("CPUtempState"));
         CPUtempSensor.setValue(dbController.get("CPUtempValue"));
         CPUtempSensor.setTimestamp(dbController.get("CPU:CPUtempTimestamp"));
-        CPU cpu = new CPU(CPUtempSensor, dbController.get("CPU:CPUload"), dbController.get("CPU:CPUactiveCores"));
+        Integer cpuLoad = 100 - Integer.parseInt(dbController.get("os:top:cpu_idle"));
+        CPU cpu = new CPU(CPUtempSensor, cpuLoad.toString(), dbController.get("CPU:CPUactiveCores"));
 
-        Sensor jitterSensor = new Sensor("Jitter", dbController.get("RT:JitterValue"), "ms", dbController.get("RT:JitterStater"), dbController.get("RT:JitterTimestamp"));
+        Sensor jitterSensor = new Sensor("Jitter", dbController.get("os:thread:collionControll:diffTimeNano"), "ns", dbController.get("RT:JitterStater"), dbController.get("os:thread:collionControll:JitterTimestamp"));
         RealTimeData realTimeData = new RealTimeData(jitterSensor, dbController.get("RT:numOfRTThreads"));
 
         Received received = new Received(dbController.get("rx_bytes"), dbController.get("rx_packages"), dbController.get("rx_errors"), dbController.get("rx_dropped"), dbController.get("rx_overrun"), dbController.get("rx_mcast"));

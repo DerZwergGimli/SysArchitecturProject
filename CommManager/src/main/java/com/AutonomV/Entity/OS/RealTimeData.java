@@ -9,7 +9,6 @@ public class RealTimeData {
 
     private Sensor sensor;
     private String numOfRTThreads;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * No args constructor for use in serialization
@@ -41,14 +40,6 @@ public class RealTimeData {
 
     public void setNumOfRTThreads(String numOfRTThreads) {
         this.numOfRTThreads = numOfRTThreads;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
 }

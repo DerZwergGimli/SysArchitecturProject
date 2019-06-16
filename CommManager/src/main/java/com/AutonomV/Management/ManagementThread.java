@@ -90,6 +90,8 @@ public class ManagementThread extends Thread {
             }
         } else {
             System.out.println("Client has no conection to the Server");
+            comController.connect();
+            Thread.sleep(1000);
             // TODO: Log severe error!
         }
         return false;
@@ -111,7 +113,7 @@ public class ManagementThread extends Thread {
         // check cyclically if the driver is pressent
         String isPresentResponse = dbController.get("Driver:isPresent");
         // string is true if the string is not a null and equal to true (ignoring case).
-        if (!isPresentResponse.isEmpty() && Boolean.valueOf(isPresentResponse)) {
+        if ((isPresentResponse != null) && !isPresentResponse.isEmpty() && Boolean.valueOf(isPresentResponse)) {
             isDriverPresent = true;
             return true;
         } else {

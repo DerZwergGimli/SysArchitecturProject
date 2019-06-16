@@ -9,7 +9,7 @@ public class Manager {
     public static void main(String[] args) {
 
         ManagementThread managementThread = new ManagementThread();
-        ComController comController = new ComController("localhost","1883","V1");
+        ComController comController = new ComController("localhost","1888","V1");
         DataPersistanceThread dataPersistanceThread = new DataPersistanceThread(1000,comController);
         comController.init("/V1/Driver/AuthResponse/",true);
 

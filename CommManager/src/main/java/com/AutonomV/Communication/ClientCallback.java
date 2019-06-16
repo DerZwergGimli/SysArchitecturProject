@@ -24,7 +24,6 @@ public class ClientCallback implements MqttCallback {
 
     @Override
     public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
-        // TODO: check if use of .equalsIgnoreCase() is neccessairy gere
         /* Check if topic is: /V1/Driver/AuthResponse/ */
         if (topic.equals("/V1/Driver/AuthResponse/")) {
             // convert String to Pojo

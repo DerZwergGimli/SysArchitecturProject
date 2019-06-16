@@ -64,15 +64,16 @@ public class ComController {
      *
      * @return true if connection was established, false if not.
      */
-    private boolean connect() {
+    public boolean connect() {
         try {
-            if (mqttClient != null){
+            if (mqttClient != null && !connectionStatus){
                 System.out.println("Trying to connect..");
                 mqttClient.connect(connOpts);
                 connectionStatus = true;
                 return true;
             }else {
                 System.out.println("Client is null !");
+                connectionStatus = false;
                 return false;
             }
 

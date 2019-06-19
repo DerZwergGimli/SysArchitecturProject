@@ -36,7 +36,7 @@ public class StopWatch {
 	}
 
 	public void writeToDB(RedisDBInterface redis) {
-		String parentTopic = "sensors:thread:collionControll:";
+		String parentTopic = "sensors:thread:collionControllExecutionTime:";
 		redis.setAndExpire(parentTopic + "startTimeNano", String.valueOf(startTimeNano), expireTimeRedis);
 		redis.setAndExpire(parentTopic + "endTimeNano", String.valueOf(endTimeNamo), expireTimeRedis);
 		redis.setAndExpire(parentTopic + "diffTimeNano", String.valueOf(diffTimeNano), expireTimeRedis);

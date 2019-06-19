@@ -1,36 +1,218 @@
-[2019-06-15 20:32:20] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-18 15:56:34] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:22] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:35] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:22] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:35] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
  null 
-[2019-06-15 20:32:22] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:35] [SEVERE ] CollisonAvoidance was interrupted in its execution
  null 
-[2019-06-15 20:32:23] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:35] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:23] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:36] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-15 20:32:23] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:50] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:23] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:51] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:24] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:51] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:24] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:51] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:24] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:52] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:24] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:52] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:25] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:52] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
  null 
-[2019-06-15 20:32:25] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:52] [SEVERE ] CollisonAvoidance was interrupted in its execution
  null 
-[2019-06-15 20:32:25] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:56:52] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:25] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+[2019-06-18 15:56:54] [INFO   ] Creating InterruptableCollisionAvoidance
  null 
-[2019-06-15 20:32:25] [SEVERE ] CollisonAvoidance was interrupted in its execution
+[2019-06-18 15:57:07] [WARNING] Overrun detected in CollisionAvoidance increasing time!
  null 
-[2019-06-15 20:32:25] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+[2019-06-18 15:57:07] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:08] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:09] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:09] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:09] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:09] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:10] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 15:57:10] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 15:57:10] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:11] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 15:57:25] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:26] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:26] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:26] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:26] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:27] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:27] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:27] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:27] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:28] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 15:57:28] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 15:57:28] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:29] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 15:57:44] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:45] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:45] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:45] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 15:57:45] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 15:57:45] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:46] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 15:57:58] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 15:57:58] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 15:57:58] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 15:57:59] [WARNING] Managemt diabled the programm will now close! And stop all threads clean!
+ null 
+[2019-06-18 15:58:00] [WARNING] DatabaseReader was exited!
+ null 
+[2019-06-18 15:58:00] [WARNING] DatabaseWriter was exited!
+ null 
+[2019-06-18 15:58:00] [INFO   ] ---Application closed--
+ null 
+[2019-06-18 16:24:18] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-18 16:24:18] [INFO   ] --Application stared--
+ null 
+[2019-06-18 16:24:18] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 16:24:18] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-06-18 16:24:18] [INFO   ] Creating InterruptableReaderDB
+ null 
+[2019-06-18 18:56:49] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-18 18:56:49] [INFO   ] --Application stared--
+ null 
+[2019-06-18 18:56:49] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 18:56:49] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-06-18 18:56:49] [INFO   ] Creating InterruptableReaderDB
+ null 
+[2019-06-18 18:57:43] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-18 18:57:43] [INFO   ] --Application stared--
+ null 
+[2019-06-18 18:57:43] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 18:57:43] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-06-18 18:57:43] [INFO   ] Creating InterruptableReaderDB
+ null 
+[2019-06-18 18:57:59] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 18:57:59] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 18:57:59] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:58:00] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 18:58:16] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:58:17] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 18:58:17] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 18:58:17] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:58:18] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 18:58:34] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:58:35] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 18:58:35] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 18:58:35] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:58:36] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 18:58:53] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 18:58:53] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 18:58:53] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:58:54] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 18:59:08] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:59:09] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:59:10] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 18:59:10] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 18:59:10] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:59:12] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 18:59:27] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 18:59:27] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 18:59:27] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:59:29] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 18:59:38] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 18:59:38] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 18:59:38] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:59:40] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-18 18:59:54] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-18 18:59:54] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-18 18:59:54] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 
+[2019-06-18 18:59:56] [WARNING] Managemt diabled the programm will now close! And stop all threads clean!
+ null 
+[2019-06-18 18:59:57] [WARNING] DatabaseReader was exited!
+ null 
+[2019-06-18 18:59:57] [WARNING] DatabaseWriter was exited!
+ null 
+[2019-06-18 18:59:57] [INFO   ] ---Application closed--
  null 

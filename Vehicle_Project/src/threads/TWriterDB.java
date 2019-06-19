@@ -13,21 +13,21 @@ import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
-import objects.ManagementControl;
-import objects.QCollisonControl;
+import collisonAvoidance.IQCollisonBuffer;
+import management.IManagementControl;
 import threads.interruptible.InterruptableWriterDB;
 
-public class TWriteDB extends RealtimeThread {
+public class TWriterDB extends RealtimeThread implements ITWriterDB {
 
 	Logger logger;
-	ManagementControl management;
+	IManagementControl management;
 
 	// ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
-	ArrayBlockingQueue<QCollisonControl> qCollisonControl;
+	ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 	Boolean running;
 
-	public TWriteDB(Logger logger, ManagementControl management,
-			ArrayBlockingQueue<QCollisonControl> qCollisonControl) {
+	public TWriterDB(Logger logger, IManagementControl management,
+			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.logger = logger;
 		this.management = management;
 		this.qCollisonControl = qCollisonControl;

@@ -8,19 +8,22 @@ import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 
-import objects.LidarSensor;
-import objects.ManagementControl;
-import objects.QCollisonControl;
-import objects.StopWatch;
+import collisonAvoidance.ILidarSensor;
+import collisonAvoidance.IQCollisonBuffer;
+import collisonAvoidance.LidarSensor;
+import collisonAvoidance.QCollisonBuffer;
+import management.IManagementControl;
+import other.IStopWatch;
+import other.StopWatch;
 
 public class InterruptableCollisionAvoidance implements Interruptible {
 
 	private Logger logger;
-	private ManagementControl management;
-	private ArrayBlockingQueue<QCollisonControl> qCollisonControl;
+	private IManagementControl management;
+	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
-	public InterruptableCollisionAvoidance(Logger logger, ManagementControl managemnt,
-			ArrayBlockingQueue<QCollisonControl> qCollisonControl) {
+	public InterruptableCollisionAvoidance(Logger logger, IManagementControl managemnt,
+			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.logger = logger;
 		this.management = managemnt;
 		this.qCollisonControl = qCollisonControl;
@@ -38,14 +41,14 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 		int bound = 0;
 		double f = 0;
 		int ct = 0;
-		StopWatch stopWatchcurrent = new StopWatch();
-		StopWatch stopWatchOld = new StopWatch();
+		IStopWatch stopWatchcurrent = new StopWatch();
+		IStopWatch stopWatchOld = new StopWatch();
 		stopWatchOld.init();
 
 		while (management.isCollisonAvoidanceThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 			stopWatchcurrent.start();
 
-			LidarSensor lidarSensor = new LidarSensor();
+			ILidarSensor lidarSensor = new LidarSensor();
 			lidarSensor.setRandomDistances();
 
 			sendInQueue(lidarSensor, stopWatchOld);
@@ -63,8 +66,8 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 		logger.log(Level.WARNING, "CollisionAvoidance was exited!");
 	}
 
-	private void sendInQueue(LidarSensor lidarSensor, StopWatch stopWatch) {
-		QCollisonControl qCollisonControlObject = new QCollisonControl(lidarSensor, stopWatch);
+	private void sendInQueue(ILidarSensor lidarSensor, IStopWatch stopWatch) {
+		IQCollisonBuffer qCollisonControlObject = new QCollisonBuffer(lidarSensor, stopWatch);
 		qCollisonControl.offer(qCollisonControlObject);
 
 	}

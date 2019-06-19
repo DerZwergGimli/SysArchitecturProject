@@ -12,22 +12,22 @@ import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
-import objects.ManagementControl;
-import redis.RedisDBInterface;
+import management.IManagementControl;
+import redis.IRedisDBInterface;
 import threads.interruptible.InterruptableReaderDB;
 
-public class TReaderDB extends RealtimeThread {
+public class TReaderDB extends RealtimeThread implements ITReaderDB {
 
 	private Logger logger;
-	private ManagementControl management;
-	private RedisDBInterface redis;
+	private IManagementControl management;
+	private IRedisDBInterface redis;
 
 	private static int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 5;
 	private static SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 	private static ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(),
 			new RelativeTime(300, 0), null, null, null, null);
 
-	public TReaderDB(Logger logger, ManagementControl management) {
+	public TReaderDB(Logger logger, IManagementControl management) {
 		this.logger = logger;
 		this.management = management;
 		setName("DatabseReaderThread");

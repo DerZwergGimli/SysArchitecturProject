@@ -1,4 +1,4 @@
-package os;
+package osInterfaces;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -9,9 +9,9 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import redis.RedisDBInterface;
+import redis.IRedisDBInterface;
 
-public class OSLinuxTopInterface {
+public class TopInterface implements ITopInterface {
 
 	private int expireTimeRedis = 100;
 
@@ -45,9 +45,10 @@ public class OSLinuxTopInterface {
 	private long swap_bufferCache;
 	private String swap_unit = "KiB";
 
-	public OSLinuxTopInterface() {
+	public TopInterface() {
 	}
 
+	@Override
 	public void readOSLinuxTopInterface() {
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		String bashString = "top -b -n 1 | grep 'top' -m 1 -A 4";
@@ -144,7 +145,7 @@ public class OSLinuxTopInterface {
 		}
 	}
 
-	public void writeToDatabase(RedisDBInterface redis) {
+	public void writeToDatabase(IRedisDBInterface redis) {
 		String parentTopic = "sensors:os:top:";
 		redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
 		redis.setAndExpire(parentTopic + "systemTime", systemTime, expireTimeRedis);

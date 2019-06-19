@@ -1,12 +1,12 @@
-package os;
+package osInterfaces;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import redis.RedisDBInterface;
+import redis.IRedisDBInterface;
 
-public class NetworkInterface {
+public class NetworkInterface implements INetworkInterface {
 	private int expireTimeRedis = 100;
 
 	private String networkInterfaceName;
@@ -30,6 +30,7 @@ public class NetworkInterface {
 
 	}
 
+	@Override
 	public void readNetworkInterface() {
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		String bashString = "ip -statistics link show dev " + this.networkInterfaceName + " | grep RX -A 4";
@@ -83,7 +84,7 @@ public class NetworkInterface {
 
 	}
 
-	public void writeToDatabase(RedisDBInterface redis) {
+	public void writeToDatabase(IRedisDBInterface redis) {
 		String parentTopic = "sensors:os:network:";
 
 		// Set ALL RX_Values

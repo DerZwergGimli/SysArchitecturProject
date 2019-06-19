@@ -1,8 +1,8 @@
-package objects;
+package other;
 
-import redis.RedisDBInterface;
+import redis.IRedisDBInterface;
 
-public class StopWatch {
+public class StopWatch implements IStopWatch {
 
 	private int expireTimeRedis = 100;
 	private long startTimeNano;
@@ -12,30 +12,36 @@ public class StopWatch {
 	public StopWatch() {
 	}
 
+	@Override
 	public void init() {
 		startTimeNano = 0;
 		endTimeNamo = 0;
 		diffTimeNano = 0;
 	}
 
+	@Override
 	public void start() {
 		startTimeNano = System.nanoTime();
 	}
 
+	@Override
 	public void stop() {
 		endTimeNamo = System.nanoTime();
 	}
 
+	@Override
 	public void stopAndCalulate() {
 		endTimeNamo = System.nanoTime();
 		calculateDuration();
 	}
 
+	@Override
 	public void calculateDuration() {
 		diffTimeNano = endTimeNamo - startTimeNano;
 	}
 
-	public void writeToDB(RedisDBInterface redis) {
+	@Override
+	public void writeToDB(IRedisDBInterface redis) {
 		String parentTopic = "sensors:thread:collionControllExecutionTime:";
 		redis.setAndExpire(parentTopic + "startTimeNano", String.valueOf(startTimeNano), expireTimeRedis);
 		redis.setAndExpire(parentTopic + "endTimeNano", String.valueOf(endTimeNamo), expireTimeRedis);

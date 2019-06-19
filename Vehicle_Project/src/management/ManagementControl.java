@@ -1,8 +1,8 @@
-package objects;
+package management;
 
-import redis.RedisDBInterface;
+import redis.IRedisDBInterface;
 
-public class ManagementControl {
+public class ManagementControl implements IManagementControl {
 	private static String parentTopic = "management:threads:";
 
 	private Boolean managementThreadRunnable;
@@ -24,58 +24,71 @@ public class ManagementControl {
 	}
 
 	// Management
+	@Override
 	public Boolean isManagemnetThreadRunnable() {
 		return managementThreadRunnable;
 	}
 
+	@Override
 	public void makeManagementThreadRunnable() {
 		managementThreadRunnable = true;
 	}
 
+	@Override
 	public void makeManegementThreadUnrunnable() {
 		managementThreadRunnable = false;
 	}
 
 	// CollisionAvoidance
+	@Override
 	public Boolean isCollisonAvoidanceThreadRunnable() {
 		return collisionAvoidanceThreadRunnable;
 	}
 
+	@Override
 	public void makeCollisonAvoidanceThreadRunnable() {
 		collisionAvoidanceThreadRunnable = true;
 	}
 
+	@Override
 	public void makeCollisonAvoidanceThreadUnrunnable() {
 		collisionAvoidanceThreadRunnable = false;
 	}
 
 	// databaseWriter
+	@Override
 	public Boolean isDatabaseWriterThreadRunnable() {
 		return databaseWriterThreadRunnable;
 	}
 
+	@Override
 	public void makeDatabaseWriterThreadRunnbale() {
 		databaseWriterThreadRunnable = true;
 	}
 
+	@Override
 	public void makeDatabaseWriterThreadUnrunnable() {
 		databaseWriterThreadRunnable = false;
 	}
 
 	// databaseReader
+	@Override
 	public Boolean isDatabaseReaderThreadRunnable() {
 		return databaseReaderThreadRunnable;
 	}
 
+	@Override
 	public void makeDatabaseReaderThreadRunnbale() {
 		databaseReaderThreadRunnable = true;
 	}
 
+	@Override
 	public void makeDatabaseReaderThreadUnrunnable() {
 		databaseReaderThreadRunnable = false;
 	}
 
-	public void writeEntriesToDatabase(RedisDBInterface redis) {
+	@Override
+	public void writeEntriesToDatabase(IRedisDBInterface redis) {
 		redis.set(parentTopic + "managementRunnable", "true");
 		redis.set(parentTopic + "collisonAvoidanceRunnable", "true");
 		redis.set(parentTopic + "databaseReaderRunnable", "true");
@@ -84,7 +97,8 @@ public class ManagementControl {
 		redis.close();
 	}
 
-	public void readEntriesFormDatabase(RedisDBInterface redis) {
+	@Override
+	public void readEntriesFormDatabase(IRedisDBInterface redis) {
 		managementThreadRunnable = Boolean.parseBoolean(redis.get(parentTopic + "managementRunnable"));
 		collisionAvoidanceThreadRunnable = Boolean.parseBoolean(redis.get(parentTopic + "collisonAvoidanceRunnable"));
 		databaseReaderThreadRunnable = Boolean.parseBoolean(redis.get(parentTopic + "databaseReaderRunnable"));
@@ -93,6 +107,7 @@ public class ManagementControl {
 		redis.close();
 	}
 
+	@Override
 	public void printAll() {
 		System.out.println("managementThreadRunnable:\t\t" + managementThreadRunnable);
 		System.out.println("collisionAvoidanceThreadRunnable:\t" + collisionAvoidanceThreadRunnable);

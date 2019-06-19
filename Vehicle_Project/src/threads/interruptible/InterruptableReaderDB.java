@@ -8,16 +8,17 @@ import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 import javax.realtime.memory.LTMemory;
 
-import objects.ManagementControl;
+import management.IManagementControl;
+import redis.IRedisDBInterface;
 import redis.RedisDBInterface;
 
 public class InterruptableReaderDB implements Interruptible {
 	private volatile Logger logger;
-	private volatile ManagementControl management;
+	private volatile IManagementControl management;
 	private volatile LTMemory ma = null;
-	private volatile RedisDBInterface redis;
+	private volatile IRedisDBInterface redis;
 
-	public InterruptableReaderDB(Logger logger, ManagementControl management) {
+	public InterruptableReaderDB(Logger logger, IManagementControl management) {
 		this.logger = logger;
 		this.management = management;
 	}
@@ -79,7 +80,7 @@ public class InterruptableReaderDB implements Interruptible {
 		while (management.isDatabaseReaderThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 
 			try {
-				RedisDBInterface redis = new RedisDBInterface(logger);
+				IRedisDBInterface redis = new RedisDBInterface(logger);
 
 				System.out.println("Hello from DB-Reader");
 				// System.out.println(LTMemory.getMemoryArea(ma).memoryRemaining());

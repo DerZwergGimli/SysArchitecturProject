@@ -9,22 +9,25 @@ import javax.realtime.PriorityParameters;
 import javax.realtime.PriorityScheduler;
 import javax.realtime.RealtimeThread;
 
-public class MissCollisonAvoidance extends AsyncEventHandler {
+public class MissCollisonAvoidance extends AsyncEventHandler implements IMissCollisonAvoidance {
 
 	AsynchronouslyInterruptedException asInterruptedException;
 	RealtimeThread realtimeThread;
 	static int priorityParameters = PriorityScheduler.instance().getMinPriority() + 11;
 	Logger logger;
 
+	@Override
 	public void setInterruptExeption(AsynchronouslyInterruptedException asInterrupExeption) {
 		this.asInterruptedException = asInterrupExeption;
 
 	}
 
+	@Override
 	public void setThread(RealtimeThread realtimeThread) {
 		this.realtimeThread = realtimeThread;
 	}
 
+	@Override
 	public void setLogger(Logger logger) {
 		this.logger = logger;
 	}

@@ -1,19 +1,20 @@
-package os;
+package osInterfaces;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import redis.RedisDBInterface;
+import redis.IRedisDBInterface;
 
-public class OSSensorInterface {
+public class SensorsInterface implements ISensorsInterface {
 	private int expireTimeRedis = 100;
 	private String cpu0_temperature;
 
-	public OSSensorInterface() {
-		// TODO Auto-generated constructor stub
+	public SensorsInterface() {
+
 	}
 
+	@Override
 	public void readOSSensors() {
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		String bashString = "sensors | grep 'Core 0'";
@@ -50,7 +51,8 @@ public class OSSensorInterface {
 		}
 	}
 
-	public void writeToDatabase(RedisDBInterface redis) {
+	@Override
+	public void writeToDatabase(IRedisDBInterface redis) {
 		String parentTopic = "sensors:os:temperatures:";
 		redis.setAndExpire(parentTopic + "cpu0", cpu0_temperature, expireTimeRedis);
 		redis.setAndExpire(parentTopic + "unit", "celsius", expireTimeRedis);

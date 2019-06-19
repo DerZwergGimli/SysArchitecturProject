@@ -1,8 +1,5 @@
 package com.AutonomV.Entity;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Sensor {
 
     private String name;
@@ -10,7 +7,6 @@ public class Sensor {
     private String unit;
     private String state;
     private String timestamp;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
     /**
      * No args constructor for use in serialization
@@ -73,18 +69,5 @@ public class Sensor {
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
-
-//    @Override
-//    public String toString() {
-//        return new ToStringBuilder(this).append("name", name).append("value", value).append("unit", unit).append("state", state).append("timestamp", timestamp).append("additionalProperties", additionalProperties).toString();
-//    }
 
 }

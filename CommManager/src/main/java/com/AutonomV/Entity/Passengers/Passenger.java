@@ -8,13 +8,11 @@ public class Passenger {
 
     /**
      * No args constructor for use in serialization
-     *
      */
     public Passenger() {
     }
 
     /**
-     *
      * @param timeStamp
      * @param name
      * @param isPresent

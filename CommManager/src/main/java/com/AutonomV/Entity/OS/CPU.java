@@ -2,15 +2,11 @@ package com.AutonomV.Entity.OS;
 
 import com.AutonomV.Entity.Sensor;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class CPU {
 
     private Sensor CPUtemperature;
-    private String cPULoad;             // TODO: Change to Int ?
-    private String cPUActiveCores;      // TODO: Change to Int ?
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private String cPULoad;
+    private String cPUActiveCores;
 
     /**
      * No args constructor for use in serialization
@@ -54,11 +50,4 @@ public class CPU {
         this.cPUActiveCores = cPUActiveCores;
     }
 
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
-    }
 }

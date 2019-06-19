@@ -18,16 +18,16 @@ public class ManagementThread extends Thread {
     private static Driver driver = null;
     private static boolean isDriverAllowed;
 
-    private int state;
+    private static int state;
     public static final int NO_DRIVER = 0;
-    public static final int AUTHENTIFICATE = 1;
+    public static final int AUTHENTIFICATION = 1;
     public static final int IS_LOGGED_IN = 2;
     public static final int LOGOUT = 3;
 
     public ManagementThread() {
         this.dbController = DBController.getInstance();
-        this.comController = new ComController(); // TODO: call Constructor with parameters
-        this.state = NO_DRIVER;
+        this.comController = new ComController("localhost", "1880", "AutonomV");
+        state = NO_DRIVER;
         this.isDriverPresent = false;
     }
 
@@ -35,27 +35,14 @@ public class ManagementThread extends Thread {
     public void run() {
 
         while (true) {
-
-            String id = dbController.get("DriverID");
-
             switch (state) {
                 case NO_DRIVER:
-                    /* Send Data with low Frequency */
-                    cyclicDataPersistance();
-                    // Timeinterval for cyclic data persistance
-                    try {
-                        Thread.sleep(5000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                    // In this case the Check will be ade every 5 sec which is not sufficient
-                    // TODO: Make a seperate Thread for Data Persistance
-                    // Idea : Thread with attribute interval, which can be set accordingly to the state.
+                    /* Send Data with low Frequency done in DataPersistenceThread*/
                     if (checkDriver()) {
-                        state = AUTHENTIFICATE;
+                        state = AUTHENTIFICATION;
                     }
                     break;
-                case AUTHENTIFICATE:
+                case AUTHENTIFICATION:
                     try {
                         if (authenticate()) {
                             state = IS_LOGGED_IN;
@@ -63,17 +50,9 @@ public class ManagementThread extends Thread {
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
-                    ;
                     break;
                 case IS_LOGGED_IN:
-                    // TODO: Send Data with high frequency
-                    cyclicDataPersistance();
-                    // Timeinterval for cyclic data persistance
-                    try {
-                        Thread.sleep(500);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+                    // Send Data with high frequency done in DataPersistanceThread
                     // Cyclc Check in DB if Driver is still present
                     if (!checkDriver()) {
                         state = LOGOUT;
@@ -111,6 +90,8 @@ public class ManagementThread extends Thread {
             }
         } else {
             System.out.println("Client has no conection to the Server");
+            comController.connect();
+            Thread.sleep(1000);
             // TODO: Log severe error!
         }
         return false;
@@ -132,7 +113,7 @@ public class ManagementThread extends Thread {
         // check cyclically if the driver is pressent
         String isPresentResponse = dbController.get("Driver:isPresent");
         // string is true if the string is not a null and equal to true (ignoring case).
-        if (!isPresentResponse.isEmpty() && Boolean.valueOf(isPresentResponse)) {
+        if ((isPresentResponse != null) && !isPresentResponse.isEmpty() && Boolean.valueOf(isPresentResponse)) {
             isDriverPresent = true;
             return true;
         } else {
@@ -140,15 +121,13 @@ public class ManagementThread extends Thread {
         }
     }
 
-    private void cyclicDataPersistance() {
-        // TODO: move to DataPersistanceThread
-        dbController.get("CPU:CPUtemperature");
-        // ...
-    }
-
     public static void updateDriver(boolean isDriverAllowed, Driver driver) {
         ManagementThread.driver = driver;
         ManagementThread.isDriverAllowed = isDriverAllowed;
     }
 
+
+    public static int getManagementState() {
+        return state;
+    }
 }

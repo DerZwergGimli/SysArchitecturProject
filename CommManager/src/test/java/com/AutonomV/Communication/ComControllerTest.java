@@ -14,7 +14,7 @@ public class ComControllerTest {
     @Before
     public void setUp() {
         mIstance = new ComController("localhost", "1888", "AutonomV");
-        mIstance.init("/V1/Driver/AuthResponse/", true);
+        mIstance.init("/SysArch/V1/Driver/AuthResponse/", true,"V1", "DE1");
     }
 
     @After
@@ -35,7 +35,7 @@ public class ComControllerTest {
     public void publishTest() {
         DriverAuth driverAuth = new DriverAuth("973453", "20190607T134601Z");
         String authRequest = Converter.pojo2json(driverAuth);
-        mIstance.publish("/V1/Driver/AuthRequest/", authRequest, 2);
+        mIstance.publish("/SysArch/V1/Driver/AuthRequest/", authRequest, 2);
     }
 
     @Test

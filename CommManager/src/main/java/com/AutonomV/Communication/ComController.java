@@ -36,14 +36,16 @@ public class ComController {
         this.connectionStatus = false;
     }
 
-    public void init(String topicFilter, boolean cleanSession) {
+    public void init(String topicFilter, boolean cleanSession, String userName, String password) {
         // TODO: use evtl. user and Password
         try {
             persistence = new MemoryPersistence();
             connOpts = new MqttConnectOptions();
             connOpts.setCleanSession(cleanSession);
             connOpts.setAutomaticReconnect(true);
-            connOpts.setWill("/V1/Driver/LogoutRequest/", "Client got disconnected suddently".getBytes(), 2, true);
+            connOpts.setUserName(userName);
+            connOpts.setPassword(password.toCharArray());
+            connOpts.setWill("/SysArch/V1/Driver/LogoutRequest/", "Client got disconnected suddently".getBytes(), 2, true);
             mqttClient = new MqttClient(broker, clientId, persistence);
             mqttClient.setCallback(new ClientCallback());
             if (connect()) {

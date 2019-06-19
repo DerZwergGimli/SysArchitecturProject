@@ -59,16 +59,16 @@ public class DataPersistanceThread extends Thread {
         Vehicle vehicle = getVehicleData();
         String vehicleJson = Converter.pojo2json(vehicle);
 
-        comController.publish("/V1/Sensors/", vehicleJson, 2);
+        comController.publish("/SysArch/V1/Sensors/", vehicleJson, 2);
     }
 
     private Vehicle getVehicleData() {
-        Sensor tempSensor = new Sensor("Temperature", dbController.get("Sensors:TempValue"), "°C", dbController.get("Sensors:TempState"), dbController.get("Sensors:TempTimestamp"));
+        Sensor tempSensor = new Sensor("Temperature", dbController.get("Sensors:TempValue"), " Degree Celsius", dbController.get("Sensors:TempState"), dbController.get("Sensors:TempTimestamp"));
         Sensor humiditySensor = new Sensor("Humidity", dbController.get("Sensors:HumidityValue"), "%", dbController.get("Sensors:HumidityState"), dbController.get("Sensors:HumidityTimestamp"));
         Sensor speedSensor = new Sensor("Speed", dbController.get("Sensors:SpeedValue"), "km/h", dbController.get("Sensors:SpeedState"), dbController.get("Sensors:SpeedTimestamp"));
         Passenger driverPassenger = new Passenger("Driver", dbController.get("Driver:isPresent"), "timestamp"); // TODO: Timestamp
         Passenger frontSeatPassenger = new Passenger("front-seat passenger", dbController.get("Passenger:isPresent"), "timestamp"); // TODO: Timestamp
-        Lidar lidarSensor = new Lidar(dbController.get("sensors:lidar:angles"), "°", dbController.get("sensors:lidar:distances"), "cm", dbController.get("management:threads:collisonAvoidanceRunnable"), dbController.get("sensors:lidar:timestamp"));
+        Lidar lidarSensor = new Lidar(dbController.get("sensors:lidar:angles"), "Degree", dbController.get("sensors:lidar:distances"), "cm", dbController.get("management:threads:collisonAvoidanceRunnable"), dbController.get("sensors:lidar:timestamp"));
 
         Vehicle vehicle = new Vehicle();
         vehicle.addSensors(tempSensor);
@@ -85,13 +85,13 @@ public class DataPersistanceThread extends Thread {
         VehicleOS vehicleOS = getVehicleOS();
         String oSJson = Converter.pojo2json(vehicleOS);
 
-        comController.publish("/V1/OS/", oSJson, 2);
+        comController.publish("/SysArch/V1/OS/", oSJson, 2);
     }
 
     private VehicleOS getVehicleOS() {
         Sensor CPUtempSensor = new Sensor();
         CPUtempSensor.setName("CPUtemperature");
-        CPUtempSensor.setUnit("°C");
+        CPUtempSensor.setUnit("Degree Celsius");
         CPUtempSensor.setState(dbController.get("CPUtempState"));
         CPUtempSensor.setValue(dbController.get("CPUtempValue"));
         CPUtempSensor.setTimestamp(dbController.get("CPU:CPUtempTimestamp"));

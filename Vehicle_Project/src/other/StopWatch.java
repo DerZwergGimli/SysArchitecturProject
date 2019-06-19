@@ -52,11 +52,13 @@ public class StopWatch implements IStopWatch {
 	@Override
 	public void writeToDB(IRedisDBInterface redis) {
 		String parentTopic = "sensors:thread:collionControllExecutionTime:";
+		if ((startTimeNano != 0) && (endTimeNamo != 0)) {
 
-		redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
-		redis.setAndExpire(parentTopic + "startTimeNano", String.valueOf(startTimeNano), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "endTimeNano", String.valueOf(endTimeNamo), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "diffTimeNano", String.valueOf(diffTimeNano), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
+			redis.setAndExpire(parentTopic + "startTimeNano", String.valueOf(startTimeNano), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "endTimeNano", String.valueOf(endTimeNamo), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "diffTimeNano", String.valueOf(diffTimeNano), expireTimeRedis);
+		}
 	}
 
 	private void generateTimestamp() {

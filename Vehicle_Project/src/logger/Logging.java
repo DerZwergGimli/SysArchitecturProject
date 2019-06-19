@@ -1,7 +1,10 @@
 package logger;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.Date;
+import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
@@ -16,12 +19,21 @@ public class Logging {
 	 *
 	 * @return the logger
 	 */
+	private static Logger LOGGER;
+	private static String fileName;
+	private static int maxFileSize;
+	private static int maxNumberOfFiles;
+	private static Boolean appendFiles;
+	private static Level debugLevel;
+
 	public static Logger setupLogger() {
-		Logger LOGGER = Logger.getLogger(Main.class.getName());
+		LOGGER = Logger.getLogger(Main.class.getName());
 		FileHandler fh;
 
+		readPropertiesFile();
+
 		try {
-			fh = new FileHandler("mainLog.log", 10000, 3, true);
+			fh = new FileHandler(fileName, maxFileSize, maxNumberOfFiles, appendFiles);
 			LOGGER.addHandler(fh);
 
 			fh.setFormatter(new SimpleFormatter() {
@@ -33,7 +45,7 @@ public class Logging {
 							lr.getMessage(), lr.getThrown());
 				}
 			});
-			LOGGER.setLevel(Level.ALL);
+			LOGGER.setLevel(debugLevel);
 			LOGGER.info("-- LOGGER stated --");
 			// LOGGER.setUseParentHandlers(false);
 
@@ -43,6 +55,23 @@ public class Logging {
 			e.printStackTrace();
 		}
 		return LOGGER;
+	}
+
+	private static void readPropertiesFile() {
+		try (InputStream input = new FileInputStream("config.properties")) {
+			Properties properties = new Properties();
+			properties.load(input);
+
+			fileName = properties.getProperty("logger.fileName");
+			maxFileSize = Integer.valueOf(properties.getProperty("logger.maxFileSize"));
+			maxNumberOfFiles = Integer.valueOf(properties.getProperty("logger.maxNumberOfFiles"));
+			appendFiles = Boolean.valueOf(properties.getProperty("logger.maxNumberOfFiles"));
+			debugLevel = Level.parse(properties.getProperty("logger.debugLevel"));
+
+		} catch (Exception ex) {
+			System.out.println("Error while trying to read config for Logger!!! ");
+
+		}
 	}
 
 }

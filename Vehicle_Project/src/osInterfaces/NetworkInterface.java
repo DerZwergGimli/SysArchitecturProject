@@ -100,7 +100,7 @@ public class NetworkInterface implements INetworkInterface {
 	@Override
 	public void writeToDatabase(IRedisDBInterface redis) {
 		String parentTopic = "sensors:os:network:";
-		redis.setAndExpire(parentTopic + networkInterfaceName + "timestamp", timestamp, expireTimeRedis);
+		redis.setAndExpire(parentTopic + networkInterfaceName + ":timestamp", timestamp, expireTimeRedis);
 
 		// Set ALL RX_Values
 		redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_bytes", String.valueOf(rx_bytes), expireTimeRedis);

@@ -1,8 +1,16 @@
 package management;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import redis.IRedisDBInterface;
 
 public class ManagementControl implements IManagementControl {
+	private Logger logger;
+
 	private static String parentTopic = "management:threads:";
 
 	private Boolean managementThreadRunnable;
@@ -10,17 +18,10 @@ public class ManagementControl implements IManagementControl {
 	private Boolean databaseWriterThreadRunnable;
 	private Boolean databaseReaderThreadRunnable;
 
-	public ManagementControl() {
-//		managementThreadRunnable = true;
-//		collisionAvoidanceThreadRunnable = true;
-//		databaseWriterThreadRunnable = true;
-//		databaseReaderThreadRunnable = true;
-	}
+	private Boolean exposeEntriesToDatabase;
 
-	public ManagementControl(Boolean managementActive, Boolean databaseWriterActive, Boolean databaseReaderAvtive) {
-		this.managementThreadRunnable = managementActive;
-		this.databaseWriterThreadRunnable = databaseWriterActive;
-		this.databaseReaderThreadRunnable = databaseReaderAvtive;
+	public ManagementControl(Logger logger) {
+		this.logger = logger;
 	}
 
 	// Management
@@ -89,22 +90,52 @@ public class ManagementControl implements IManagementControl {
 
 	@Override
 	public void writeEntriesToDatabase(IRedisDBInterface redis) {
-		redis.set(parentTopic + "managementRunnable", "true");
-		redis.set(parentTopic + "collisonAvoidanceRunnable", "true");
-		redis.set(parentTopic + "databaseReaderRunnable", "true");
-		redis.set(parentTopic + "databaseWriterRunnable", "true");
+		if (exposeEntriesToDatabase == true) {
+			redis.set(parentTopic + "managementThreadRunnable", managementThreadRunnable.toString());
+			redis.set(parentTopic + "collisonAvoidanceThreadRunnable", managementThreadRunnable.toString());
+			redis.set(parentTopic + "databaseReaderThreadRunnable", databaseReaderThreadRunnable.toString());
+			redis.set(parentTopic + "databaseWriterThreadRunnable", databaseWriterThreadRunnable.toString());
 
-		redis.close();
+		}
+
 	}
 
 	@Override
 	public void readEntriesFormDatabase(IRedisDBInterface redis) {
-		managementThreadRunnable = Boolean.parseBoolean(redis.get(parentTopic + "managementRunnable"));
-		collisionAvoidanceThreadRunnable = Boolean.parseBoolean(redis.get(parentTopic + "collisonAvoidanceRunnable"));
-		databaseReaderThreadRunnable = Boolean.parseBoolean(redis.get(parentTopic + "databaseReaderRunnable"));
-		databaseWriterThreadRunnable = Boolean.parseBoolean(redis.get(parentTopic + "databaseWriterRunnable"));
+		if ((exposeEntriesToDatabase == true) && (redis.isEnabled() == true)) {
+			managementThreadRunnable = Boolean.parseBoolean(redis.get(parentTopic + "managementThreadRunnable"));
+			collisionAvoidanceThreadRunnable = Boolean
+					.parseBoolean(redis.get(parentTopic + "collisonAvoidanceThreadRunnable"));
+			databaseReaderThreadRunnable = Boolean
+					.parseBoolean(redis.get(parentTopic + "databaseReaderThreadRunnable"));
+			databaseWriterThreadRunnable = Boolean
+					.parseBoolean(redis.get(parentTopic + "databaseWriterThreadRunnable"));
 
-		redis.close();
+		}
+
+	}
+
+	@Override
+	public void readPropertiesFile() {
+		try (InputStream input = new FileInputStream("config.properties")) {
+			Properties properties = new Properties();
+			properties.load(input);
+
+			this.managementThreadRunnable = Boolean
+					.parseBoolean(properties.getProperty("managementControl.managementThreadRunnable"));
+			this.collisionAvoidanceThreadRunnable = Boolean
+					.parseBoolean(properties.getProperty("managementControl.collisionAvoidanceThreadRunnable"));
+			this.databaseReaderThreadRunnable = Boolean
+					.parseBoolean(properties.getProperty("managementControl.databaseReaderThreadRunnable"));
+			this.databaseWriterThreadRunnable = Boolean
+					.parseBoolean(properties.getProperty("managementControl.databaseWriterThreadRunnable"));
+			this.exposeEntriesToDatabase = Boolean
+					.parseBoolean(properties.getProperty("managementControl.exposeEntriesToDatabase"));
+
+		} catch (Exception ex) {
+			logger.log(Level.SEVERE, "Error while trying to read config of RedisDB", ex);
+
+		}
 	}
 
 	@Override

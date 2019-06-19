@@ -38,4 +38,6 @@ public interface IManagementControl {
 
 	public void printAll();
 
+	public void readPropertiesFile();
+
 }

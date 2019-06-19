@@ -131,10 +131,7 @@ public class TopInterface implements ITopInterface {
 				swap_used = Long.parseLong(fifthRow[6]);
 				swap_bufferCache = Long.parseLong(fifthRow[8]);
 
-				// GenerateTimeStamp
-				DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'", Locale.GERMANY);
-				dateFormat.setTimeZone(TimeZone.getTimeZone("CET"));
-				timestamp = dateFormat.format(new Date());
+				generateTimestamp();
 
 			}
 
@@ -145,6 +142,13 @@ public class TopInterface implements ITopInterface {
 		}
 	}
 
+	private void generateTimestamp() {
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'", Locale.GERMANY);
+		dateFormat.setTimeZone(TimeZone.getTimeZone("CET"));
+		timestamp = dateFormat.format(new Date());
+	}
+
+	@Override
 	public void writeToDatabase(IRedisDBInterface redis) {
 		String parentTopic = "sensors:os:top:";
 		redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);

@@ -3,6 +3,11 @@ package osInterfaces;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import redis.IRedisDBInterface;
 
@@ -11,6 +16,7 @@ public class NetworkInterface implements INetworkInterface {
 
 	private String networkInterfaceName;
 
+	private String timestamp;
 	private long rx_bytes;
 	private long rx_packages;
 	private long rx_errors;
@@ -74,6 +80,7 @@ public class NetworkInterface implements INetworkInterface {
 				this.tx_carrier = Long.parseLong(tx_tokens[5]);
 				this.tx_collsns = Long.parseLong(tx_tokens[6]);
 
+				generateTimestamp();
 			}
 
 		} catch (IOException e) {
@@ -84,8 +91,16 @@ public class NetworkInterface implements INetworkInterface {
 
 	}
 
+	private void generateTimestamp() {
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'", Locale.GERMANY);
+		dateFormat.setTimeZone(TimeZone.getTimeZone("CET"));
+		timestamp = dateFormat.format(new Date());
+	}
+
+	@Override
 	public void writeToDatabase(IRedisDBInterface redis) {
 		String parentTopic = "sensors:os:network:";
+		redis.setAndExpire(parentTopic + networkInterfaceName + "timestamp", timestamp, expireTimeRedis);
 
 		// Set ALL RX_Values
 		redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_bytes", String.valueOf(rx_bytes), expireTimeRedis);

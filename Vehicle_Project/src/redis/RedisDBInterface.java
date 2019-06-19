@@ -8,7 +8,7 @@ import java.util.logging.Logger;
 
 import redis.clients.jedis.Jedis;
 
-public class RedisDBInterface {
+public class RedisDBInterface implements IRedisDBInterface {
 	private Logger logger;
 	private Jedis jedisDB;
 	private String jedisURL;
@@ -35,6 +35,7 @@ public class RedisDBInterface {
 
 	}
 
+	@Override
 	public String set(String name, String variable) {
 		try {
 			return jedisDB.set(name, variable);
@@ -45,6 +46,7 @@ public class RedisDBInterface {
 		return "-1";
 	}
 
+	@Override
 	public String setAndExpire(String name, String variable, int secounds) {
 		try {
 			return jedisDB.setex(name, secounds, variable);
@@ -56,6 +58,7 @@ public class RedisDBInterface {
 		return "-1";
 	}
 
+	@Override
 	public String get(String name) {
 		try {
 			return jedisDB.get(name);
@@ -65,10 +68,12 @@ public class RedisDBInterface {
 		return "-1";
 	}
 
+	@Override
 	public void expire(String variableName, int timeSecounds) {
 		System.out.println("Expire_: " + jedisDB.expire(variableName, timeSecounds));
 	}
 
+	@Override
 	public void close() {
 		try {
 			jedisDB.close();

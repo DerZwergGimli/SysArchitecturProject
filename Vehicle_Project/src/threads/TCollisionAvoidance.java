@@ -13,26 +13,27 @@ import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
-import objects.ManagementControl;
-import objects.QCollisonControl;
+import collisonAvoidance.IQCollisonBuffer;
+import management.IManagementControl;
+import threads.handler.IMissCollisonAvoidance;
 import threads.handler.MissCollisonAvoidance;
 import threads.handler.OverrunCollisonAvoidance;
 import threads.interruptible.InterruptableCollisionAvoidance;
 
-public class TCollisionAvoidance extends RealtimeThread {
+public class TCollisionAvoidance extends RealtimeThread implements ITCollisionAvoidance {
 	private volatile Logger logger;
-	private ManagementControl management;
+	private IManagementControl management;
 	volatile OverrunCollisonAvoidance overrunHandler;
 	MissCollisonAvoidance missHandler;
 	// ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
-	ArrayBlockingQueue<QCollisonControl> qCollisonControl;
+	ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
-	public TCollisionAvoidance(Logger logger, ManagementControl management, MissCollisonAvoidance missHandler,
-			ArrayBlockingQueue<QCollisonControl> qCollisonControl) {
+	public TCollisionAvoidance(Logger logger, IManagementControl management, IMissCollisonAvoidance missHandler,
+			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.setName("TCollisionAvoidance");
 		this.logger = logger;
 		this.management = management;
-		this.missHandler = missHandler;
+		this.missHandler = (MissCollisonAvoidance) missHandler;
 		// this.lidarSensorQueue = lidarSensorQueue;
 		this.qCollisonControl = qCollisonControl;
 
@@ -44,13 +45,14 @@ public class TCollisionAvoidance extends RealtimeThread {
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
 		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(250, 0),
-				new RelativeTime(100, 0), new RelativeTime(200, 0), overrunHandler, missHandler);
+				new RelativeTime(100, 0), new RelativeTime(200, 0), this.overrunHandler, this.missHandler);
 
 		setSchedulingParameters(schedulingParameters);
 		setReleaseParameters(releaseParameters);
 
 	}
 
+	@Override
 	public void setOverrunLogger(Logger logger) {
 		this.logger = logger;
 		overrunHandler.setLogger(logger);

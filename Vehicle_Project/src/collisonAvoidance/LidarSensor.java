@@ -1,8 +1,8 @@
-package objects;
+package collisonAvoidance;
 
-import redis.RedisDBInterface;
+import redis.IRedisDBInterface;
 
-public class LidarSensor {
+public class LidarSensor implements ILidarSensor {
 
 	int expireTimeRedis = 100;
 
@@ -15,19 +15,22 @@ public class LidarSensor {
 		}
 	}
 
+	@Override
 	public void setRandomDistances() {
 		for (int i = 0; i < distances.length; i++) {
 			distances[i] = (int) ((Math.random() * 10) + 1);
 		}
 	}
 
+	@Override
 	public void printValues() {
 		for (int i = 0; i < angles.length; i++) {
 			System.out.println("Angle=" + angles[i] + "; Distances=" + distances[i]);
 		}
 	}
 
-	public void writeToDB(RedisDBInterface redis) {
+	@Override
+	public void writeToDB(IRedisDBInterface redis) {
 		String parentTopic = "sensors:lidar:";
 		redis.setAndExpire(parentTopic + "distances", distancesToString(), expireTimeRedis);
 		redis.setAndExpire(parentTopic + "angles", anglesToString(), expireTimeRedis);

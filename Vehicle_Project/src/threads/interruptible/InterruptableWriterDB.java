@@ -9,23 +9,27 @@ import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 
-import objects.LidarSensor;
-import objects.ManagementControl;
-import objects.QCollisonControl;
-import objects.StopWatch;
-import os.NetworkInterface;
-import os.OSLinuxTopInterface;
-import os.OSSensorInterface;
+import collisonAvoidance.ILidarSensor;
+import collisonAvoidance.IQCollisonBuffer;
+import management.IManagementControl;
+import osInterfaces.INetworkInterface;
+import osInterfaces.ISensorsInterface;
+import osInterfaces.ITopInterface;
+import osInterfaces.NetworkInterface;
+import osInterfaces.SensorsInterface;
+import osInterfaces.TopInterface;
+import other.IStopWatch;
+import redis.IRedisDBInterface;
 import redis.RedisDBInterface;
 
 public class InterruptableWriterDB implements Interruptible {
 	private Logger logger;
-	private ManagementControl management;
-	private RedisDBInterface redis;
-	private ArrayBlockingQueue<QCollisonControl> qCollisonControl;
+	private IManagementControl management;
+	private IRedisDBInterface redis;
+	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
-	public InterruptableWriterDB(Logger logger, ManagementControl management,
-			ArrayBlockingQueue<QCollisonControl> qCollisonControl) {
+	public InterruptableWriterDB(Logger logger, IManagementControl management,
+			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.logger = logger;
 		this.management = management;
 		this.qCollisonControl = qCollisonControl;
@@ -58,13 +62,13 @@ public class InterruptableWriterDB implements Interruptible {
 
 	private void writeQueueDataToDatabase() {
 		// LidarSensor sensorLidar;
-		QCollisonControl qCollisonControlObject;
+		IQCollisonBuffer qCollisonControlObject;
 
 		try {
 			qCollisonControlObject = qCollisonControl.poll(10, TimeUnit.MILLISECONDS);
 			if (qCollisonControlObject != null) {
-				LidarSensor lidarSensor = qCollisonControlObject.getLidarSensor();
-				StopWatch stopWatch = qCollisonControlObject.getStopWatch();
+				ILidarSensor lidarSensor = qCollisonControlObject.getLidarSensor();
+				IStopWatch stopWatch = qCollisonControlObject.getStopWatch();
 				lidarSensor.writeToDB(redis);
 				stopWatch.writeToDB(redis);
 			}
@@ -78,19 +82,19 @@ public class InterruptableWriterDB implements Interruptible {
 	}
 
 	private void writeNetworkDataToDatabase() {
-		NetworkInterface networkInterface0 = new NetworkInterface("wlp2s0");
+		INetworkInterface networkInterface0 = new NetworkInterface("wlp2s0");
 		networkInterface0.readNetworkInterface();
 		networkInterface0.writeToDatabase(redis);
 	}
 
 	private void writeOSSensorsToDatabase() {
-		OSSensorInterface osSensors = new OSSensorInterface();
+		ISensorsInterface osSensors = new SensorsInterface();
 		osSensors.readOSSensors();
 		osSensors.writeToDatabase(redis);
 	}
 
 	private void writeLinuxTopInterfaceToDatabase() {
-		OSLinuxTopInterface topInterface = new OSLinuxTopInterface();
+		ITopInterface topInterface = new TopInterface();
 		topInterface.readOSLinuxTopInterface();
 		topInterface.writeToDatabase(redis);
 	}

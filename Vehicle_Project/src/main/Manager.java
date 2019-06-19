@@ -47,6 +47,9 @@ public class Manager extends RealtimeThread {
 		management.printAll();
 
 		while (management.isManagemnetThreadRunnable()) {
+			clearScreen();
+			management.printAll();
+
 			management.readEntriesFormDatabase(redis);
 
 			manageCollisonAvoidanceThread();
@@ -59,7 +62,7 @@ public class Manager extends RealtimeThread {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			management.printAll();
+
 		}
 
 		if (!management.isManagemnetThreadRunnable()) {
@@ -77,7 +80,7 @@ public class Manager extends RealtimeThread {
 				logger.log(Level.SEVERE, "InterruptedException while trying to cancel and join the threads!", e);
 			} catch (NullPointerException e) {
 				logger.log(Level.WARNING,
-						"Misstaken that some thread not run anymore. But you dont realy have to care! \nBecause the application will now shut down anyway!");
+						"Misstaken that some thread not run anymore. But you dont really have to care! \nBecause the application will now shut down anyway!");
 			} catch (Exception e) {
 				logger.log(Level.SEVERE, "Error while trying to cancel and join the threads!", e);
 			}
@@ -176,6 +179,11 @@ public class Manager extends RealtimeThread {
 			}
 		}
 
+	}
+
+	public static void clearScreen() {
+		System.out.print("\033[H\033[2J");
+		System.out.flush();
 	}
 
 }

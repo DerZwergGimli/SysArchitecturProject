@@ -1,0 +1,6 @@
+[2019-06-19 23:36:47] [SEVERE ] Critical the RT Lidar Thread was conuming to much time it will be canceld!
+ null 
+[2019-06-19 23:36:47] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-06-19 23:36:47] [WARNING] Overrun detected in CollisionAvoidance increasing time!
+ null 

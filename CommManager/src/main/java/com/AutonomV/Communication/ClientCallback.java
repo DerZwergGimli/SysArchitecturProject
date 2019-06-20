@@ -25,7 +25,8 @@ public class ClientCallback implements MqttCallback {
     @Override
     public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
         /* Check if topic is: /V1/Driver/AuthResponse/ */
-        if (topic.equals("/V1/Driver/AuthResponse/")) {
+        System.out.println("Msg received on :" + topic + " :" + mqttMessage.toString());
+        if (topic.equals("/SysArch/V1/Driver/AuthResponse/")) {
             // convert String to Pojo
             Driver allowedDriver = new Driver();
             String driverMsg = new String(mqttMessage.getPayload());

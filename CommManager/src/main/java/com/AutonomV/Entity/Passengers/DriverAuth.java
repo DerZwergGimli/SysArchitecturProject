@@ -5,11 +5,11 @@ package com.AutonomV.Entity.Passengers;
  */
 public class DriverAuth {
     private String id;
-    private String timeStamp;
+    private String timestamp;
 
-    public DriverAuth(String id, String timeStamp) {
+    public DriverAuth(String id, String timestamp) {
         this.id = id;
-        this.timeStamp = timeStamp;
+        this.timestamp = timestamp;
     }
 
     public String getId() {
@@ -20,11 +20,11 @@ public class DriverAuth {
         this.id = id;
     }
 
-    public String getTimeStamp() {
-        return timeStamp;
+    public String getTimestamp() {
+        return timestamp;
     }
 
-    public void setTimeStamp(String timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
     }
 }

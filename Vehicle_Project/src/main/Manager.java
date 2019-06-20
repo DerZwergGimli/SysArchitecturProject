@@ -10,18 +10,21 @@ import collisonAvoidance.IQCollisonBuffer;
 import management.ManagementControl;
 import redis.RedisDBInterface;
 import threads.TCollisionAvoidance;
+import threads.TLidarDataCollection;
 import threads.TReaderDB;
 import threads.TWriterDB;
 import threads.handler.IMissCollisonAvoidance;
 import threads.handler.MissCollisonAvoidance;
 
 public class Manager extends RealtimeThread {
+
 	private Logger logger;
 	private RedisDBInterface redis;
 	private ManagementControl management;
 	private IMissCollisonAvoidance missCollisonAvoidance;
 	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 	private TCollisionAvoidance threadCollisionAvoidance;
+	private TLidarDataCollection threadLidarDataCollection;
 	private TWriterDB threadWriterDB;
 	private TReaderDB threadReaderDB;
 
@@ -53,6 +56,7 @@ public class Manager extends RealtimeThread {
 			management.readEntriesFormDatabase(redis);
 
 			manageCollisonAvoidanceThread();
+			manageLidarDataCollectionThread();
 			manageDatabaseWriterThread();
 			manageDatabaseReaderThread();
 
@@ -69,6 +73,7 @@ public class Manager extends RealtimeThread {
 			logger.log(Level.WARNING, "Managemt diabled the programm will now close! And stop all threads clean!");
 
 			management.makeCollisonAvoidanceThreadUnrunnable();
+			management.makeLidarDataCollectionThreadUnrunnable();
 			management.makeDatabaseWriterThreadUnrunnable();
 			management.makeDatabaseReaderThreadUnrunnable();
 
@@ -118,6 +123,36 @@ public class Manager extends RealtimeThread {
 			if (Thread.State.WAITING == threadCollisionAvoidance.getState()) {
 			}
 			if (Thread.State.BLOCKED == threadCollisionAvoidance.getState()) {
+			}
+		}
+
+	}
+
+	public void manageLidarDataCollectionThread() {
+		if (null == threadLidarDataCollection && management.isLidarDataCollectionThreadRunnable()) {
+			threadLidarDataCollection = new TLidarDataCollection(logger, management);
+		}
+
+		if (threadLidarDataCollection != null) {
+
+			if (Thread.State.NEW == threadLidarDataCollection.getState()) {
+				if (management.isLidarDataCollectionThreadRunnable()) {
+					threadLidarDataCollection.start();
+				}
+			}
+			if (Thread.State.RUNNABLE == threadLidarDataCollection.getState()) {
+
+			}
+			if (Thread.State.TERMINATED == threadLidarDataCollection.getState()) {
+				if (management.isLidarDataCollectionThreadRunnable()) {
+					threadLidarDataCollection = new TLidarDataCollection(logger, management);
+				}
+			}
+			if (Thread.State.TIMED_WAITING == threadLidarDataCollection.getState()) {
+			}
+			if (Thread.State.WAITING == threadLidarDataCollection.getState()) {
+			}
+			if (Thread.State.BLOCKED == threadLidarDataCollection.getState()) {
 			}
 		}
 
@@ -181,9 +216,12 @@ public class Manager extends RealtimeThread {
 
 	}
 
-	public static void clearScreen() {
-		System.out.print("\033[H\033[2J");
-		System.out.flush();
+	public void clearScreen() {
+		if (management.isClearConsoleActive()) {
+			System.out.print("\033[H\033[2J");
+			System.out.flush();
+		}
+
 	}
 
 }

@@ -12,16 +12,21 @@ public class ManagementControl implements IManagementControl {
 	private Logger logger;
 
 	private static String parentTopic = "management:threads:";
-
+	private Boolean clearConsole;
 	private Boolean managementThreadRunnable;
 	private Boolean collisionAvoidanceThreadRunnable;
+	private Boolean lidarDataCollectionThreadRunnable;
 	private Boolean databaseWriterThreadRunnable;
 	private Boolean databaseReaderThreadRunnable;
-
 	private Boolean exposeEntriesToDatabase;
 
 	public ManagementControl(Logger logger) {
 		this.logger = logger;
+	}
+
+	@Override
+	public Boolean isClearConsoleActive() {
+		return clearConsole;
 	}
 
 	// Management
@@ -54,6 +59,24 @@ public class ManagementControl implements IManagementControl {
 	@Override
 	public void makeCollisonAvoidanceThreadUnrunnable() {
 		collisionAvoidanceThreadRunnable = false;
+	}
+
+	// Lidar-Data-Collection
+	@Override
+	public Boolean isLidarDataCollectionThreadRunnable() {
+		return lidarDataCollectionThreadRunnable;
+	}
+
+	@Override
+	public void makeLidarDataCollectionThreadRunnable() {
+		lidarDataCollectionThreadRunnable = true;
+
+	}
+
+	@Override
+	public void makeLidarDataCollectionThreadUnrunnable() {
+		lidarDataCollectionThreadRunnable = false;
+
 	}
 
 	// databaseWriter
@@ -92,7 +115,8 @@ public class ManagementControl implements IManagementControl {
 	public void writeEntriesToDatabase(IRedisDBInterface redis) {
 		if (exposeEntriesToDatabase == true) {
 			redis.set(parentTopic + "managementThreadRunnable", managementThreadRunnable.toString());
-			redis.set(parentTopic + "collisonAvoidanceThreadRunnable", managementThreadRunnable.toString());
+			redis.set(parentTopic + "collisonAvoidanceThreadRunnable", collisionAvoidanceThreadRunnable.toString());
+			redis.set(parentTopic + "lidarDataCollectionThreadRunnable", lidarDataCollectionThreadRunnable.toString());
 			redis.set(parentTopic + "databaseReaderThreadRunnable", databaseReaderThreadRunnable.toString());
 			redis.set(parentTopic + "databaseWriterThreadRunnable", databaseWriterThreadRunnable.toString());
 
@@ -106,6 +130,8 @@ public class ManagementControl implements IManagementControl {
 			managementThreadRunnable = Boolean.parseBoolean(redis.get(parentTopic + "managementThreadRunnable"));
 			collisionAvoidanceThreadRunnable = Boolean
 					.parseBoolean(redis.get(parentTopic + "collisonAvoidanceThreadRunnable"));
+			lidarDataCollectionThreadRunnable = Boolean
+					.parseBoolean(redis.get(parentTopic + "lidarDataCollectionThreadRunnable"));
 			databaseReaderThreadRunnable = Boolean
 					.parseBoolean(redis.get(parentTopic + "databaseReaderThreadRunnable"));
 			databaseWriterThreadRunnable = Boolean
@@ -123,6 +149,8 @@ public class ManagementControl implements IManagementControl {
 
 			this.managementThreadRunnable = Boolean
 					.parseBoolean(properties.getProperty("managementControl.managementThreadRunnable"));
+			this.lidarDataCollectionThreadRunnable = Boolean
+					.parseBoolean(properties.getProperty("managementControl.lidarDataCollection"));
 			this.collisionAvoidanceThreadRunnable = Boolean
 					.parseBoolean(properties.getProperty("managementControl.collisionAvoidanceThreadRunnable"));
 			this.databaseReaderThreadRunnable = Boolean
@@ -131,7 +159,7 @@ public class ManagementControl implements IManagementControl {
 					.parseBoolean(properties.getProperty("managementControl.databaseWriterThreadRunnable"));
 			this.exposeEntriesToDatabase = Boolean
 					.parseBoolean(properties.getProperty("managementControl.exposeEntriesToDatabase"));
-
+			this.clearConsole = Boolean.parseBoolean(properties.getProperty("console.clearScreen"));
 		} catch (Exception ex) {
 			logger.log(Level.SEVERE, "Error while trying to read config of RedisDB", ex);
 
@@ -142,6 +170,7 @@ public class ManagementControl implements IManagementControl {
 	public void printAll() {
 		System.out.println("managementThreadRunnable:\t\t" + managementThreadRunnable);
 		System.out.println("collisionAvoidanceThreadRunnable:\t" + collisionAvoidanceThreadRunnable);
+		System.out.println("lidarDataCollectionThreadRunnable:\t" + lidarDataCollectionThreadRunnable);
 		System.out.println("databaseReaderThreadRunnable:\t\t" + databaseReaderThreadRunnable);
 		System.out.println("databaseWriterThreadRunnable:\t\t" + databaseWriterThreadRunnable);
 	}

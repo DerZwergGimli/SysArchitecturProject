@@ -7,6 +7,8 @@ import logger.Logging;
 public class Main {
 
 	public static void main(String[] args) {
+		Banner.printBanner();
+
 		Logger logger = Logging.setupLogger();
 		logger.info("--Application stared--");
 

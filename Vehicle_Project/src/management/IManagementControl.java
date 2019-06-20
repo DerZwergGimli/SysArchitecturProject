@@ -3,6 +3,9 @@ package management;
 import redis.IRedisDBInterface;
 
 public interface IManagementControl {
+	// Clear Console
+	public Boolean isClearConsoleActive();
+
 	// Management
 	public Boolean isManagemnetThreadRunnable();
 
@@ -16,6 +19,13 @@ public interface IManagementControl {
 	public void makeCollisonAvoidanceThreadRunnable();
 
 	public void makeCollisonAvoidanceThreadUnrunnable();
+
+	// Lidar Data Collection
+	public Boolean isLidarDataCollectionThreadRunnable();
+
+	public void makeLidarDataCollectionThreadRunnable();
+
+	public void makeLidarDataCollectionThreadUnrunnable();
 
 	// databaseWriter
 	public Boolean isDatabaseWriterThreadRunnable();
@@ -37,5 +47,7 @@ public interface IManagementControl {
 	public void readEntriesFormDatabase(IRedisDBInterface redis);
 
 	public void printAll();
+
+	public void readPropertiesFile();
 
 }

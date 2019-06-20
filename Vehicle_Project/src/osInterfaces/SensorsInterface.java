@@ -3,12 +3,19 @@ package osInterfaces;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+import java.util.TimeZone;
 
 import redis.IRedisDBInterface;
 
 public class SensorsInterface implements ISensorsInterface {
 	private int expireTimeRedis = 100;
 	private String cpu0_temperature;
+
+	private String timestamp;
 
 	public SensorsInterface() {
 
@@ -42,6 +49,8 @@ public class SensorsInterface implements ISensorsInterface {
 				String test = lines[0];
 				String[] core = test.split("[ ]+");
 				cpu0_temperature = core[2].substring(0, core[2].length() - 2);
+
+				generateTimestamp();
 			}
 
 		} catch (IOException e) {
@@ -51,9 +60,17 @@ public class SensorsInterface implements ISensorsInterface {
 		}
 	}
 
+	private void generateTimestamp() {
+		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'", Locale.GERMANY);
+		dateFormat.setTimeZone(TimeZone.getTimeZone("CET"));
+		timestamp = dateFormat.format(new Date());
+	}
+
 	@Override
 	public void writeToDatabase(IRedisDBInterface redis) {
 		String parentTopic = "sensors:os:temperatures:";
+
+		redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
 		redis.setAndExpire(parentTopic + "cpu0", cpu0_temperature, expireTimeRedis);
 		redis.setAndExpire(parentTopic + "unit", "celsius", expireTimeRedis);
 	}

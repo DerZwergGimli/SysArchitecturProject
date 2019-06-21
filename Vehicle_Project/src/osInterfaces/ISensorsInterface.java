@@ -1,6 +1,6 @@
 package osInterfaces;
 
-import redis.IRedisDBInterface;
+import redisInterface.IRedisDBInterface;
 
 public interface ISensorsInterface {
 

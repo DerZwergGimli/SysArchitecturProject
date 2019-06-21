@@ -9,7 +9,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.TimeZone;
 
-import redis.IRedisDBInterface;
+import redisInterface.IRedisDBInterface;
 
 public class TopInterface implements ITopInterface {
 

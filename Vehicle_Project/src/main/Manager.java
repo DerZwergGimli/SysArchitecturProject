@@ -6,23 +6,30 @@ import java.util.logging.Logger;
 
 import javax.realtime.RealtimeThread;
 
-import collisonAvoidance.IQCollisonBuffer;
+import gpioInterface.lidar.ILidarSensor;
+import gpioInterface.lidar.LidarInterface;
 import management.ManagementControl;
-import redis.RedisDBInterface;
+import redisInterface.RedisDBInterface;
 import threads.TCollisionAvoidance;
 import threads.TLidarDataCollection;
 import threads.TReaderDB;
 import threads.TWriterDB;
-import threads.handler.IMissCollisonAvoidance;
 import threads.handler.MissCollisonAvoidance;
+import threads.handler.MissLidarDataCollection;
+import threads.queue.IQCollisonBuffer;
 
 public class Manager extends RealtimeThread {
 
 	private Logger logger;
 	private RedisDBInterface redis;
 	private ManagementControl management;
-	private IMissCollisonAvoidance missCollisonAvoidance;
-	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
+	private volatile LidarInterface lidarController;
+
+	private volatile MissCollisonAvoidance missCollisonAvoidance;
+	private volatile MissLidarDataCollection missLidarDataCollection;
+	private volatile ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
+	private volatile ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+
 	private TCollisionAvoidance threadCollisionAvoidance;
 	private TLidarDataCollection threadLidarDataCollection;
 	private TWriterDB threadWriterDB;
@@ -37,8 +44,10 @@ public class Manager extends RealtimeThread {
 		management = new ManagementControl(logger);
 		management.readPropertiesFile();
 		management.writeEntriesToDatabase(redis);
+		lidarController = new LidarInterface();
 
 		qCollisonControl = new ArrayBlockingQueue<IQCollisonBuffer>(1);
+		qLidarSensor = new ArrayBlockingQueue<ILidarSensor>(10);
 	}
 
 	@Override
@@ -129,8 +138,14 @@ public class Manager extends RealtimeThread {
 	}
 
 	public void manageLidarDataCollectionThread() {
+
 		if (null == threadLidarDataCollection && management.isLidarDataCollectionThreadRunnable()) {
-			threadLidarDataCollection = new TLidarDataCollection(logger, management);
+
+			missLidarDataCollection = new MissLidarDataCollection(logger);
+			threadLidarDataCollection = new TLidarDataCollection(logger, management, lidarController,
+					missLidarDataCollection, qLidarSensor);
+			missLidarDataCollection.setThread(threadLidarDataCollection);
+			missLidarDataCollection.setLidarController(lidarController);
 		}
 
 		if (threadLidarDataCollection != null) {
@@ -145,7 +160,11 @@ public class Manager extends RealtimeThread {
 			}
 			if (Thread.State.TERMINATED == threadLidarDataCollection.getState()) {
 				if (management.isLidarDataCollectionThreadRunnable()) {
-					threadLidarDataCollection = new TLidarDataCollection(logger, management);
+					missLidarDataCollection = new MissLidarDataCollection(logger);
+					threadLidarDataCollection = new TLidarDataCollection(logger, management, lidarController,
+							missLidarDataCollection, qLidarSensor);
+					missLidarDataCollection.setThread(threadLidarDataCollection);
+					missLidarDataCollection.setLidarController(lidarController);
 				}
 			}
 			if (Thread.State.TIMED_WAITING == threadLidarDataCollection.getState()) {
@@ -222,6 +241,13 @@ public class Manager extends RealtimeThread {
 			System.out.flush();
 		}
 
+	}
+
+	private void stopLidarRotaion() {
+		LidarInterface lidarInterface = new LidarInterface();
+		if (lidarInterface.isEnabled()) {
+			lidarInterface.stopRotation();
+		}
 	}
 
 }

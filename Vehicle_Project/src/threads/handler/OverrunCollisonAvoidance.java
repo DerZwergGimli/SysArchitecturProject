@@ -8,7 +8,7 @@ import javax.realtime.RealtimeThread;
 import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 
-public class OverrunCollisonAvoidance extends AsyncEventHandler implements IOverrunCollisonAvoidance {
+public class OverrunCollisonAvoidance extends AsyncEventHandler implements IOverrunHandler {
 
 	public OverrunCollisonAvoidance(Logger logger) {
 		this.logger = logger;

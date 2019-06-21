@@ -9,7 +9,7 @@ import javax.realtime.PriorityParameters;
 import javax.realtime.PriorityScheduler;
 import javax.realtime.RealtimeThread;
 
-public class MissCollisonAvoidance extends AsyncEventHandler implements IMissCollisonAvoidance {
+public class MissCollisonAvoidance extends AsyncEventHandler implements IMissHandler {
 
 	AsynchronouslyInterruptedException asInterruptedException;
 	RealtimeThread realtimeThread;
@@ -40,7 +40,8 @@ public class MissCollisonAvoidance extends AsyncEventHandler implements IMissCol
 
 	@Override
 	public void handleAsyncEvent() {
-		logger.log(Level.SEVERE, "Critical the RT Lidar Thread was conuming to much time it will be canceld!");
+		logger.log(Level.SEVERE,
+				"Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!");
 
 		realtimeThread.schedulePeriodic();
 

@@ -1,6 +1,6 @@
 package management;
 
-import redis.IRedisDBInterface;
+import redisInterface.IRedisDBInterface;
 
 public interface IManagementControl {
 	// Clear Console

@@ -9,8 +9,7 @@ import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 
-import collisonAvoidance.ILidarSensor;
-import collisonAvoidance.IQCollisonBuffer;
+import gpioInterface.lidar.ILidarSensor;
 import management.IManagementControl;
 import osInterfaces.INetworkInterface;
 import osInterfaces.ISensorsInterface;
@@ -18,9 +17,10 @@ import osInterfaces.ITopInterface;
 import osInterfaces.NetworkInterface;
 import osInterfaces.SensorsInterface;
 import osInterfaces.TopInterface;
-import other.IStopWatch;
-import redis.IRedisDBInterface;
-import redis.RedisDBInterface;
+import redisInterface.IRedisDBInterface;
+import redisInterface.RedisDBInterface;
+import threads.queue.IQCollisonBuffer;
+import timing.IStopWatch;
 
 public class InterruptableWriterDB implements Interruptible {
 	private Logger logger;

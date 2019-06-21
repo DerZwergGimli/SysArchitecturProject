@@ -24,9 +24,9 @@ public class ManagementThread extends Thread {
     public static final int IS_LOGGED_IN = 2;
     public static final int LOGOUT = 3;
 
-    public ManagementThread() {
+    public ManagementThread(ComController comController) {
         this.dbController = DBController.getInstance();
-        this.comController = new ComController("localhost", "1880", "AutonomV");
+        this.comController = comController;
         state = NO_DRIVER;
         this.isDriverPresent = false;
     }
@@ -77,22 +77,15 @@ public class ManagementThread extends Thread {
     private boolean authenticate() throws InterruptedException {
         // Send ID to the Management System
         // Get Driver ID and the timestamp of the Login from DB
-        DriverAuth driverAut = new DriverAuth(dbController.get("Driver:id"), dbController.get("Driver:timeStamp"));
+        DriverAuth driverAut = new DriverAuth(dbController.get("Driver:id"), "393939393");  // TODO dbController.get("Driver:timeStamp")
         String authRequest = Converter.pojo2json(driverAut);
-        if (comController.getConnectionStatus()) {
-            comController.publish("/V1/Driver/AuthRequest/", authRequest, 2);
-            /* Small Delay for Authentication Response*/
-            Thread.sleep(1000);
-            if (isDriverAllowed) {
-                // Write Driver Info in DB
-                writeDriverInfoInDB();
-                return true;
-            }
-        } else {
-            System.out.println("Client has no conection to the Server");
-            comController.connect();
-            Thread.sleep(1000);
-            // TODO: Log severe error!
+        comController.publish("/SysArch/V1/Driver/AuthRequest/", authRequest, 2);
+        /* Small Delay for Authentication Response*/
+        Thread.sleep(1000);
+        if (isDriverAllowed) {
+            // Write Driver Info in DB
+            writeDriverInfoInDB();
+            return true;
         }
         return false;
     }

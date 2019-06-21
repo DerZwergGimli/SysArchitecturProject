@@ -1,15 +1,13 @@
 package com.AutonomV.Communication;
 
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
-import org.eclipse.paho.client.mqttv3.MqttException;
-import org.eclipse.paho.client.mqttv3.MqttMessage;
+import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 /**
  * This Class controlls the Communication interface over MQTT
  */
 public class ComController {
+    private static final String TAG = "ComController ";
 
     private String host = "tcp://iot.eclipse.org";
     private String port = "1883";
@@ -37,7 +35,6 @@ public class ComController {
     }
 
     public void init(String topicFilter, boolean cleanSession, String userName, String password) {
-        // TODO: use evtl. user and Password
         try {
             persistence = new MemoryPersistence();
             connOpts = new MqttConnectOptions();
@@ -48,12 +45,8 @@ public class ComController {
             connOpts.setWill("/SysArch/V1/Driver/LogoutRequest/", "Client got disconnected suddently".getBytes(), 2, true);
             mqttClient = new MqttClient(broker, clientId, persistence);
             mqttClient.setCallback(new ClientCallback());
-            if (connect()) {
-                // subscribe to /V1/Driver/AuthResponse/
-                mqttClient.subscribe(topicFilter, 2);
-            } else {
-                System.out.println("Client couldn't connect to the Server");
-            }
+            // subscribe to /SysArch/V1/Driver/AuthResponse/
+            subscribe(topicFilter, 2);
         } catch (MqttException e) {
             e.printStackTrace();
         }
@@ -68,17 +61,19 @@ public class ComController {
      */
     public boolean connect() {
         try {
-            if (mqttClient != null && !connectionStatus) {
-                System.out.println("Trying to connect..");
-                mqttClient.connect(connOpts);
-                connectionStatus = true;
-                return true;
-            } else {
-                System.out.println("Client is null !");
-                connectionStatus = false;
+            if (mqttClient == null) {
+                System.out.println(TAG + "MQTTClient is null !");
                 return false;
+            } else if (!connectionStatus) {
+                System.out.println(TAG + "Trying to connect..");
+                IMqttToken iMqttToken = mqttClient.connectWithResult(connOpts);
+                iMqttToken.waitForCompletion();
+                boolean connectResponse = iMqttToken.getSessionPresent();
+                System.out.println(TAG + "Connection status: " + connectResponse);
+                connectionStatus = connectResponse;
+                return connectResponse;
             }
-
+            return false;
         } catch (MqttException e) {
             e.printStackTrace();
             connectionStatus = false;
@@ -92,27 +87,46 @@ public class ComController {
      * @param topic The topic where the msg should be publiched
      * @param msg   The Payload that should be published
      */
-    public void publish(String topic, String msg, int qos) {
+    public synchronized void publish(String topic, String msg, int qos) {
         if (qos < 0 || qos > 2) {
-            System.out.println("Invalid QoS: " + qos);
+            System.out.println(TAG + "Invalid QoS: " + qos);
             // printHelp();
             return;
         }
-        if (connectionStatus && mqttClient != null) {
+        if (mqttClient != null) {
             MqttMessage message = new MqttMessage(msg.getBytes());
             message.setQos(qos);
-            System.out.println("Publishing message: " + msg);
+            System.out.println(TAG + " Publishing message: " + msg);
             try {
+                mqttClient.connect(connOpts);
+                System.out.println(TAG + " connected ");
                 mqttClient.publish(topic, message);
+                mqttClient.disconnect();
             } catch (MqttException e) {
+                System.out.println(TAG + "Mqtt Exeption thrown");
                 e.printStackTrace();
                 disconnect();
                 close();
             }
         } else {
-            System.out.println("Connection is lost or client is null");
+            System.out.println(TAG + "Connection is lost or client is null");
         }
 
+    }
+
+    public void subscribe(String topic, int qos) {
+        if (mqttClient != null) {
+            try {
+                mqttClient.connect(connOpts);
+                mqttClient.subscribe(topic, qos);
+                System.out.println(TAG + " Subscribed to " + topic);
+                mqttClient.disconnect();
+            } catch (MqttException e) {
+                e.printStackTrace();
+                disconnect();
+                close();
+            }
+        }
     }
 
     /**
@@ -120,12 +134,12 @@ public class ComController {
      */
     private void disconnect() {
         try {
-            System.out.println("Disconnecting..");
+            System.out.println(TAG + "Disconnecting..");
             mqttClient.disconnect();
             connectionStatus = false;
 
         } catch (MqttException e) {
-            System.out.println("Exception when trying to disconnect the client");
+            System.out.println(TAG + "Exception when trying to disconnect the Mqtt Client");
             e.printStackTrace();
         }
     }
@@ -134,10 +148,10 @@ public class ComController {
         if (connectionStatus) {
             disconnect();
             try {
-                System.out.println("Closing Client..");
+                System.out.println(TAG + "Closing Client..");
                 mqttClient.close();
             } catch (MqttException e) {
-                System.out.println("Exception when trying to close the client");
+                System.out.println(TAG + "Exception when trying to close the Mqtt Client");
                 e.printStackTrace();
             }
         } else {

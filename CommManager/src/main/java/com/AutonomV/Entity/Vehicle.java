@@ -8,8 +8,8 @@ import java.util.List;
 
 public class Vehicle {
 
-    private List<Sensor> sensors = null;
-    private List<Passenger> passengers = null;
+    private List<Sensor> Sensors = null;
+    private List<Passenger> Passengers = null;
     private Lidar lidar;
 
     /**
@@ -24,34 +24,34 @@ public class Vehicle {
      */
     public Vehicle(List<Sensor> sensors, Lidar lidar) {
         super();
-        this.sensors = sensors;
+        this.Sensors = sensors;
         this.lidar = lidar;
     }
 
     public void addSensors(Sensor sensor) {
-        if (sensors != null) {
-            sensors.add(sensor);
+        if (Sensors != null) {
+            Sensors.add(sensor);
         } else {
-            sensors = new ArrayList<Sensor>();
-            sensors.add(sensor);
+            Sensors = new ArrayList<Sensor>();
+            Sensors.add(sensor);
         }
     }
 
     public void addPassengers(Passenger passenger) {
-        if (passengers != null) {
-            passengers.add(passenger);
+        if (Passengers != null) {
+            Passengers.add(passenger);
         } else {
-            passengers = new ArrayList<Passenger>();
-            passengers.add(passenger);
+            Passengers = new ArrayList<Passenger>();
+            Passengers.add(passenger);
         }
     }
 
     public List<Sensor> getSensors() {
-        return sensors;
+        return Sensors;
     }
 
     public void setSensors(List<Sensor> sensors) {
-        this.sensors = sensors;
+        this.Sensors = sensors;
     }
 
     public Lidar getLidar() {
@@ -63,11 +63,11 @@ public class Vehicle {
     }
 
     public List<Passenger> getPassengers() {
-        return passengers;
+        return Passengers;
     }
 
     public void setPassengers(List<Passenger> passengers) {
-        this.passengers = passengers;
+        this.Passengers = passengers;
     }
 
 }

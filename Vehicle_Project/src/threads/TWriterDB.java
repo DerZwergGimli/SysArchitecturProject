@@ -13,11 +13,11 @@ import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
-import collisonAvoidance.IQCollisonBuffer;
 import management.IManagementControl;
 import threads.interruptible.InterruptableWriterDB;
+import threads.queue.IQCollisonBuffer;
 
-public class TWriterDB extends RealtimeThread implements ITWriterDB {
+public class TWriterDB extends RealtimeThread {
 
 	Logger logger;
 	IManagementControl management;

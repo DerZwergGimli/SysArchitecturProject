@@ -1,5 +1,6 @@
 package main;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import logger.Logging;
@@ -26,12 +27,9 @@ public class Main {
 		try {
 			manager.join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.log(Level.SEVERE, "Error while trying to joing manager thread the application will colse!");
 		}
 
-//		manager.startThreads();
-//		manager.joinThreads();
 	}
 
 }

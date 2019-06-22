@@ -13,10 +13,10 @@ import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
 import management.IManagementControl;
-import redis.IRedisDBInterface;
+import redisInterface.IRedisDBInterface;
 import threads.interruptible.InterruptableReaderDB;
 
-public class TReaderDB extends RealtimeThread implements ITReaderDB {
+public class TReaderDB extends RealtimeThread {
 
 	private Logger logger;
 	private IManagementControl management;

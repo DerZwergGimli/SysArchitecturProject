@@ -13,39 +13,39 @@ import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
-import collisonAvoidance.IQCollisonBuffer;
 import management.IManagementControl;
-import threads.handler.IMissCollisonAvoidance;
 import threads.handler.MissCollisonAvoidance;
 import threads.handler.OverrunCollisonAvoidance;
 import threads.interruptible.InterruptableCollisionAvoidance;
+import threads.queue.IQCollisonBuffer;
 
-public class TCollisionAvoidance extends RealtimeThread implements ITCollisionAvoidance {
+public class TCollisionAvoidance extends RealtimeThread implements IHandableThread {
 	private volatile Logger logger;
 	private IManagementControl management;
-	volatile OverrunCollisonAvoidance overrunHandler;
-	MissCollisonAvoidance missHandler;
+	private volatile OverrunCollisonAvoidance overrunHandlerCollisionAvoidance;
+	MissCollisonAvoidance missHandlerCollisionAvoidance;
 	// ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
 	ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
-	public TCollisionAvoidance(Logger logger, IManagementControl management, IMissCollisonAvoidance missHandler,
+	public TCollisionAvoidance(Logger logger, IManagementControl management,
+			MissCollisonAvoidance missHandlerCollisionAvoidance,
 			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.setName("TCollisionAvoidance");
 		this.logger = logger;
 		this.management = management;
-		this.missHandler = (MissCollisonAvoidance) missHandler;
+		this.missHandlerCollisionAvoidance = missHandlerCollisionAvoidance;
 		// this.lidarSensorQueue = lidarSensorQueue;
 		this.qCollisonControl = qCollisonControl;
 
-		overrunHandler = new OverrunCollisonAvoidance(logger);
-
-		overrunHandler.setThread(this);
+		overrunHandlerCollisionAvoidance = new OverrunCollisonAvoidance(logger);
+		overrunHandlerCollisionAvoidance.setThread(this);
 
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 1;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
 		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(250, 0),
-				new RelativeTime(100, 0), new RelativeTime(200, 0), this.overrunHandler, this.missHandler);
+				new RelativeTime(100, 0), new RelativeTime(200, 0), this.overrunHandlerCollisionAvoidance,
+				this.missHandlerCollisionAvoidance);
 
 		setSchedulingParameters(schedulingParameters);
 		setReleaseParameters(releaseParameters);
@@ -55,7 +55,7 @@ public class TCollisionAvoidance extends RealtimeThread implements ITCollisionAv
 	@Override
 	public void setOverrunLogger(Logger logger) {
 		this.logger = logger;
-		overrunHandler.setLogger(logger);
+		overrunHandlerCollisionAvoidance.setLogger(logger);
 	}
 
 	@Override
@@ -63,7 +63,7 @@ public class TCollisionAvoidance extends RealtimeThread implements ITCollisionAv
 		try {
 			logger.info("Creating InterruptableCollisionAvoidance");
 			AsynchronouslyInterruptedException asInterruptExeption = new AsynchronouslyInterruptedException();
-			missHandler.setInterruptExeption(asInterruptExeption);
+			missHandlerCollisionAvoidance.setInterruptExeption(asInterruptExeption);
 			InterruptableCollisionAvoidance inCollisionAvoidance = new InterruptableCollisionAvoidance(logger,
 					management, qCollisonControl);
 			asInterruptExeption.doInterruptible(inCollisionAvoidance);

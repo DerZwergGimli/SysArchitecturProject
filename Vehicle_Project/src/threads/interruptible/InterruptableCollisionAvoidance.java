@@ -8,13 +8,13 @@ import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 
-import collisonAvoidance.ILidarSensor;
-import collisonAvoidance.IQCollisonBuffer;
-import collisonAvoidance.LidarSensor;
-import collisonAvoidance.QCollisonBuffer;
+import gpioInterface.lidar.ILidarSensor;
+import gpioInterface.lidar.LidarSensor;
 import management.IManagementControl;
-import other.IStopWatch;
-import other.StopWatch;
+import threads.queue.IQCollisonBuffer;
+import threads.queue.QCollisonBuffer;
+import timing.IStopWatch;
+import timing.StopWatch;
 
 public class InterruptableCollisionAvoidance implements Interruptible {
 

@@ -1,22 +1,31 @@
 package threads.interruptible;
 
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
+import javax.realtime.RealtimeThread;
 
+import gpioInterface.lidar.ILidarInterface;
+import gpioInterface.lidar.ILidarSensor;
+import gpioInterface.lidar.LidarSensor;
 import management.IManagementControl;
-import management.ManagementLidar;
 
 public class InterruptableLidarDataCollection implements Interruptible {
-	private volatile Logger logger;
-	private volatile IManagementControl management;
-	private ManagementLidar lidarManagement;
+	private Logger logger;
+	private IManagementControl management;
+	private ILidarInterface lidarController;
+	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
 
-	public InterruptableLidarDataCollection(Logger logger, IManagementControl management) {
+	public InterruptableLidarDataCollection(Logger logger, IManagementControl management,
+			ILidarInterface lidarController, ArrayBlockingQueue<ILidarSensor> qLidarSensor) {
 		this.logger = logger;
 		this.management = management;
+		this.lidarController = lidarController;
+		this.qLidarSensor = qLidarSensor;
+
 	}
 
 	@Override
@@ -27,24 +36,42 @@ public class InterruptableLidarDataCollection implements Interruptible {
 
 	@Override
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
-		lidarManagement = new ManagementLidar();
-		if (lidarManagement.isEnabled()) {
-			lidarManagement.init();
-			lidarManagement.startRotation();
 
-			while (management.isLidarDataCollectionThreadRunnable()) {
-				int lidarValues[] = lidarManagement.scan();
-				if (lidarValues.length != 0) {
-					for (int i : lidarValues) {
-						System.out.print(i + ", ");
-					}
-					System.out.println("(" + lidarValues.length + ")");
-				} else {
-					logger.log(Level.WARNING, "Error while reading lidar sensor values");
+		while (management.isLidarDataCollectionThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
+			sendDataToQueue(readFromSensor());
+		}
+
+	}
+
+	private int[] readFromSensor() {
+		if (lidarController.isEnabled()) {
+			int lidarValues[] = lidarController.scan();
+			if (lidarValues.length != 0) {
+				for (int i : lidarValues) {
+					System.out.print(i + ", ");
+					return lidarValues;
 				}
-
+				System.out.println("(" + lidarValues.length + ")");
+			} else {
+				logger.log(Level.WARNING, "Error while reading lidar sensor values");
 			}
-			lidarManagement.stopRotation();
+			return new int[0];
+		} else {
+			logger.info("Lidar sensor disabled but thread started!");
+		}
+		return new int[0];
+
+	}
+
+	private void sendDataToQueue(int[] lidarDistances) {
+		if (lidarDistances.length != 0) {
+
+			LidarSensor lidarSensor = new LidarSensor();
+			lidarSensor.setDistances(lidarDistances);
+
+			if (!qLidarSensor.offer(lidarSensor)) {
+				logger.log(Level.WARNING, "Could not write into queue");
+			}
 		}
 
 	}

@@ -1,48 +1,75 @@
 package threads;
 
+import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.realtime.AsynchronouslyInterruptedException;
+import javax.realtime.PeriodicParameters;
 import javax.realtime.PriorityParameters;
 import javax.realtime.PriorityScheduler;
 import javax.realtime.RealtimeThread;
+import javax.realtime.RelativeTime;
+import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
+import gpioInterface.lidar.ILidarInterface;
+import gpioInterface.lidar.ILidarSensor;
 import management.IManagementControl;
-import redis.IRedisDBInterface;
+import threads.handler.MissLidarDataCollection;
+import threads.handler.OverrunLidarDataCollection;
 import threads.interruptible.InterruptableLidarDataCollection;
 
-public class TLidarDataCollection extends RealtimeThread {
+public class TLidarDataCollection extends RealtimeThread implements IHandableThread {
 	private Logger logger;
 	private IManagementControl management;
-	private IRedisDBInterface redis;
+	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private ILidarInterface lidarController;
+
+	private volatile OverrunLidarDataCollection overrunHandlerLidarDataCollection;
+	private MissLidarDataCollection missHandlerLidarDataCollection;
 
 	private static int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 5;
 	private static SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
-	public TLidarDataCollection(Logger logger, IManagementControl management) {
+	public TLidarDataCollection(Logger logger, IManagementControl management, ILidarInterface lidarController,
+			MissLidarDataCollection missHandlerLidarDataCollection, ArrayBlockingQueue<ILidarSensor> qLidarSensor) {
+		setName("LidarDataCollectionThread");
 		this.logger = logger;
 		this.management = management;
-		setName("LidarDataCollectionThread");
+		this.lidarController = lidarController;
+		this.missHandlerLidarDataCollection = missHandlerLidarDataCollection;
+		this.qLidarSensor = qLidarSensor;
+
+		overrunHandlerLidarDataCollection = new OverrunLidarDataCollection(logger);
+		overrunHandlerLidarDataCollection.setThread(this);
 
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 1;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
-		// ReleaseParameters releaseParameters = new PeriodicParameters(new
-		// RelativeTime(), null, null, null, null, null);
+		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(3000, 0),
+				new RelativeTime(1000, 0), new RelativeTime(29000, 0), this.overrunHandlerLidarDataCollection,
+				this.missHandlerLidarDataCollection);
 
 		setSchedulingParameters(schedulingParameters);
-		// setReleaseParameters(releaseParameters);
+		setReleaseParameters(releaseParameters);
+	}
+
+	@Override
+	public void setOverrunLogger(Logger logger) {
+		this.logger = logger;
+		overrunHandlerLidarDataCollection.setLogger(logger);
+
 	}
 
 	@Override
 	public void run() {
+		startLidarRotation();
 		try {
 			logger.info("Creating LidarDataCollectionThread");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
 			InterruptableLidarDataCollection inLidarDataCollection = new InterruptableLidarDataCollection(logger,
-					management);
+					management, lidarController, qLidarSensor);
 			asInterruptedException.doInterruptible(inLidarDataCollection);
 
 		} catch (Exception e) {
@@ -50,4 +77,12 @@ public class TLidarDataCollection extends RealtimeThread {
 		}
 
 	}
+
+	private void startLidarRotation() {
+		if (lidarController.isEnabled()) {
+			lidarController.init();
+			lidarController.startRotation();
+		}
+	}
+
 }

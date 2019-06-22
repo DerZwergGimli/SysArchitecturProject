@@ -9,8 +9,8 @@ import javax.realtime.RealtimeThread;
 import javax.realtime.memory.LTMemory;
 
 import management.IManagementControl;
-import redis.IRedisDBInterface;
-import redis.RedisDBInterface;
+import redisInterface.IRedisDBInterface;
+import redisInterface.RedisDBInterface;
 
 public class InterruptableReaderDB implements Interruptible {
 	private volatile Logger logger;

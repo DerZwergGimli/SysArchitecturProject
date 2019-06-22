@@ -2,7 +2,7 @@
     {
         "id": "33dcc03f.67613",
         "type": "tab",
-        "label": "DB Controller",
+        "label": "UI",
         "disabled": false,
         "info": ""
     },
@@ -24,7 +24,7 @@
         "id": "11287ab8.c34bb5",
         "type": "tab",
         "label": "MQTT_Emulater",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -40,7 +40,7 @@
         "id": "6650949.a2e696c",
         "type": "redis-config",
         "z": "",
-        "host": "172.17.0.4",
+        "host": "172.17.0.3",
         "port": "6379",
         "dbase": "0",
         "pass": "{{REDIS_PASSWORD}}"
@@ -276,6 +276,113 @@
         "willPayload": ""
     },
     {
+        "id": "fae0160d.22ab08",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": " ea-pc165",
+        "broker": "ea-pc165.ei.htwg-konstanz.de",
+        "port": "8883",
+        "clientid": "AutonomV",
+        "usetls": false,
+        "compatmode": true,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "8ad1b592.c3d668",
+        "type": "ui_group",
+        "z": "",
+        "name": "Lidar",
+        "tab": "195141ae.ff7b4e",
+        "order": 4,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "c9de1db8.702ed",
+        "type": "ui_group",
+        "z": "",
+        "name": "Charts",
+        "tab": "b2e7fc97.cac51",
+        "order": 2,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "d498d6dc.ebb258",
+        "type": "ui_group",
+        "z": "",
+        "name": "Inputs",
+        "tab": "b2e7fc97.cac51",
+        "order": 1,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "2dc18061.e0c9a",
+        "type": "ui_group",
+        "z": "",
+        "name": "Group 3",
+        "tab": "b2e7fc97.cac51",
+        "order": 3,
+        "disp": false,
+        "width": "6"
+    },
+    {
+        "id": "b2e7fc97.cac51",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Charts",
+        "icon": "dashboard",
+        "order": 2
+    },
+    {
+        "id": "a69bef6b.848e2",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "79604c96.43be94",
+        "order": 2,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "dec0f0f3.fc4c9",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "79604c96.43be94",
+        "order": 4,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "3d13f273.f646ce",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "79604c96.43be94",
+        "order": 5,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a6ef1529.baec78",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "79604c96.43be94",
+        "order": 7,
+        "width": 1,
+        "height": 1
+    },
+    {
         "id": "14312978.33ce27",
         "type": "redis-command",
         "z": "33dcc03f.67613",
@@ -283,7 +390,7 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 420,
+        "x": 520,
         "y": 320,
         "wires": [
             [
@@ -295,11 +402,11 @@
         "id": "30d091cb.69404e",
         "type": "function",
         "z": "33dcc03f.67613",
-        "name": "RedisKey",
-        "func": "msg.payload = ['jitter']\nreturn msg;",
+        "name": "JitterKey",
+        "func": "msg.payload = ['os:thread:collionControll:diffTimeNano']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 281.5,
+        "x": 322.5,
         "y": 320,
         "wires": [
             [
@@ -319,12 +426,17 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 114.5,
-        "y": 339,
+        "x": 110,
+        "y": 360,
         "wires": [
             [
                 "30d091cb.69404e",
-                "bf5da47d.0ee758"
+                "bf5da47d.0ee758",
+                "eca7a94d.4bb7b8",
+                "fac0d8eb.a0eb88",
+                "1cce86ac.070779",
+                "7b147d91.a38e94",
+                "eb3e61da.3da63"
             ]
         ]
     },
@@ -336,8 +448,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 366,
-        "y": 173,
+        "x": 580,
+        "y": 100,
         "wires": [
             []
         ]
@@ -354,12 +466,16 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 165,
-        "y": 181,
+        "x": 140,
+        "y": 140,
         "wires": [
             [
                 "fb70ca83.ef5678",
-                "a828970b.1f1188"
+                "a828970b.1f1188",
+                "c02acf5d.54118",
+                "aae9c025.af305",
+                "d3ab1fb0.11697",
+                "b40f127b.4ebf4"
             ]
         ]
     },
@@ -368,11 +484,11 @@
         "type": "function",
         "z": "831252f4.92bf1",
         "name": "Jitter",
-        "func": "var rand = Math.floor(Math.random() * 11);\nmsg.payload = ['jitter',rand]\nreturn msg;",
+        "func": "var rand = Math.floor(Math.random() * 11);\nmsg.payload = ['os:thread:collionControll:diffTimeNano',rand]\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 355,
-        "y": 137,
+        "x": 354,
+        "y": 100,
         "wires": [
             [
                 "c6849d41.d73ea",
@@ -386,7 +502,7 @@
         "z": "33dcc03f.67613",
         "name": "JitterChart",
         "group": "79604c96.43be94",
-        "order": 2,
+        "order": 1,
         "width": 0,
         "height": 0,
         "label": "Jitter in ms",
@@ -416,7 +532,7 @@
         ],
         "useOldStyle": false,
         "outputs": 1,
-        "x": 591,
+        "x": 691,
         "y": 319,
         "wires": [
             []
@@ -434,8 +550,8 @@
         "label": "Driver ID",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 719.5,
-        "y": 63,
+        "x": 700,
+        "y": 100,
         "wires": []
     },
     {
@@ -446,8 +562,8 @@
         "func": "msg.payload = ['Driver:id']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 410,
-        "y": 63,
+        "x": 390,
+        "y": 101,
         "wires": [
             [
                 "8cbdf613.967328"
@@ -462,8 +578,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 557.5,
-        "y": 63,
+        "x": 537.5,
+        "y": 101,
         "wires": [
             [
                 "6af3efa1.5923f"
@@ -501,8 +617,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 366,
-        "y": 319,
+        "x": 580,
+        "y": 380,
         "wires": [
             []
         ]
@@ -515,8 +631,8 @@
         "func": "var rand = Math.floor(Math.random() * 1000);\nmsg.payload = ['Driver:id',rand]\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 356,
-        "y": 283,
+        "x": 355,
+        "y": 377,
         "wires": [
             [
                 "86ab0c9d.8dbe7",
@@ -536,8 +652,8 @@
         "label": "Driver Firstname",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 740.5,
-        "y": 104,
+        "x": 720.5,
+        "y": 142,
         "wires": []
     },
     {
@@ -548,8 +664,8 @@
         "func": "msg.payload = ['Driver:firstName']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 410,
-        "y": 104,
+        "x": 390,
+        "y": 142,
         "wires": [
             [
                 "7be64816.6f8168"
@@ -564,8 +680,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 557.5,
-        "y": 104,
+        "x": 537.5,
+        "y": 142,
         "wires": [
             [
                 "518972fe.e0562c"
@@ -580,8 +696,8 @@
         "func": "msg.payload = ['Driver:lastName']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 410,
-        "y": 148,
+        "x": 390,
+        "y": 186,
         "wires": [
             [
                 "bcceff7a.55f4a"
@@ -596,8 +712,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 555.5,
-        "y": 147,
+        "x": 535.5,
+        "y": 185,
         "wires": [
             [
                 "cc526e15.adf67"
@@ -616,8 +732,8 @@
         "label": "Driver Lastname",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 740.5,
-        "y": 147,
+        "x": 720.5,
+        "y": 185,
         "wires": []
     },
     {
@@ -628,8 +744,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 367,
-        "y": 389,
+        "x": 580,
+        "y": 414,
         "wires": [
             []
         ]
@@ -642,8 +758,8 @@
         "func": "msg.payload = ['Driver:firstName','Mouaad']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 366,
-        "y": 353,
+        "x": 360,
+        "y": 414,
         "wires": [
             [
                 "8f6c2600.51ada8",
@@ -659,8 +775,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 367,
-        "y": 457,
+        "x": 580,
+        "y": 454,
         "wires": [
             []
         ]
@@ -673,8 +789,8 @@
         "func": "msg.payload = ['Driver:lastName','Gssair']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 366,
-        "y": 421,
+        "x": 360,
+        "y": 454,
         "wires": [
             [
                 "16a2545a.a1dc5c",
@@ -706,7 +822,7 @@
         "officon": "",
         "offcolor": "",
         "x": 290,
-        "y": 580,
+        "y": 640,
         "wires": [
             [
                 "9117163c.8dd608",
@@ -723,7 +839,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 477.5,
-        "y": 565,
+        "y": 625,
         "wires": [
             [
                 "a1e3177.9693be8"
@@ -739,7 +855,7 @@
         "name": "RedisSET",
         "topic": "",
         "x": 629.5,
-        "y": 565,
+        "y": 625,
         "wires": [
             []
         ]
@@ -757,7 +873,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "x": 659.5,
-        "y": 601,
+        "y": 661,
         "wires": []
     },
     {
@@ -784,7 +900,7 @@
         "officon": "",
         "offcolor": "",
         "x": 288.5,
-        "y": 662,
+        "y": 722,
         "wires": [
             [
                 "66557a8b.215044",
@@ -801,7 +917,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 476,
-        "y": 649,
+        "y": 709,
         "wires": [
             [
                 "a1730f57.71fec"
@@ -817,7 +933,7 @@
         "name": "RedisSET",
         "topic": "",
         "x": 630,
-        "y": 649,
+        "y": 709,
         "wires": [
             []
         ]
@@ -835,7 +951,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "x": 649,
-        "y": 683,
+        "y": 743,
         "wires": []
     },
     {
@@ -846,7 +962,7 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 421,
+        "x": 521,
         "y": 362,
         "wires": [
             [
@@ -858,11 +974,11 @@
         "id": "bf5da47d.0ee758",
         "type": "function",
         "z": "33dcc03f.67613",
-        "name": "RedisKey",
-        "func": "msg.payload = ['CPUTemp']\nreturn msg;",
+        "name": "CpuTempKey",
+        "func": "msg.payload = ['os:temperature:cpu0']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 281.5,
+        "x": 342.5,
         "y": 362,
         "wires": [
             [
@@ -878,8 +994,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 367,
-        "y": 246,
+        "x": 580,
+        "y": 180,
         "wires": [
             []
         ]
@@ -889,11 +1005,11 @@
         "type": "function",
         "z": "831252f4.92bf1",
         "name": "CPUTemp",
-        "func": "var rand = Math.floor(Math.random() * 10 +30);\nmsg.payload = ['CPUTemp',rand]\nreturn msg;",
+        "func": "var rand = Math.floor(Math.random() * 10 +30);\nmsg.payload = ['os:temperature:cpu0',rand]\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 376,
-        "y": 209,
+        "x": 373,
+        "y": 180,
         "wires": [
             [
                 "9216b8e0.f348f8",
@@ -923,7 +1039,7 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 591,
+        "x": 691,
         "y": 361,
         "wires": []
     },
@@ -936,7 +1052,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 477.5,
-        "y": 601,
+        "y": 661,
         "wires": [
             [
                 "4fb971aa.107d5"
@@ -952,7 +1068,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 476.5,
-        "y": 683,
+        "y": 743,
         "wires": [
             [
                 "dc330436.4df198"
@@ -969,8 +1085,8 @@
         "createDir": false,
         "overwriteFile": "false",
         "encoding": "none",
-        "x": 610.5,
-        "y": 279,
+        "x": 790,
+        "y": 280,
         "wires": [
             []
         ]
@@ -1031,7 +1147,7 @@
             "41f6fd46.8cc0f4"
         ],
         "x": 180.5,
-        "y": 352,
+        "y": 452,
         "wires": [
             [
                 "a83a86d4.7247e8",
@@ -1051,8 +1167,8 @@
             "8adcf31f.eb84c",
             "9df3a8ae.159338"
         ],
-        "x": 291.5,
-        "y": 21,
+        "x": 355,
+        "y": 20,
         "wires": []
     },
     {
@@ -1091,7 +1207,8 @@
                 "efdfc389.aab4a",
                 "209ab1b3.31d7ee",
                 "7a21d643.3fe2a8",
-                "e49dd927.11dfa8"
+                "e49dd927.11dfa8",
+                "dd07925b.ec12f"
             ]
         ]
     },
@@ -1103,8 +1220,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 368,
-        "y": 526,
+        "x": 580,
+        "y": 494,
         "wires": [
             []
         ]
@@ -1117,8 +1234,8 @@
         "func": "msg.payload = ['Driver:authLevel','2']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 367,
-        "y": 490,
+        "x": 360,
+        "y": 494,
         "wires": [
             [
                 "ba0ada72.089378"
@@ -1133,8 +1250,8 @@
         "func": "msg.payload = ['Driver:authLevel']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 410,
-        "y": 190,
+        "x": 390,
+        "y": 228,
         "wires": [
             [
                 "d827814c.143f3"
@@ -1149,8 +1266,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 555.5,
-        "y": 189,
+        "x": 535.5,
+        "y": 227,
         "wires": [
             [
                 "23773a40.778136"
@@ -1169,8 +1286,8 @@
         "label": "Driver Authentication Level",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 740.5,
-        "y": 189,
+        "x": 720.5,
+        "y": 227,
         "wires": []
     },
     {
@@ -1178,10 +1295,10 @@
         "type": "mqtt in",
         "z": "11287ab8.c34bb5",
         "name": "DriverAuthRequest",
-        "topic": "/V1/Driver/AuthRequest/",
+        "topic": "/SysArch/V1/Driver/AuthRequest/",
         "qos": "2",
         "datatype": "auto",
-        "broker": "2cf2dec3.233862",
+        "broker": "fae0160d.22ab08",
         "x": 110,
         "y": 180,
         "wires": [
@@ -1211,11 +1328,11 @@
         "type": "mqtt out",
         "z": "11287ab8.c34bb5",
         "name": "",
-        "topic": "/V1/Driver/AuthRequest/",
+        "topic": "/SysArch/V1/Driver/AuthRequest/",
         "qos": "2",
         "retain": "",
-        "broker": "2cf2dec3.233862",
-        "x": 650,
+        "broker": "fae0160d.22ab08",
+        "x": 680,
         "y": 80,
         "wires": []
     },
@@ -1248,22 +1365,6 @@
         "outputs": 1,
         "noerr": 0,
         "x": 290,
-        "y": 80,
-        "wires": [
-            [
-                "43d0f57b.a078bc"
-            ]
-        ]
-    },
-    {
-        "id": "43d0f57b.a078bc",
-        "type": "json",
-        "z": "11287ab8.c34bb5",
-        "name": "",
-        "property": "payload",
-        "action": "str",
-        "pretty": true,
-        "x": 450,
         "y": 80,
         "wires": [
             [
@@ -1308,11 +1409,11 @@
         "type": "mqtt out",
         "z": "11287ab8.c34bb5",
         "name": "",
-        "topic": "/V1/Driver/AuthResponse/",
+        "topic": "/SysArch/V1/Driver/AuthResponse/",
         "qos": "2",
         "retain": "",
-        "broker": "2cf2dec3.233862",
-        "x": 540,
+        "broker": "fae0160d.22ab08",
+        "x": 560,
         "y": 300,
         "wires": []
     },
@@ -1356,8 +1457,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 367,
-        "y": 600,
+        "x": 580,
+        "y": 534,
         "wires": [
             []
         ]
@@ -1370,8 +1471,8 @@
         "func": "msg.payload = ['Driver:isPresent','true']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 366,
-        "y": 564,
+        "x": 360,
+        "y": 534,
         "wires": [
             [
                 "e297d7fe.64fa38"
@@ -1386,8 +1487,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 327,
-        "y": 673,
+        "x": 580,
+        "y": 574,
         "wires": [
             []
         ]
@@ -1400,8 +1501,8 @@
         "func": "msg.payload = ['Driver:authLevel','2']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 346,
-        "y": 637,
+        "x": 380,
+        "y": 574,
         "wires": [
             [
                 "be2ca0e7.ce727"
@@ -1420,41 +1521,11 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 160,
-        "y": 660,
+        "x": 200,
+        "y": 580,
         "wires": [
             [
-                "be2ca0e7.ce727"
-            ]
-        ]
-    },
-    {
-        "id": "7efa239f.cc59dc",
-        "type": "redis-command",
-        "z": "33dcc03f.67613",
-        "server": "6650949.a2e696c",
-        "command": "get",
-        "name": "RedisGET",
-        "topic": "",
-        "x": 420,
-        "y": 400,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "e4b072e6.dbd5b",
-        "type": "function",
-        "z": "33dcc03f.67613",
-        "name": "RedisKey",
-        "func": "msg.payload = ['sensors:Lidar:angles']\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 281.5,
-        "y": 400,
-        "wires": [
-            [
-                "7efa239f.cc59dc"
+                "b08df44c.6dd598"
             ]
         ]
     },
@@ -1466,8 +1537,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 420,
-        "y": 440,
+        "x": 521,
+        "y": 480,
         "wires": [
             []
         ]
@@ -1476,16 +1547,410 @@
         "id": "fac0d8eb.a0eb88",
         "type": "function",
         "z": "33dcc03f.67613",
-        "name": "RedisKey",
+        "name": "LidarDistancesKey",
         "func": "msg.payload = ['sensors:Lidar:distances']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 281.5,
-        "y": 440,
+        "x": 353.5,
+        "y": 480,
         "wires": [
             [
                 "efe526c1.ab8c08"
             ]
         ]
+    },
+    {
+        "id": "e1d97fac.f93ff",
+        "type": "redis-command",
+        "z": "831252f4.92bf1",
+        "server": "6650949.a2e696c",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 580,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c02acf5d.54118",
+        "type": "function",
+        "z": "831252f4.92bf1",
+        "name": "JitterTimestamp",
+        "func": "var timestamp = new Date().toISOString();\nmsg.payload = ['os:thread:collionControll:JitterTimestamp',timestamp]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 384,
+        "y": 140,
+        "wires": [
+            [
+                "e1d97fac.f93ff"
+            ]
+        ]
+    },
+    {
+        "id": "51abdc74.ce91f4",
+        "type": "redis-command",
+        "z": "831252f4.92bf1",
+        "server": "6650949.a2e696c",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 580,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "aae9c025.af305",
+        "type": "function",
+        "z": "831252f4.92bf1",
+        "name": "CPUTempTimestamp",
+        "func": "// https://stackoverflow.com/questions/2573521/how-do-i-output-an-iso-8601-formatted-string-in-javascript\nvar timestamp = new Date().toISOString();\nmsg.payload = ['os:temperature:timestamp',timestamp]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 403,
+        "y": 220,
+        "wires": [
+            [
+                "51abdc74.ce91f4"
+            ]
+        ]
+    },
+    {
+        "id": "9dd1cb92.1820d8",
+        "type": "redis-command",
+        "z": "831252f4.92bf1",
+        "server": "6650949.a2e696c",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 580,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d3ab1fb0.11697",
+        "type": "function",
+        "z": "831252f4.92bf1",
+        "name": "CPULoad",
+        "func": "var rand = Math.floor(Math.random() * 20 +30);\nmsg.payload = ['os:top:cpu_idle',rand]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 363,
+        "y": 260,
+        "wires": [
+            [
+                "9dd1cb92.1820d8"
+            ]
+        ]
+    },
+    {
+        "id": "5a252e29.6595",
+        "type": "redis-command",
+        "z": "831252f4.92bf1",
+        "server": "6650949.a2e696c",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 580,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b40f127b.4ebf4",
+        "type": "function",
+        "z": "831252f4.92bf1",
+        "name": "CPUactiveCores",
+        "func": "msg.payload = ['CPU:CPUactiveCores','4']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 383,
+        "y": 300,
+        "wires": [
+            [
+                "5a252e29.6595"
+            ]
+        ]
+    },
+    {
+        "id": "607ee992.9266f8",
+        "type": "redis-command",
+        "z": "831252f4.92bf1",
+        "server": "6650949.a2e696c",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 580,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d217821f.75c82",
+        "type": "function",
+        "z": "831252f4.92bf1",
+        "name": "LidarDistances",
+        "func": "var rand = Math.floor(Math.random() * 20 +10);\nvar dataArray = Array.from({length: 8}, () => Math.floor(Math.random() * 40));\nvar data = {\n    datasets: [{\n        data: [rand+15, \n            rand+23, \n            rand+79,\n            rand+83,\n            rand+63,\n            rand+53,\n            rand+51,\n            rand+28]\n    }],\n\n    // These labels appear in the legend and in the tooltips when hovering different arcs\n    labels: [\n        '0',\n        '45',\n        '90',\n        '135',\n        '180',\n        '225',\n        '270',\n        '315',\n    ]\n};\nmsg.payload = ['sensors:Lidar:distances',data]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 220,
+        "y": 340,
+        "wires": [
+            [
+                "607ee992.9266f8"
+            ]
+        ]
+    },
+    {
+        "id": "9c4b246.1e9dcd8",
+        "type": "redis-command",
+        "z": "33dcc03f.67613",
+        "server": "6650949.a2e696c",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 521,
+        "y": 400,
+        "wires": [
+            [
+                "f5ad0ae6.6f0688"
+            ]
+        ]
+    },
+    {
+        "id": "eca7a94d.4bb7b8",
+        "type": "function",
+        "z": "33dcc03f.67613",
+        "name": "CpuLoadKey",
+        "func": "msg.payload = ['os:top:cpu_idle']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 333.5,
+        "y": 400,
+        "wires": [
+            [
+                "9c4b246.1e9dcd8"
+            ]
+        ]
+    },
+    {
+        "id": "f5ad0ae6.6f0688",
+        "type": "ui_chart",
+        "z": "33dcc03f.67613",
+        "name": "CpuLoadCChart",
+        "group": "79604c96.43be94",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "CPU Load in %",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "ss",
+        "interpolate": "linear",
+        "nodata": "No Data is available for now",
+        "dot": true,
+        "ymin": "0",
+        "ymax": "100",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 702,
+        "y": 399,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "24c92e4f.e87982",
+        "type": "ui_chart",
+        "z": "33dcc03f.67613",
+        "name": "LidarPolarChart",
+        "group": "8ad1b592.c3d668",
+        "order": 2,
+        "width": "12",
+        "height": "6",
+        "label": "Distnaces in cm",
+        "chartType": "polar-area",
+        "legend": "true",
+        "xformat": "ss",
+        "interpolate": "linear",
+        "nodata": "Distances not available",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 701,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7b147d91.a38e94",
+        "type": "function",
+        "z": "33dcc03f.67613",
+        "name": "ChartData",
+        "func": "\nvar dataArray = Array.from({length: 8}, () => Math.floor(Math.random() * 40));\nvar m = {};\n\nm.labels = ['0',\n        '45',\n        '90',\n        '135',\n        '180',\n        '225',\n        '270',\n        '315'];\nm.data = [dataArray];\nm.series = [\n        '0',\n        '45',\n        '90',\n        '135',\n        '180',\n        '225',\n        '270',\n        '315'];\nreturn {payload:[m],topic:msg.topic};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 331,
+        "y": 520,
+        "wires": [
+            [
+                "24c92e4f.e87982"
+            ]
+        ]
+    },
+    {
+        "id": "42bc209a.35b81",
+        "type": "chartjs-polar",
+        "z": "33dcc03f.67613",
+        "name": "Lidar",
+        "path": "Lidar",
+        "charttitle": "Lidar Distances",
+        "xaxis": "Distances in cm",
+        "yaxis": "Angles in Degree",
+        "x": 510,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1cce86ac.070779",
+        "type": "function",
+        "z": "33dcc03f.67613",
+        "name": "ChartJsData",
+        "func": "\nif(msg.topic == 'colors'){\n    var colorArray = msg.payload;\n}\nvar dataArray = Array.from({length: 8}, () => Math.floor(Math.random() * 40));\n\nvar dataset = new Array(8);\nfor (var i = 0; i < 8;i++) {\n    dataset[i] = {};\n    dataset[i].x = i.toString();\n    dataset[i].y = dataArray[i];\n}\nmsg.payload = {\n    \"channel\": \"Population\",\n    \"color\": flow.get('randomColorsArray'),\n    \"dataset\": dataset\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 331,
+        "y": 440,
+        "wires": [
+            [
+                "42bc209a.35b81"
+            ]
+        ]
+    },
+    {
+        "id": "dd07925b.ec12f",
+        "type": "function",
+        "z": "33dcc03f.67613",
+        "name": "Setup",
+        "func": "function getRandomColor() {\n  var letters = '0123456789ABCDEF';\n  var color = '#';\n  for (var i = 0; i < 6; i++) {\n    color += letters[Math.floor(Math.random() * 16)];\n  }\n  return color;\n}\n// \"#\"+((1<<24)*Math.random()|0).toString(16)\nflow.set(\"randomColorsArray\",Array.from({length: 8}, () => getRandomColor()))\n\nflow.set('port','1881');\nflow.set('lidarUrl',\"http://0.0.0.0:1881/Lidar\")\n\nmsg.topic = 'colors'; \nmsg.payload = flow.get('lidarUrl');\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 390,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5d609ee0.6351a",
+        "type": "ui_template",
+        "z": "33dcc03f.67613",
+        "group": "8ad1b592.c3d668",
+        "name": "OpenLidarWindow",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "format": "<script>\n    var redirect = function(){\nwindow.open(\"http://0.0.0.0:1881/Lidar\",'_blank');\n}\n</script>\n\n<button onclick=\"redirect()\">Open Lidar plot</button>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 670,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb3e61da.3da63",
+        "type": "function",
+        "z": "33dcc03f.67613",
+        "name": "CPUactiveCores",
+        "func": "msg.payload = ['CPU:CPUactiveCores']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 341,
+        "y": 560,
+        "wires": [
+            [
+                "edf9ed1e.4de35"
+            ]
+        ]
+    },
+    {
+        "id": "edf9ed1e.4de35",
+        "type": "redis-command",
+        "z": "33dcc03f.67613",
+        "server": "6650949.a2e696c",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 521,
+        "y": 560,
+        "wires": [
+            [
+                "1c58bc96.b51e03"
+            ]
+        ]
+    },
+    {
+        "id": "1c58bc96.b51e03",
+        "type": "ui_text",
+        "z": "33dcc03f.67613",
+        "group": "79604c96.43be94",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "CpuActiveCoresTxt",
+        "label": "CPU Active Cores :",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 711,
+        "y": 560,
+        "wires": []
     }
 ]

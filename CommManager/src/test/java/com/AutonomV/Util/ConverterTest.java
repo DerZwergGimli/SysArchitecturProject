@@ -18,7 +18,7 @@ public class ConverterTest {
 
     @Before
     public void setUp() throws Exception {
-        this.driver = new Driver(2334, "pojo1FirstName", "pojo1LastName", 345);
+        this.driver = new Driver("2334", "pojo1FirstName", "pojo1LastName", "345");
 
         jsonString = "{ \n" +
                 " \"id\" : \"2334\",                    \n" +

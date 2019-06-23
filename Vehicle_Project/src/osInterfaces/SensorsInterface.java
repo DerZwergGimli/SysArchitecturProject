@@ -30,11 +30,11 @@ public class SensorsInterface implements ISensorsInterface {
 		if (enabled) {
 
 			ProcessBuilder processBuilder = new ProcessBuilder();
-			String bashString = "sensors | grep 'Core 0'";
+			String bashString = "cat /sys/class/thermal/thermal_zone0/temp ";
 
 			processBuilder.command("bash", "-c", bashString);
 
-			String[] lines = new String[4];
+			String[] lines = new String[1];
 
 			try {
 				Process process = processBuilder.start();
@@ -52,9 +52,8 @@ public class SensorsInterface implements ISensorsInterface {
 				int exitCode = process.waitFor();
 
 				if (exitCode == 0) {
-					String test = lines[0];
-					String[] core = test.split("[ ]+");
-					cpu0_temperature = core[2].substring(0, core[2].length() - 2);
+					float temperature = Float.valueOf(lines[0]) / 1000;
+					cpu0_temperature = String.valueOf(temperature);
 
 					generateTimestamp();
 				}
@@ -91,6 +90,7 @@ public class SensorsInterface implements ISensorsInterface {
 			properties.load(input);
 
 			enabled = Boolean.valueOf(properties.getProperty("sensorsInterface.enabled"));
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
 
 		} catch (Exception ex) {
 			System.out.println("Error reading config file!");

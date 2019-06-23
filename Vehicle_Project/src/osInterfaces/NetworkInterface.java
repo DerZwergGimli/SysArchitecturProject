@@ -158,6 +158,7 @@ public class NetworkInterface implements INetworkInterface {
 
 			enabled = Boolean.valueOf(properties.getProperty("networkInterface.enabled"));
 			networkInterfaceName = properties.getProperty("networkInterface.name");
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
 
 		} catch (Exception ex) {
 			System.out.println("Error reading config file!");

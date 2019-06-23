@@ -48,8 +48,6 @@ public class InterruptableWriterDB implements Interruptible {
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
 		while (management.isDatabaseWriterThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 
-			System.out.println("Hello from Writer");
-
 			writeQueueDataToDatabase();
 			writeNetworkDataToDatabase();
 			writeOSSensorsToDatabase();

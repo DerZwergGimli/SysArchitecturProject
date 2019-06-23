@@ -201,6 +201,7 @@ public class TopInterface implements ITopInterface {
 			properties.load(input);
 
 			enabled = Boolean.valueOf(properties.getProperty("topInterface.enabled"));
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
 
 		} catch (Exception ex) {
 			System.out.println("Error reading config file!");

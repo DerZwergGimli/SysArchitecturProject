@@ -1,9 +1,12 @@
 package gpioInterface.lidar;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.TimeZone;
 
 import redisInterface.IRedisDBInterface;
@@ -16,6 +19,7 @@ public class LidarSensor implements ILidarSensor {
 	private int[] distances = new int[360];
 
 	public LidarSensor() {
+		readPropertiesFile();
 		generateAngels();
 	}
 
@@ -105,6 +109,19 @@ public class LidarSensor implements ILidarSensor {
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'", Locale.GERMANY);
 		dateFormat.setTimeZone(TimeZone.getTimeZone("CET"));
 		timestamp = dateFormat.format(new Date());
+	}
+
+	private void readPropertiesFile() {
+		try (InputStream input = new FileInputStream("config.properties")) {
+			Properties properties = new Properties();
+			properties.load(input);
+
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
+
+		} catch (Exception ex) {
+			System.out.println("Error reading config file!");
+
+		}
 	}
 
 }

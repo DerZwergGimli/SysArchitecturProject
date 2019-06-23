@@ -136,6 +136,7 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 			backLeftMinDistance = Integer.valueOf(properties.getProperty("collisonAvoidance.BackLeft_MinDistance"));
 			backRightMinDistance = Integer.valueOf(properties.getProperty("collisonAvoidance.BackRight_MinDistance"));
 
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
 		} catch (Exception ex) {
 			System.out.println("Error reading config file!");
 
@@ -144,7 +145,7 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 
 	@Override
 	public void writeToDB(IRedisDBInterface redis) {
-		String parentTopic = "collsionAvoidance:status:";
+		String parentTopic = "sensors:collsionAvoidance:status:";
 
 		redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
 		redis.setAndExpire(parentTopic + "front", String.valueOf(frontStaus), expireTimeRedis);

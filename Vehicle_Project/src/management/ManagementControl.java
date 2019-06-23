@@ -10,6 +10,7 @@ import redisInterface.IRedisDBInterface;
 
 public class ManagementControl implements IManagementControl {
 	private Logger logger;
+	private int expireTimeRedis;
 
 	private static String parentTopic = "management:threads:";
 	private Boolean clearConsole;
@@ -115,11 +116,16 @@ public class ManagementControl implements IManagementControl {
 	@Override
 	public void writeEntriesToDatabase(IRedisDBInterface redis) {
 		if (exposeControlToDatabase == true) {
-			redis.set(parentTopic + "managementThreadRunnable", managementThreadRunnable.toString());
-			redis.set(parentTopic + "collisonAvoidanceThreadRunnable", collisionAvoidanceThreadRunnable.toString());
-			redis.set(parentTopic + "lidarDataCollectionThreadRunnable", lidarDataCollectionThreadRunnable.toString());
-			redis.set(parentTopic + "databaseReaderThreadRunnable", databaseReaderThreadRunnable.toString());
-			redis.set(parentTopic + "databaseWriterThreadRunnable", databaseWriterThreadRunnable.toString());
+			redis.setAndExpire(parentTopic + "managementThreadRunnable", managementThreadRunnable.toString(),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + "collisonAvoidanceThreadRunnable",
+					collisionAvoidanceThreadRunnable.toString(), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "lidarDataCollectionThreadRunnable",
+					lidarDataCollectionThreadRunnable.toString(), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "databaseReaderThreadRunnable", databaseReaderThreadRunnable.toString(),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + "databaseWriterThreadRunnable", databaseWriterThreadRunnable.toString(),
+					expireTimeRedis);
 
 		}
 
@@ -164,6 +170,8 @@ public class ManagementControl implements IManagementControl {
 			this.clearConsole = Boolean.parseBoolean(properties.getProperty("console.clearScreen", "false"));
 			this.showSatusInConsole = Boolean
 					.parseBoolean(properties.getProperty("console.showStatusInConsole", "false"));
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
+
 		} catch (Exception ex) {
 			logger.log(Level.SEVERE, "Error while trying to read config of RedisDB", ex);
 

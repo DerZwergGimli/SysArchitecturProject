@@ -2,6 +2,12 @@ package management;
 
 import redisInterface.IRedisDBInterface;
 
+/**
+ * This interface is used to manage the whole application
+ * 
+ * @author yannick
+ *
+ */
 public interface IManagementControl {
 	// Clear Console
 	public Boolean isClearConsoleActive();

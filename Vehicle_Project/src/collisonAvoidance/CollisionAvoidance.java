@@ -12,10 +12,17 @@ import java.util.TimeZone;
 import gpioInterface.lidar.LidarSensor;
 import redisInterface.IRedisDBInterface;
 
+/**
+ * Implementation of the collisionAvoidance interface
+ * 
+ * @author yannick
+ *
+ */
 public class CollisionAvoidance implements ICollisonAvoidance {
 	private int expireTimeRedis = 100;
 	private String timestamp;
 	private LidarSensor lidarSensor;
+	private float weighting;
 
 	private int frontMinDistance;
 	private int frontLeftMinDistance;
@@ -26,15 +33,20 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 	private int backLeftMinDistance;
 	private int backRightMinDistance;
 
-	private ECollisonAvoidanceStaus frontStaus;
-	private ECollisonAvoidanceStaus frontLeftStatus;
-	private ECollisonAvoidanceStaus frontRightStaus;
-	private ECollisonAvoidanceStaus leftStatus;
-	private ECollisonAvoidanceStaus rightStatus;
-	private ECollisonAvoidanceStaus backStatus;
-	private ECollisonAvoidanceStaus backLeftStatus;
-	private ECollisonAvoidanceStaus backRightStatus;
+	private CollisionStatus frontStaus;
+	private CollisionStatus frontLeftStatus;
+	private CollisionStatus frontRightStaus;
+	private CollisionStatus leftStatus;
+	private CollisionStatus rightStatus;
+	private CollisionStatus backStatus;
+	private CollisionStatus backLeftStatus;
+	private CollisionStatus backRightStatus;
 
+	/**
+	 * Constructor of the collionAvoidance class
+	 * 
+	 * @param lidarSensor
+	 */
 	public CollisionAvoidance(LidarSensor lidarSensor) {
 		this.lidarSensor = lidarSensor;
 		readPropertiesFile();
@@ -55,46 +67,46 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 	}
 
 	@Override
-	public ECollisonAvoidanceStaus checkFront() {
+	public CollisionStatus checkFront() {
 		return check(330, 30, frontMinDistance);
 	}
 
 	@Override
-	public ECollisonAvoidanceStaus checkFrontRight() {
+	public CollisionStatus checkFrontRight() {
 		return check(30, 60, frontRightMinDistance);
 	}
 
 	@Override
-	public ECollisonAvoidanceStaus checkFrontLeft() {
+	public CollisionStatus checkFrontLeft() {
 		return check(300, 330, frontLeftMinDistance);
 	}
 
 	@Override
-	public ECollisonAvoidanceStaus checkLeft() {
+	public CollisionStatus checkLeft() {
 		return check(240, 300, leftMinDistance);
 	}
 
 	@Override
-	public ECollisonAvoidanceStaus checkRight() {
+	public CollisionStatus checkRight() {
 		return check(60, 120, rightMinDistance);
 	}
 
 	@Override
-	public ECollisonAvoidanceStaus checkBack() {
+	public CollisionStatus checkBack() {
 		return check(150, 210, backMinDistance);
 	}
 
 	@Override
-	public ECollisonAvoidanceStaus checkBackLeft() {
+	public CollisionStatus checkBackLeft() {
 		return check(210, 240, backLeftMinDistance);
 	}
 
 	@Override
-	public ECollisonAvoidanceStaus checkBackRight() {
+	public CollisionStatus checkBackRight() {
 		return check(120, 150, backRightMinDistance);
 	}
 
-	private ECollisonAvoidanceStaus check(int startAngle, int StopAngle, int minDistance) {
+	private CollisionStatus check(int startAngle, int StopAngle, int minDistance) {
 		int countOK = 0;
 		int countNOK = 0;
 
@@ -107,11 +119,14 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 				countNOK++;
 			}
 		}
-		if (countNOK == 0) {
-			return ECollisonAvoidanceStaus.ok;
+
+		CollisionStatus cStatus = new CollisionStatus(countOK, countNOK);
+		if (cStatus.getRatio() > 1) {
+			cStatus.setStatus(ECollisonAvoidanceStaus.ok);
 		} else {
-			return ECollisonAvoidanceStaus.objectDetected;
+			cStatus.setStatus(ECollisonAvoidanceStaus.objectDetected);
 		}
+		return cStatus;
 	}
 
 	private void generateTimestamp() {
@@ -137,6 +152,8 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 			backRightMinDistance = Integer.valueOf(properties.getProperty("collisonAvoidance.BackRight_MinDistance"));
 
 			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
+			weighting = Float.valueOf(properties.getProperty("collisonAvoidance.weighting"));
+
 		} catch (Exception ex) {
 			System.out.println("Error reading config file!");
 
@@ -148,14 +165,14 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 		String parentTopic = "sensors:collsionAvoidance:status:";
 
 		redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
-		redis.setAndExpire(parentTopic + "front", String.valueOf(frontStaus), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "frontLeft", String.valueOf(frontLeftStatus), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "frontRight", String.valueOf(frontRightStaus), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "left", String.valueOf(leftStatus), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "right", String.valueOf(rightStatus), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "back", String.valueOf(backStatus), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "backLeft", String.valueOf(backLeftStatus), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "backRight", String.valueOf(backRightStatus), expireTimeRedis);
+		redis.setAndExpire(parentTopic + "front", frontStaus.convertToString(), expireTimeRedis);
+		redis.setAndExpire(parentTopic + "frontLeft", frontLeftStatus.convertToString(), expireTimeRedis);
+		redis.setAndExpire(parentTopic + "frontRight", frontRightStaus.convertToString(), expireTimeRedis);
+		redis.setAndExpire(parentTopic + "left", leftStatus.convertToString(), expireTimeRedis);
+		redis.setAndExpire(parentTopic + "right", rightStatus.convertToString(), expireTimeRedis);
+		redis.setAndExpire(parentTopic + "back", backStatus.convertToString(), expireTimeRedis);
+		redis.setAndExpire(parentTopic + "backLeft", backLeftStatus.convertToString(), expireTimeRedis);
+		redis.setAndExpire(parentTopic + "backRight", backRightStatus.convertToString(), expireTimeRedis);
 	}
 
 }

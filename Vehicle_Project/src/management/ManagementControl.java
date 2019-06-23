@@ -8,6 +8,12 @@ import java.util.logging.Logger;
 
 import redisInterface.IRedisDBInterface;
 
+/**
+ * This contrete class is used to control/manage the whole application
+ * 
+ * @author yannick
+ *
+ */
 public class ManagementControl implements IManagementControl {
 	private Logger logger;
 	private int expireTimeRedis;
@@ -22,6 +28,11 @@ public class ManagementControl implements IManagementControl {
 	private Boolean exposeControlToDatabase;
 	private Boolean showSatusInConsole;
 
+	/**
+	 * This is the constructor of the manager
+	 * 
+	 * @param logger
+	 */
 	public ManagementControl(Logger logger) {
 		this.logger = logger;
 	}

@@ -7,6 +7,12 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Properties;
 
+/**
+ * Implementation of a ILidarInterface used to control a lidar-sensor on an RPI
+ * 
+ * @author yannick
+ *
+ */
 public class LidarInterface implements ILidarInterface {
 
 	private Boolean lidarEnabled;
@@ -15,9 +21,11 @@ public class LidarInterface implements ILidarInterface {
 	private String lidarStopRotationCommand;
 	private String lidarScanCommand;
 
+	/**
+	 * The constructor for a LidarInterface
+	 */
 	public LidarInterface() {
 		readPropertiesFile();
-		System.out.println();
 	}
 
 	@Override

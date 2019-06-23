@@ -23,13 +23,19 @@ import redisInterface.RedisDBInterface;
 import threads.queue.IQCollisonBuffer;
 import timing.IStopWatch;
 
-public class InterruptableWriterDB implements Interruptible {
+/**
+ * This is a Interruptible for the WriterDB-Thread
+ * 
+ * @author yannick
+ *
+ */
+public class InterruptibleWriterDB implements Interruptible {
 	private Logger logger;
 	private IManagementControl management;
 	private IRedisDBInterface redis;
 	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
-	public InterruptableWriterDB(Logger logger, IManagementControl management,
+	public InterruptibleWriterDB(Logger logger, IManagementControl management,
 			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.logger = logger;
 		this.management = management;

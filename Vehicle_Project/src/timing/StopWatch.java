@@ -8,15 +8,23 @@ import java.util.TimeZone;
 
 import redisInterface.IRedisDBInterface;
 
+/**
+ * This is the implementation of a stopwatch
+ * 
+ * @author yannick
+ *
+ */
 public class StopWatch implements IStopWatch {
 
 	private int expireTimeRedis = 100;
-
 	private String timestamp;
 	private long startTimeNano;
 	private long endTimeNamo;
 	private long diffTimeNano;
 
+	/**
+	 * The constructor of a StopWatch Object
+	 */
 	public StopWatch() {
 	}
 
@@ -39,7 +47,7 @@ public class StopWatch implements IStopWatch {
 
 	@Override
 	public void stopAndCalulate() {
-		endTimeNamo = System.nanoTime();
+		stop();
 		calculateDuration();
 	}
 

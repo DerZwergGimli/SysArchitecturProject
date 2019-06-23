@@ -17,18 +17,34 @@ import gpioInterface.lidar.ILidarSensor;
 import management.IManagementControl;
 import threads.handler.MissCollisonAvoidance;
 import threads.handler.OverrunCollisonAvoidance;
-import threads.interruptible.InterruptableCollisionAvoidance;
+import threads.interruptible.InterruptibleCollisionAvoidance;
 import threads.queue.IQCollisonBuffer;
 
+/**
+ * This is a RealtimeThread used for checking periodically for a
+ * collision/objects
+ * 
+ * @author yannick
+ *
+ */
 public class TCollisionAvoidance extends RealtimeThread implements IHandableThread {
 	private volatile Logger logger;
 	private IManagementControl management;
 	private volatile OverrunCollisonAvoidance overrunHandlerCollisionAvoidance;
-	MissCollisonAvoidance missHandlerCollisionAvoidance;
-	// ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
-	ArrayBlockingQueue<ILidarSensor> qLidarSensor;
-	ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
+	private MissCollisonAvoidance missHandlerCollisionAvoidance;
 
+	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
+
+	/**
+	 * Constructor for the CollisionAvoidance RealtimeThread
+	 * 
+	 * @param logger
+	 * @param management
+	 * @param missHandlerCollisionAvoidance
+	 * @param qLidarSensor
+	 * @param qCollisonControl
+	 */
 	public TCollisionAvoidance(Logger logger, IManagementControl management,
 			MissCollisonAvoidance missHandlerCollisionAvoidance, ArrayBlockingQueue<ILidarSensor> qLidarSensor,
 			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
@@ -67,7 +83,7 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 			logger.info("Creating InterruptableCollisionAvoidance");
 			AsynchronouslyInterruptedException asInterruptExeption = new AsynchronouslyInterruptedException();
 			missHandlerCollisionAvoidance.setInterruptExeption(asInterruptExeption);
-			InterruptableCollisionAvoidance inCollisionAvoidance = new InterruptableCollisionAvoidance(logger,
+			InterruptibleCollisionAvoidance inCollisionAvoidance = new InterruptibleCollisionAvoidance(logger,
 					management, qLidarSensor, qCollisonControl);
 			asInterruptExeption.doInterruptible(inCollisionAvoidance);
 

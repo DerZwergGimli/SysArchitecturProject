@@ -2,25 +2,79 @@ package collisonAvoidance;
 
 import redisInterface.IRedisDBInterface;
 
+/**
+ * The interface for the collionAvoidance
+ * 
+ * @author yannick
+ *
+ */
 public interface ICollisonAvoidance {
 
+	/**
+	 * Will check all present sections
+	 */
 	public void checkAllSections();
 
-	public ECollisonAvoidanceStaus checkFront();
+	/**
+	 * Will check if there is a object in front
+	 * 
+	 * @return
+	 */
+	public CollisionStatus checkFront();
 
-	public ECollisonAvoidanceStaus checkFrontRight();
+	/**
+	 * Will check if there is a object on front-right
+	 * 
+	 * @return
+	 */
+	public CollisionStatus checkFrontRight();
 
-	public ECollisonAvoidanceStaus checkFrontLeft();
+	/**
+	 * Will check if there is a object on front-left
+	 * 
+	 * @return
+	 */
+	public CollisionStatus checkFrontLeft();
 
-	public ECollisonAvoidanceStaus checkLeft();
+	/**
+	 * Will check if there is a object on left
+	 * 
+	 * @return
+	 */
+	public CollisionStatus checkLeft();
 
-	public ECollisonAvoidanceStaus checkRight();
+	/**
+	 * Will check if there is a object on right
+	 * 
+	 * @return
+	 */
+	public CollisionStatus checkRight();
 
-	public ECollisonAvoidanceStaus checkBack();
+	/**
+	 * Will check if there is a object on back
+	 * 
+	 * @return
+	 */
+	public CollisionStatus checkBack();
 
-	public ECollisonAvoidanceStaus checkBackLeft();
+	/**
+	 * Will check if there is a object on back-left
+	 * 
+	 * @return
+	 */
+	public CollisionStatus checkBackLeft();
 
-	public ECollisonAvoidanceStaus checkBackRight();
+	/**
+	 * Will check if there is a object in back-right
+	 * 
+	 * @return
+	 */
+	public CollisionStatus checkBackRight();
 
+	/**
+	 * Will write all entries into the redis database
+	 * 
+	 * @param redis
+	 */
 	public void writeToDB(IRedisDBInterface redis);
 }

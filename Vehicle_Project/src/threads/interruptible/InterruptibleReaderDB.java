@@ -12,13 +12,19 @@ import management.IManagementControl;
 import redisInterface.IRedisDBInterface;
 import redisInterface.RedisDBInterface;
 
-public class InterruptableReaderDB implements Interruptible {
+/**
+ * This is a Interruptible for the ReaderDB-Thread
+ * 
+ * @author yannick
+ *
+ */
+public class InterruptibleReaderDB implements Interruptible {
 	private volatile Logger logger;
 	private volatile IManagementControl management;
 	private volatile LTMemory ma = null;
 	private volatile IRedisDBInterface redis;
 
-	public InterruptableReaderDB(Logger logger, IManagementControl management) {
+	public InterruptibleReaderDB(Logger logger, IManagementControl management) {
 		this.logger = logger;
 		this.management = management;
 	}

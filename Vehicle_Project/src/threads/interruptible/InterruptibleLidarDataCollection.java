@@ -13,13 +13,19 @@ import gpioInterface.lidar.ILidarSensor;
 import gpioInterface.lidar.LidarSensor;
 import management.IManagementControl;
 
-public class InterruptableLidarDataCollection implements Interruptible {
+/**
+ * This is a Interruptible for the LidarDataCollection-Thread
+ * 
+ * @author yannick
+ *
+ */
+public class InterruptibleLidarDataCollection implements Interruptible {
 	private Logger logger;
 	private IManagementControl management;
 	private ILidarInterface lidarController;
 	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
 
-	public InterruptableLidarDataCollection(Logger logger, IManagementControl management,
+	public InterruptibleLidarDataCollection(Logger logger, IManagementControl management,
 			ILidarInterface lidarController, ArrayBlockingQueue<ILidarSensor> qLidarSensor) {
 		this.logger = logger;
 		this.management = management;

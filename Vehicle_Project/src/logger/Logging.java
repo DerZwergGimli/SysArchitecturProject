@@ -13,6 +13,12 @@ import java.util.logging.SimpleFormatter;
 
 import main.Main;
 
+/**
+ * This is the logging class to log some information to the console and file
+ * 
+ * @author yannick
+ *
+ */
 public class Logging {
 	/**
 	 * Sets the up logger.
@@ -26,6 +32,11 @@ public class Logging {
 	private static Boolean appendFiles;
 	private static Level debugLevel;
 
+	/**
+	 * This will create the logger-instance
+	 * 
+	 * @return
+	 */
 	public static Logger setupLogger() {
 		LOGGER = Logger.getLogger(Main.class.getName());
 		FileHandler fh;

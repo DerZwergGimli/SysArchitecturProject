@@ -18,6 +18,13 @@ import threads.handler.MissCollisonAvoidance;
 import threads.handler.MissLidarDataCollection;
 import threads.queue.IQCollisonBuffer;
 
+/**
+ * This RealtimeThread is used to control the application using
+ * ManagementControl
+ * 
+ * @author yannick
+ *
+ */
 public class Manager extends RealtimeThread {
 
 	private Logger logger;
@@ -35,6 +42,11 @@ public class Manager extends RealtimeThread {
 	private TWriterDB threadWriterDB;
 	private TReaderDB threadReaderDB;
 
+	/**
+	 * This is the constructor for a manager
+	 * 
+	 * @param logger
+	 */
 	public Manager(Logger logger) {
 		this.logger = logger;
 		setName("ManagerThread");
@@ -55,6 +67,9 @@ public class Manager extends RealtimeThread {
 		manage();
 	}
 
+	/**
+	 * This needs to be called to manage the application
+	 */
 	public void manage() {
 		management.printAll();
 
@@ -85,6 +100,7 @@ public class Manager extends RealtimeThread {
 			management.makeLidarDataCollectionThreadUnrunnable();
 			management.makeDatabaseWriterThreadUnrunnable();
 			management.makeDatabaseReaderThreadUnrunnable();
+			stopLidarRotaion();
 
 			try {
 				threadCollisionAvoidance.join();
@@ -102,7 +118,7 @@ public class Manager extends RealtimeThread {
 		}
 	}
 
-	public void manageCollisonAvoidanceThread() {
+	private void manageCollisonAvoidanceThread() {
 		if (null == threadCollisionAvoidance && management.isCollisonAvoidanceThreadRunnable()) {
 			missCollisonAvoidance = new MissCollisonAvoidance(logger);
 			threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance, qLidarSensor,
@@ -138,7 +154,7 @@ public class Manager extends RealtimeThread {
 
 	}
 
-	public void manageLidarDataCollectionThread() {
+	private void manageLidarDataCollectionThread() {
 
 		if (null == threadLidarDataCollection && management.isLidarDataCollectionThreadRunnable()) {
 
@@ -178,7 +194,7 @@ public class Manager extends RealtimeThread {
 
 	}
 
-	public void manageDatabaseWriterThread() {
+	private void manageDatabaseWriterThread() {
 		if (null == threadWriterDB && management.isDatabaseWriterThreadRunnable()) {
 			threadWriterDB = new TWriterDB(logger, management, qCollisonControl);
 		}
@@ -207,7 +223,7 @@ public class Manager extends RealtimeThread {
 		}
 	}
 
-	public void manageDatabaseReaderThread() {
+	private void manageDatabaseReaderThread() {
 		if (null == threadReaderDB && management.isDatabaseReaderThreadRunnable()) {
 			threadReaderDB = new TReaderDB(logger, management);
 		}
@@ -236,6 +252,9 @@ public class Manager extends RealtimeThread {
 
 	}
 
+	/**
+	 * This method can be used to clear the console screen
+	 */
 	public void clearScreen() {
 		if (management.isClearConsoleActive()) {
 			System.out.print("\033[H\033[2J");

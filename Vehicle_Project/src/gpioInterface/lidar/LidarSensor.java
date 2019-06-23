@@ -11,6 +11,13 @@ import java.util.TimeZone;
 
 import redisInterface.IRedisDBInterface;
 
+/**
+ * Implementation of an ILidarSensor used to store and handle data of a
+ * lidar-sensor
+ * 
+ * @author yannick
+ *
+ */
 public class LidarSensor implements ILidarSensor {
 	int expireTimeRedis = 100;
 
@@ -18,6 +25,9 @@ public class LidarSensor implements ILidarSensor {
 	private int[] angles = new int[360];
 	private int[] distances = new int[360];
 
+	/**
+	 * The constructor of a lidar-sensor-object
+	 */
 	public LidarSensor() {
 		readPropertiesFile();
 		generateAngels();

@@ -19,14 +19,28 @@ import threads.queue.QCollisonBuffer;
 import timing.IStopWatch;
 import timing.StopWatch;
 
-public class InterruptableCollisionAvoidance implements Interruptible {
+/**
+ * This is a Interruptible for the CollisionAvoidance-Thread
+ * 
+ * @author yannick
+ *
+ */
+public class InterruptibleCollisionAvoidance implements Interruptible {
 
 	private Logger logger;
 	private IManagementControl management;
 	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
 	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
-	public InterruptableCollisionAvoidance(Logger logger, IManagementControl managemnt,
+	/**
+	 * This is the constructor for a Interruptible for a CollisionAvoidance-Thread
+	 * 
+	 * @param logger
+	 * @param managemnt
+	 * @param qLidarSensor
+	 * @param qCollisonControl
+	 */
+	public InterruptibleCollisionAvoidance(Logger logger, IManagementControl managemnt,
 			ArrayBlockingQueue<ILidarSensor> qLidarSensor, ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.logger = logger;
 		this.management = managemnt;

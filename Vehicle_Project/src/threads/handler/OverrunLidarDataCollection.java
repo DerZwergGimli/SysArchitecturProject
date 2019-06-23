@@ -8,8 +8,19 @@ import javax.realtime.RealtimeThread;
 import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 
+/**
+ * Concrete OverrunHandler for the lidarDataCollection
+ * 
+ * @author yannick
+ *
+ */
 public class OverrunLidarDataCollection extends AsyncEventHandler implements IOverrunHandler {
 
+	/**
+	 * Constructor for a OverrunHandler for lidarDataCollection
+	 * 
+	 * @param logger
+	 */
 	public OverrunLidarDataCollection(Logger logger) {
 		this.logger = logger;
 	}

@@ -8,8 +8,19 @@ import javax.realtime.RealtimeThread;
 import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 
+/**
+ * Concrete OverrunHandler for the collionAvoidance
+ * 
+ * @author yannick
+ *
+ */
 public class OverrunCollisonAvoidance extends AsyncEventHandler implements IOverrunHandler {
 
+	/**
+	 * Constructor for a OverrunHandler for collsionAvoidance
+	 * 
+	 * @param logger
+	 */
 	public OverrunCollisonAvoidance(Logger logger) {
 		this.logger = logger;
 	}

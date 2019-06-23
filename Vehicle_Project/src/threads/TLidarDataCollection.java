@@ -18,8 +18,15 @@ import gpioInterface.lidar.ILidarSensor;
 import management.IManagementControl;
 import threads.handler.MissLidarDataCollection;
 import threads.handler.OverrunLidarDataCollection;
-import threads.interruptible.InterruptableLidarDataCollection;
+import threads.interruptible.InterruptibleLidarDataCollection;
 
+/**
+ * This RealtimeThread is used to read the values periodically form a
+ * lidar-Sensor
+ * 
+ * @author yannick
+ *
+ */
 public class TLidarDataCollection extends RealtimeThread implements IHandableThread {
 	private Logger logger;
 	private IManagementControl management;
@@ -32,6 +39,15 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 	private static int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 5;
 	private static SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
+	/**
+	 * This is the constructor for the lidarDataCollection RealtimeThread
+	 * 
+	 * @param logger
+	 * @param management
+	 * @param lidarController
+	 * @param missHandlerLidarDataCollection
+	 * @param qLidarSensor
+	 */
 	public TLidarDataCollection(Logger logger, IManagementControl management, ILidarInterface lidarController,
 			MissLidarDataCollection missHandlerLidarDataCollection, ArrayBlockingQueue<ILidarSensor> qLidarSensor) {
 		setName("LidarDataCollectionThread");
@@ -68,7 +84,7 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 		try {
 			logger.info("Creating LidarDataCollectionThread");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
-			InterruptableLidarDataCollection inLidarDataCollection = new InterruptableLidarDataCollection(logger,
+			InterruptibleLidarDataCollection inLidarDataCollection = new InterruptibleLidarDataCollection(logger,
 					management, lidarController, qLidarSensor);
 			asInterruptedException.doInterruptible(inLidarDataCollection);
 

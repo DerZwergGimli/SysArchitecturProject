@@ -5,8 +5,19 @@ import java.util.logging.Logger;
 
 import logger.Logging;
 
+/**
+ * This is the main class of the Vehicle
+ * 
+ * @author yannick
+ *
+ */
 public class Main {
 
+	/**
+	 * This is the main function of the vehicle program
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		Banner.printBanner();
 
@@ -19,6 +30,11 @@ public class Main {
 
 	}
 
+	/**
+	 * This class is used to start and setup the manager
+	 * 
+	 * @param logger
+	 */
 	private static void startManager(Logger logger) {
 		Manager manager = new Manager(logger);
 

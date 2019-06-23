@@ -14,9 +14,15 @@ import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
 import management.IManagementControl;
-import threads.interruptible.InterruptableWriterDB;
+import threads.interruptible.InterruptibleWriterDB;
 import threads.queue.IQCollisonBuffer;
 
+/**
+ * This RealtimeThread is used to read periodically from a database
+ * 
+ * @author yannick
+ *
+ */
 public class TWriterDB extends RealtimeThread {
 
 	Logger logger;
@@ -26,6 +32,14 @@ public class TWriterDB extends RealtimeThread {
 	ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 	Boolean running;
 
+	/**
+	 * This is the constructor for a Writer-database_thread to write entries
+	 * periodically to a Database
+	 * 
+	 * @param logger
+	 * @param management
+	 * @param qCollisonControl
+	 */
 	public TWriterDB(Logger logger, IManagementControl management,
 			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.logger = logger;
@@ -50,7 +64,7 @@ public class TWriterDB extends RealtimeThread {
 		try {
 			logger.info("Creating InterruptableWriterDB");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
-			InterruptableWriterDB inWriterDB = new InterruptableWriterDB(logger, management, qCollisonControl);
+			InterruptibleWriterDB inWriterDB = new InterruptibleWriterDB(logger, management, qCollisonControl);
 			asInterruptedException.doInterruptible(inWriterDB);
 
 		} catch (Exception e) {

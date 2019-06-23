@@ -58,9 +58,9 @@ public class TopInterface implements ITopInterface {
 		if (enabled) {
 
 			ProcessBuilder processBuilder = new ProcessBuilder();
-			String bashString = "top -b -n 1 | grep 'top' -m 1 -A 4";
+			String bashString = "top -b -n 1 | head -5";
 
-			processBuilder.command("bash", "-c", bashString);
+			processBuilder.command("/bin/sh", "-c", bashString);
 
 			String[] lines = new String[5];
 
@@ -80,6 +80,7 @@ public class TopInterface implements ITopInterface {
 				int exitCode = process.waitFor();
 
 				if (exitCode == 0) {
+
 					// Parse first ROW
 
 					String temp = lines[0];

@@ -63,12 +63,33 @@ public class DataPersistanceThread extends Thread {
     }
 
     private Vehicle getVehicleData() {
-        Sensor tempSensor = new Sensor("Temperature", dbController.get("Sensors:TempValue"), " Degree Celsius", dbController.get("Sensors:TempState"), dbController.get("Sensors:TempTimestamp"));
-        Sensor humiditySensor = new Sensor("Humidity", dbController.get("Sensors:HumidityValue"), "%", dbController.get("Sensors:HumidityState"), dbController.get("Sensors:HumidityTimestamp"));
-        Sensor speedSensor = new Sensor("Speed", dbController.get("Sensors:SpeedValue"), "km/h", dbController.get("Sensors:SpeedState"), dbController.get("Sensors:SpeedTimestamp"));
-        Passenger driverPassenger = new Passenger("Driver", dbController.get("Driver:isPresent"), "timestamp"); // TODO: Timestamp
-        Passenger frontSeatPassenger = new Passenger("front-seat passenger", dbController.get("Passenger:isPresent"), "timestamp"); // TODO: Timestamp
-        Lidar lidarSensor = new Lidar(dbController.get("sensors:lidar:angles"), "Degree", dbController.get("sensors:lidar:distances"), "cm", dbController.get("management:threads:collisonAvoidanceRunnable"), dbController.get("sensors:lidar:timestamp"));
+        Sensor tempSensor = new Sensor("Temperature",
+                dbController.get("Sensors:TempValue"),
+                " Degree Celsius",
+                dbController.get("Sensors:TempState"),
+                dbController.get("Sensors:TempTimestamp"));
+        Sensor humiditySensor = new Sensor("Humidity",
+                dbController.get("Sensors:HumidityValue"),
+                "%",
+                dbController.get("Sensors:HumidityState"),
+                dbController.get("Sensors:HumidityTimestamp"));
+        Sensor speedSensor = new Sensor("Speed",
+                dbController.get("Sensors:SpeedValue"),
+                "km/h",
+                dbController.get("Sensors:SpeedState"),
+                dbController.get("Sensors:SpeedTimestamp"));
+        Passenger driverPassenger = new Passenger("Driver",
+                dbController.get("Driver:isPresent"),
+                "timestamp"); // TODO: Timestamp
+        Passenger frontSeatPassenger = new Passenger("front-seat passenger",
+                dbController.get("Passenger:isPresent"),
+                "timestamp"); // TODO: Timestamp
+        Lidar lidarSensor = new Lidar(dbController.get("sensors:lidar:angles"),
+                "Degree",
+                dbController.get("sensors:lidar:distances"),
+                "cm",
+                dbController.get("management:threads:collisonAvoidanceRunnable"),
+                dbController.get("sensors:lidar:timestamp"));
 
         Vehicle vehicle = new Vehicle();
         vehicle.addSensors(tempSensor);
@@ -93,8 +114,8 @@ public class DataPersistanceThread extends Thread {
         CPUtempSensor.setName("CPUtemperature");
         CPUtempSensor.setUnit("Degree Celsius");
         CPUtempSensor.setState(dbController.get("CPUtempState"));
-        CPUtempSensor.setValue(dbController.get("CPUtempValue"));
-        CPUtempSensor.setTimestamp(dbController.get("CPU:CPUtempTimestamp"));
+        CPUtempSensor.setValue(dbController.get("os:temperature:cpu0"));
+        CPUtempSensor.setTimestamp(dbController.get("os:temperature:timestamp"));
         Integer cpuLoad = 100 - Integer.parseInt(dbController.get("os:top:cpu_idle"));
         CPU cpu = new CPU(CPUtempSensor, cpuLoad.toString(), dbController.get("CPU:CPUactiveCores"));
 
@@ -105,12 +126,12 @@ public class DataPersistanceThread extends Thread {
                 dbController.get("os:thread:collionControll:JitterTimestamp"));
         RealTimeData realTimeData = new RealTimeData(jitterSensor, dbController.get("RT:numOfRTThreads"));
 
-        Received received = new Received(dbController.get("rx_bytes"),
-                dbController.get("rx_packages"),
-                dbController.get("rx_errors"),
-                dbController.get("rx_dropped"),
-                dbController.get("rx_overrun"),
-                dbController.get("rx_mcast"));
+        Received received = new Received(dbController.get(networkDBentry + "rx_bytes"),
+                dbController.get(networkDBentry + "rx_packages"),
+                dbController.get(networkDBentry + "rx_errors"),
+                dbController.get(networkDBentry + "rx_dropped"),
+                dbController.get(networkDBentry + "rx_overrun"),
+                dbController.get(networkDBentry + "rx_mcast"));
         Transmitted transmitted = new Transmitted(dbController.get(networkDBentry + "tx_bytes"),
                 dbController.get(networkDBentry + "tx_packages"),
                 dbController.get(networkDBentry + "tx_errors"),

@@ -5,11 +5,10 @@ import java.util.Map;
 
 public class Driver {
 
-    private int id;
+    private String id;
     private String firstName;
     private String lastName;
-    private int authLevel;
-    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+    private String authLevel;
 
     /**
      * No args constructor for use in serialization
@@ -23,7 +22,7 @@ public class Driver {
      * @param authLevel
      * @param firstName
      */
-    public Driver(int id, String firstName, String lastName, int authLevel) {
+    public Driver(String id, String firstName, String lastName, String authLevel) {
         super();
         this.id = id;
         this.firstName = firstName;
@@ -31,11 +30,11 @@ public class Driver {
         this.authLevel = authLevel;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -55,20 +54,12 @@ public class Driver {
         this.lastName = lastName;
     }
 
-    public int getAuthLevel() {
+    public String getAuthLevel() {
         return authLevel;
     }
 
-    public void setAuthLevel(int authLevel) {
+    public void setAuthLevel(String authLevel) {
         this.authLevel = authLevel;
-    }
-
-    public Map<String, Object> getAdditionalProperties() {
-        return this.additionalProperties;
-    }
-
-    public void setAdditionalProperty(String name, Object value) {
-        this.additionalProperties.put(name, value);
     }
 
     @Override
@@ -78,7 +69,6 @@ public class Driver {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", authLevel=" + authLevel +
-                ", additionalProperties=" + additionalProperties +
                 '}';
     }
 

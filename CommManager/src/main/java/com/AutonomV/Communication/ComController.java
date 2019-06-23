@@ -45,6 +45,7 @@ public class ComController {
             connOpts.setWill("/SysArch/V1/Driver/LogoutRequest/", "Client got disconnected suddently".getBytes(), 2, true);
             mqttClient = new MqttClient(broker, clientId, persistence);
             mqttClient.setCallback(new ClientCallback());
+            connect();
             // subscribe to /SysArch/V1/Driver/AuthResponse/
             subscribe(topicFilter, 2);
         } catch (MqttException e) {
@@ -93,15 +94,14 @@ public class ComController {
             // printHelp();
             return;
         }
-        if (mqttClient != null) {
+        if (mqttClient != null && mqttClient.isConnected()) {
             MqttMessage message = new MqttMessage(msg.getBytes());
             message.setQos(qos);
             System.out.println(TAG + " Publishing message: " + msg);
             try {
-                mqttClient.connect(connOpts);
-                System.out.println(TAG + " connected ");
+                //mqttClient.connect(connOpts);
                 mqttClient.publish(topic, message);
-                mqttClient.disconnect();
+                //mqttClient.disconnect();
             } catch (MqttException e) {
                 System.out.println(TAG + "Mqtt Exeption thrown");
                 e.printStackTrace();
@@ -115,12 +115,12 @@ public class ComController {
     }
 
     public void subscribe(String topic, int qos) {
-        if (mqttClient != null) {
+        if (mqttClient != null && mqttClient.isConnected()) {
             try {
-                mqttClient.connect(connOpts);
+                //mqttClient.connect(connOpts);
                 mqttClient.subscribe(topic, qos);
                 System.out.println(TAG + " Subscribed to " + topic);
-                mqttClient.disconnect();
+                //mqttClient.disconnect();
             } catch (MqttException e) {
                 e.printStackTrace();
                 disconnect();

@@ -33,9 +33,38 @@ public class LidarSensor implements ILidarSensor {
 		generateTimestamp();
 	}
 
+	@Override
 	public void setDistances(int[] distances) {
 		this.distances = distances;
 		generateTimestamp();
+	}
+
+	@Override
+	public int[] getDistancesBySection(int startAngle, int endAngle) {
+		int[] distancesSection = null;
+
+		if ((endAngle - startAngle) > 0) {
+			distancesSection = new int[endAngle - startAngle];
+
+			for (int i = startAngle; i < endAngle; i++) {
+				distancesSection[i - startAngle] = distances[i];
+			}
+		}
+
+		if ((endAngle - startAngle) < 0) {
+			int startToZero = 359 - startAngle;
+
+			distancesSection = new int[startToZero + endAngle + 1];
+			for (int i = startAngle; i < distances.length; i++) {
+				distancesSection[i - startAngle] = distances[i];
+			}
+
+			for (int i = 0; i < endAngle; i++) {
+				distancesSection[startToZero + i + 1] = distances[i];
+			}
+		}
+
+		return distancesSection;
 	}
 
 	@Override

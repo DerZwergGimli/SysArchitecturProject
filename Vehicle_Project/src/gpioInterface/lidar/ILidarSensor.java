@@ -10,4 +10,7 @@ public interface ILidarSensor {
 
 	public void writeToDB(IRedisDBInterface redis);
 
+	public void setDistances(int[] distances);
+
+	public int[] getDistancesBySection(int startAngle, int endAngle);
 }

@@ -21,6 +21,7 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 	private Logger logger;
 	private IManagementControl management;
 	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
+	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
 
 	public InterruptableCollisionAvoidance(Logger logger, IManagementControl managemnt,
 			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {

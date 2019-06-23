@@ -9,6 +9,7 @@ import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 
+import collisonAvoidance.ICollisonAvoidance;
 import gpioInterface.lidar.ILidarSensor;
 import management.IManagementControl;
 import osInterfaces.INetworkInterface;
@@ -33,6 +34,7 @@ public class InterruptableWriterDB implements Interruptible {
 		this.logger = logger;
 		this.management = management;
 		this.qCollisonControl = qCollisonControl;
+		this.redis = new RedisDBInterface(logger);
 
 	}
 
@@ -47,13 +49,11 @@ public class InterruptableWriterDB implements Interruptible {
 		while (management.isDatabaseWriterThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 
 			System.out.println("Hello from Writer");
-			redis = new RedisDBInterface(logger);
+
 			writeQueueDataToDatabase();
 			writeNetworkDataToDatabase();
 			writeOSSensorsToDatabase();
 			writeLinuxTopInterfaceToDatabase();
-
-			redis.close();
 
 		}
 		logger.log(Level.WARNING, "DatabaseWriter was exited!");
@@ -68,9 +68,11 @@ public class InterruptableWriterDB implements Interruptible {
 			qCollisonControlObject = qCollisonControl.poll(10, TimeUnit.MILLISECONDS);
 			if (qCollisonControlObject != null) {
 				ILidarSensor lidarSensor = qCollisonControlObject.getLidarSensor();
+				ICollisonAvoidance collisionAvoidance = qCollisonControlObject.getCollisonAvoidance();
 				IStopWatch stopWatch = qCollisonControlObject.getStopWatch();
 				lidarSensor.writeToDB(redis);
 				stopWatch.writeToDB(redis);
+				collisionAvoidance.writeToDB(redis);
 			}
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
@@ -82,7 +84,7 @@ public class InterruptableWriterDB implements Interruptible {
 	}
 
 	private void writeNetworkDataToDatabase() {
-		INetworkInterface networkInterface0 = new NetworkInterface("wlp2s0");
+		INetworkInterface networkInterface0 = new NetworkInterface();
 		networkInterface0.readNetworkInterface();
 		networkInterface0.writeToDatabase(redis);
 	}

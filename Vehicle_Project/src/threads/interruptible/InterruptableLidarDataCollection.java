@@ -47,11 +47,11 @@ public class InterruptableLidarDataCollection implements Interruptible {
 		if (lidarController.isEnabled()) {
 			int lidarValues[] = lidarController.scan();
 			if (lidarValues.length != 0) {
-				for (int i : lidarValues) {
-					System.out.print(i + ", ");
-					return lidarValues;
-				}
-				System.out.println("(" + lidarValues.length + ")");
+//				for (int i : lidarValues) {
+//					System.out.print(i + ", ");
+				return lidarValues;
+//				}
+//				System.out.println("(" + lidarValues.length + ")");
 			} else {
 				logger.log(Level.WARNING, "Error while reading lidar sensor values");
 			}
@@ -69,6 +69,13 @@ public class InterruptableLidarDataCollection implements Interruptible {
 			LidarSensor lidarSensor = new LidarSensor();
 			lidarSensor.setDistances(lidarDistances);
 
+			if (!qLidarSensor.offer(lidarSensor)) {
+				logger.log(Level.WARNING, "Could not write into queue");
+			}
+		} else {
+			LidarSensor lidarSensor = new LidarSensor();
+			lidarSensor.setRandomDistances();
+			logger.log(Level.INFO, "Generated RANDOM lidarValues");
 			if (!qLidarSensor.offer(lidarSensor)) {
 				logger.log(Level.WARNING, "Could not write into queue");
 			}

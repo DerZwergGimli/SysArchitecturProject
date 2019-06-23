@@ -86,7 +86,7 @@ public class InterruptableReaderDB implements Interruptible {
 				// System.out.println(LTMemory.getMemoryArea(ma).memoryRemaining());
 
 				redis.close();
-				// redis = null;
+
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				System.out.println("----_ERROR HERE");

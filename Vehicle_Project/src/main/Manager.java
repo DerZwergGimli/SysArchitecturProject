@@ -47,7 +47,7 @@ public class Manager extends RealtimeThread {
 		lidarController = new LidarInterface();
 
 		qCollisonControl = new ArrayBlockingQueue<IQCollisonBuffer>(1);
-		qLidarSensor = new ArrayBlockingQueue<ILidarSensor>(10);
+		qLidarSensor = new ArrayBlockingQueue<ILidarSensor>(1);
 	}
 
 	@Override
@@ -98,13 +98,14 @@ public class Manager extends RealtimeThread {
 			} catch (Exception e) {
 				logger.log(Level.SEVERE, "Error while trying to cancel and join the threads!", e);
 			}
+			redis.close();
 		}
 	}
 
 	public void manageCollisonAvoidanceThread() {
 		if (null == threadCollisionAvoidance && management.isCollisonAvoidanceThreadRunnable()) {
 			missCollisonAvoidance = new MissCollisonAvoidance(logger);
-			threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance,
+			threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance, qLidarSensor,
 					qCollisonControl);
 			missCollisonAvoidance.setThread(threadCollisionAvoidance);
 		}
@@ -123,7 +124,7 @@ public class Manager extends RealtimeThread {
 				if (management.isCollisonAvoidanceThreadRunnable()) {
 					missCollisonAvoidance = new MissCollisonAvoidance(logger);
 					threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance,
-							qCollisonControl);
+							qLidarSensor, qCollisonControl);
 					missCollisonAvoidance.setThread(threadCollisionAvoidance);
 				}
 			}

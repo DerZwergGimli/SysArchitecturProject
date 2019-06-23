@@ -51,7 +51,7 @@ public class LidarSensor implements ILidarSensor {
 			}
 		}
 
-		if ((endAngle - startAngle) < 0) {
+		if ((startAngle - endAngle) > 0) {
 			int startToZero = 359 - startAngle;
 
 			distancesSection = new int[startToZero + endAngle + 1];

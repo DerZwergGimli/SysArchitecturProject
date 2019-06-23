@@ -1,12 +1,16 @@
 package collisonAvoidance;
 
+import redisInterface.IRedisDBInterface;
+
 public interface ICollisonAvoidance {
+
+	public void checkAllSections();
 
 	public ECollisonAvoidanceStaus checkFront();
 
 	public ECollisonAvoidanceStaus checkFrontRight();
 
-	public ECollisonAvoidanceStaus checkFronLeft();
+	public ECollisonAvoidanceStaus checkFrontLeft();
 
 	public ECollisonAvoidanceStaus checkLeft();
 
@@ -17,4 +21,6 @@ public interface ICollisonAvoidance {
 	public ECollisonAvoidanceStaus checkBackLeft();
 
 	public ECollisonAvoidanceStaus checkBackRight();
+
+	public void writeToDB(IRedisDBInterface redis);
 }

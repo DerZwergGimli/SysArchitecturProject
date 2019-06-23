@@ -47,8 +47,8 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 1;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
-		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(3000, 0),
-				new RelativeTime(1000, 0), new RelativeTime(29000, 0), this.overrunHandlerLidarDataCollection,
+		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(2000, 0),
+				new RelativeTime(1500, 0), new RelativeTime(2000, 0), this.overrunHandlerLidarDataCollection,
 				this.missHandlerLidarDataCollection);
 
 		setSchedulingParameters(schedulingParameters);

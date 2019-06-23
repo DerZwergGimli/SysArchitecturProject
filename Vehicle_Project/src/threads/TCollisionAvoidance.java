@@ -13,6 +13,7 @@ import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
+import gpioInterface.lidar.ILidarSensor;
 import management.IManagementControl;
 import threads.handler.MissCollisonAvoidance;
 import threads.handler.OverrunCollisonAvoidance;
@@ -25,16 +26,18 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 	private volatile OverrunCollisonAvoidance overrunHandlerCollisionAvoidance;
 	MissCollisonAvoidance missHandlerCollisionAvoidance;
 	// ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
+	ArrayBlockingQueue<ILidarSensor> qLidarSensor;
 	ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
 	public TCollisionAvoidance(Logger logger, IManagementControl management,
-			MissCollisonAvoidance missHandlerCollisionAvoidance,
+			MissCollisonAvoidance missHandlerCollisionAvoidance, ArrayBlockingQueue<ILidarSensor> qLidarSensor,
 			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.setName("TCollisionAvoidance");
 		this.logger = logger;
 		this.management = management;
 		this.missHandlerCollisionAvoidance = missHandlerCollisionAvoidance;
 		// this.lidarSensorQueue = lidarSensorQueue;
+		this.qLidarSensor = qLidarSensor;
 		this.qCollisonControl = qCollisonControl;
 
 		overrunHandlerCollisionAvoidance = new OverrunCollisonAvoidance(logger);
@@ -65,7 +68,7 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 			AsynchronouslyInterruptedException asInterruptExeption = new AsynchronouslyInterruptedException();
 			missHandlerCollisionAvoidance.setInterruptExeption(asInterruptExeption);
 			InterruptableCollisionAvoidance inCollisionAvoidance = new InterruptableCollisionAvoidance(logger,
-					management, qCollisonControl);
+					management, qLidarSensor, qCollisonControl);
 			asInterruptExeption.doInterruptible(inCollisionAvoidance);
 
 		} catch (Exception e) {

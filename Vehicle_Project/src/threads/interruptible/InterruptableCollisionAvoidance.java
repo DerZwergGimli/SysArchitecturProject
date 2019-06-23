@@ -1,6 +1,7 @@
 package threads.interruptible;
 
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -8,6 +9,8 @@ import javax.realtime.AsynchronouslyInterruptedException;
 import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 
+import collisonAvoidance.CollisionAvoidance;
+import collisonAvoidance.ICollisonAvoidance;
 import gpioInterface.lidar.ILidarSensor;
 import gpioInterface.lidar.LidarSensor;
 import management.IManagementControl;
@@ -20,13 +23,14 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 
 	private Logger logger;
 	private IManagementControl management;
-	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
 	public InterruptableCollisionAvoidance(Logger logger, IManagementControl managemnt,
-			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
+			ArrayBlockingQueue<ILidarSensor> qLidarSensor, ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.logger = logger;
 		this.management = managemnt;
+		this.qLidarSensor = qLidarSensor;
 		this.qCollisonControl = qCollisonControl;
 
 	}
@@ -39,9 +43,7 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 
 	@Override
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
-		int bound = 0;
-		double f = 0;
-		int ct = 0;
+
 		IStopWatch stopWatchcurrent = new StopWatch();
 		IStopWatch stopWatchOld = new StopWatch();
 		stopWatchOld.init();
@@ -49,17 +51,20 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 		while (management.isCollisonAvoidanceThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 			stopWatchcurrent.start();
 
-			ILidarSensor lidarSensor = new LidarSensor();
-			lidarSensor.setRandomDistances();
+			LidarSensor lidarSensor = null;
+			try {
+				lidarSensor = (LidarSensor) qLidarSensor.poll(10, TimeUnit.MILLISECONDS);
+			} catch (InterruptedException e) {
+				logger.log(Level.WARNING, "Failed to read from queue - lidrSensor!", e);
+			}
 
-			sendInQueue(lidarSensor, stopWatchOld);
-
-			if (++ct > 2000)
-				return;
-			for (f = 0.0; f < bound; f += 1.0)
-				;
-			bound += 100000;
-			System.out.println("DONG! " + bound);
+			if (lidarSensor != null) {
+				CollisionAvoidance collisionAvoidance = new CollisionAvoidance(lidarSensor);
+				collisionAvoidance.checkAllSections();
+				sendInQueue(lidarSensor, collisionAvoidance, stopWatchOld);
+			} else {
+				logger.log(Level.WARNING, "Queue was empty does nothing in here");
+			}
 
 			stopWatchcurrent.stopAndCalulate();
 			stopWatchOld = stopWatchcurrent;
@@ -67,9 +72,23 @@ public class InterruptableCollisionAvoidance implements Interruptible {
 		logger.log(Level.WARNING, "CollisionAvoidance was exited!");
 	}
 
-	private void sendInQueue(ILidarSensor lidarSensor, IStopWatch stopWatch) {
-		IQCollisonBuffer qCollisonControlObject = new QCollisonBuffer(lidarSensor, stopWatch);
+	private void sendInQueue(ILidarSensor lidarSensor, ICollisonAvoidance collisionAvoidance, IStopWatch stopWatch) {
+		IQCollisonBuffer qCollisonControlObject = new QCollisonBuffer(lidarSensor, collisionAvoidance, stopWatch);
 		qCollisonControl.offer(qCollisonControlObject);
+
+	}
+
+	private void generateOverun() {
+		int bound = 0;
+		double f = 0;
+		int ct = 0;
+
+		if (++ct > 2000)
+			return;
+		for (f = 0.0; f < bound; f += 1.0)
+			;
+		bound += 100000;
+		System.out.println("DONG! " + bound);
 
 	}
 

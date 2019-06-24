@@ -1,9 +1,12 @@
 package timing;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.TimeZone;
 
 import redisInterface.IRedisDBInterface;
@@ -16,7 +19,7 @@ import redisInterface.IRedisDBInterface;
  */
 public class StopWatch implements IStopWatch {
 
-	private int expireTimeRedis = 100;
+	private static int expireTimeRedis = 100;
 	private String timestamp;
 	private long startTimeNano;
 	private long endTimeNamo;
@@ -26,6 +29,7 @@ public class StopWatch implements IStopWatch {
 	 * The constructor of a StopWatch Object
 	 */
 	public StopWatch() {
+		readPropertiesFile();
 	}
 
 	@Override
@@ -73,6 +77,18 @@ public class StopWatch implements IStopWatch {
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'", Locale.GERMANY);
 		dateFormat.setTimeZone(TimeZone.getTimeZone("CET"));
 		timestamp = dateFormat.format(new Date());
+	}
+
+	private static void readPropertiesFile() {
+		try (InputStream input = new FileInputStream("config.properties")) {
+			Properties properties = new Properties();
+			properties.load(input);
+
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
+
+		} catch (Exception ex) {
+			System.out.println("Error while trying to read config for Logger!!! ");
+		}
 	}
 
 }

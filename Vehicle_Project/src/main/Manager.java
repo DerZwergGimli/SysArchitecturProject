@@ -1,5 +1,6 @@
 package main;
 
+import java.util.Scanner;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -10,6 +11,8 @@ import gpioInterface.lidar.ILidarSensor;
 import gpioInterface.lidar.LidarInterface;
 import management.ManagementControl;
 import redisInterface.RedisDBInterface;
+import testing.TimeoutController;
+import testing.TimeoutController.TimeoutException;
 import threads.TCollisionAvoidance;
 import threads.TLidarDataCollection;
 import threads.TReaderDB;
@@ -84,12 +87,13 @@ public class Manager extends RealtimeThread {
 			manageDatabaseWriterThread();
 			manageDatabaseReaderThread();
 
-			try {
-				sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			readUserIntput();
+//			try {
+//				sleep(1000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
 
 		}
 
@@ -267,7 +271,45 @@ public class Manager extends RealtimeThread {
 		LidarInterface lidarInterface = new LidarInterface();
 		if (lidarInterface.isEnabled()) {
 			lidarInterface.stopRotation();
+			StringBuilder out = new StringBuilder();
+			String text = null;
+			Scanner scanner = new Scanner(System.in);
+			while (scanner.hasNextLine()) {
+				text = new String(scanner.nextLine());
+				out.append(text);
+			}
+			scanner.close();
+			System.out.println(out);
+			System.out.println("program terminated");
+
 		}
+	}
+
+	private void readUserIntput() {
+
+		Runnable my = new Runnable() {
+			@Override
+			public void run() {
+				StringBuilder out = new StringBuilder();
+				String text = null;
+				Scanner scanner = new Scanner(System.in);
+				while (scanner.hasNextLine()) {
+					text = new String(scanner.nextLine());
+					out.append(text);
+				}
+				scanner.close();
+				// logger.log(Level.INFO, "User has closed the application using crt+D!");
+				management.makeManegementThreadUnrunnable();
+
+			}
+		};
+
+		try {
+			TimeoutController.execute(my, 1000);
+		} catch (TimeoutException e) {
+
+		}
+
 	}
 
 }

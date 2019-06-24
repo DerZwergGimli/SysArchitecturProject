@@ -1,5 +1,8 @@
 package threads;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,6 +31,10 @@ import threads.queue.IQCollisonBuffer;
  *
  */
 public class TCollisionAvoidance extends RealtimeThread implements IHandableThread {
+	private static int periode;
+	private static int cost;
+	private static int deadline;
+
 	private volatile Logger logger;
 	private IManagementControl management;
 	private volatile OverrunCollisonAvoidance overrunHandlerCollisionAvoidance;
@@ -56,14 +63,16 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 		this.qLidarSensor = qLidarSensor;
 		this.qCollisonControl = qCollisonControl;
 
+		readPropertiesFile();
+
 		overrunHandlerCollisionAvoidance = new OverrunCollisonAvoidance(logger);
 		overrunHandlerCollisionAvoidance.setThread(this);
 
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 1;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
-		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(250, 0),
-				new RelativeTime(100, 0), new RelativeTime(200, 0), this.overrunHandlerCollisionAvoidance,
+		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(periode, 0),
+				new RelativeTime(cost, 0), new RelativeTime(deadline, 0), this.overrunHandlerCollisionAvoidance,
 				this.missHandlerCollisionAvoidance);
 
 		setSchedulingParameters(schedulingParameters);
@@ -92,4 +101,18 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 		}
 	}
 
+	private static void readPropertiesFile() {
+		try (InputStream input = new FileInputStream("config.properties")) {
+			Properties properties = new Properties();
+			properties.load(input);
+
+			periode = Integer.valueOf(properties.getProperty("collisonAvoidance.periode"));
+			cost = Integer.valueOf(properties.getProperty("collisonAvoidance.cost"));
+			deadline = Integer.valueOf(properties.getProperty("collisonAvoidance.deadline"));
+
+		} catch (Exception ex) {
+			System.out.println("Error while trying to read config for Logger!!! ");
+
+		}
+	}
 }

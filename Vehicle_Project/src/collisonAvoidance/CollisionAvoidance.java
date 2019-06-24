@@ -124,8 +124,14 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 		if (cStatus.getRatio() > 1) {
 			cStatus.setStatus(ECollisonAvoidanceStaus.ok);
 		} else {
-			cStatus.setStatus(ECollisonAvoidanceStaus.objectDetected);
+			if (cStatus.getRatio() == 0) {
+				cStatus.setStatus(ECollisonAvoidanceStaus.error);
+			} else {
+				cStatus.setStatus(ECollisonAvoidanceStaus.objectDetected);
+			}
+
 		}
+
 		return cStatus;
 	}
 

@@ -79,21 +79,14 @@ public class Manager extends RealtimeThread {
 		while (management.isManagemnetThreadRunnable()) {
 			clearScreen();
 			management.printAll();
-
-			management.readEntriesFormDatabase(redis);
+			// management.readEntriesFormDatabase(redis);
 
 			manageCollisonAvoidanceThread();
 			manageLidarDataCollectionThread();
 			manageDatabaseWriterThread();
 			manageDatabaseReaderThread();
 
-			readUserIntput();
-//			try {
-//				sleep(1000);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
+			// readUserIntput();
 
 		}
 

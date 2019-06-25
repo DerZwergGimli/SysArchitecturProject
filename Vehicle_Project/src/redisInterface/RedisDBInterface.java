@@ -50,6 +50,8 @@ public class RedisDBInterface implements IRedisDBInterface {
 			logger.log(Level.SEVERE, "Error while trying to connect to Redis-Server", e);
 		}
 
+		jedisDB.close();
+
 	}
 
 	@Override

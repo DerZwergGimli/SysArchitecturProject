@@ -90,6 +90,7 @@ public class InterruptibleReaderDB implements Interruptible {
 
 				System.out.println("Hello from DB-Reader");
 				// System.out.println(LTMemory.getMemoryArea(ma).memoryRemaining());
+				management.readEntriesFormDatabase(redis);
 
 				redis.close();
 

@@ -42,7 +42,12 @@ public class CollisionStatus {
 	 * @return
 	 */
 	public float getRatio() {
-		return ok / nok;
+		try {
+			return ok / nok;
+		} catch (ArithmeticException e) {
+			return 0;
+		}
+
 	}
 
 	/**

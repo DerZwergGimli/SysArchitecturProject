@@ -46,7 +46,7 @@ public class Banner {
 		System.out.println("  _____                                                                         ");
 		System.out.println(" / ____|          Project-Members:                                              ");
 		System.out.println("| |  __               - Jonas Maier                                             ");
-		System.out.println("| | |_ |              - Mouaad Gasair                                           ");
+		System.out.println("| | |_ |              - Mouaad Gassair                                          ");
 		System.out.println("| |__| |              - Yannick Pauly                                           ");
 		System.out.println(" \\_____|                             		HOPE YOU ENJOY THIS!        ");
 		System.out.println();

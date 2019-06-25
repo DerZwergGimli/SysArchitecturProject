@@ -59,7 +59,6 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 		this.logger = logger;
 		this.management = management;
 		this.missHandlerCollisionAvoidance = missHandlerCollisionAvoidance;
-		// this.lidarSensorQueue = lidarSensorQueue;
 		this.qLidarSensor = qLidarSensor;
 		this.qCollisonControl = qCollisonControl;
 

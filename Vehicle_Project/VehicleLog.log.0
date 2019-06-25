@@ -1,0 +1,38 @@
+[2019-06-25 17:20:59] [INFO   ] -- LOGGER stated --
+ null 
+[2019-06-25 17:20:59] [INFO   ] --Application stared--
+ null 
+[2019-06-25 17:20:59] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-06-25 17:20:59] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-06-25 17:20:59] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-06-25 17:21:00] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-25 17:21:00] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-25 17:21:00] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-25 17:21:00] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-25 17:21:01] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-25 17:21:01] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-25 17:21:01] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-25 17:21:01] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-06-25 17:21:01] [INFO   ] Generated RANDOM lidarValues
+ null 
+[2019-06-25 17:21:02] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-25 17:21:02] [SEVERE ] Error while writing to Redis DB and trying to set an expire for this variable
+ redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null 
+[2019-06-25 17:21:02] [SEVERE ] Error while writing to Redis DB and trying to set an expire for this variable
+ redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null 
+[2019-06-25 17:21:02] [SEVERE ] Error while writing to Redis DB and trying to set an expire for this variable
+ redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null 
+[2019-06-25 17:21:02] [WARNING] Managemt diabled the programm will now close! And stop all threads clean!
+ null 

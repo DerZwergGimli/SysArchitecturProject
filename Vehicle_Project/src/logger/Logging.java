@@ -3,7 +3,7 @@ package logger;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -52,13 +52,8 @@ public class Logging {
 
 				@Override
 				public synchronized String format(LogRecord lr) {
-					if (lr.getThrown() != null) {
-						return String.format(format, new Date(lr.getMillis()), lr.getLevel().getLocalizedName(),
-								lr.getMessage(), lr.getThrown());
-					} else {
-						return String.format(format, new Date(lr.getMillis()), lr.getLevel().getLocalizedName(),
-								lr.getMessage());
-					}
+					return String.format(format, new Date(lr.getMillis()), lr.getLevel().getLocalizedName(),
+							lr.getMessage(), lr.getThrown());
 
 				}
 			});

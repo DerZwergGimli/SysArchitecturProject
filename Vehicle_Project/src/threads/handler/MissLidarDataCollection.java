@@ -63,7 +63,7 @@ public class MissLidarDataCollection extends AsyncEventHandler implements IMissH
 		logger.info("Trying to stop lidar rotation");
 		stopLidarRotaion();
 
-		realtimeThread.schedulePeriodic();
+		realtimeThread.deschedulePeriodic();
 
 		if (!asInterruptedException.fire())
 			System.out.println("Fire returened false");

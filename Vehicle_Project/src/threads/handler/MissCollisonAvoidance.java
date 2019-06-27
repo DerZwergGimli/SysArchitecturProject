@@ -54,7 +54,7 @@ public class MissCollisonAvoidance extends AsyncEventHandler implements IMissHan
 		logger.log(Level.SEVERE,
 				"Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!");
 
-		realtimeThread.schedulePeriodic();
+		realtimeThread.deschedulePeriodic();
 
 		if (!asInterruptedException.fire())
 			System.out.println("Fire returened false");

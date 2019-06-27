@@ -1,7 +1,6 @@
 package main;
 
 import java.io.File;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import logger.Logging;
@@ -42,14 +41,18 @@ public class Main {
 	 */
 	private static void startManager(Logger logger) {
 		Manager manager = new Manager(logger);
+		manager.manage();
 
-		manager.start();
-
-		try {
-			manager.join();
-		} catch (InterruptedException e) {
-			logger.log(Level.SEVERE, "Error while trying to joing manager thread the application will colse!");
-		}
+//		while (manager.isRunnable()) {
+//
+//		}
+//		manager.start();
+//
+//		try {
+//			manager.join();
+//		} catch (InterruptedException e) {
+//			logger.log(Level.SEVERE, "Error while trying to joing manager thread the application will colse!");
+//		}
 
 	}
 

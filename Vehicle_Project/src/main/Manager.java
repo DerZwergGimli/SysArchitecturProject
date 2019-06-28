@@ -64,10 +64,6 @@ public class Manager {
 		qLidarSensor = new ArrayBlockingQueue<ILidarSensor>(1);
 	}
 
-	public Boolean isRunnable() {
-		return ManagerRunnable;
-	}
-
 	/**
 	 * This needs to be called to manage the application
 	 */

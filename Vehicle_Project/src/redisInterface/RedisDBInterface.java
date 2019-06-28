@@ -16,6 +16,12 @@ public class RedisDBInterface implements IRedisDBInterface {
 	private String jedisURL;
 	private int jedisPort;
 
+	/**
+	 * This will create a new connection to redis database as well as checking for a
+	 * connection
+	 * 
+	 * @param logger
+	 */
 	public RedisDBInterface(Logger logger) {
 		this.logger = logger;
 		readPropertiesFile();
@@ -44,13 +50,15 @@ public class RedisDBInterface implements IRedisDBInterface {
 			logger.log(Level.SEVERE, "Error while trying to connect to Redis-Server", e);
 		}
 
+		jedisDB.close();
+
 	}
 
 	@Override
-	public String set(String name, String variable) {
+	public String set(String topic, String variable) {
 		if (jedisServerEnabled == true) {
 			try {
-				return jedisDB.set(name, variable);
+				return jedisDB.set(topic, variable);
 
 			} catch (Exception e) {
 				logger.log(Level.SEVERE, "Error while writing to Redis DB", e);
@@ -61,10 +69,10 @@ public class RedisDBInterface implements IRedisDBInterface {
 	}
 
 	@Override
-	public String setAndExpire(String name, String variable, int secounds) {
+	public String setAndExpire(String topic, String variable, int secounds) {
 		if (jedisServerEnabled == true) {
 			try {
-				return jedisDB.setex(name, secounds, variable);
+				return jedisDB.setex(topic, secounds, variable);
 
 			} catch (Exception e) {
 				logger.log(Level.SEVERE,
@@ -75,10 +83,10 @@ public class RedisDBInterface implements IRedisDBInterface {
 	}
 
 	@Override
-	public String get(String name) {
+	public String get(String topic) {
 		if (jedisServerEnabled == true) {
 			try {
-				return jedisDB.get(name);
+				return jedisDB.get(topic);
 			} catch (Exception e) {
 				logger.log(Level.SEVERE, "Error while reading from Redis DB", e);
 			}

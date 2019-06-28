@@ -1,5 +1,8 @@
 package threads;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -18,9 +21,20 @@ import gpioInterface.lidar.ILidarSensor;
 import management.IManagementControl;
 import threads.handler.MissLidarDataCollection;
 import threads.handler.OverrunLidarDataCollection;
-import threads.interruptible.InterruptableLidarDataCollection;
+import threads.interruptible.InterruptibleLidarDataCollection;
 
+/**
+ * This RealtimeThread is used to read the values periodically form a
+ * lidar-Sensor
+ * 
+ * @author yannick
+ *
+ */
 public class TLidarDataCollection extends RealtimeThread implements IHandableThread {
+	private static int periode;
+	private static int cost;
+	private static int deadline;
+
 	private Logger logger;
 	private IManagementControl management;
 	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
@@ -32,6 +46,15 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 	private static int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 5;
 	private static SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
+	/**
+	 * This is the constructor for the lidarDataCollection RealtimeThread
+	 * 
+	 * @param logger
+	 * @param management
+	 * @param lidarController
+	 * @param missHandlerLidarDataCollection
+	 * @param qLidarSensor
+	 */
 	public TLidarDataCollection(Logger logger, IManagementControl management, ILidarInterface lidarController,
 			MissLidarDataCollection missHandlerLidarDataCollection, ArrayBlockingQueue<ILidarSensor> qLidarSensor) {
 		setName("LidarDataCollectionThread");
@@ -40,6 +63,7 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 		this.lidarController = lidarController;
 		this.missHandlerLidarDataCollection = missHandlerLidarDataCollection;
 		this.qLidarSensor = qLidarSensor;
+		readPropertiesFile();
 
 		overrunHandlerLidarDataCollection = new OverrunLidarDataCollection(logger);
 		overrunHandlerLidarDataCollection.setThread(this);
@@ -47,8 +71,8 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 1;
 		SchedulingParameters schedulingParameters = new PriorityParameters(threadPriority);
 
-		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(3000, 0),
-				new RelativeTime(1000, 0), new RelativeTime(29000, 0), this.overrunHandlerLidarDataCollection,
+		ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(), new RelativeTime(periode, 0),
+				new RelativeTime(cost, 0), new RelativeTime(deadline, 0), this.overrunHandlerLidarDataCollection,
 				this.missHandlerLidarDataCollection);
 
 		setSchedulingParameters(schedulingParameters);
@@ -68,7 +92,7 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 		try {
 			logger.info("Creating LidarDataCollectionThread");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
-			InterruptableLidarDataCollection inLidarDataCollection = new InterruptableLidarDataCollection(logger,
+			InterruptibleLidarDataCollection inLidarDataCollection = new InterruptibleLidarDataCollection(logger,
 					management, lidarController, qLidarSensor);
 			asInterruptedException.doInterruptible(inLidarDataCollection);
 
@@ -82,6 +106,21 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 		if (lidarController.isEnabled()) {
 			lidarController.init();
 			lidarController.startRotation();
+		}
+	}
+
+	private static void readPropertiesFile() {
+		try (InputStream input = new FileInputStream("config.properties")) {
+			Properties properties = new Properties();
+			properties.load(input);
+
+			periode = Integer.valueOf(properties.getProperty("lidar.periode"));
+			cost = Integer.valueOf(properties.getProperty("lidar.cost"));
+			deadline = Integer.valueOf(properties.getProperty("lidar.deadline"));
+
+		} catch (Exception ex) {
+			System.out.println("Error while trying to read config for Logger!!! ");
+
 		}
 	}
 

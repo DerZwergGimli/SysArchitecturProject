@@ -3,7 +3,7 @@ package logger;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Date;
+import java.sql.Date;
 import java.util.Properties;
 import java.util.logging.FileHandler;
 import java.util.logging.Level;
@@ -13,6 +13,12 @@ import java.util.logging.SimpleFormatter;
 
 import main.Main;
 
+/**
+ * This is the logging class to log some information to the console and file
+ * 
+ * @author yannick
+ *
+ */
 public class Logging {
 	/**
 	 * Sets the up logger.
@@ -26,6 +32,11 @@ public class Logging {
 	private static Boolean appendFiles;
 	private static Level debugLevel;
 
+	/**
+	 * This will create the logger-instance
+	 * 
+	 * @return
+	 */
 	public static Logger setupLogger() {
 		LOGGER = Logger.getLogger(Main.class.getName());
 		FileHandler fh;
@@ -43,6 +54,7 @@ public class Logging {
 				public synchronized String format(LogRecord lr) {
 					return String.format(format, new Date(lr.getMillis()), lr.getLevel().getLocalizedName(),
 							lr.getMessage(), lr.getThrown());
+
 				}
 			});
 			LOGGER.setLevel(debugLevel);

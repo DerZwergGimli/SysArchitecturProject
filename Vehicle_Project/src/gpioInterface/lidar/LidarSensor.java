@@ -1,13 +1,23 @@
 package gpioInterface.lidar;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.TimeZone;
 
 import redisInterface.IRedisDBInterface;
 
+/**
+ * Implementation of an ILidarSensor used to store and handle data of a
+ * lidar-sensor
+ * 
+ * @author yannick
+ *
+ */
 public class LidarSensor implements ILidarSensor {
 	int expireTimeRedis = 100;
 
@@ -15,7 +25,11 @@ public class LidarSensor implements ILidarSensor {
 	private int[] angles = new int[360];
 	private int[] distances = new int[360];
 
+	/**
+	 * The constructor of a lidar-sensor-object
+	 */
 	public LidarSensor() {
+		readPropertiesFile();
 		generateAngels();
 	}
 
@@ -33,9 +47,38 @@ public class LidarSensor implements ILidarSensor {
 		generateTimestamp();
 	}
 
+	@Override
 	public void setDistances(int[] distances) {
 		this.distances = distances;
 		generateTimestamp();
+	}
+
+	@Override
+	public int[] getDistancesBySection(int startAngle, int endAngle) {
+		int[] distancesSection = null;
+
+		if ((endAngle - startAngle) > 0) {
+			distancesSection = new int[endAngle - startAngle];
+
+			for (int i = startAngle; i < endAngle; i++) {
+				distancesSection[i - startAngle] = distances[i];
+			}
+		}
+
+		if ((startAngle - endAngle) > 0) {
+			int startToZero = 359 - startAngle;
+
+			distancesSection = new int[startToZero + endAngle + 1];
+			for (int i = startAngle; i < distances.length; i++) {
+				distancesSection[i - startAngle] = distances[i];
+			}
+
+			for (int i = 0; i < endAngle; i++) {
+				distancesSection[startToZero + i + 1] = distances[i];
+			}
+		}
+
+		return distancesSection;
 	}
 
 	@Override
@@ -76,6 +119,19 @@ public class LidarSensor implements ILidarSensor {
 		DateFormat dateFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'", Locale.GERMANY);
 		dateFormat.setTimeZone(TimeZone.getTimeZone("CET"));
 		timestamp = dateFormat.format(new Date());
+	}
+
+	private void readPropertiesFile() {
+		try (InputStream input = new FileInputStream("config.properties")) {
+			Properties properties = new Properties();
+			properties.load(input);
+
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
+
+		} catch (Exception ex) {
+			System.out.println("Error reading config file!");
+
+		}
 	}
 
 }

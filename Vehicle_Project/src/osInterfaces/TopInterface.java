@@ -1,17 +1,21 @@
 package osInterfaces;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.TimeZone;
 
 import redisInterface.IRedisDBInterface;
 
 public class TopInterface implements ITopInterface {
+	private Boolean enabled;
 
 	private int expireTimeRedis = 100;
 
@@ -46,99 +50,105 @@ public class TopInterface implements ITopInterface {
 	private String swap_unit = "KiB";
 
 	public TopInterface() {
+		readPropertiesFile();
 	}
 
 	@Override
 	public void readOSLinuxTopInterface() {
-		ProcessBuilder processBuilder = new ProcessBuilder();
-		String bashString = "top -b -n 1 | grep 'top' -m 1 -A 4";
+		if (enabled) {
 
-		processBuilder.command("bash", "-c", bashString);
+			ProcessBuilder processBuilder = new ProcessBuilder();
+			String bashString = "top -b -n 1 | head -5";
 
-		String[] lines = new String[5];
+			processBuilder.command("/bin/sh", "-c", bashString);
 
-		try {
-			Process process = processBuilder.start();
+			String[] lines = new String[5];
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			try {
+				Process process = processBuilder.start();
 
-			String line;
-			int i = 0;
+				BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-			while ((line = reader.readLine()) != null) {
-				lines[i] = line;
-				i++;
-			}
+				String line;
+				int i = 0;
 
-			int exitCode = process.waitFor();
-
-			if (exitCode == 0) {
-				// Parse first ROW
-				String temp = lines[0];
-				String[] firstRow = temp.split("[ ]+");
-				if (firstRow.length == 13) {
-					systemTime = firstRow[2];
-					uptime = firstRow[4];
-					uptimeUnit = firstRow[5].substring(0, firstRow[5].length() - 1);
-					loadAverage_1min = Float
-							.parseFloat(firstRow[10].substring(0, firstRow[10].length() - 1).replace(',', '.'));
-					loadAverage_5min = Float
-							.parseFloat(firstRow[11].substring(0, firstRow[11].length() - 1).replace(',', '.'));
-					loadAverage_15min = Float
-							.parseFloat(firstRow[12].substring(0, firstRow[12].length() - 1).replace(',', '.'));
-				}
-				if (firstRow.length == 12) {
-					systemTime = firstRow[2];
-					uptime = firstRow[4].substring(0, firstRow[4].length() - 1);
-					uptimeUnit = "hh:mm";
-					loadAverage_1min = Float
-							.parseFloat(firstRow[9].substring(0, firstRow[9].length() - 1).replace(',', '.'));
-					loadAverage_5min = Float
-							.parseFloat(firstRow[10].substring(0, firstRow[10].length() - 1).replace(',', '.'));
-					loadAverage_15min = Float
-							.parseFloat(firstRow[11].substring(0, firstRow[11].length() - 1).replace(',', '.'));
+				while ((line = reader.readLine()) != null) {
+					lines[i] = line;
+					i++;
 				}
 
-				// Parse secound ROW TODO: make this happening
-				temp = lines[1];
-				String[] secoundRow = temp.split("[ ]+");
+				int exitCode = process.waitFor();
 
-				// Parse third ROW
-				temp = lines[2];
-				String[] thridRow = temp.split("[ ]+");
-				cpu_user = Float.parseFloat(thridRow[1].replace(',', '.'));
-				cpu_system = Float.parseFloat(thridRow[3].replace(',', '.'));
-				cpu_nice = Float.parseFloat(thridRow[5].replace(',', '.'));
-				cpu_idle = Float.parseFloat(thridRow[7].replace(',', '.'));
-				cpu_wait = Float.parseFloat(thridRow[9].replace(',', '.'));
-				cpu_hardwareInterrupts = Float.parseFloat(thridRow[11].replace(',', '.'));
-				cpu_softwareInterrupts = Float.parseFloat(thridRow[13].replace(',', '.'));
-				cpu_stolenTimeByHypervisor = Float.parseFloat(thridRow[15].replace(',', '.'));
+				if (exitCode == 0) {
 
-				// Parse fourth ROW
-				temp = lines[3];
-				String[] fourthRow = temp.split("[ ]+");
-				memory_total = Long.parseLong(fourthRow[3]);
-				memory_free = Long.parseLong(fourthRow[5]);
-				memory_used = Long.parseLong(fourthRow[7]);
-				memory_bufferCache = Long.parseLong(fourthRow[9]);
+					// Parse first ROW
 
-				// Parse fifth ROW
-				temp = lines[4];
-				String[] fifthRow = temp.split("[ ]+");
-				swap_total = Long.parseLong(fifthRow[2]);
-				swap_free = Long.parseLong(fifthRow[4]);
-				swap_used = Long.parseLong(fifthRow[6]);
-				swap_bufferCache = Long.parseLong(fifthRow[8]);
+					String temp = lines[0];
+					String[] firstRow = temp.split("[ ]+");
+					if (firstRow.length == 13) {
+						systemTime = firstRow[2];
+						uptime = firstRow[4];
+						uptimeUnit = firstRow[5].substring(0, firstRow[5].length() - 1);
+						loadAverage_1min = Float
+								.parseFloat(firstRow[10].substring(0, firstRow[10].length() - 1).replace(',', '.'));
+						loadAverage_5min = Float
+								.parseFloat(firstRow[11].substring(0, firstRow[11].length() - 1).replace(',', '.'));
+						loadAverage_15min = Float
+								.parseFloat(firstRow[12].substring(0, firstRow[12].length() - 1).replace(',', '.'));
+					}
+					if (firstRow.length == 12) {
+						systemTime = firstRow[2];
+						uptime = firstRow[4].substring(0, firstRow[4].length() - 1);
+						uptimeUnit = "hh:mm";
+						loadAverage_1min = Float
+								.parseFloat(firstRow[9].substring(0, firstRow[9].length() - 1).replace(',', '.'));
+						loadAverage_5min = Float
+								.parseFloat(firstRow[10].substring(0, firstRow[10].length() - 1).replace(',', '.'));
+						loadAverage_15min = Float
+								.parseFloat(firstRow[11].substring(0, firstRow[11].length() - 1).replace(',', '.'));
+					}
 
-				generateTimestamp();
+					// Parse secound ROW TODO: make this happening
+					temp = lines[1];
+					String[] secoundRow = temp.split("[ ]+");
 
+					// Parse third ROW
+					temp = lines[2];
+					String[] thridRow = temp.split("[ ]+");
+					cpu_user = Float.parseFloat(thridRow[1].replace(',', '.'));
+					cpu_system = Float.parseFloat(thridRow[3].replace(',', '.'));
+					cpu_nice = Float.parseFloat(thridRow[5].replace(',', '.'));
+					cpu_idle = Float.parseFloat(thridRow[7].replace(',', '.'));
+					cpu_wait = Float.parseFloat(thridRow[9].replace(',', '.'));
+					cpu_hardwareInterrupts = Float.parseFloat(thridRow[11].replace(',', '.'));
+					cpu_softwareInterrupts = Float.parseFloat(thridRow[13].replace(',', '.'));
+					cpu_stolenTimeByHypervisor = Float.parseFloat(thridRow[15].replace(',', '.'));
+
+					// Parse fourth ROW
+					temp = lines[3];
+					String[] fourthRow = temp.split("[ ]+");
+					memory_total = Long.parseLong(fourthRow[3]);
+					memory_free = Long.parseLong(fourthRow[5]);
+					memory_used = Long.parseLong(fourthRow[7]);
+					memory_bufferCache = Long.parseLong(fourthRow[9]);
+
+					// Parse fifth ROW
+					temp = lines[4];
+					String[] fifthRow = temp.split("[ ]+");
+					swap_total = Long.parseLong(fifthRow[2]);
+					swap_free = Long.parseLong(fifthRow[4]);
+					swap_used = Long.parseLong(fifthRow[6]);
+					swap_bufferCache = Long.parseLong(fifthRow[8]);
+
+					generateTimestamp();
+
+				}
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 	}
 
@@ -150,37 +160,53 @@ public class TopInterface implements ITopInterface {
 
 	@Override
 	public void writeToDatabase(IRedisDBInterface redis) {
-		String parentTopic = "sensors:os:top:";
-		redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
-		redis.setAndExpire(parentTopic + "systemTime", systemTime, expireTimeRedis);
-		redis.setAndExpire(parentTopic + "uptime", uptime, expireTimeRedis);
-		redis.setAndExpire(parentTopic + "uptimeUnit", uptimeUnit, expireTimeRedis);
-		redis.setAndExpire(parentTopic + "users_active", String.valueOf(users_active), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "loadAverage_1min", String.valueOf(loadAverage_1min), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "loadAverage_5min", String.valueOf(loadAverage_5min), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "loadAverage_15min", String.valueOf(loadAverage_15min), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "cpu_user", String.valueOf(cpu_user), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "cpu_system", String.valueOf(cpu_system), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "cpu_nice", String.valueOf(cpu_nice), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "cpu_idle", String.valueOf(cpu_idle), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "cpu_wait", String.valueOf(cpu_wait), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "cpu_hardwareInterrupts", String.valueOf(cpu_hardwareInterrupts),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + "cpu_softwareInterrupts", String.valueOf(cpu_softwareInterrupts),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + "cpu_stolenTimeByHypervisor", String.valueOf(cpu_stolenTimeByHypervisor),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + "memory_total", String.valueOf(memory_total), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "memory_free", String.valueOf(memory_free), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "memory_used", String.valueOf(memory_used), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "memory_bufferCache", String.valueOf(memory_bufferCache), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "memeory_unit", memeory_unit, expireTimeRedis);
-		redis.setAndExpire(parentTopic + "swap_total", String.valueOf(swap_total), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "swap_free", String.valueOf(swap_free), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "swap_used", String.valueOf(swap_used), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "swap_bufferCache", String.valueOf(swap_bufferCache), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "swap_unit", swap_unit, expireTimeRedis);
+		if (enabled) {
 
+			String parentTopic = "sensors:os:top:";
+			redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
+			redis.setAndExpire(parentTopic + "systemTime", systemTime, expireTimeRedis);
+			redis.setAndExpire(parentTopic + "uptime", uptime, expireTimeRedis);
+			redis.setAndExpire(parentTopic + "uptimeUnit", uptimeUnit, expireTimeRedis);
+			redis.setAndExpire(parentTopic + "users_active", String.valueOf(users_active), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "loadAverage_1min", String.valueOf(loadAverage_1min), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "loadAverage_5min", String.valueOf(loadAverage_5min), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "loadAverage_15min", String.valueOf(loadAverage_15min), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "cpu_user", String.valueOf(cpu_user), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "cpu_system", String.valueOf(cpu_system), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "cpu_nice", String.valueOf(cpu_nice), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "cpu_idle", String.valueOf(cpu_idle), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "cpu_wait", String.valueOf(cpu_wait), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "cpu_hardwareInterrupts", String.valueOf(cpu_hardwareInterrupts),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + "cpu_softwareInterrupts", String.valueOf(cpu_softwareInterrupts),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + "cpu_stolenTimeByHypervisor", String.valueOf(cpu_stolenTimeByHypervisor),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + "memory_total", String.valueOf(memory_total), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "memory_free", String.valueOf(memory_free), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "memory_used", String.valueOf(memory_used), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "memory_bufferCache", String.valueOf(memory_bufferCache), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "memeory_unit", memeory_unit, expireTimeRedis);
+			redis.setAndExpire(parentTopic + "swap_total", String.valueOf(swap_total), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "swap_free", String.valueOf(swap_free), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "swap_used", String.valueOf(swap_used), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "swap_bufferCache", String.valueOf(swap_bufferCache), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "swap_unit", swap_unit, expireTimeRedis);
+		}
+	}
+
+	private void readPropertiesFile() {
+		try (InputStream input = new FileInputStream("config.properties")) {
+			Properties properties = new Properties();
+			properties.load(input);
+
+			enabled = Boolean.valueOf(properties.getProperty("topInterface.enabled"));
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
+
+		} catch (Exception ex) {
+			System.out.println("Error reading config file!");
+
+		}
 	}
 
 }

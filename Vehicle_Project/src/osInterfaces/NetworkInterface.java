@@ -1,17 +1,22 @@
 package osInterfaces;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Properties;
 import java.util.TimeZone;
 
 import redisInterface.IRedisDBInterface;
 
 public class NetworkInterface implements INetworkInterface {
+	private Boolean enabled;
+
 	private int expireTimeRedis = 100;
 
 	private String networkInterfaceName;
@@ -31,62 +36,65 @@ public class NetworkInterface implements INetworkInterface {
 	private long tx_carrier;
 	private long tx_collsns;
 
-	public NetworkInterface(String networkInterfaceName) {
-		this.networkInterfaceName = networkInterfaceName;
+	public NetworkInterface() {
+		readPropertiesFile();
 
 	}
 
 	@Override
 	public void readNetworkInterface() {
-		ProcessBuilder processBuilder = new ProcessBuilder();
-		String bashString = "ip -statistics link show dev " + this.networkInterfaceName + " | grep RX -A 4";
+		if (enabled) {
 
-		processBuilder.command("bash", "-c", bashString);
+			ProcessBuilder processBuilder = new ProcessBuilder();
+			String bashString = "ip -statistics link show dev " + this.networkInterfaceName + " | grep RX -A 4";
 
-		String[] lines = new String[4];
+			processBuilder.command("bash", "-c", bashString);
 
-		try {
-			Process process = processBuilder.start();
+			String[] lines = new String[4];
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+			try {
+				Process process = processBuilder.start();
 
-			String line;
-			int i = 0;
+				BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
 
-			while ((line = reader.readLine()) != null) {
-				lines[i] = line;
-				i++;
+				String line;
+				int i = 0;
+
+				while ((line = reader.readLine()) != null) {
+					lines[i] = line;
+					i++;
+				}
+
+				int exitCode = process.waitFor();
+
+				if (exitCode == 0) {
+
+					String delims = "[ ]+";
+					String[] rx_tokens = lines[1].split(delims);
+					String[] tx_tokens = lines[3].split(delims);
+
+					this.rx_bytes = Long.parseLong(rx_tokens[1]);
+					this.rx_packages = Long.parseLong(rx_tokens[2]);
+					this.rx_errors = Long.parseLong(rx_tokens[3]);
+					this.rx_dropped = Long.parseLong(rx_tokens[4]);
+					this.rx_overrun = Long.parseLong(rx_tokens[5]);
+					this.rx_mcast = Long.parseLong(rx_tokens[6]);
+
+					this.tx_bytes = Long.parseLong(tx_tokens[1]);
+					this.tx_packages = Long.parseLong(tx_tokens[2]);
+					this.tx_errors = Long.parseLong(tx_tokens[3]);
+					this.tx_dropped = Long.parseLong(tx_tokens[4]);
+					this.tx_carrier = Long.parseLong(tx_tokens[5]);
+					this.tx_collsns = Long.parseLong(tx_tokens[6]);
+
+					generateTimestamp();
+				}
+
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-
-			int exitCode = process.waitFor();
-
-			if (exitCode == 0) {
-
-				String delims = "[ ]+";
-				String[] rx_tokens = lines[1].split(delims);
-				String[] tx_tokens = lines[3].split(delims);
-
-				this.rx_bytes = Long.parseLong(rx_tokens[1]);
-				this.rx_packages = Long.parseLong(rx_tokens[2]);
-				this.rx_errors = Long.parseLong(rx_tokens[3]);
-				this.rx_dropped = Long.parseLong(rx_tokens[4]);
-				this.rx_overrun = Long.parseLong(rx_tokens[5]);
-				this.rx_mcast = Long.parseLong(rx_tokens[6]);
-
-				this.tx_bytes = Long.parseLong(tx_tokens[1]);
-				this.tx_packages = Long.parseLong(tx_tokens[2]);
-				this.tx_errors = Long.parseLong(tx_tokens[3]);
-				this.tx_dropped = Long.parseLong(tx_tokens[4]);
-				this.tx_carrier = Long.parseLong(tx_tokens[5]);
-				this.tx_collsns = Long.parseLong(tx_tokens[6]);
-
-				generateTimestamp();
-			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		}
 
 	}
@@ -99,34 +107,39 @@ public class NetworkInterface implements INetworkInterface {
 
 	@Override
 	public void writeToDatabase(IRedisDBInterface redis) {
-		String parentTopic = "sensors:os:network:";
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":timestamp", timestamp, expireTimeRedis);
+		if (enabled) {
 
-		// Set ALL RX_Values
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_bytes", String.valueOf(rx_bytes), expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_packages", String.valueOf(rx_packages),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_errors", String.valueOf(rx_errors),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_dropped", String.valueOf(rx_dropped),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_overrun", String.valueOf(rx_overrun),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_mcast", String.valueOf(rx_mcast), expireTimeRedis);
+			String parentTopic = "sensors:os:network:";
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":timestamp", timestamp, expireTimeRedis);
 
-		// Set ALL RX_Values
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_bytes", String.valueOf(tx_bytes), expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_packages", String.valueOf(tx_packages),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_errors", String.valueOf(tx_errors),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_droppped", String.valueOf(tx_dropped),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_carrier", String.valueOf(tx_carrier),
-				expireTimeRedis);
-		redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_collsns", String.valueOf(tx_collsns),
-				expireTimeRedis);
+			// Set ALL RX_Values
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_bytes", String.valueOf(rx_bytes),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_packages", String.valueOf(rx_packages),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_errors", String.valueOf(rx_errors),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_dropped", String.valueOf(rx_dropped),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_overrun", String.valueOf(rx_overrun),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":rx_mcast", String.valueOf(rx_mcast),
+					expireTimeRedis);
 
+			// Set ALL RX_Values
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_bytes", String.valueOf(tx_bytes),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_packages", String.valueOf(tx_packages),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_errors", String.valueOf(tx_errors),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_droppped", String.valueOf(tx_dropped),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_carrier", String.valueOf(tx_carrier),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + networkInterfaceName + ":tx_collsns", String.valueOf(tx_collsns),
+					expireTimeRedis);
+		}
 	}
 
 	@Override
@@ -136,6 +149,21 @@ public class NetworkInterface implements INetworkInterface {
 				+ ", rx_overrun=" + rx_overrun + ", rx_mcast=" + rx_mcast + "\n tx_bytes=" + tx_bytes + ", tx_packages="
 				+ tx_packages + ", tx_errors=" + tx_errors + ", tx_dropped=" + tx_dropped + ", tx_carrier=" + tx_carrier
 				+ ", tx_collsns=" + tx_collsns + "]";
+	}
+
+	private void readPropertiesFile() {
+		try (InputStream input = new FileInputStream("config.properties")) {
+			Properties properties = new Properties();
+			properties.load(input);
+
+			enabled = Boolean.valueOf(properties.getProperty("networkInterface.enabled"));
+			networkInterfaceName = properties.getProperty("networkInterface.name");
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
+
+		} catch (Exception ex) {
+			System.out.println("Error reading config file!");
+
+		}
 	}
 
 }

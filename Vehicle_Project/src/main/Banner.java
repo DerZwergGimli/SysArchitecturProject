@@ -4,10 +4,20 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
+/**
+ * This class is used to generate a banner that will be displayed at the start
+ * of the application
+ * 
+ * @author yannick
+ *
+ */
 public class Banner {
 
 	private static int startupDelay = 5;
 
+	/**
+	 * This will print the banner to system.out.print()
+	 */
 	public static void printBanner() {
 		readPropertiesFile();
 
@@ -36,7 +46,7 @@ public class Banner {
 		System.out.println("  _____                                                                         ");
 		System.out.println(" / ____|          Project-Members:                                              ");
 		System.out.println("| |  __               - Jonas Maier                                             ");
-		System.out.println("| | |_ |              - Mouaad Gasair                                           ");
+		System.out.println("| | |_ |              - Mouaad Gassair                                          ");
 		System.out.println("| |__| |              - Yannick Pauly                                           ");
 		System.out.println(" \\_____|                             		HOPE YOU ENJOY THIS!        ");
 		System.out.println();

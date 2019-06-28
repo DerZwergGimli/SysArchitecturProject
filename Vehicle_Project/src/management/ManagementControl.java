@@ -8,8 +8,15 @@ import java.util.logging.Logger;
 
 import redisInterface.IRedisDBInterface;
 
+/**
+ * This contrete class is used to control/manage the whole application
+ * 
+ * @author yannick
+ *
+ */
 public class ManagementControl implements IManagementControl {
 	private Logger logger;
+	private int expireTimeRedis;
 
 	private static String parentTopic = "management:threads:";
 	private Boolean clearConsole;
@@ -21,6 +28,11 @@ public class ManagementControl implements IManagementControl {
 	private Boolean exposeControlToDatabase;
 	private Boolean showSatusInConsole;
 
+	/**
+	 * This is the constructor of the manager
+	 * 
+	 * @param logger
+	 */
 	public ManagementControl(Logger logger) {
 		this.logger = logger;
 	}
@@ -115,11 +127,16 @@ public class ManagementControl implements IManagementControl {
 	@Override
 	public void writeEntriesToDatabase(IRedisDBInterface redis) {
 		if (exposeControlToDatabase == true) {
-			redis.set(parentTopic + "managementThreadRunnable", managementThreadRunnable.toString());
-			redis.set(parentTopic + "collisonAvoidanceThreadRunnable", collisionAvoidanceThreadRunnable.toString());
-			redis.set(parentTopic + "lidarDataCollectionThreadRunnable", lidarDataCollectionThreadRunnable.toString());
-			redis.set(parentTopic + "databaseReaderThreadRunnable", databaseReaderThreadRunnable.toString());
-			redis.set(parentTopic + "databaseWriterThreadRunnable", databaseWriterThreadRunnable.toString());
+			redis.setAndExpire(parentTopic + "managementThreadRunnable", managementThreadRunnable.toString(),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + "collisonAvoidanceThreadRunnable",
+					collisionAvoidanceThreadRunnable.toString(), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "lidarDataCollectionThreadRunnable",
+					lidarDataCollectionThreadRunnable.toString(), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "databaseReaderThreadRunnable", databaseReaderThreadRunnable.toString(),
+					expireTimeRedis);
+			redis.setAndExpire(parentTopic + "databaseWriterThreadRunnable", databaseWriterThreadRunnable.toString(),
+					expireTimeRedis);
 
 		}
 
@@ -164,6 +181,8 @@ public class ManagementControl implements IManagementControl {
 			this.clearConsole = Boolean.parseBoolean(properties.getProperty("console.clearScreen", "false"));
 			this.showSatusInConsole = Boolean
 					.parseBoolean(properties.getProperty("console.showStatusInConsole", "false"));
+			expireTimeRedis = Integer.valueOf(properties.getProperty("redis.expireTime"));
+
 		} catch (Exception ex) {
 			logger.log(Level.SEVERE, "Error while trying to read config of RedisDB", ex);
 
@@ -180,6 +199,8 @@ public class ManagementControl implements IManagementControl {
 			System.out.println("lidarDataCollectionThreadRunnable:\t" + lidarDataCollectionThreadRunnable);
 			System.out.println("databaseReaderThreadRunnable:\t\t" + databaseReaderThreadRunnable);
 			System.out.println("databaseWriterThreadRunnable:\t\t" + databaseWriterThreadRunnable);
+			System.out.println(" -> to close the application press 'ctr+d'");
+			System.out.println("===============================================================================");
 
 		}
 	}

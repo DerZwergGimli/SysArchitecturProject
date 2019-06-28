@@ -11,6 +11,12 @@ import javax.realtime.RealtimeThread;
 
 import gpioInterface.lidar.ILidarInterface;
 
+/**
+ * Concrete MissHandler for the lidarDataCollection
+ * 
+ * @author yannick
+ *
+ */
 public class MissLidarDataCollection extends AsyncEventHandler implements IMissHandler {
 	private AsynchronouslyInterruptedException asInterruptedException;
 	private RealtimeThread realtimeThread;
@@ -38,6 +44,11 @@ public class MissLidarDataCollection extends AsyncEventHandler implements IMissH
 		this.lidarController = lidarController;
 	}
 
+	/**
+	 * Constructor for a MissHandler for lidarDataCollection
+	 * 
+	 * @param logger
+	 */
 	public MissLidarDataCollection(Logger logger) {
 		super(new PriorityParameters(priorityParameters), null, null, null, null, null);
 		this.logger = logger;

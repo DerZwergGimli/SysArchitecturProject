@@ -14,8 +14,15 @@ import javax.realtime.SchedulingParameters;
 
 import management.IManagementControl;
 import redisInterface.IRedisDBInterface;
-import threads.interruptible.InterruptableReaderDB;
+import threads.interruptible.InterruptibleReaderDB;
 
+/**
+ * This RealtimeThread is used to write some entries periodically into a
+ * database
+ * 
+ * @author yannick
+ *
+ */
 public class TReaderDB extends RealtimeThread {
 
 	private Logger logger;
@@ -27,6 +34,12 @@ public class TReaderDB extends RealtimeThread {
 	private static ReleaseParameters releaseParameters = new PeriodicParameters(new RelativeTime(),
 			new RelativeTime(300, 0), null, null, null, null);
 
+	/**
+	 * This is the constructor for the reader-database thread
+	 * 
+	 * @param logger
+	 * @param management
+	 */
 	public TReaderDB(Logger logger, IManagementControl management) {
 		this.logger = logger;
 		this.management = management;
@@ -55,7 +68,7 @@ public class TReaderDB extends RealtimeThread {
 		try {
 			logger.info("Creating InterruptableReaderDB");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
-			InterruptableReaderDB inReaderDB = new InterruptableReaderDB(logger, management);
+			InterruptibleReaderDB inReaderDB = new InterruptibleReaderDB(logger, management);
 			asInterruptedException.doInterruptible(inReaderDB);
 
 		} catch (Exception e) {

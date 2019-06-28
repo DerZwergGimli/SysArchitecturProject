@@ -9,6 +9,12 @@ import javax.realtime.PriorityParameters;
 import javax.realtime.PriorityScheduler;
 import javax.realtime.RealtimeThread;
 
+/**
+ * Concrete MissHandler for the collisionAvoidance
+ * 
+ * @author yannick
+ *
+ */
 public class MissCollisonAvoidance extends AsyncEventHandler implements IMissHandler {
 
 	AsynchronouslyInterruptedException asInterruptedException;
@@ -32,6 +38,11 @@ public class MissCollisonAvoidance extends AsyncEventHandler implements IMissHan
 		this.logger = logger;
 	}
 
+	/**
+	 * Constructor for a MissHandler for CollisonAvoidance
+	 * 
+	 * @param logger
+	 */
 	public MissCollisonAvoidance(Logger logger) {
 		super(new PriorityParameters(priorityParameters), null, null, null, null, null);
 		this.logger = logger;

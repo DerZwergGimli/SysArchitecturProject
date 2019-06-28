@@ -29,8 +29,8 @@ public class DBControllerTest {
 
     @Test
     public void get() {
-        String actual = mInstance.get("var1");
-        Assert.assertEquals("Get Method not successful, result read: " + actual, "100", actual);
+        String actual = mInstance.get("sensors:rfid:present");
+        Assert.assertEquals("Get Method not successful, result read: " + actual, "true", actual);
     }
 
     @Test

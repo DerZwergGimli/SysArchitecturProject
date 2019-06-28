@@ -24,8 +24,8 @@ public class DataPersistanceThread extends Thread {
     private int interval_ms;
     private DBController dbController;
     private ComController comController;
-    private String networkDBentry = "os:network:wlp2s0:";
-    private String jitter = "os:network:wlp2s0:";
+    private String networkDBentry = "os:network:eth0:";
+    private String jitterDBentry = "sensors:collsionAvoidance:timing:collionControllExecutionTime:";
 
     public DataPersistanceThread(int interval_ms, ComController comController) {
         this.interval_ms = interval_ms;
@@ -64,40 +64,39 @@ public class DataPersistanceThread extends Thread {
 
     private Vehicle getVehicleData() {
         Sensor tempSensor = new Sensor("Temperature",
-                dbController.get("Sensors:TempValue"),
+                dbController.get("sensors:temperature:tempValue"),
                 " Degree Celsius",
-                dbController.get("Sensors:TempState"),
-                dbController.get("Sensors:TempTimestamp"));
+                dbController.get("sensors:temperature:tempState"),
+                dbController.get("sensors:temperature:timestamp"));
         Sensor humiditySensor = new Sensor("Humidity",
-                dbController.get("Sensors:HumidityValue"),
+                dbController.get("sensors:humidity:humidityValue"),
                 "%",
-                dbController.get("Sensors:HumidityState"),
-                dbController.get("Sensors:HumidityTimestamp"));
+                dbController.get("sensors:humidity:humidityState"),
+                dbController.get("sensors:humidity:humidityTimestamp"));
         Sensor speedSensor = new Sensor("Speed",
-                dbController.get("Sensors:SpeedValue"),
+                dbController.get("sensors:speed:speedValue"),
                 "km/h",
-                dbController.get("Sensors:SpeedState"),
-                dbController.get("Sensors:SpeedTimestamp"));
-        Passenger driverPassenger = new Passenger("Driver",
-                dbController.get("Driver:isPresent"),
-                "timestamp"); // TODO: Timestamp
-        Passenger frontSeatPassenger = new Passenger("front-seat passenger",
-                dbController.get("Passenger:isPresent"),
-                "timestamp"); // TODO: Timestamp
-        Lidar lidarSensor = new Lidar(dbController.get("sensors:lidar:angles"),
-                "Degree",
+                dbController.get("sensors:speed:speedState"),
+                dbController.get("sensors:speed:speedTimestamp"));
+        Sensor lidarSensor = new Sensor("LidarDistances",
                 dbController.get("sensors:lidar:distances"),
-                "cm",
-                dbController.get("management:threads:collisonAvoidanceRunnable"),
+                "mm",
+                dbController.get("management:threads:lidarDataCollectionThreadRunnable"),
                 dbController.get("sensors:lidar:timestamp"));
+        Passenger driverPassenger = new Passenger("Driver",
+                dbController.get("sensors:rfid:present"),
+                dbController.get("sensors:rfid:timestamp")); // TODO: Timestamp
+//        Passenger frontSeatPassenger = new Passenger("front-seat passenger",
+//                dbController.get("Passenger:isPresent"),
+//                "20190624T005155Z"); // TODO: Timestamp
 
         Vehicle vehicle = new Vehicle();
         vehicle.addSensors(tempSensor);
         vehicle.addSensors(humiditySensor);
         vehicle.addSensors(speedSensor);
+        vehicle.addSensors(lidarSensor);
         vehicle.addPassengers(driverPassenger);
-        vehicle.addPassengers(frontSeatPassenger);
-        vehicle.setLidar(lidarSensor);
+//        vehicle.addPassengers(frontSeatPassenger);
         return vehicle;
     }
 
@@ -116,14 +115,21 @@ public class DataPersistanceThread extends Thread {
         CPUtempSensor.setState(dbController.get("CPUtempState"));
         CPUtempSensor.setValue(dbController.get("os:temperature:cpu0"));
         CPUtempSensor.setTimestamp(dbController.get("os:temperature:timestamp"));
-        Integer cpuLoad = 100 - Integer.parseInt(dbController.get("os:top:cpu_idle"));
+        Integer cpuLoad = new Integer(0);
+        try{
+            cpuLoad = 100 - Integer.parseInt(dbController.get("os:top:cpu_idle"));
+        }catch (Exception ex){
+            System.out.println("Exception Thrown");
+            ex.printStackTrace();
+        }
+
         CPU cpu = new CPU(CPUtempSensor, cpuLoad.toString(), dbController.get("CPU:CPUactiveCores"));
 
         Sensor jitterSensor = new Sensor("Jitter",
-                dbController.get("os:thread:collionControll:diffTimeNano"),
+                dbController.get(jitterDBentry+"diffTimeNano"),
                 "ns",
-                dbController.get("RT:JitterState"),
-                dbController.get("os:thread:collionControll:JitterTimestamp"));
+                dbController.get("management:threads:collisonAvoidanceRunnable"),
+                dbController.get(jitterDBentry+"timestamp"));
         RealTimeData realTimeData = new RealTimeData(jitterSensor, dbController.get("RT:numOfRTThreads"));
 
         Received received = new Received(dbController.get(networkDBentry + "rx_bytes"),

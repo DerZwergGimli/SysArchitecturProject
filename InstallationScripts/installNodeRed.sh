@@ -2,22 +2,23 @@
 
 nodeRedInstall(){
    echo "Installing Node-RED";
-   sudo apt-get install nodejs-legacy -y;
-   sudo apt-get install npm -y;
-   sudo npm install -g --unsafe-perm node-red node-red-admin -y;
-   sudo ufw allow 1880;
-   generateNodeRed_Service;
-   sudo systemctl enable node-red;
-   sudo systemctl start node-red;
-   sudo systemctl stop node-red;
-   sudo npm install node-red-contrib-redis;
-   sudo npm install node-red-dashboard;
-   sudo npm install node-red-contrib-chartjs
+   apt install nodejs-legacy -y;
+   apt install npm -y;
+   apt install build-essential;
+   apt install nodered;
+   ufw allow 1880;
+   #cp node-red.service /etc/systemd/system/node-red.service;
+   systemctl enable nodered;
+   systemctl start nodered;
+   systemctl stop nodered;
+   npm install node-red-contrib-redis;
+   npm install node-red-dashboard;
+   npm install node-red-contrib-chartjs;
 }
 
 
 generateNodeRed_Service(){
-cat <<EOT >> /etc/systemd/system/node-red.service
+cat << EOT >> /etc/systemd/system/node-red.service
 [Unit]
 Description=Node-RED
 After=syslog.target network.target

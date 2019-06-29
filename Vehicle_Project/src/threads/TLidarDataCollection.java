@@ -99,6 +99,7 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Error occured while creating InterruptableLidarDataCollection", e);
 		}
+		lidarController.stopRotation();
 
 	}
 

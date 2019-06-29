@@ -73,11 +73,11 @@ public class InterruptibleCollisionAvoidance implements Interruptible {
 			}
 
 			if (lidarSensor != null) {
-				CollisionAvoidance collisionAvoidance = new CollisionAvoidance(lidarSensor);
+				CollisionAvoidance collisionAvoidance = new CollisionAvoidance(lidarSensor, logger);
 				collisionAvoidance.checkAllSections();
 				sendInQueue(lidarSensor, collisionAvoidance, stopWatchOld);
 			} else {
-				logger.log(Level.WARNING, "Queue was empty does nothing in here");
+				logger.log(Level.INFO, "Queue was empty does nothing in here");
 			}
 
 			stopWatchcurrent.stopAndCalulate();

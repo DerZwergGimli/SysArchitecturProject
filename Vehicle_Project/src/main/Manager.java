@@ -73,7 +73,7 @@ public class Manager {
 		while (management.isManagemnetThreadRunnable()) {
 			clearScreen();
 			management.printAll();
-			// management.readEntriesFormDatabase(redis);
+			management.readEntriesFormDatabase(redis);
 
 			manageCollisonAvoidanceThread();
 			manageLidarDataCollectionThread();
@@ -102,8 +102,10 @@ public class Manager {
 
 			try {
 				threadCollisionAvoidance.join();
+				threadLidarDataCollection.join();
 				threadReaderDB.join();
 				threadWriterDB.join();
+
 			} catch (InterruptedException e) {
 				logger.log(Level.SEVERE, "InterruptedException while trying to cancel and join the threads!", e);
 			} catch (NullPointerException e) {
@@ -194,7 +196,7 @@ public class Manager {
 
 	private void manageDatabaseWriterThread() {
 		if (null == threadWriterDB && management.isDatabaseWriterThreadRunnable()) {
-			threadWriterDB = new TWriterDB(logger, management, qCollisonControl);
+			threadWriterDB = new TWriterDB(logger, management, qCollisonControl, redis);
 		}
 
 		if (threadWriterDB != null) {
@@ -209,7 +211,7 @@ public class Manager {
 			}
 			if (Thread.State.TERMINATED == threadWriterDB.getState()) {
 				if (management.isDatabaseWriterThreadRunnable()) {
-					threadWriterDB = new TWriterDB(logger, management, qCollisonControl);
+					threadWriterDB = new TWriterDB(logger, management, qCollisonControl, redis);
 				}
 			}
 			if (Thread.State.TIMED_WAITING == threadWriterDB.getState()) {

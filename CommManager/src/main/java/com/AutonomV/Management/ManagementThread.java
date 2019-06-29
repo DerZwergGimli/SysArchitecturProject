@@ -77,7 +77,7 @@ public class ManagementThread extends Thread {
     private boolean authenticate() throws InterruptedException {
         // Send ID to the Management System
         // Get Driver ID and the timestamp of the Login from DB
-        DriverAuth driverAut = new DriverAuth(dbController.get("Driver:id"), "393939393");  // TODO dbController.get("Driver:timeStamp")
+        DriverAuth driverAut = new DriverAuth(dbController.get("sensors:rfid:ID"), dbController.get("sensors:rfid:timestamp"));  // TODO dbController.get("Driver:timeStamp")
         String authRequest = Converter.pojo2json(driverAut);
         comController.publish("/SysArch/V1/Driver/AuthRequest/", authRequest, 2);
         /* Small Delay for Authentication Response*/
@@ -103,8 +103,13 @@ public class ManagementThread extends Thread {
      * @return true if Driver is present, false if not.
      */
     private boolean checkDriver() {
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         // check cyclically if the driver is pressent
-        String isPresentResponse = dbController.get("Driver:isPresent");
+        String isPresentResponse = dbController.get("sensors:rfid:present");
         // string is true if the string is not a null and equal to true (ignoring case).
         if ((isPresentResponse != null) && !isPresentResponse.isEmpty() && Boolean.valueOf(isPresentResponse)) {
             isDriverPresent = true;

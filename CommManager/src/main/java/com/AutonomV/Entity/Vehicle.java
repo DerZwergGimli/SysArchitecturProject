@@ -10,7 +10,6 @@ public class Vehicle {
 
     private List<Sensor> Sensors = null;
     private List<Passenger> Passengers = null;
-    private Lidar lidar;
 
     /**
      * No args constructor for use in serialization
@@ -20,12 +19,12 @@ public class Vehicle {
 
     /**
      * @param sensors
-     * @param lidar
+     * @param passengers
      */
-    public Vehicle(List<Sensor> sensors, Lidar lidar) {
+    public Vehicle(List<Sensor> sensors, List<Passenger> passengers) {
         super();
         this.Sensors = sensors;
-        this.lidar = lidar;
+        this.Passengers = passengers;
     }
 
     public void addSensors(Sensor sensor) {
@@ -52,14 +51,6 @@ public class Vehicle {
 
     public void setSensors(List<Sensor> sensors) {
         this.Sensors = sensors;
-    }
-
-    public Lidar getLidar() {
-        return lidar;
-    }
-
-    public void setLidar(Lidar lidar) {
-        this.lidar = lidar;
     }
 
     public List<Passenger> getPassengers() {

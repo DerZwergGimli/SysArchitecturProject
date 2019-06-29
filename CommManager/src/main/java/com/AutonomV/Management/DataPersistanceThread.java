@@ -14,6 +14,12 @@ import com.AutonomV.Entity.Sensor;
 import com.AutonomV.Entity.Vehicle;
 import com.AutonomV.Util.Converter;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * This Class extends the Thread Class and runs an infinite loop if not interrupted.
  * The Interval can be changed depending on the State from the ManagementThread.
@@ -22,15 +28,35 @@ import com.AutonomV.Util.Converter;
 public class DataPersistanceThread extends Thread {
 
     private int interval_ms;
+    private int noDriverSendingInterval = 10000;
+    private int driverSendingInterval = 5000;
     private DBController dbController;
     private ComController comController;
-    private String networkDBentry = "os:network:eth0:";
+    private Logger logger;
+    private String networkDBentry = "sensors:os:network:eth0:";
     private String jitterDBentry = "sensors:collsionAvoidance:timing:collionControllExecutionTime:";
 
-    public DataPersistanceThread(int interval_ms, ComController comController) {
+    public DataPersistanceThread(int interval_ms, ComController comController, Logger logger) {
         this.interval_ms = interval_ms;
         this.comController = comController;
+        this.logger = logger;
         dbController = DBController.getInstance();
+
+    }
+
+    public  void initProperties() {
+        try (InputStream input = new FileInputStream("config.properties")) {
+            Properties properties = new Properties();
+            properties.load(input);
+
+            this.networkDBentry = properties.getProperty("networkDBentry", "sensors:os:network:eth0:");
+            this.jitterDBentry = properties.getProperty("jedisDBentry", "sensors:collsionAvoidance:timing:collionControllExecutionTime:");
+            this.noDriverSendingInterval = Integer.valueOf(properties.getProperty("noDriverSendingInterval", "10000"));
+            this.driverSendingInterval = Integer.valueOf(properties.getProperty("driverSendingInterval", "5000"));
+
+        } catch (Exception ex) {
+            logger.log(Level.SEVERE, "Error while trying to read config of DataPersistancy", ex);
+        }
     }
 
     @Override
@@ -40,9 +66,9 @@ public class DataPersistanceThread extends Thread {
             sendVehicleOS();
 
             if (ManagementThread.getManagementState() == ManagementThread.NO_DRIVER) {
-                interval_ms = 30000; // 30s
+                interval_ms = noDriverSendingInterval; // 10s
             } else {
-                interval_ms = 5000; // 5s
+                interval_ms = driverSendingInterval; // 5s
             }
 
             try {
@@ -113,11 +139,11 @@ public class DataPersistanceThread extends Thread {
         CPUtempSensor.setName("CPUtemperature");
         CPUtempSensor.setUnit("Degree Celsius");
         CPUtempSensor.setState(dbController.get("CPUtempState"));
-        CPUtempSensor.setValue(dbController.get("os:temperature:cpu0"));
-        CPUtempSensor.setTimestamp(dbController.get("os:temperature:timestamp"));
+        CPUtempSensor.setValue(dbController.get("sensors:os:temperature:cpu0"));
+        CPUtempSensor.setTimestamp(dbController.get("sensors:os:temperature:timestamp"));
         Integer cpuLoad = new Integer(0);
         try{
-            cpuLoad = 100 - Integer.parseInt(dbController.get("os:top:cpu_idle"));
+            cpuLoad = 100 - Integer.parseInt(dbController.get("sensors:os:top:cpu_idle"));
         }catch (Exception ex){
             System.out.println("Exception Thrown");
             ex.printStackTrace();

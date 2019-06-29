@@ -6,6 +6,8 @@ import com.AutonomV.Entity.Passengers.Driver;
 import com.AutonomV.Entity.Passengers.DriverAuth;
 import com.AutonomV.Util.Converter;
 
+import java.util.logging.Logger;
+
 /**
  * This Class extends the Thread Class and runs an infinite loop if not interrupted.
  * It retrievs the Data from the Redis DB, observes the Vehicle and driver and changes the state accordingly.
@@ -24,7 +26,7 @@ public class ManagementThread extends Thread {
     public static final int IS_LOGGED_IN = 2;
     public static final int LOGOUT = 3;
 
-    public ManagementThread(ComController comController) {
+    public ManagementThread(ComController comController, Logger logger) {
         this.dbController = DBController.getInstance();
         this.comController = comController;
         state = NO_DRIVER;

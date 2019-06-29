@@ -1,48 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="CommManager:jar2" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="1394a649-02cb-43e1-9187-6f04f7def902" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/lidar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/mainLog.log.1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/collisonAvoidance/ILidarSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/collisonAvoidance/IQCollisonBuffer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/collisonAvoidance/QCollisonBuffer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/management/IManagementControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/osInterfaces/INetworkInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/osInterfaces/ISensorsInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/osInterfaces/ITopInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/other/IStopWatch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/redis/IRedisDBInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/ITCollisionAvoidance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/ITReaderDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/ITWriterDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/handler/IMissCollisonAvoidance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/handler/IOverrunCollisonAvoidance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../liader_Sample/lidarinit.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../liader_Sample/lidarscan.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../liader_Sample/lidarstop.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../liader_Sample/src/testlidar/lidar.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../liader_Sample/xv11test" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.project" beforeDir="false" afterPath="$PROJECT_DIR$/../.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/mainLog.log.0" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/mainLog.log.0" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/mainLog.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/mainLog.log.2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/main/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/main/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/objects/LidarSensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/collisonAvoidance/LidarSensor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/objects/ManagementControl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/management/ManagementControl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/objects/QCollisonControl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/objects/StopWatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/other/StopWatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/os/NetworkInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/osInterfaces/NetworkInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/os/OSLinuxTopInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/osInterfaces/TopInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/os/OSSensorInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/osInterfaces/SensorsInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/redis/RedisDBInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/redis/RedisDBInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/threads/TCollisionAvoidance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/TCollisionAvoidance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/threads/TReaderDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/TReaderDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/threads/TWriteDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/TWriterDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/threads/handler/MissCollisonAvoidance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/handler/MissCollisonAvoidance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/threads/handler/OverrunCollisonAvoidance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/handler/OverrunCollisonAvoidance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/threads/interruptible/InterruptableCollisionAvoidance.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/interruptible/InterruptableCollisionAvoidance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/threads/interruptible/InterruptableReaderDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/interruptible/InterruptableReaderDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/threads/interruptible/InterruptableWriterDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/threads/interruptible/InterruptableWriterDB.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Banner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Logging.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/CommManager_jar2/CommManager.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/CommManager_jar2/CommManager.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Communication/ClientCallback.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Communication/ClientCallback.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Communication/ComController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Communication/ComController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Communication/DBController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Communication/DBController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Lidar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Lidar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/CPU.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/CPU.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/Network/NetworkInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/Network/NetworkInfo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/Network/Received.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/Network/Received.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/Network/Transmitted.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/Network/Transmitted.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/RealTimeData.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/RealTimeData.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/VehicleOS.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/OS/VehicleOS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Passengers/Driver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Passengers/Driver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Passengers/DriverAuth.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Passengers/DriverAuth.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Passengers/Passenger.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Passengers/Passenger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Sensor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Sensor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Vehicle.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Entity/Vehicle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Management/DataPersistanceThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Management/DataPersistanceThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Management/ManagementThread.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Management/ManagementThread.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Management/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Management/Manager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/AutonomV/Util/Converter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/AutonomV/Util/Converter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Communication/ComControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Communication/ComControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Communication/DBControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Communication/DBControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Util/ConverterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Util/ConverterTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../UI-NodeRed/flows.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UI-NodeRed/flows.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,36 +69,15 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="869">
-              <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ComController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#837#838#0" expanded="true" />
-                <element signature="e#882#883#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="71" column="22" lean-forward="true" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+            <state relative-caret-position="407">
+              <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#710#711#0" expanded="true" />
+                <element signature="e#765#766#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -109,17 +85,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="80" lean-forward="true" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="80" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ClientCallback.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+            <state relative-caret-position="16">
+              <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -127,20 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/ComControllerTest.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Banner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/DBControllerTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
+            <state relative-caret-position="330">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
@@ -148,24 +106,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="217">
-              <caret line="66" column="100" lean-forward="true" selection-start-line="66" selection-start-column="100" selection-end-line="66" selection-end-column="100" />
+            <state relative-caret-position="493">
+              <caret line="58" column="9" selection-start-line="47" selection-start-column="8" selection-end-line="58" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5618#5619#0" expanded="true" />
-                <element signature="e#5652#5653#0" expanded="true" />
-                <element signature="e#5703#5704#0" expanded="true" />
-                <element signature="e#5749#5750#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-32">
+              <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -175,8 +141,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit4 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -184,11 +150,31 @@
     <findStrings>
       <find>super</find>
       <find>isDriverPresent</find>
-      <find>Client has no conection to the Server</find>
       <find>lida</find>
       <find>°</find>
       <find>%</find>
       <find>publis</find>
+      <find>Client has no conection to the Server</find>
+      <find>Client is null</find>
+      <find>Client is</find>
+      <find>ent couldn't connect</find>
+      <find>Client</find>
+      <find>ection is lost or c</find>
+      <find>subs</find>
+      <find>nnection is lost</find>
+      <find>is lost or cli</find>
+      <find>JSON</find>
+      <find>received</find>
+      <find>Msg</find>
+      <find>Client has</find>
+      <find>ion is lost or</find>
+      <find>jitt</find>
+      <find>jitte</find>
+      <find>ID</find>
+      <find>Driver</find>
+      <find>Drive</find>
+      <find>sensors:rfid:present</find>
+      <find>Dr</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -215,32 +201,34 @@
         <option value="$PROJECT_DIR$/src/main/java/Entity/OS/VehicleOS.java" />
         <option value="$PROJECT_DIR$/src/main/java/Communication/DBController.java" />
         <option value="$PROJECT_DIR$/src/main/java/Management/DBThread.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Driver.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DBThread.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/AutonomV/Util/ConverterTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/DriverAuth.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Converter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/Passenger.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/Driver.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/DBControllerTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Lidar.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Sensor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Vehicle.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/VehicleOS.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/RealTimeData.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/CPU.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/Network/NetworkInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/Network/Received.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/Network/Transmitted.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ClientCallback.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ComController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/ComControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/DriverAuth.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ClientCallback.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ComController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/Driver.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/AutonomV/Util/ConverterTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Vehicle.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/DBControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Logging.java" />
         <option value="$PROJECT_DIR$/config.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Banner.java" />
       </list>
     </option>
   </component>
@@ -251,7 +239,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="802" />
@@ -269,6 +257,129 @@
               <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
               <item name="CommManager" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+              <item name="Communication" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+              <item name="OS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+              <item name="OS" type="462c0819:PsiDirectoryNode" />
+              <item name="Network" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+              <item name="Passengers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+              <item name="Management" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+              <item name="Util" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CommManager" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CommManager" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+              <item name="Communication" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -278,13 +389,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
@@ -294,6 +406,7 @@
       <recent name="com.AutonomV.Util" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.AutonomV.Util" />
       <recent name="com.AutonomV" />
       <recent name="Entity.OS.Network" />
     </key>
@@ -404,23 +517,15 @@
       <workItem from="1559926024978" duration="43321000" />
       <workItem from="1560345166911" duration="30353000" />
       <workItem from="1560874627834" duration="1442000" />
-      <workItem from="1560948043806" duration="2057000" />
+      <workItem from="1560948043806" duration="2684000" />
+      <workItem from="1561040537144" duration="12612000" />
+      <workItem from="1561205560832" duration="5397000" />
+      <workItem from="1561476088046" duration="12043000" />
+      <workItem from="1561803002774" duration="6780000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ComControllerTest - 2019.06.16 at 18h 29m 22s.xml">
-      <configuration name="ComControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComControllerTest - 2019.06.16 at 18h 30m 09s.xml">
-      <configuration name="ComControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComControllerTest - 2019.06.16 at 18h 31m 47s.xml">
-      <configuration name="ComControllerTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ComControllerTest - 2019.06.16 at 18h 35m 19s.xml">
-      <configuration name="ComControllerTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ComControllerTest - 2019.06.16 at 18h 37m 11s.xml">
       <configuration name="ComControllerTest" configurationId="JUnit" />
     </history-entry>
@@ -439,9 +544,21 @@
     <history-entry file="DBControllerTest - 2019.06.19 at 15h 21m 24s.xml">
       <configuration name="DBControllerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="DBControllerTest - 2019.06.26 at 14h 41m 18s.xml">
+      <configuration name="DBControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBControllerTest - 2019.06.26 at 14h 58m 45s.xml">
+      <configuration name="DBControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBControllerTest - 2019.06.26 at 15h 01m 22s.xml">
+      <configuration name="DBControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DBControllerTest - 2019.06.26 at 15h 28m 01s.xml">
+      <configuration name="DBControllerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78879000" />
+    <option name="totallyTimeSpent" value="116338000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,20 +570,19 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="802" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18240343" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19098713" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="0" weight="0.23661971" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.23614457" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32957748" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.3746479" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.37349397" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -499,13 +615,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Main.java" />
-    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.0/org.eclipse.paho.client.mqttv3-1.2.0.jar!/org/eclipse/paho/client/mqttv3/MqttClient.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="195" column="16" selection-start-line="195" selection-start-column="16" selection-end-line="195" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2651">
@@ -570,103 +679,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/DriverAuth.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/Driver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#285#301#0" expanded="true" />
-            <element signature="e#1377#1378#0" expanded="true" />
-            <element signature="e#1425#1426#0" expanded="true" />
-            <element signature="e#1493#1494#0" expanded="true" />
-            <element signature="e#1551#1552#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/Passenger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
-          <folding>
-            <element signature="e#572#573#0" expanded="true" />
-            <element signature="e#599#600#0" expanded="true" />
-            <element signature="e#639#640#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#707#708#0" expanded="true" />
-            <element signature="e#739#740#0" expanded="true" />
-            <element signature="e#789#790#0" expanded="true" />
-            <element signature="e#831#832#0" expanded="true" />
-            <element signature="e#867#868#0" expanded="true" />
-            <element signature="e#899#900#0" expanded="true" />
-            <element signature="e#949#950#0" expanded="true" />
-            <element signature="e#991#992#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Util/ConverterTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="28" column="5" selection-start-line="19" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="634">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.0.1/jedis-3.0.1.jar!/redis/clients/jedis/Connection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="168" selection-start-line="168" selection-end-line="168" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Lidar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Sensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Vehicle.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="73" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/VehicleOS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -711,16 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
           <caret line="84" column="5" selection-start-line="84" selection-start-column="5" selection-end-line="84" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/Network/Transmitted.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="27" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -934,84 +936,207 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ClientCallback.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.0/org.eclipse.paho.client.mqttv3-1.2.0.jar!/org/eclipse/paho/client/mqttv3/MqttClient.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+        <state relative-caret-position="139">
+          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/ComControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="30" column="60" selection-start-line="30" selection-start-column="60" selection-end-line="30" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/DriverAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/Passenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="50" column="1" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Util/ConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="81" selection-start-line="20" selection-start-column="81" selection-end-line="20" selection-end-column="81" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/ComControllerTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/Driver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="16" column="63" lean-forward="true" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="80" lean-forward="true" selection-start-line="13" selection-start-column="69" selection-end-line="13" selection-end-column="80" />
+        <state relative-caret-position="60">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ComController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="30" column="66" selection-start-line="30" selection-start-column="66" selection-end-line="30" selection-end-column="66" />
+        <state relative-caret-position="495">
+          <caret line="36" column="34" selection-start-line="36" selection-start-column="34" selection-end-line="36" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#837#838#0" expanded="true" />
-            <element signature="e#882#883#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ClientCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Lidar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="83" column="1" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Sensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/Network/Transmitted.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.0.1/jedis-3.0.1.jar!/redis/clients/jedis/BinaryJedis.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="1229" column="31" selection-start-line="1229" selection-start-column="31" selection-end-line="1229" selection-end-column="31" />
+          <folding>
+            <element signature="e#41625#41626#0" expanded="true" />
+            <element signature="e#41673#41674#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.0.1/jedis-3.0.1.jar!/redis/clients/jedis/Connection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="216" column="38" selection-start-line="216" selection-start-column="38" selection-end-line="216" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/DBControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="32" column="57" selection-start-line="32" selection-start-column="57" selection-end-line="32" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/src.zip!/java/util/Properties.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="967" column="18" selection-start-line="967" selection-start-column="18" selection-end-line="967" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Logging.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="869">
-          <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+        <state relative-caret-position="-32">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/DBControllerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="35" lean-forward="true" selection-start-column="35" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="71" column="22" lean-forward="true" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="66" column="100" lean-forward="true" selection-start-line="66" selection-start-column="100" selection-end-line="66" selection-end-column="100" />
+        <state relative-caret-position="493">
+          <caret line="58" column="9" selection-start-line="47" selection-start-column="8" selection-end-line="58" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#5618#5619#0" expanded="true" />
-            <element signature="e#5652#5653#0" expanded="true" />
-            <element signature="e#5703#5704#0" expanded="true" />
-            <element signature="e#5749#5750#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#710#711#0" expanded="true" />
+            <element signature="e#765#766#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Banner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
         </state>
       </provider>
     </entry>
@@ -1021,10 +1146,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>CommManager:jar2</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1071,7 +1198,6 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>

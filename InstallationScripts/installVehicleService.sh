@@ -4,20 +4,20 @@
 
 
 generateVehilce_Service(){
-cat <<EOT >> /etc/systemd/system/node-red.service
+cat <<EOT >> /etc/systemd/system/vehicle.service
 [Unit]
 Description=Vehilce SysArchitecture
 After=syslog.target network.target
 
 [Service]
-ExecStart=XXX
+ExecStart=/home/pi/Vehicle/armv7/SysArchVehicle_armv7
 Restart=on-failure
 KillSignal=SIGINT
 
 # non-root user to run as
 WorkingDirectory=/home/UTILISATEUR/
-User=UTILISATEUR
-Group=UTILISATEUR
+User=root
+Group=root
 
 [Install]
 WantedBy=multi-user.target

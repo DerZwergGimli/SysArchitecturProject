@@ -54,6 +54,19 @@ public class RedisDBInterface implements IRedisDBInterface {
 
 	}
 
+	public Boolean ping(RedisDBInterface redis) {
+		try {
+			String answer = jedisDB.ping();
+			if (answer.contains("PONG")) {
+				return true;
+			}
+		} catch (Exception e) {
+			logger.log(Level.SEVERE, "Error while trying to connect to Redis-Server", e);
+		}
+		return false;
+
+	}
+
 	@Override
 	public String set(String topic, String variable) {
 		if (jedisServerEnabled == true) {

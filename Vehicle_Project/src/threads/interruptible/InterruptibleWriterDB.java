@@ -19,7 +19,6 @@ import osInterfaces.NetworkInterface;
 import osInterfaces.SensorsInterface;
 import osInterfaces.TopInterface;
 import redisInterface.IRedisDBInterface;
-import redisInterface.RedisDBInterface;
 import threads.queue.IQCollisonBuffer;
 import timing.IStopWatch;
 
@@ -36,11 +35,11 @@ public class InterruptibleWriterDB implements Interruptible {
 	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
 	public InterruptibleWriterDB(Logger logger, IManagementControl management,
-			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
+			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl, IRedisDBInterface redis) {
 		this.logger = logger;
 		this.management = management;
 		this.qCollisonControl = qCollisonControl;
-		this.redis = new RedisDBInterface(logger);
+		this.redis = redis;
 
 	}
 
@@ -53,12 +52,14 @@ public class InterruptibleWriterDB implements Interruptible {
 	@Override
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
 		while (management.isDatabaseWriterThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
+			// redis = new RedisDBInterface(logger);
 
 			writeQueueDataToDatabase();
 			writeNetworkDataToDatabase();
 			writeOSSensorsToDatabase();
 			writeLinuxTopInterfaceToDatabase();
 
+			// redis.close();
 		}
 		logger.log(Level.WARNING, "DatabaseWriter was exited!");
 

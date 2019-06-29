@@ -8,6 +8,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.TimeZone;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import gpioInterface.lidar.LidarSensor;
 import redisInterface.IRedisDBInterface;
@@ -19,6 +21,7 @@ import redisInterface.IRedisDBInterface;
  *
  */
 public class CollisionAvoidance implements ICollisonAvoidance {
+	private Logger logger;
 	private int expireTimeRedis = 100;
 	private String timestamp;
 	private LidarSensor lidarSensor;
@@ -47,8 +50,9 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 	 * 
 	 * @param lidarSensor
 	 */
-	public CollisionAvoidance(LidarSensor lidarSensor) {
+	public CollisionAvoidance(LidarSensor lidarSensor, Logger logger) {
 		this.lidarSensor = lidarSensor;
+		this.logger = logger;
 		readPropertiesFile();
 	}
 
@@ -161,7 +165,7 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 			weighting = Float.valueOf(properties.getProperty("collisonAvoidance.weighting"));
 
 		} catch (Exception ex) {
-			System.out.println("Error reading config file!");
+			logger.log(Level.SEVERE, "Error reading config file!", ex);
 
 		}
 	}

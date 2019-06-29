@@ -5,8 +5,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import javax.realtime.RealtimeThread;
-
 import gpioInterface.lidar.ILidarSensor;
 import gpioInterface.lidar.LidarInterface;
 import management.ManagementControl;
@@ -28,7 +26,7 @@ import threads.queue.IQCollisonBuffer;
  * @author yannick
  *
  */
-public class Manager extends RealtimeThread {
+public class Manager {
 
 	private Logger logger;
 	private RedisDBInterface redis;
@@ -39,6 +37,7 @@ public class Manager extends RealtimeThread {
 	private volatile MissLidarDataCollection missLidarDataCollection;
 	private volatile ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 	private volatile ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private Boolean ManagerRunnable;
 
 	private TCollisionAvoidance threadCollisionAvoidance;
 	private TLidarDataCollection threadLidarDataCollection;
@@ -52,8 +51,8 @@ public class Manager extends RealtimeThread {
 	 */
 	public Manager(Logger logger) {
 		this.logger = logger;
-		setName("ManagerThread");
-
+		// setName("ManagerThread");
+		this.ManagerRunnable = true;
 		redis = new RedisDBInterface(logger);
 
 		management = new ManagementControl(logger);
@@ -65,11 +64,6 @@ public class Manager extends RealtimeThread {
 		qLidarSensor = new ArrayBlockingQueue<ILidarSensor>(1);
 	}
 
-	@Override
-	public void run() {
-		manage();
-	}
-
 	/**
 	 * This needs to be called to manage the application
 	 */
@@ -79,12 +73,19 @@ public class Manager extends RealtimeThread {
 		while (management.isManagemnetThreadRunnable()) {
 			clearScreen();
 			management.printAll();
-			// management.readEntriesFormDatabase(redis);
+			management.readEntriesFormDatabase(redis);
 
 			manageCollisonAvoidanceThread();
 			manageLidarDataCollectionThread();
 			manageDatabaseWriterThread();
 			manageDatabaseReaderThread();
+
+			try {
+				Thread.sleep(1);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
 			// readUserIntput();
 
@@ -101,8 +102,10 @@ public class Manager extends RealtimeThread {
 
 			try {
 				threadCollisionAvoidance.join();
+				threadLidarDataCollection.join();
 				threadReaderDB.join();
 				threadWriterDB.join();
+
 			} catch (InterruptedException e) {
 				logger.log(Level.SEVERE, "InterruptedException while trying to cancel and join the threads!", e);
 			} catch (NullPointerException e) {
@@ -193,7 +196,7 @@ public class Manager extends RealtimeThread {
 
 	private void manageDatabaseWriterThread() {
 		if (null == threadWriterDB && management.isDatabaseWriterThreadRunnable()) {
-			threadWriterDB = new TWriterDB(logger, management, qCollisonControl);
+			threadWriterDB = new TWriterDB(logger, management, qCollisonControl, redis);
 		}
 
 		if (threadWriterDB != null) {
@@ -208,7 +211,7 @@ public class Manager extends RealtimeThread {
 			}
 			if (Thread.State.TERMINATED == threadWriterDB.getState()) {
 				if (management.isDatabaseWriterThreadRunnable()) {
-					threadWriterDB = new TWriterDB(logger, management, qCollisonControl);
+					threadWriterDB = new TWriterDB(logger, management, qCollisonControl, redis);
 				}
 			}
 			if (Thread.State.TIMED_WAITING == threadWriterDB.getState()) {

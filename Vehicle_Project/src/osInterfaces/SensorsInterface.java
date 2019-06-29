@@ -76,7 +76,7 @@ public class SensorsInterface implements ISensorsInterface {
 	public void writeToDatabase(IRedisDBInterface redis) {
 		if (enabled) {
 
-			String parentTopic = "sensors:os:temperatures:";
+			String parentTopic = "sensors:os:temperature:";
 
 			redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
 			redis.setAndExpire(parentTopic + "cpu0", cpu0_temperature, expireTimeRedis);

@@ -5,6 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import logger.Logging;
+import redisInterface.RedisDBInterface;
 
 /**
  * This is the main class of the Vehicle
@@ -21,14 +22,18 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		if (checkForConfigExistance()) {
-			Banner.printBanner();
-
 			Logger logger = Logging.setupLogger();
-			logger.info("--Application stared--");
+			if (checkForRedisConnection(logger)) {
 
-			startManager(logger);
+				Banner.printBanner();
+				logger.info("--Application stared--");
+				startManager(logger);
+				logger.info("---Application closed--");
 
-			logger.info("---Application closed--");
+			} else {
+				logger.log(Level.SEVERE, "Cannot connect to Redis-Server you might want to check the config file!");
+			}
+
 		} else {
 			System.out.println("Error while trying to find config file!");
 			System.out.println("Make sure that you have a valid config file!");
@@ -42,14 +47,7 @@ public class Main {
 	 */
 	private static void startManager(Logger logger) {
 		Manager manager = new Manager(logger);
-
-		manager.start();
-
-		try {
-			manager.join();
-		} catch (InterruptedException e) {
-			logger.log(Level.SEVERE, "Error while trying to joing manager thread the application will colse!");
-		}
+		manager.manage();
 
 	}
 
@@ -59,6 +57,19 @@ public class Main {
 			return true;
 		}
 		return false;
+	}
+
+	private static Boolean checkForRedisConnection(Logger logger) {
+		RedisDBInterface redis = new RedisDBInterface(logger);
+
+		if (redis.ping(redis)) {
+			redis.close();
+			return true;
+
+		}
+		redis.close();
+		return false;
+
 	}
 
 }

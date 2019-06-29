@@ -7,6 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1394a649-02cb-43e1-9187-6f04f7def902" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Banner.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Logging.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -40,6 +41,13 @@
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Communication/DBControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Communication/DBControllerTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Util/ConverterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/AutonomV/Util/ConverterTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../UI-NodeRed/flows.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UI-NodeRed/flows.json" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommManager.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/build/armv7/SysArchVehicle_armv7" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/build/armv7/SysArchVehicle_armv7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Vehicle_Project/src/osInterfaces/SensorsInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Vehicle_Project/src/osInterfaces/SensorsInterface.java" afterDir="false" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,6 +77,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="407">
@@ -99,11 +108,18 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="330">
               <caret line="22" selection-start-line="22" selection-end-line="22" />
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="493">
@@ -120,15 +136,29 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
               <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="9" />
+=======
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="294">
+              <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-32">
               <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1297">
+              <caret line="115" column="72" lean-forward="true" selection-start-line="115" selection-start-column="72" selection-end-line="115" selection-end-column="72" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -239,10 +269,16 @@
       </MavenImportingSettings>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" fullScreen="true">
     <option name="y" value="23" />
+=======
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="240" />
+    <option name="y" value="156" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
     <option name="width" value="1440" />
-    <option name="height" value="802" />
+    <option name="height" value="793" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -250,6 +286,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -299,6 +336,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="Entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -380,11 +418,14 @@
               <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
               <item name="Communication" type="462c0819:PsiDirectoryNode" />
             </path>
+=======
+              <item name="Management" type="462c0819:PsiDirectoryNode" />
+            </path>
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -394,6 +435,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -517,11 +559,17 @@
       <workItem from="1559926024978" duration="43321000" />
       <workItem from="1560345166911" duration="30353000" />
       <workItem from="1560874627834" duration="1442000" />
+<<<<<<< HEAD
       <workItem from="1560948043806" duration="2684000" />
       <workItem from="1561040537144" duration="12612000" />
       <workItem from="1561205560832" duration="5397000" />
       <workItem from="1561476088046" duration="12043000" />
       <workItem from="1561803002774" duration="6780000" />
+=======
+      <workItem from="1560948043806" duration="2057000" />
+      <workItem from="1561814172791" duration="408000" />
+      <workItem from="1561816175404" duration="198000" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
     </task>
     <servers />
   </component>
@@ -558,7 +606,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="116338000" />
+=======
+    <option name="totallyTimeSpent" value="79485000" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,9 +622,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19098713" />
+=======
+    <frame x="0" y="-5" width="1920" height="1085" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13927428" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -582,7 +640,11 @@
       <window_info anchor="bottom" id="Messages" order="0" weight="0.23614457" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32957748" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.37349397" />
+=======
+      <window_info anchor="bottom" id="Run" order="3" weight="0.3746479" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -607,14 +669,9 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.0.1/jedis-3.0.1.jar!/redis/clients/jedis/Jedis.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="1601" column="17" selection-start-line="1601" selection-start-column="12" selection-end-line="1601" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.0.1/jedis-3.0.1.jar!/redis/clients/jedis/Jedis.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Main.java" />
+<<<<<<< HEAD
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2651">
@@ -640,6 +697,12 @@
         </state>
       </provider>
     </entry>
+=======
+    <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.0/org.eclipse.paho.client.mqttv3-1.2.0.jar!/org/eclipse/paho/client/mqttv3/MqttClient.class" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/src.zip!/java/lang/Class.java" />
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_73.jdk/Contents/Home/src.zip!/java/lang/Object.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.9/jackson-databind-2.9.9.jar!/com/fasterxml/jackson/databind/util/JSONPObject.class" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
     <entry file="uml://JAVA/com.AutonomV.Entity">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -662,13 +725,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.9/jackson-databind-2.9.9.jar!/com/fasterxml/jackson/databind/exc/MismatchedInputException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/fasterxml/jackson/core/jackson-databind/2.9.9/jackson-databind-2.9.9.jar!/com/fasterxml/jackson/databind/exc/MismatchedInputException.class" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Converter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -679,6 +736,93 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/DriverAuth.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/Driver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#285#301#0" expanded="true" />
+            <element signature="e#1377#1378#0" expanded="true" />
+            <element signature="e#1425#1426#0" expanded="true" />
+            <element signature="e#1493#1494#0" expanded="true" />
+            <element signature="e#1551#1552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Passengers/Passenger.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="617">
+          <caret line="52" column="1" selection-start-line="52" selection-start-column="1" selection-end-line="52" selection-end-column="1" />
+          <folding>
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#599#600#0" expanded="true" />
+            <element signature="e#639#640#0" expanded="true" />
+            <element signature="e#671#672#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+            <element signature="e#789#790#0" expanded="true" />
+            <element signature="e#831#832#0" expanded="true" />
+            <element signature="e#867#868#0" expanded="true" />
+            <element signature="e#899#900#0" expanded="true" />
+            <element signature="e#949#950#0" expanded="true" />
+            <element signature="e#991#992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Util/ConverterTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="28" column="5" selection-start-line="19" selection-start-column="4" selection-end-line="28" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/redis/clients/jedis/3.0.1/jedis-3.0.1.jar!/redis/clients/jedis/Connection.class" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Lidar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Sensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Vehicle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="73" selection-start-line="73" selection-end-line="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/OS/VehicleOS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="277">
@@ -936,6 +1080,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="jar://$MAVEN_REPOSITORY$/org/eclipse/paho/org.eclipse.paho.client.mqttv3/1.2.0/org.eclipse.paho.client.mqttv3-1.2.0.jar!/org/eclipse/paho/client/mqttv3/MqttClient.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="139">
@@ -998,12 +1143,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="23" selection-start-line="23" selection-end-line="23" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1890">
+          <caret line="94" column="38" selection-start-line="94" selection-start-column="38" selection-end-line="94" selection-end-column="38" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Entity/Lidar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="715">
@@ -1078,24 +1230,53 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ComController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="567">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1428">
+          <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ClientCallback.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="31" column="60" selection-start-line="31" selection-start-column="60" selection-end-line="31" selection-end-column="60" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/AutonomV/Communication/ComControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-32">
           <caret line="26" column="39" selection-start-line="26" selection-start-column="39" selection-end-line="26" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="231">
+          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="493">
           <caret line="58" column="9" selection-start-line="47" selection-start-column="8" selection-end-line="58" selection-end-column="9" />
           <folding>
@@ -1108,11 +1289,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="9" />
+=======
+        <state>
+          <caret column="35" selection-start-column="35" selection-end-column="35" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java">
+    <entry file="file://$PROJECT_DIR$/config.properties">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="407">
           <caret line="39" column="10" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
           <folding>
@@ -1120,11 +1306,16 @@
             <element signature="e#710#711#0" expanded="true" />
             <element signature="e#765#766#0" expanded="true" />
           </folding>
+=======
+        <state relative-caret-position="147">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="16">
           <caret line="34" column="29" selection-start-line="34" selection-start-column="29" selection-end-line="34" selection-end-column="29" />
           <folding>
@@ -1137,6 +1328,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
+=======
+        <state relative-caret-position="336">
+          <caret line="16" column="38" selection-start-line="16" selection-start-column="38" selection-end-line="16" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1297">
+          <caret line="115" column="72" lean-forward="true" selection-start-line="115" selection-start-column="72" selection-end-line="115" selection-end-column="72" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> e78e5372f6512310cafc03de90f402e631c9acbc
         </state>
       </provider>
     </entry>

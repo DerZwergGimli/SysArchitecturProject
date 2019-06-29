@@ -1,76 +1,22 @@
-[2019-06-25 19:56:12] [INFO   ] -- LOGGER stated --
+[2019-06-29 18:05:53] [INFO   ] Lidar sensor disabled but thread started!
  null 
-[2019-06-25 19:56:12] [INFO   ] --Application stared--
+[2019-06-29 18:05:53] [INFO   ] Generated RANDOM lidarValues
  null 
-[2019-06-25 19:56:12] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-06-29 18:05:53] [INFO   ] Queue was empty does nothing in here
  null 
-[2019-06-25 19:56:12] [INFO   ] Creating LidarDataCollectionThread
+[2019-06-29 18:05:53] [INFO   ] Queue was empty does nothing in here
  null 
-[2019-06-25 19:56:12] [INFO   ] Creating InterruptableWriterDB
+[2019-06-29 18:05:54] [INFO   ] Queue was empty does nothing in here
  null 
-[2019-06-25 19:56:12] [WARNING] Queue was empty does nothing in here
+[2019-06-29 18:05:54] [INFO   ] Queue was empty does nothing in here
  null 
-[2019-06-25 19:56:12] [WARNING] Queue was empty does nothing in here
+[2019-06-29 18:05:54] [INFO   ] Queue was empty does nothing in here
  null 
-[2019-06-25 19:56:12] [WARNING] Queue was empty does nothing in here
+[2019-06-29 18:05:54] [INFO   ] Queue was empty does nothing in here
  null 
-[2019-06-25 19:56:13] [WARNING] Queue was empty does nothing in here
+[2019-06-29 18:05:55] [INFO   ] Queue was empty does nothing in here
  null 
-[2019-06-25 19:56:13] [WARNING] Queue was empty does nothing in here
+[2019-06-29 18:05:55] [INFO   ] Lidar sensor disabled but thread started!
  null 
-[2019-06-25 19:56:13] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:13] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:14] [INFO   ] Lidar sensor disabled but thread started!
- null 
-[2019-06-25 19:56:14] [INFO   ] Generated RANDOM lidarValues
- null 
-[2019-06-25 19:56:14] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:14] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:14] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:15] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:15] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:15] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:15] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:16] [INFO   ] Lidar sensor disabled but thread started!
- null 
-[2019-06-25 19:56:16] [INFO   ] Generated RANDOM lidarValues
- null 
-[2019-06-25 19:56:16] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:16] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:16] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:17] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:17] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:17] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:17] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:18] [INFO   ] Lidar sensor disabled but thread started!
- null 
-[2019-06-25 19:56:18] [INFO   ] Generated RANDOM lidarValues
- null 
-[2019-06-25 19:56:18] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:18] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:18] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:19] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:19] [WARNING] Queue was empty does nothing in here
- null 
-[2019-06-25 19:56:19] [WARNING] Managemt diabled the programm will now close! And stop all threads clean!
+[2019-06-29 18:05:55] [INFO   ] Generated RANDOM lidarValues
  null 

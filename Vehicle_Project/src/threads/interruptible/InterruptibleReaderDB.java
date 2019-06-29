@@ -86,7 +86,7 @@ public class InterruptibleReaderDB implements Interruptible {
 		while (management.isDatabaseReaderThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 
 			try {
-				IRedisDBInterface redis = new RedisDBInterface(logger);
+				redis = new RedisDBInterface(logger);
 
 				System.out.println("Hello from DB-Reader");
 				// System.out.println(LTMemory.getMemoryArea(ma).memoryRemaining());

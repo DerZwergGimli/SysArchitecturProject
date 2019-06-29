@@ -14,6 +14,7 @@ import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
 import management.IManagementControl;
+import redisInterface.IRedisDBInterface;
 import threads.interruptible.InterruptibleWriterDB;
 import threads.queue.IQCollisonBuffer;
 
@@ -31,6 +32,7 @@ public class TWriterDB extends RealtimeThread {
 	// ArrayBlockingQueue<LidarSensor> lidarSensorQueue;
 	ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 	Boolean running;
+	IRedisDBInterface redis;
 
 	/**
 	 * This is the constructor for a Writer-database_thread to write entries
@@ -41,10 +43,11 @@ public class TWriterDB extends RealtimeThread {
 	 * @param qCollisonControl
 	 */
 	public TWriterDB(Logger logger, IManagementControl management,
-			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
+			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl, IRedisDBInterface redis) {
 		this.logger = logger;
 		this.management = management;
 		this.qCollisonControl = qCollisonControl;
+		this.redis = redis;
 		setName("DatabaseWriterThread");
 
 		int threadPriority = PriorityScheduler.instance().getMinPriority() + 10 - 4;
@@ -64,7 +67,7 @@ public class TWriterDB extends RealtimeThread {
 		try {
 			logger.info("Creating InterruptableWriterDB");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
-			InterruptibleWriterDB inWriterDB = new InterruptibleWriterDB(logger, management, qCollisonControl);
+			InterruptibleWriterDB inWriterDB = new InterruptibleWriterDB(logger, management, qCollisonControl, redis);
 			asInterruptedException.doInterruptible(inWriterDB);
 
 		} catch (Exception e) {

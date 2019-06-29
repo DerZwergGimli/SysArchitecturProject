@@ -77,7 +77,7 @@ public class Logging {
 			fileName = properties.getProperty("logger.fileName");
 			maxFileSize = Integer.valueOf(properties.getProperty("logger.maxFileSize"));
 			maxNumberOfFiles = Integer.valueOf(properties.getProperty("logger.maxNumberOfFiles"));
-			appendFiles = Boolean.valueOf(properties.getProperty("logger.maxNumberOfFiles"));
+			appendFiles = Boolean.valueOf(properties.getProperty("logger.appendFiles"));
 			debugLevel = Level.parse(properties.getProperty("logger.debugLevel"));
 
 		} catch (Exception ex) {

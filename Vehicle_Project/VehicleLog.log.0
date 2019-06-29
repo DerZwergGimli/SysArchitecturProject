@@ -1,2 +1,12 @@
-[2019-06-27 11:02:40] [INFO   ] -- LOGGER stated --
+[2019-06-29 14:09:25] [SEVERE ] Error while writing to Redis DB and trying to set an expire for this variable
+ redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null 
+[2019-06-29 14:09:25] [SEVERE ] Error while writing to Redis DB and trying to set an expire for this variable
+ redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null 
+[2019-06-29 14:09:25] [SEVERE ] Error while writing to Redis DB and trying to set an expire for this variable
+ redis.clients.jedis.exceptions.JedisDataException: value sent to redis cannot be null 
+[2019-06-29 14:09:25] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-29 14:09:25] [WARNING] Queue was empty does nothing in here
+ null 
+[2019-06-29 14:09:26] [WARNING] Queue was empty does nothing in here
  null 

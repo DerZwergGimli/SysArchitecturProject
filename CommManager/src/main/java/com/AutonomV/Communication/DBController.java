@@ -3,20 +3,26 @@ package com.AutonomV.Communication;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.exceptions.JedisException;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * This Class is a Child class of the Redis DB Controller "Jedis", and extends its fonctionality to fit in this Application
  */
 public class DBController {
     private final static String TAG = "DBController ";
 
+    private static Logger logger;
+
     private static DBController instance = null;
     private Jedis jedis;
     private static String host = "localhost";
     private static int port = 6379;
 
-    private DBController(String host, int port) {
-        this.host = host;
-        this.port = port;
+    private DBController() {
         this.jedis = new Jedis(host, port,1800);
     }
 
@@ -26,14 +32,15 @@ public class DBController {
             return instance;
         } else {
             System.out.println(TAG + "Initiating Jedis Controller on: " + host + ":" + port);
-            instance = new DBController("localhost", 6379);
+            instance = new DBController();
             return instance;
         }
     }
 
-    public boolean init(String host, int port, int timeout){
-
-        return false;
+    public static void init(String mHost, int mPort, int timeout, Logger mLogger){
+        logger = mLogger;
+        host = mHost;
+        port = mPort;
     }
 
 
@@ -51,8 +58,8 @@ public class DBController {
      * This Method sets the variable of key "key" with the value in "value"
      * TODO: return enum ? OK,..
      *
-     * @param key
-     * @param variable
+     * @param key key of the variable to be writen
+     * @param variable Value of the variable to be writen
      * @return
      */
     public String set(String key, String variable) {
@@ -62,7 +69,7 @@ public class DBController {
     /**
      * This method gets the variable with the key "key"
      *
-     * @param key
+     * @param key key of the variable to be retrieved.
      * @return
      */
     public String get(String key) {
@@ -87,6 +94,10 @@ public class DBController {
         }
     }
 
+    /**
+     *  This method checks if the Jedis Client is connected by pinging the server
+     * @return true if the client is connected, false if not
+     */
     public boolean isConnected() {
         String res = jedis.ping();
         System.out.println("Jedis Ping response: " + res);
@@ -96,7 +107,12 @@ public class DBController {
             return false;
     }
 
-
+    /**
+     * This method sets an expire timeout for the specific variable
+     * @param variableName variable key
+     * @param timeSecounds timeout to expire
+     * @return
+     */
     public Long expire(String variableName, int timeSecounds) {
         System.out.println(TAG + "Expire_: " + jedis.expire(variableName, timeSecounds));
         return null;

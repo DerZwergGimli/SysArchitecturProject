@@ -199,7 +199,6 @@ public class ManagementControl implements IManagementControl {
 			System.out.println("lidarDataCollectionThreadRunnable:\t" + lidarDataCollectionThreadRunnable);
 			System.out.println("databaseReaderThreadRunnable:\t\t" + databaseReaderThreadRunnable);
 			System.out.println("databaseWriterThreadRunnable:\t\t" + databaseWriterThreadRunnable);
-			System.out.println(" -> to close the application press 'ctr+d'");
 			System.out.println("===============================================================================");
 
 		}

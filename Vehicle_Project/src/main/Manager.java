@@ -5,7 +5,6 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import gpioInterface.lidar.ILidarSensor;
 import gpioInterface.lidar.LidarInterface;
 import management.ManagementControl;
 import redisInterface.RedisDBInterface;
@@ -18,6 +17,7 @@ import threads.TWriterDB;
 import threads.handler.MissCollisonAvoidance;
 import threads.handler.MissLidarDataCollection;
 import threads.queue.IQCollisonBuffer;
+import threads.queue.IQLidarBuffer;
 
 /**
  * This RealtimeThread is used to control the application using
@@ -36,7 +36,7 @@ public class Manager {
 	private volatile MissCollisonAvoidance missCollisonAvoidance;
 	private volatile MissLidarDataCollection missLidarDataCollection;
 	private volatile ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
-	private volatile ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private volatile ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer;
 	private Boolean ManagerRunnable;
 
 	private TCollisionAvoidance threadCollisionAvoidance;
@@ -61,7 +61,8 @@ public class Manager {
 		lidarController = new LidarInterface();
 
 		qCollisonControl = new ArrayBlockingQueue<IQCollisonBuffer>(1);
-		qLidarSensor = new ArrayBlockingQueue<ILidarSensor>(1);
+		qLidarBuffer = new ArrayBlockingQueue<IQLidarBuffer>(1);
+
 	}
 
 	/**
@@ -73,7 +74,9 @@ public class Manager {
 		while (management.isManagemnetThreadRunnable()) {
 			clearScreen();
 			management.printAll();
-			management.readEntriesFormDatabase(redis);
+			RedisDBInterface tempRedis = new RedisDBInterface(logger);
+			management.readEntriesFormDatabase(tempRedis);
+			tempRedis.close();
 
 			manageCollisonAvoidanceThread();
 			manageLidarDataCollectionThread();
@@ -121,7 +124,7 @@ public class Manager {
 	private void manageCollisonAvoidanceThread() {
 		if (null == threadCollisionAvoidance && management.isCollisonAvoidanceThreadRunnable()) {
 			missCollisonAvoidance = new MissCollisonAvoidance(logger);
-			threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance, qLidarSensor,
+			threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance, qLidarBuffer,
 					qCollisonControl);
 			missCollisonAvoidance.setThread(threadCollisionAvoidance);
 		}
@@ -140,7 +143,7 @@ public class Manager {
 				if (management.isCollisonAvoidanceThreadRunnable()) {
 					missCollisonAvoidance = new MissCollisonAvoidance(logger);
 					threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance,
-							qLidarSensor, qCollisonControl);
+							qLidarBuffer, qCollisonControl);
 					missCollisonAvoidance.setThread(threadCollisionAvoidance);
 				}
 			}
@@ -160,7 +163,7 @@ public class Manager {
 
 			missLidarDataCollection = new MissLidarDataCollection(logger);
 			threadLidarDataCollection = new TLidarDataCollection(logger, management, lidarController,
-					missLidarDataCollection, qLidarSensor);
+					missLidarDataCollection, qLidarBuffer);
 			missLidarDataCollection.setThread(threadLidarDataCollection);
 			missLidarDataCollection.setLidarController(lidarController);
 		}
@@ -179,7 +182,7 @@ public class Manager {
 				if (management.isLidarDataCollectionThreadRunnable()) {
 					missLidarDataCollection = new MissLidarDataCollection(logger);
 					threadLidarDataCollection = new TLidarDataCollection(logger, management, lidarController,
-							missLidarDataCollection, qLidarSensor);
+							missLidarDataCollection, qLidarBuffer);
 					missLidarDataCollection.setThread(threadLidarDataCollection);
 					missLidarDataCollection.setLidarController(lidarController);
 				}

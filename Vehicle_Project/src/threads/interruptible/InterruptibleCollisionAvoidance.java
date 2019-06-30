@@ -12,12 +12,12 @@ import javax.realtime.RealtimeThread;
 import collisonAvoidance.CollisionAvoidance;
 import collisonAvoidance.ICollisonAvoidance;
 import gpioInterface.lidar.ILidarSensor;
-import gpioInterface.lidar.LidarSensor;
 import management.IManagementControl;
 import threads.queue.IQCollisonBuffer;
+import threads.queue.IQLidarBuffer;
 import threads.queue.QCollisonBuffer;
+import threads.queue.QLidarBuffer;
 import timing.IStopWatch;
-import timing.StopWatch;
 
 /**
  * This is a Interruptible for the CollisionAvoidance-Thread
@@ -29,7 +29,7 @@ public class InterruptibleCollisionAvoidance implements Interruptible {
 
 	private Logger logger;
 	private IManagementControl management;
-	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer;
 	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
 	/**
@@ -41,10 +41,10 @@ public class InterruptibleCollisionAvoidance implements Interruptible {
 	 * @param qCollisonControl
 	 */
 	public InterruptibleCollisionAvoidance(Logger logger, IManagementControl managemnt,
-			ArrayBlockingQueue<ILidarSensor> qLidarSensor, ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
+			ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer, ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.logger = logger;
 		this.management = managemnt;
-		this.qLidarSensor = qLidarSensor;
+		this.qLidarBuffer = qLidarBuffer;
 		this.qCollisonControl = qCollisonControl;
 
 	}
@@ -58,32 +58,26 @@ public class InterruptibleCollisionAvoidance implements Interruptible {
 	@Override
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
 
-		IStopWatch stopWatchcurrent = new StopWatch();
-		IStopWatch stopWatchOld = new StopWatch();
-		stopWatchOld.init();
-
 		while (management.isCollisonAvoidanceThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
-			stopWatchcurrent.start();
-
-			LidarSensor lidarSensor = null;
-			try {
-				lidarSensor = (LidarSensor) qLidarSensor.poll(10, TimeUnit.MILLISECONDS);
-			} catch (InterruptedException e) {
-				logger.log(Level.WARNING, "Failed to read from queue - lidrSensor!", e);
-			}
-
-			if (lidarSensor != null) {
-				CollisionAvoidance collisionAvoidance = new CollisionAvoidance(lidarSensor, logger);
-				collisionAvoidance.checkAllSections();
-				sendInQueue(lidarSensor, collisionAvoidance, stopWatchOld);
-			} else {
-				logger.log(Level.INFO, "Queue was empty does nothing in here");
-			}
-
-			stopWatchcurrent.stopAndCalulate();
-			stopWatchOld = stopWatchcurrent;
+			readFromQueue();
 		}
 		logger.log(Level.WARNING, "CollisionAvoidance was exited!");
+	}
+
+	private void readFromQueue() {
+		QLidarBuffer lidarBuffer = null;
+		try {
+			lidarBuffer = (QLidarBuffer) qLidarBuffer.poll(10, TimeUnit.MILLISECONDS);
+		} catch (Exception e) {
+			logger.log(Level.WARNING, "Failed to read from queue - lidrSensor!", e);
+		}
+		if (lidarBuffer != null) {
+			CollisionAvoidance collisionAvoidance = new CollisionAvoidance(lidarBuffer.getLidarSensor(), logger);
+			collisionAvoidance.checkAllSections();
+			sendInQueue(lidarBuffer.getLidarSensor(), collisionAvoidance, lidarBuffer.getStopWatch());
+		} else {
+			logger.log(Level.INFO, "Queue was empty does nothing in here");
+		}
 	}
 
 	private void sendInQueue(ILidarSensor lidarSensor, ICollisonAvoidance collisionAvoidance, IStopWatch stopWatch) {

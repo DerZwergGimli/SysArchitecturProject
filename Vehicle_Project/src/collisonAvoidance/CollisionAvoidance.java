@@ -11,7 +11,7 @@ import java.util.TimeZone;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import gpioInterface.lidar.LidarSensor;
+import gpioInterface.lidar.ILidarSensor;
 import redisInterface.IRedisDBInterface;
 
 /**
@@ -24,7 +24,7 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 	private Logger logger;
 	private int expireTimeRedis = 100;
 	private String timestamp;
-	private LidarSensor lidarSensor;
+	private ILidarSensor lidarSensor;
 	private float weighting;
 
 	private int frontMinDistance;
@@ -50,7 +50,7 @@ public class CollisionAvoidance implements ICollisonAvoidance {
 	 * 
 	 * @param lidarSensor
 	 */
-	public CollisionAvoidance(LidarSensor lidarSensor, Logger logger) {
+	public CollisionAvoidance(ILidarSensor lidarSensor, Logger logger) {
 		this.lidarSensor = lidarSensor;
 		this.logger = logger;
 		readPropertiesFile();

@@ -60,8 +60,8 @@ public class MissLidarDataCollection extends AsyncEventHandler implements IMissH
 		logger.log(Level.SEVERE,
 				"Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!");
 
-		logger.info("Trying to stop lidar rotation");
-		stopLidarRotaion();
+		// logger.info("Trying to stop lidar rotation");
+		// stopLidarRotaion();
 
 		realtimeThread.deschedulePeriodic();
 

@@ -63,7 +63,7 @@ public class StopWatch implements IStopWatch {
 
 	@Override
 	public void writeToDB(IRedisDBInterface redis) {
-		String parentTopic = "sensors:collsionAvoidance:timing:";
+		String parentTopic = "sensors:lidar:timing:";
 		if ((startTimeNano != 0) && (endTimeNamo != 0)) {
 
 			redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);

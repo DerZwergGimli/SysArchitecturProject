@@ -5,12 +5,9 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import gpioInterface.lidar.ILidarSensor;
 import gpioInterface.lidar.LidarInterface;
 import management.ManagementControl;
 import redisInterface.RedisDBInterface;
-import testing.TimeoutController;
-import testing.TimeoutController.TimeoutException;
 import threads.TCollisionAvoidance;
 import threads.TLidarDataCollection;
 import threads.TReaderDB;
@@ -18,6 +15,7 @@ import threads.TWriterDB;
 import threads.handler.MissCollisonAvoidance;
 import threads.handler.MissLidarDataCollection;
 import threads.queue.IQCollisonBuffer;
+import threads.queue.IQLidarBuffer;
 
 /**
  * This RealtimeThread is used to control the application using
@@ -36,7 +34,7 @@ public class Manager {
 	private volatile MissCollisonAvoidance missCollisonAvoidance;
 	private volatile MissLidarDataCollection missLidarDataCollection;
 	private volatile ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
-	private volatile ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private volatile ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer;
 	private Boolean ManagerRunnable;
 
 	private TCollisionAvoidance threadCollisionAvoidance;
@@ -61,7 +59,8 @@ public class Manager {
 		lidarController = new LidarInterface();
 
 		qCollisonControl = new ArrayBlockingQueue<IQCollisonBuffer>(1);
-		qLidarSensor = new ArrayBlockingQueue<ILidarSensor>(1);
+		qLidarBuffer = new ArrayBlockingQueue<IQLidarBuffer>(1);
+
 	}
 
 	/**
@@ -71,9 +70,11 @@ public class Manager {
 		management.printAll();
 
 		while (management.isManagemnetThreadRunnable()) {
-			clearScreen();
+			management.clearScreen();
 			management.printAll();
-			management.readEntriesFormDatabase(redis);
+			RedisDBInterface tempRedis = new RedisDBInterface(logger);
+			management.readEntriesFormDatabase(tempRedis);
+			tempRedis.close();
 
 			manageCollisonAvoidanceThread();
 			manageLidarDataCollectionThread();
@@ -86,8 +87,6 @@ public class Manager {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
-			// readUserIntput();
 
 		}
 
@@ -121,7 +120,7 @@ public class Manager {
 	private void manageCollisonAvoidanceThread() {
 		if (null == threadCollisionAvoidance && management.isCollisonAvoidanceThreadRunnable()) {
 			missCollisonAvoidance = new MissCollisonAvoidance(logger);
-			threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance, qLidarSensor,
+			threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance, qLidarBuffer,
 					qCollisonControl);
 			missCollisonAvoidance.setThread(threadCollisionAvoidance);
 		}
@@ -140,7 +139,7 @@ public class Manager {
 				if (management.isCollisonAvoidanceThreadRunnable()) {
 					missCollisonAvoidance = new MissCollisonAvoidance(logger);
 					threadCollisionAvoidance = new TCollisionAvoidance(logger, management, missCollisonAvoidance,
-							qLidarSensor, qCollisonControl);
+							qLidarBuffer, qCollisonControl);
 					missCollisonAvoidance.setThread(threadCollisionAvoidance);
 				}
 			}
@@ -160,7 +159,7 @@ public class Manager {
 
 			missLidarDataCollection = new MissLidarDataCollection(logger);
 			threadLidarDataCollection = new TLidarDataCollection(logger, management, lidarController,
-					missLidarDataCollection, qLidarSensor);
+					missLidarDataCollection, qLidarBuffer);
 			missLidarDataCollection.setThread(threadLidarDataCollection);
 			missLidarDataCollection.setLidarController(lidarController);
 		}
@@ -179,7 +178,7 @@ public class Manager {
 				if (management.isLidarDataCollectionThreadRunnable()) {
 					missLidarDataCollection = new MissLidarDataCollection(logger);
 					threadLidarDataCollection = new TLidarDataCollection(logger, management, lidarController,
-							missLidarDataCollection, qLidarSensor);
+							missLidarDataCollection, qLidarBuffer);
 					missLidarDataCollection.setThread(threadLidarDataCollection);
 					missLidarDataCollection.setLidarController(lidarController);
 				}
@@ -252,17 +251,6 @@ public class Manager {
 
 	}
 
-	/**
-	 * This method can be used to clear the console screen
-	 */
-	public void clearScreen() {
-		if (management.isClearConsoleActive()) {
-			System.out.print("\033[H\033[2J");
-			System.out.flush();
-		}
-
-	}
-
 	private void stopLidarRotaion() {
 		LidarInterface lidarInterface = new LidarInterface();
 		if (lidarInterface.isEnabled()) {
@@ -279,33 +267,6 @@ public class Manager {
 			System.out.println("program terminated");
 
 		}
-	}
-
-	private void readUserIntput() {
-
-		Runnable my = new Runnable() {
-			@Override
-			public void run() {
-				StringBuilder out = new StringBuilder();
-				String text = null;
-				Scanner scanner = new Scanner(System.in);
-				while (scanner.hasNextLine()) {
-					text = new String(scanner.nextLine());
-					out.append(text);
-				}
-				scanner.close();
-				// logger.log(Level.INFO, "User has closed the application using crt+D!");
-				management.makeManegementThreadUnrunnable();
-
-			}
-		};
-
-		try {
-			TimeoutController.execute(my, 1000);
-		} catch (TimeoutException e) {
-
-		}
-
 	}
 
 }

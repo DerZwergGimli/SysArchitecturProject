@@ -161,7 +161,7 @@ public class ManagementControl implements IManagementControl {
 
 	@Override
 	public void readPropertiesFile() {
-		try (InputStream input = new FileInputStream("config.properties")) {
+		try (InputStream input = new FileInputStream("config_vehicle.properties")) {
 			Properties properties = new Properties();
 			properties.load(input);
 
@@ -199,10 +199,18 @@ public class ManagementControl implements IManagementControl {
 			System.out.println("lidarDataCollectionThreadRunnable:\t" + lidarDataCollectionThreadRunnable);
 			System.out.println("databaseReaderThreadRunnable:\t\t" + databaseReaderThreadRunnable);
 			System.out.println("databaseWriterThreadRunnable:\t\t" + databaseWriterThreadRunnable);
-			System.out.println(" -> to close the application press 'ctr+d'");
 			System.out.println("===============================================================================");
 
 		}
+	}
+
+	@Override
+	public void clearScreen() {
+		if (this.isClearConsoleActive()) {
+			System.out.print("\033[H\033[2J");
+			System.out.flush();
+		}
+
 	}
 
 }

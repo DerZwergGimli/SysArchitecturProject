@@ -9,9 +9,12 @@ import javax.realtime.Interruptible;
 import javax.realtime.RealtimeThread;
 
 import gpioInterface.lidar.ILidarInterface;
-import gpioInterface.lidar.ILidarSensor;
 import gpioInterface.lidar.LidarSensor;
 import management.IManagementControl;
+import threads.queue.IQLidarBuffer;
+import threads.queue.QLidarBuffer;
+import timing.IStopWatch;
+import timing.StopWatch;
 
 /**
  * This is a Interruptible for the LidarDataCollection-Thread
@@ -23,14 +26,14 @@ public class InterruptibleLidarDataCollection implements Interruptible {
 	private Logger logger;
 	private IManagementControl management;
 	private ILidarInterface lidarController;
-	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private ArrayBlockingQueue<IQLidarBuffer> qlidarBuffer;
 
 	public InterruptibleLidarDataCollection(Logger logger, IManagementControl management,
-			ILidarInterface lidarController, ArrayBlockingQueue<ILidarSensor> qLidarSensor) {
+			ILidarInterface lidarController, ArrayBlockingQueue<IQLidarBuffer> qlidarBuffer) {
 		this.logger = logger;
 		this.management = management;
 		this.lidarController = lidarController;
-		this.qLidarSensor = qLidarSensor;
+		this.qlidarBuffer = qlidarBuffer;
 
 	}
 
@@ -44,7 +47,12 @@ public class InterruptibleLidarDataCollection implements Interruptible {
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
 
 		while (management.isLidarDataCollectionThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
-			sendDataToQueue(readFromSensor());
+			IStopWatch stopWatch = new StopWatch();
+			stopWatch.init();
+			stopWatch.start();
+			int[] lidarData = readFromSensor();
+			stopWatch.stopAndCalulate();
+			sendDataToQueue(lidarData, stopWatch);
 		}
 
 	}
@@ -69,20 +77,22 @@ public class InterruptibleLidarDataCollection implements Interruptible {
 
 	}
 
-	private void sendDataToQueue(int[] lidarDistances) {
+	private void sendDataToQueue(int[] lidarDistances, IStopWatch stopWatch) {
 		if (lidarDistances.length != 0) {
 
 			LidarSensor lidarSensor = new LidarSensor();
 			lidarSensor.setDistances(lidarDistances);
 
-			if (!qLidarSensor.offer(lidarSensor)) {
+			IQLidarBuffer lidarObject = new QLidarBuffer(lidarSensor, stopWatch);
+			if (!qlidarBuffer.offer(lidarObject)) {
 				logger.log(Level.WARNING, "Could not write into queue");
 			}
 		} else {
 			LidarSensor lidarSensor = new LidarSensor();
 			lidarSensor.setRandomDistances();
 			logger.log(Level.INFO, "Generated RANDOM lidarValues");
-			if (!qLidarSensor.offer(lidarSensor)) {
+			IQLidarBuffer lidarObject = new QLidarBuffer(lidarSensor, stopWatch);
+			if (!qlidarBuffer.offer(lidarObject)) {
 				logger.log(Level.WARNING, "Could not write into queue");
 			}
 		}

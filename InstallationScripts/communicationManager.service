@@ -1,0 +1,15 @@
+[Unit]
+Description=Vehicle Communication Manager
+After=syslog.target
+
+[Service]
+WorkingDirectory=/home/pi/Vehicle/java	
+SyslogIdentifier=CommunicationManager_Vehicle
+ExecStart=/bin/bash -c "java -jar /home/pi/Vehicle/java/CommManager.jar"
+User=pi
+Type=simple
+
+
+[Install]
+WantedBy=multi-user.target
+

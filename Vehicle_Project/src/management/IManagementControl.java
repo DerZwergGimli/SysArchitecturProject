@@ -134,4 +134,9 @@ public interface IManagementControl {
 	 */
 	public void readPropertiesFile();
 
+	/**
+	 * This method can be used to clear the console screen
+	 */
+	public void clearScreen();
+
 }

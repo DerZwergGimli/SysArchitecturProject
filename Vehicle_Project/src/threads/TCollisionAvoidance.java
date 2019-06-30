@@ -16,12 +16,12 @@ import javax.realtime.RelativeTime;
 import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
-import gpioInterface.lidar.ILidarSensor;
 import management.IManagementControl;
 import threads.handler.MissCollisonAvoidance;
 import threads.handler.OverrunCollisonAvoidance;
 import threads.interruptible.InterruptibleCollisionAvoidance;
 import threads.queue.IQCollisonBuffer;
+import threads.queue.IQLidarBuffer;
 
 /**
  * This is a RealtimeThread used for checking periodically for a
@@ -40,7 +40,7 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 	private volatile OverrunCollisonAvoidance overrunHandlerCollisionAvoidance;
 	private MissCollisonAvoidance missHandlerCollisionAvoidance;
 
-	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer;
 	private ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl;
 
 	/**
@@ -49,17 +49,17 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 	 * @param logger
 	 * @param management
 	 * @param missHandlerCollisionAvoidance
-	 * @param qLidarSensor
+	 * @param qLidarBuffer
 	 * @param qCollisonControl
 	 */
 	public TCollisionAvoidance(Logger logger, IManagementControl management,
-			MissCollisonAvoidance missHandlerCollisionAvoidance, ArrayBlockingQueue<ILidarSensor> qLidarSensor,
+			MissCollisonAvoidance missHandlerCollisionAvoidance, ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer,
 			ArrayBlockingQueue<IQCollisonBuffer> qCollisonControl) {
 		this.setName("TCollisionAvoidance");
 		this.logger = logger;
 		this.management = management;
 		this.missHandlerCollisionAvoidance = missHandlerCollisionAvoidance;
-		this.qLidarSensor = qLidarSensor;
+		this.qLidarBuffer = qLidarBuffer;
 		this.qCollisonControl = qCollisonControl;
 
 		readPropertiesFile();
@@ -89,11 +89,11 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 	public void run() {
 		try {
 			logger.info("Creating InterruptableCollisionAvoidance");
-			AsynchronouslyInterruptedException asInterruptExeption = new AsynchronouslyInterruptedException();
-			missHandlerCollisionAvoidance.setInterruptExeption(asInterruptExeption);
+			AsynchronouslyInterruptedException asInterruptedExeption = new AsynchronouslyInterruptedException();
+			missHandlerCollisionAvoidance.setInterruptExeption(asInterruptedExeption);
 			InterruptibleCollisionAvoidance inCollisionAvoidance = new InterruptibleCollisionAvoidance(logger,
-					management, qLidarSensor, qCollisonControl);
-			asInterruptExeption.doInterruptible(inCollisionAvoidance);
+					management, qLidarBuffer, qCollisonControl);
+			asInterruptedExeption.doInterruptible(inCollisionAvoidance);
 
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Error occured while creating Interruptable", e);
@@ -101,7 +101,7 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 	}
 
 	private static void readPropertiesFile() {
-		try (InputStream input = new FileInputStream("config.properties")) {
+		try (InputStream input = new FileInputStream("config_vehicle.properties")) {
 			Properties properties = new Properties();
 			properties.load(input);
 

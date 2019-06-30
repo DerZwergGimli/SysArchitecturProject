@@ -17,11 +17,11 @@ import javax.realtime.ReleaseParameters;
 import javax.realtime.SchedulingParameters;
 
 import gpioInterface.lidar.ILidarInterface;
-import gpioInterface.lidar.ILidarSensor;
 import management.IManagementControl;
 import threads.handler.MissLidarDataCollection;
 import threads.handler.OverrunLidarDataCollection;
 import threads.interruptible.InterruptibleLidarDataCollection;
+import threads.queue.IQLidarBuffer;
 
 /**
  * This RealtimeThread is used to read the values periodically form a
@@ -37,7 +37,7 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 
 	private Logger logger;
 	private IManagementControl management;
-	private ArrayBlockingQueue<ILidarSensor> qLidarSensor;
+	private ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer;
 	private ILidarInterface lidarController;
 
 	private volatile OverrunLidarDataCollection overrunHandlerLidarDataCollection;
@@ -53,16 +53,16 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 	 * @param management
 	 * @param lidarController
 	 * @param missHandlerLidarDataCollection
-	 * @param qLidarSensor
+	 * @param qLidarBuffer
 	 */
 	public TLidarDataCollection(Logger logger, IManagementControl management, ILidarInterface lidarController,
-			MissLidarDataCollection missHandlerLidarDataCollection, ArrayBlockingQueue<ILidarSensor> qLidarSensor) {
+			MissLidarDataCollection missHandlerLidarDataCollection, ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer) {
 		setName("LidarDataCollectionThread");
 		this.logger = logger;
 		this.management = management;
 		this.lidarController = lidarController;
 		this.missHandlerLidarDataCollection = missHandlerLidarDataCollection;
-		this.qLidarSensor = qLidarSensor;
+		this.qLidarBuffer = qLidarBuffer;
 		readPropertiesFile();
 
 		overrunHandlerLidarDataCollection = new OverrunLidarDataCollection(logger);
@@ -92,8 +92,9 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 		try {
 			logger.info("Creating LidarDataCollectionThread");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
+			missHandlerLidarDataCollection.setInterruptExeption(asInterruptedException);
 			InterruptibleLidarDataCollection inLidarDataCollection = new InterruptibleLidarDataCollection(logger,
-					management, lidarController, qLidarSensor);
+					management, lidarController, qLidarBuffer);
 			asInterruptedException.doInterruptible(inLidarDataCollection);
 
 		} catch (Exception e) {
@@ -111,7 +112,7 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 	}
 
 	private static void readPropertiesFile() {
-		try (InputStream input = new FileInputStream("config.properties")) {
+		try (InputStream input = new FileInputStream("config_vehicle.properties")) {
 			Properties properties = new Properties();
 			properties.load(input);
 

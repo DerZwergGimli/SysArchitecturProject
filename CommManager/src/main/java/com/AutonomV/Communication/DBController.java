@@ -28,10 +28,10 @@ public class DBController {
 
     public static synchronized DBController getInstance() {
         if (instance != null) {
-            System.out.println(TAG + "Jedis Controller exists");
+            logger.info(TAG + "Jedis Controller exists");
             return instance;
         } else {
-            System.out.println(TAG + "Initiating Jedis Controller on: " + host + ":" + port);
+            logger.info(TAG + "Initiating Jedis Controller on: " + host + ":" + port);
             instance = new DBController();
             return instance;
         }
@@ -50,7 +50,6 @@ public class DBController {
      * @return should return "PONG" if the connection is established.
      */
     public String ping() {
-
         return jedis.ping();
     }
 
@@ -83,13 +82,13 @@ public class DBController {
 
             } else {
                 System.out.println("Connecting again...");
+                logger.info(TAG+"Connecting again...");
                 this.jedis = new Jedis(host, port);
                 return jedis.get(key);
             }
         } catch (JedisException ex) {
             System.out.println(TAG + "Exception thrown while trying to get Redis Variable: " + key);
-            ex.printStackTrace();
-            //System.out.println(ex.getStackTrace());
+            logger.log(Level.SEVERE, "Exception thrown while trying to get Redis Variable: " + key, ex);
             return "0";
         }
     }
@@ -116,6 +115,17 @@ public class DBController {
     public Long expire(String variableName, int timeSecounds) {
         System.out.println(TAG + "Expire_: " + jedis.expire(variableName, timeSecounds));
         return null;
+    }
+
+    /**
+     * this method determines if a key exists in the DB
+     * @param key
+     * @return "On" if it exists, "Off" if not
+     */
+    public String exists(String key){
+        if (jedis.exists(key))
+            return "On";
+        else return "Off";
     }
 
     /**

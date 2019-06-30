@@ -5,7 +5,19 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * This class is used to manage a configuration file
+ * 
+ * @author yannick
+ *
+ */
 public class ConfigurationFile {
+	/**
+	 * This function will check if there is a configuration file present - if not it
+	 * will create a new one!
+	 * 
+	 * @return
+	 */
 	public static Boolean check() {
 		if (checkForConfigExistance()) {
 			return true;

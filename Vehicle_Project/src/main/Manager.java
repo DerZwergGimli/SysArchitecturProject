@@ -8,8 +8,6 @@ import java.util.logging.Logger;
 import gpioInterface.lidar.LidarInterface;
 import management.ManagementControl;
 import redisInterface.RedisDBInterface;
-import testing.TimeoutController;
-import testing.TimeoutController.TimeoutException;
 import threads.TCollisionAvoidance;
 import threads.TLidarDataCollection;
 import threads.TReaderDB;
@@ -89,8 +87,6 @@ public class Manager {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
-			// readUserIntput();
 
 		}
 
@@ -282,33 +278,6 @@ public class Manager {
 			System.out.println("program terminated");
 
 		}
-	}
-
-	private void readUserIntput() {
-
-		Runnable my = new Runnable() {
-			@Override
-			public void run() {
-				StringBuilder out = new StringBuilder();
-				String text = null;
-				Scanner scanner = new Scanner(System.in);
-				while (scanner.hasNextLine()) {
-					text = new String(scanner.nextLine());
-					out.append(text);
-				}
-				scanner.close();
-				// logger.log(Level.INFO, "User has closed the application using crt+D!");
-				management.makeManegementThreadUnrunnable();
-
-			}
-		};
-
-		try {
-			TimeoutController.execute(my, 1000);
-		} catch (TimeoutException e) {
-
-		}
-
 	}
 
 }

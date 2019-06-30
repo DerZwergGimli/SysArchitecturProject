@@ -70,7 +70,7 @@ public class Manager {
 		management.printAll();
 
 		while (management.isManagemnetThreadRunnable()) {
-			clearScreen();
+			management.clearScreen();
 			management.printAll();
 			RedisDBInterface tempRedis = new RedisDBInterface(logger);
 			management.readEntriesFormDatabase(tempRedis);
@@ -247,17 +247,6 @@ public class Manager {
 			}
 			if (Thread.State.BLOCKED == threadReaderDB.getState()) {
 			}
-		}
-
-	}
-
-	/**
-	 * This method can be used to clear the console screen
-	 */
-	public void clearScreen() {
-		if (management.isClearConsoleActive()) {
-			System.out.print("\033[H\033[2J");
-			System.out.flush();
 		}
 
 	}

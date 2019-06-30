@@ -204,4 +204,13 @@ public class ManagementControl implements IManagementControl {
 		}
 	}
 
+	@Override
+	public void clearScreen() {
+		if (this.isClearConsoleActive()) {
+			System.out.print("\033[H\033[2J");
+			System.out.flush();
+		}
+
+	}
+
 }

@@ -6,13 +6,18 @@ import com.AutonomV.Entity.Passengers.Driver;
 import com.AutonomV.Entity.Passengers.DriverAuth;
 import com.AutonomV.Util.Converter;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
  * This Class extends the Thread Class and runs an infinite loop if not interrupted.
  * It retrievs the Data from the Redis DB, observes the Vehicle and driver and changes the state accordingly.
+ *
+ * @author Mgsair
  */
 public class ManagementThread extends Thread {
+
+    private static Logger logger;
 
     private DBController dbController;
     private ComController comController;
@@ -27,6 +32,7 @@ public class ManagementThread extends Thread {
     public static final int LOGOUT = 3;
 
     public ManagementThread(ComController comController, Logger logger) {
+        this.logger = logger;
         this.dbController = DBController.getInstance();
         this.comController = comController;
         state = NO_DRIVER;
@@ -87,8 +93,10 @@ public class ManagementThread extends Thread {
         if (isDriverAllowed) {
             // Write Driver Info in DB
             writeDriverInfoInDB();
+            logger.log(Level.INFO, "Driver is allowed");
             return true;
         }
+        logger.log(Level.INFO, "Driver is not allowed");
         return false;
     }
 
@@ -108,13 +116,14 @@ public class ManagementThread extends Thread {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            logger.log(Level.SEVERE, "Error while calling Thread.sleep() ", e);
         }
         // check cyclically if the driver is pressent
         String isPresentResponse = dbController.get("sensors:rfid:present");
         // string is true if the string is not a null and equal to true (ignoring case).
         if ((isPresentResponse != null) && !isPresentResponse.isEmpty() && Boolean.valueOf(isPresentResponse)) {
             isDriverPresent = true;
+            logger.log(Level.INFO, "Driver is present");
             return true;
         } else {
             return false;
@@ -124,6 +133,7 @@ public class ManagementThread extends Thread {
     public static void updateDriver(boolean isDriverAllowed, Driver driver) {
         ManagementThread.driver = driver;
         ManagementThread.isDriverAllowed = isDriverAllowed;
+        logger.log(Level.INFO, "Driver updated");
     }
 
 

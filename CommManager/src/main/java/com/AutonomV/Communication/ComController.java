@@ -5,6 +5,8 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 /**
  * This Class controlls the Communication interface over MQTT
+ *
+ * @author Mgsair
  */
 public class ComController {
     private static final String TAG = "ComController ";
@@ -34,6 +36,13 @@ public class ComController {
         this.connectionStatus = false;
     }
 
+    /**
+     * This method initializes the Communication controller with the necessary parameters
+     * @param topicFilter
+     * @param cleanSession
+     * @param userName
+     * @param password
+     */
     public void init(String topicFilter, boolean cleanSession, String userName, String password) {
         try {
             persistence = new MemoryPersistence();
@@ -114,6 +123,11 @@ public class ComController {
 
     }
 
+    /**
+     * This method checks the mqtt client connection and subscribes to a topic
+     * @param topic The topic to be subscribed to
+     * @param qos The quality of service
+     */
     public void subscribe(String topic, int qos) {
         if (mqttClient != null && mqttClient.isConnected()) {
             try {
@@ -144,6 +158,9 @@ public class ComController {
         }
     }
 
+    /**
+     * This method disconnects the client and closes the Connection from the mqtt client to the server
+     */
     public void close() {
         if (connectionStatus) {
             disconnect();

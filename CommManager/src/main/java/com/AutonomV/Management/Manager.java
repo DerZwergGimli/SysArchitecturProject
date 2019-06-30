@@ -13,6 +13,11 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * This Class is managing class of the application, it contains the main function.
+ *
+ * @author Mgsair
+ */
 public class Manager {
     private static String mqttURL;
     private static String mqttPort;
@@ -27,7 +32,7 @@ public class Manager {
     private static Logger logger;
 
     /**
-     *
+     *  This is the Main function acting as en entry of the application
      * @param args
      */
     public static void main(String[] args) {
@@ -43,6 +48,7 @@ public class Manager {
 
         readPropertiesFile();
 
+        logger.info("Initiating the Instances");
         DBController.init(redisHost, redisPort, 100, logger);
 
         ComController comController = new ComController("ea-pc165.ei.htwg-konstanz.de", "8883", "Autonom-V1");
@@ -53,6 +59,7 @@ public class Manager {
         ManagementThread managementThread = new ManagementThread(comController, logger);
         comController.init("/SysArch/V1/Driver/AuthResponse/", true, "V1", "DE1");
 
+        logger.info("Starting the Threads");
         managementThread.start();
         dataPersistanceThread.start();
 

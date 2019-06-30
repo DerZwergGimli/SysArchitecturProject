@@ -19,15 +19,15 @@ cd /home/pi/SysArchitecturProject/InstallationScripts;
 
 echo "Install vehicle";
 mkdir /home/pi/vehicle/armv7;
-wget -P /home/pi/vehicle/armv7 https://github.com/DerZwergGimli/SysArchitecturProject/blob/master/Vehicle_Project/build/armv7/SysArchVehicle_armv7;
+curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/SysArchVehicle_armv7 -o /home/pi/vehicle/armv7
 chmod +x /home/pi/vehicle/armv7/SysArchVehicle_armv7
 sudo cp vehicle.service /etc/systemd/system/vehicle.service
 sudo systemctl enable vehicle;
 
 echo "Install communicationManager";
 mkdir /home/pi/vehicle/commManager;
-wget -p /home/pi/vehicle/commManager -O commManager.jar https://github.com/DerZwergGimli/SysArchitecturProject/blob/master/CommManager/out/artifacts/CommManager_jar2;
-wget -p /home/pi/vehicle/commManager https://raw.githubusercontent.com/DerZwergGimli/SysArchitecturProject/master/CommManager/config.properties;
+curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/CommManager.jar -o /home/pi/vehicle/commManager
+curl -LJO https://raw.githubusercontent.com/DerZwergGimli/SysArchitecturProject/master/CommManager/config.properties -o /home/pi/vehicle/commManager;
 sudo cp communicationManager.service /etc/systemd/system/communicationManager.service
 sudo systemctl enable communicationManager.service;
 

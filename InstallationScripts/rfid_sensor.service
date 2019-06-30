@@ -1,0 +1,17 @@
+[Unit]
+Description=Vehilce SysArchitecture
+After=syslog.target network.target
+
+[Service]
+ExecStart=/home/pi/vehicle/armv7/SysArchVehicle_armv7
+ExecStop=/bin/bash -c "gpio pwm 1 0"
+Restart=on-failure
+KillSignal=SIGINT
+
+# run as root
+WorkingDirectory=/home/pi/vehicle/armv7
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target

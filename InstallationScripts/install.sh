@@ -5,22 +5,27 @@ Install_NodeRed="./installNodeRed.sh"
 echo "This will now install all the dependecies that are needed!";
 sleep 3;
 echo "===> Check for updates";
-sudo apt update;
-sudo apt upgrade -y;
-sudo apt install wget redis-server -y;
+#sudo apt update;
+#sudo apt upgrade -y;
+sudo apt install curl redis-server -y;
 
 echo "====> Copy Sytem Services for SystemCTL"
-sudo cp vehicle.service /etc/systemd/system/vehicle.service
-sudo cp communicationManager.service /etc/systemd/system/communicationManager.service
-sudo cp sensors.service /etc/systemd/system/sensors.service
+sudo cp vehicle.service /etc/systemd/system/vehicle.service;
+sudo cp communicationManager.service /etc/systemd/system/communicationManager.service;
+sudo cp sensors.service /etc/systemd/system/sensors.service;
+sudo cp rfid_sensor.service /etc/systemd/system/rfid_sensor.service;
 
-echo "====> Python scripts"
-mkdir /home/pi/vehicle/
-cp -r ../Sensors /home/pi/vehicle/
+
+echo "====> Python scripts";
+# sensors
+mkdir /home/pi/vehicle;
+cp -r ../Sensors /home/pi/vehicle/;
 sudo systemctl enable sensors;
+sudo systemctl enable rfid_sensor.service;
 
 
-echo "====> Install Lidar-Interface"
+
+echo "====> Install Lidar-Interface";
 sudo apt install build-essential;
 mkdir /home/pi/vehicle/lidar;
 git clone https://github.com/bmegli/xv11lidar-test.git /home/pi/vehicle/lidar;
@@ -33,8 +38,8 @@ cd /home/pi/SysArchitecturProject/InstallationScripts;
 echo "====> Install vehicle";
 mkdir /home/pi/vehicle/armv7;
 cd /home/pi/vehicle/armv7;
-curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/SysArchVehicle_armv7
-chmod +x /home/pi/vehicle/armv7/SysArchVehicle_armv7
+curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/SysArchVehicle_armv7;
+chmod +x /home/pi/vehicle/armv7/SysArchVehicle_armv7;
 sudo systemctl enable vehicle;
 
 echo "====> Install communicationManager";
@@ -43,10 +48,6 @@ cd /home/pi/vehicle/commManager;
 curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/CommManager.jar;
 curl -LJO https://raw.githubusercontent.com/DerZwergGimli/SysArchitecturProject/master/CommManager/config.properties;
 sudo systemctl enable communicationManager.service;
-
-
-echo "====> Install Python-scripts";
-echo "====> Install RFID-Sensor";
 
 
 
@@ -61,6 +62,7 @@ echo "====> Install Node-Red";
 
 echo "Start all!"
 sudo systemctl start communicationManager.service;
-sudo systemctl start vehicle;
-sudo systemctl start sensors;
+sudo systemctl start vehicle.service;
+sudo systemctl start sensors.service;
+sudo systemctl start rfid_sensor.service;
 

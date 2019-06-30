@@ -5,7 +5,7 @@ After=network.target
 [Service]
 Type=simple
 User=pi
-WorkingDirectory=vehicle/Sensors/AltIMU-10
+WorkingDirectory=/home/pi/vehicle/Sensors/RFID_Sensor
 ExecStart=/bin/sh -c 'cd /home/pi/vehicle/Sensors/RFID_Sensor && source Scripts/activate && python MFRC522-python/RFID.py'
 Restart=on-failure
 

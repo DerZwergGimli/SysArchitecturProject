@@ -5,6 +5,7 @@ main
 management
 osInterfaces
 redisInterface
+testing
 threads
 threads.handler
 threads.interruptible

@@ -37,7 +37,7 @@ public class InterruptibleCollisionAvoidance implements Interruptible {
 	 * 
 	 * @param logger
 	 * @param managemnt
-	 * @param qLidarSensor
+	 * @param qLidarBuffer
 	 * @param qCollisonControl
 	 */
 	public InterruptibleCollisionAvoidance(Logger logger, IManagementControl managemnt,

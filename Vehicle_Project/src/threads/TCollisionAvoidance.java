@@ -49,7 +49,7 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 	 * @param logger
 	 * @param management
 	 * @param missHandlerCollisionAvoidance
-	 * @param qLidarSensor
+	 * @param qLidarBuffer
 	 * @param qCollisonControl
 	 */
 	public TCollisionAvoidance(Logger logger, IManagementControl management,

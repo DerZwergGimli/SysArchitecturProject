@@ -37,7 +37,7 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 
 	private Logger logger;
 	private IManagementControl management;
-	private ArrayBlockingQueue<IQLidarBuffer> qlidarBuffer;
+	private ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer;
 	private ILidarInterface lidarController;
 
 	private volatile OverrunLidarDataCollection overrunHandlerLidarDataCollection;
@@ -53,16 +53,16 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 	 * @param management
 	 * @param lidarController
 	 * @param missHandlerLidarDataCollection
-	 * @param qLidarSensor
+	 * @param qLidarBuffer
 	 */
 	public TLidarDataCollection(Logger logger, IManagementControl management, ILidarInterface lidarController,
-			MissLidarDataCollection missHandlerLidarDataCollection, ArrayBlockingQueue<IQLidarBuffer> qlidarBuffer) {
+			MissLidarDataCollection missHandlerLidarDataCollection, ArrayBlockingQueue<IQLidarBuffer> qLidarBuffer) {
 		setName("LidarDataCollectionThread");
 		this.logger = logger;
 		this.management = management;
 		this.lidarController = lidarController;
 		this.missHandlerLidarDataCollection = missHandlerLidarDataCollection;
-		this.qlidarBuffer = qlidarBuffer;
+		this.qLidarBuffer = qLidarBuffer;
 		readPropertiesFile();
 
 		overrunHandlerLidarDataCollection = new OverrunLidarDataCollection(logger);
@@ -94,7 +94,7 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
 			missHandlerLidarDataCollection.setInterruptExeption(asInterruptedException);
 			InterruptibleLidarDataCollection inLidarDataCollection = new InterruptibleLidarDataCollection(logger,
-					management, lidarController, qlidarBuffer);
+					management, lidarController, qLidarBuffer);
 			asInterruptedException.doInterruptible(inLidarDataCollection);
 
 		} catch (Exception e) {

@@ -3,9 +3,9 @@ Description=Vehicle Communication Manager
 After=syslog.target
 
 [Service]
-WorkingDirectory=/home/pi/Vehicle/java	
+WorkingDirectory=/home/pi/vehicle/commManager	
 SyslogIdentifier=CommunicationManager_Vehicle
-ExecStart=/bin/bash -c "java -jar /home/pi/vehicle/java/CommManager.jar"
+ExecStart=/bin/bash -c "java -jar /home/pi/vehicle/commManager/CommManager.jar"
 User=pi
 Type=simple
 

@@ -9,7 +9,7 @@ Restart=on-failure
 KillSignal=SIGINT
 
 # run as root
-WorkingDirectory=/home/pi/Vehicle/armv7
+WorkingDirectory=/home/pi/vehicle/armv7
 User=root
 Group=root
 

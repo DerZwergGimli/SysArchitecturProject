@@ -1,17 +1,14 @@
 [Unit]
-Description=Vehilce SysArchitecture
-After=syslog.target network.target
+Description=RFID_Sensor_Reader
+After=network.target
 
 [Service]
-ExecStart=/home/pi/vehicle/armv7/SysArchVehicle_armv7
-ExecStop=/bin/bash -c "gpio pwm 1 0"
+Type=simple
+User=user
+WorkingDirectory=vehicle/Sensors/AltIMU-10
+ExecStart=/bin/sh -c 'cd /home/pi/vehicle/Sensors/AltIMU-10 && source Scripts/activate && python python-AltIMU-10v5/AltIMU-10.py'
 Restart=on-failure
-KillSignal=SIGINT
-
-# run as root
-WorkingDirectory=/home/pi/vehicle/armv7
-User=root
-Group=root
 
 [Install]
 WantedBy=multi-user.target
+

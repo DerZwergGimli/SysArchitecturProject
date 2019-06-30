@@ -12,6 +12,12 @@ sudo apt install wget redis-server -y;
 echo "====> Copy Sytem Services for SystemCTL"
 sudo cp vehicle.service /etc/systemd/system/vehicle.service
 sudo cp communicationManager.service /etc/systemd/system/communicationManager.service
+sudo cp sensors.service /etc/systemd/system/sensors.service
+
+echo "====> Python scripts"
+mkdir /home/pi/vehicle/
+cp -r ../Sensors /home/pi/vehicle/
+sudo systemctl enable sensors;
 
 
 echo "====> Install Lidar-Interface"
@@ -40,6 +46,14 @@ sudo systemctl enable communicationManager.service;
 
 
 echo "====> Install Python-scripts";
+echo "====> Install RFID-Sensor";
+
+
+
+
+
+
+
 
 echo "====> Install Node-Red";
 
@@ -48,4 +62,5 @@ echo "====> Install Node-Red";
 echo "Start all!"
 sudo systemctl start communicationManager.service;
 sudo systemctl start vehicle;
+sudo systemctl start sensors;
 

@@ -16,7 +16,7 @@ public class Configuration {
 			prop.setProperty("console.showStatusInConsole", "true");
 
 			// save properties to project root folder
-			prop.store(new FileOutputStream("c://config.properties"), null);
+			prop.store(new FileOutputStream("c://config_vehicle.properties"), null);
 
 		} catch (IOException ex) {
 			ex.printStackTrace();

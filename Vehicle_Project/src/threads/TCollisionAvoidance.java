@@ -101,7 +101,7 @@ public class TCollisionAvoidance extends RealtimeThread implements IHandableThre
 	}
 
 	private static void readPropertiesFile() {
-		try (InputStream input = new FileInputStream("config.properties")) {
+		try (InputStream input = new FileInputStream("config_vehicle.properties")) {
 			Properties properties = new Properties();
 			properties.load(input);
 

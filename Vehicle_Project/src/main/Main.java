@@ -52,7 +52,7 @@ public class Main {
 	}
 
 	private static Boolean checkForConfigExistance() {
-		File f = new File("config.properties");
+		File f = new File("config_vehicle.properties");
 		if (f.exists() && !f.isDirectory()) {
 			return true;
 		}

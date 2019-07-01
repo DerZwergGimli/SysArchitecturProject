@@ -8,7 +8,7 @@ More information you can find in our [wiki](https://github.com/DerZwergGimli/Sys
 ### Installation
 
 1. `git clone https://github.com/DerZwergGimli/SysArchitecturProject.git`  
-2. `cd SysArchitecturProject/InstallScripts`  
+2. `cd SysArchitecturProject/InstallationScripts`  
 3. `chmod +x install.sh`  
 4. `./install.sh`  
 

@@ -10,148 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1394a649-02cb-43e1-9187-6f04f7def902" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../CommManager/.idea/artifacts/CommManager_jar.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/.idea/artifacts/CommManager_jar2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/CommManager_README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/allclasses-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/allclasses-noframe.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Communication/ClientCallback.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Communication/ComController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Communication/DBController.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Communication/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Communication/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Communication/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/Lidar.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/CPU.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/Network/NetworkInfo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/Network/Received.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/Network/Transmitted.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/Network/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/Network/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/Network/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/RealTimeData.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/VehicleOS.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/OS/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/Passengers/Driver.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/Passengers/DriverAuth.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/Passengers/Passenger.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/Passengers/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/Passengers/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/Passengers/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/Sensor.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/Vehicle.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Entity/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Management/DataPersistanceThread.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Management/ManagementThread.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Management/Manager.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Management/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Management/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Management/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Util/Banner.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Util/Converter.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Util/Logging.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Util/package-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Util/package-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/com/AutonomV/Util/package-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/constant-values.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/deprecated-list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/help-doc.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-1.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-10.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-11.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-12.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-13.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-14.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-15.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-16.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-17.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-3.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-4.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-5.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-6.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-7.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-8.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index-files/index-9.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/overview-frame.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/overview-summary.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/overview-tree.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/package-list" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/script.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/Javadoc/stylesheet.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/VehicleLog.log.0" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/out/artifacts/CommManager_jar/CommManager.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/out/artifacts/CommManager_jar2/CommManager.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/out/artifacts/CommManager_jar2/dump.rdb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/out/artifacts/CommManager_jar2/logFile.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/AutonomV_ClassDiagram.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/AutonomV_ClassDiagram2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Communication/ClientCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Communication/ComController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Communication/DBController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/Lidar.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/OS/CPU.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/OS/Network/NetworkInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/OS/Network/Received.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/OS/Network/Transmitted.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/OS/RealTimeData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/OS/VehicleOS.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/Passengers/Driver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/Passengers/DriverAuth.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/Passengers/Passenger.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/Sensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Entity/Vehicle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Management/ManagementThread.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Management/Manager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Util/Banner.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Util/Converter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/java/com/AutonomV/Util/Logging.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/test/java/com/AutonomV/Communication/ComControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/test/java/com/AutonomV/Communication/DBControllerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/src/test/java/com/AutonomV/Util/ConverterTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/META-INF/CommManager.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Communication/ClientCallback.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Communication/ComController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Communication/DBController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/Lidar.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/OS/CPU.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/OS/Network/NetworkInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/OS/Network/Received.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/OS/Network/Transmitted.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/OS/RealTimeData.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/OS/VehicleOS.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/Passengers/Driver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/Passengers/DriverAuth.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/Passengers/Passenger.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/Sensor.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Entity/Vehicle.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Management/DataPersistanceThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Management/ManagementThread.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Management/Manager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Util/Banner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Util/Converter.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Util/Logging$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/classes/com/AutonomV/Util/Logging.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/test-classes/com/AutonomV/Communication/ComControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/test-classes/com/AutonomV/Communication/DBControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CommManager/target/test-classes/com/AutonomV/Util/ConverterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UI-NodeRed/flows.json" beforeDir="false" afterPath="$PROJECT_DIR$/../UI-NodeRed/flows.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -180,11 +39,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+            <state relative-caret-position="197">
+              <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -207,11 +69,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
+            <state relative-caret-position="283">
+              <caret line="128" column="46" lean-forward="true" selection-start-line="128" selection-start-column="46" selection-end-line="128" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -333,8 +195,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/ComController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" />
         <option value="$PROJECT_DIR$/.idea/artifacts/CommManager_jar.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" />
       </list>
     </option>
   </component>
@@ -561,7 +423,7 @@
       <workItem from="1561803002774" duration="6780000" />
       <workItem from="1561906868601" duration="6458000" />
       <workItem from="1561918502570" duration="1063000" />
-      <workItem from="1562000870109" duration="208000" />
+      <workItem from="1562000870109" duration="924000" />
     </task>
     <servers />
   </component>
@@ -598,7 +460,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128138000" />
+    <option name="totallyTimeSpent" value="128854000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1131,16 +993,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="98" selection-start-line="98" selection-end-line="98" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/artifacts/CommManager_jar2.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1150,8 +1002,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="8" column="31" lean-forward="true" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+        <state relative-caret-position="197">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="128" column="46" lean-forward="true" selection-start-line="128" selection-start-column="46" selection-end-line="128" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

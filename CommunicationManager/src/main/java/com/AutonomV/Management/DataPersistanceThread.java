@@ -114,6 +114,11 @@ public class DataPersistanceThread extends Thread {
                 dbController.get("sensors:barometer:unit"),
                 dbController.exists("sensors:temperature:data"),
                 dbController.get("sensors:barometer:timestamp"));
+        Sensor heightSensor = new Sensor("Height",
+                dbController.get("sensors:barometer:metersinheight:data"),
+                dbController.get("sensors:barometer:metersinheight:unit"),
+                dbController.exists("sensors:temperature:metersinheight:data"),
+                dbController.get("sensors:barometer:metersinheight:timestamp"));
         Sensor accelSensor = new Sensor("Acceleration",
                 dbController.get("sensors:accelerometer:accelerometer_x")
                         + "," + dbController.get("sensors:accelerometer:accelerometer_y")
@@ -143,6 +148,7 @@ public class DataPersistanceThread extends Thread {
         Vehicle vehicle = new Vehicle();
         vehicle.addSensors(tempSensor);
         vehicle.addSensors(pressureSensor);
+        vehicle.addSensors(heightSensor);
         vehicle.addSensors(accelSensor);
         vehicle.addSensors(gyroSensor);
         vehicle.addSensors(lidarSensor);

@@ -1,8 +1,98 @@
-[2019-07-01 20:04:51] [INFO   ] -- LOGGER stated --
+[2019-07-02 00:54:24] [FINER  ] RETURN
  null 
-[2019-07-01 20:04:51] [INFO   ] Initiating the Instances
+[2019-07-02 00:54:24] [FINER  ] ENTRY
  null 
-[2019-07-01 20:04:51] [INFO   ] DBController Initiating Jedis Controller on: localhost:6379
+[2019-07-02 00:54:24] [FINER  ] RETURN
  null 
-[2019-07-01 20:04:51] [INFO   ] DBController Jedis Controller exists
+[2019-07-02 00:54:34] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:54:34] [FINER  ] RETURN
+ null 
+[2019-07-02 00:54:34] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:54:34] [FINER  ] RETURN
+ null 
+[2019-07-02 00:54:44] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:54:44] [FINER  ] RETURN
+ null 
+[2019-07-02 00:54:44] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:54:44] [FINER  ] RETURN
+ null 
+[2019-07-02 00:54:54] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:54:54] [FINER  ] RETURN
+ null 
+[2019-07-02 00:54:54] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:54:54] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:03] [INFO   ] Driver is present
+ null 
+[2019-07-02 00:55:04] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:04] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:04] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:04] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:04] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:05] [INFO   ] Driver is present
+ null 
+[2019-07-02 00:55:06] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:07] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:08] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:09] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:10] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:11] [INFO   ] Driver is present
+ null 
+[2019-07-02 00:55:12] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:13] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:14] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:14] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:14] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:14] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:14] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:15] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:16] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 00:55:19] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:19] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:19] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:19] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:29] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:29] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:29] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:29] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:39] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:39] [FINER  ] RETURN
+ null 
+[2019-07-02 00:55:39] [FINER  ] ENTRY
+ null 
+[2019-07-02 00:55:39] [FINER  ] RETURN
  null 

@@ -80,7 +80,7 @@ public class ConfigurationFile {
 			writer.write("#Redis-Config\n");
 			writer.write("redis.enable=true\n");
 			writer.write("redis.url=localhost\n");
-			writer.write("redis.port=32769\n");
+			writer.write("redis.port=6379\n");
 			writer.write("redis.expireTime=1000\n");
 			writer.newLine();
 			writer.write("#Lidar-Config\n");
@@ -102,7 +102,7 @@ public class ConfigurationFile {
 			writer.newLine();
 			writer.write("#NetworkInterface\n");
 			writer.write("networkInterface.enabled=true\n");
-			writer.write("networkInterface.name=wlp2s0\n");
+			writer.write("networkInterface.name=eth0\n");
 			writer.newLine();
 			writer.write("#Top-Interface\n");
 			writer.write("topInterface.enabled=true\n");

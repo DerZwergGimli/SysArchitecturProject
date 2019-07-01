@@ -1,14 +1,13 @@
 [Unit]
-Description=Sensors_Reader
+Description=RFID_Sensor_Reader
 After=network.target
 
 [Service]
 Type=simple
 User=pi
-WorkingDirectory=vehicle/Sensors/AltIMU-10
-ExecStart=/bin/sh -c 'cd /home/pi/vehicle/Sensors/AltIMU-10 && source Scripts/activate && python python-AltIMU-10v5/AltIMU-10.py'
+WorkingDirectory=/home/pi/vehicle/Sensors/AltIMU-10
+ExecStart=/bin/bash -c "cd /home/pi/vehicle/Sensors/AltIMU-10 && source Scripts/activate && python python-AltIMU-10v5/AltIMU-10.py"
 Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
-

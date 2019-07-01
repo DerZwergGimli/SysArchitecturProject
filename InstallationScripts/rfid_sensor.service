@@ -1,0 +1,14 @@
+[Unit]
+Description=RFID_Sensor_Reader
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/vehicle/Sensors/RFID_Sensor
+ExecStart=/bin/bash -c "cd /home/pi/vehicle/Sensors/RFID_Sensor && source Scripts/activate && python MFRC522-python/RFID.py"
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+

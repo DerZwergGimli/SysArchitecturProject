@@ -10,7 +10,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1394a649-02cb-43e1-9187-6f04f7def902" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config_CommManager.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Logging.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Logging.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -42,7 +45,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="197">
+            <state relative-caret-position="285">
               <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -61,10 +64,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config.properties">
+        <entry file="file://$PROJECT_DIR$/config_CommManager.properties">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            <state relative-caret-position="75">
+              <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -72,7 +75,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="283">
+            <state relative-caret-position="1255">
               <caret line="128" column="46" lean-forward="true" selection-start-line="128" selection-start-column="46" selection-end-line="128" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -189,7 +192,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Logging.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Banner.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/config.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Util/Converter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/Manager.java" />
@@ -197,6 +199,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Communication/DBController.java" />
         <option value="$PROJECT_DIR$/.idea/artifacts/CommManager_jar.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java" />
+        <option value="$PROJECT_DIR$/config.properties" />
       </list>
     </option>
   </component>
@@ -270,15 +273,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
               <item name="Management" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CommunicationManager" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CommunicationManager" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="AutonomV" type="462c0819:PsiDirectoryNode" />
-              <item name="Util" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -423,7 +417,7 @@
       <workItem from="1561803002774" duration="6780000" />
       <workItem from="1561906868601" duration="6458000" />
       <workItem from="1561918502570" duration="1063000" />
-      <workItem from="1562000870109" duration="924000" />
+      <workItem from="1562000870109" duration="1250000" />
     </task>
     <servers />
   </component>
@@ -460,7 +454,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128854000" />
+    <option name="totallyTimeSpent" value="129180000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -475,7 +469,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19957082" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19957082" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -484,7 +478,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.23614457" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32957748" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32891566" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49928468" weight="0.37349397" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
@@ -969,13 +963,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.idea/artifacts/CommManager_jar.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1002,7 +989,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/ManagementThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
+        <state relative-caret-position="285">
           <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1010,9 +997,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config_CommManager.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/AutonomV/Management/DataPersistanceThread.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="283">
+        <state relative-caret-position="1255">
           <caret line="128" column="46" lean-forward="true" selection-start-line="128" selection-start-column="46" selection-end-line="128" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />

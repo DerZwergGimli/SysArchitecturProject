@@ -50,7 +50,7 @@ public class DataPersistanceThread extends Thread {
      * This method initializes the properties of this class by opening the config file and getting the properties from it
      */
     public void initProperties() {
-        try (InputStream input = new FileInputStream("config.properties")) {
+        try (InputStream input = new FileInputStream("config_CommManager.properties")) {
             Properties properties = new Properties();
             properties.load(input);
 

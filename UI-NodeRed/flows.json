@@ -24,7 +24,7 @@
         "id": "98123e0c.aea32",
         "type": "tab",
         "label": "DB_Emulator",
-        "disabled": true,
+        "disabled": false,
         "info": ""
     },
     {
@@ -429,16 +429,6 @@
         "order": 2,
         "width": 1,
         "height": 1
-    },
-    {
-        "id": "2abe48aa.248e48",
-        "type": "ui_link",
-        "z": "",
-        "name": "Lidar",
-        "link": "http://0.0.0.0:1881/Lidar",
-        "icon": "open_in_browser",
-        "target": "iframe",
-        "order": 4
     },
     {
         "id": "aa1b70da.8d6ae",
@@ -3370,8 +3360,8 @@
         "func": "msg.payload = ['sensors:Lidar:distances']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 351,
-        "y": 467,
+        "x": 354,
+        "y": 402,
         "wires": [
             [
                 "23ead285.23627e"
@@ -3386,8 +3376,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 518.5,
-        "y": 467,
+        "x": 521.5,
+        "y": 402,
         "wires": [
             [
                 "ab45363f.436248"
@@ -3402,55 +3392,13 @@
         "func": "\nvar dataArray = msg.payload.split(',')\nvar m = {};\n// '0','45','90','135','180','225','270', '315'\nm.labels = [];\nm.data = [dataArray];\nm.series = [];\nreturn {payload:[m],topic:msg.topic};",
         "outputs": 1,
         "noerr": 0,
-        "x": 328.5,
-        "y": 507,
+        "x": 331.5,
+        "y": 442,
         "wires": [
             [
                 "dbcbdd75.b0ba"
             ]
         ]
-    },
-    {
-        "id": "cb5ac288.1f69c",
-        "type": "function",
-        "z": "6e40fab5.1057f4",
-        "name": "ChartJsData",
-        "func": "var dataArray = Array.from({length: 8}, () => Math.floor(Math.random() * 40));\n\nvar dataset = new Array(8);\nfor (var i = 0; i < 8;i++) {\n    dataset[i] = {};\n    dataset[i].x = i.toString();\n    dataset[i].y = dataArray[i];\n}\nmsg.payload = {\n    \"channel\": \"Population\",\n    \"color\": flow.get('randomColorsArray'),\n    \"dataset\": dataset\n}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 329.5,
-        "y": 427,
-        "wires": [
-            [
-                "4f6b8c5f.992624"
-            ]
-        ]
-    },
-    {
-        "id": "4f6b8c5f.992624",
-        "type": "chartjs-polar",
-        "z": "6e40fab5.1057f4",
-        "name": "Lidar",
-        "path": "Lidar",
-        "charttitle": "Lidar Distances",
-        "xaxis": "Distances in cm",
-        "yaxis": "Angles in Degree",
-        "x": 468.5,
-        "y": 426,
-        "wires": [
-            []
-        ],
-        "l": false
-    },
-    {
-        "id": "2e662355.7ff8dc",
-        "type": "comment",
-        "z": "6e40fab5.1057f4",
-        "name": "ChartJs here",
-        "info": "Check if the user is allowed to change the Settings is the Control",
-        "x": 577.5,
-        "y": 427,
-        "wires": []
     },
     {
         "id": "dbcbdd75.b0ba",
@@ -3488,8 +3436,8 @@
         ],
         "useOldStyle": false,
         "outputs": 1,
-        "x": 698.5,
-        "y": 507,
+        "x": 701.5,
+        "y": 442,
         "wires": [
             []
         ]
@@ -3509,7 +3457,6 @@
                 "42fdff36.f472c",
                 "56b3144.e45fbec",
                 "27c5f6c3.ab950a",
-                "cb5ac288.1f69c",
                 "97d8ed6d.8ac93",
                 "f8b6f466.fa2f38",
                 "33b6ead8.5745d6",
@@ -4822,6 +4769,53 @@
         "info": "",
         "x": 132,
         "y": 655,
+        "wires": []
+    },
+    {
+        "id": "c9738e7.36d827",
+        "type": "function",
+        "z": "56a5114c.9568b",
+        "name": "ChartJsData",
+        "func": "var dataArray = msg.payload[0].data[0]\nvar dataset = new Array(360);\nfor (var i = 0; i < 360;i++) {\n    dataset[i] = {};\n    dataset[i].x = i.toString();\n    dataset[i].y = dataArray[i];\n}\nmsg.payload = {\n    \"channel\": \"Population\",\n    \"color\": flow.get('randomColorsArray'),\n    \"dataset\": dataset\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 112,
+        "y": 342,
+        "wires": [
+            [
+                "1b0517b7.fc6818",
+                "67c6a0e1.41425"
+            ]
+        ]
+    },
+    {
+        "id": "1b0517b7.fc6818",
+        "type": "chartjs-polar",
+        "z": "56a5114c.9568b",
+        "name": "Lidar",
+        "path": "Lidar",
+        "charttitle": "Lidar Distances",
+        "xaxis": "Distances in cm",
+        "yaxis": "Angles in Degree",
+        "x": 286,
+        "y": 341,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "67c6a0e1.41425",
+        "type": "debug",
+        "z": "56a5114c.9568b",
+        "name": "",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 306.5,
+        "y": 392,
         "wires": []
     }
 ]

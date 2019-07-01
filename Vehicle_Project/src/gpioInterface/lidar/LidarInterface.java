@@ -56,8 +56,6 @@ public class LidarInterface implements ILidarInterface {
 
 			if (exitCode == 0) {
 
-				// TODO: Needed Code here to parse the lidar Sensor Data
-				System.out.println(lines.toString());
 				return true;
 			}
 
@@ -95,8 +93,6 @@ public class LidarInterface implements ILidarInterface {
 
 			if (exitCode == 0) {
 
-				// TODO: Needed Code here to parse the lidar Sensor Data
-				System.out.println(lines.toString());
 				return true;
 			}
 
@@ -133,8 +129,6 @@ public class LidarInterface implements ILidarInterface {
 
 			if (exitCode == 0) {
 
-				// TODO: Needed Code here to parse the lidar Sensor Data
-				System.out.println(lines.toString());
 				return true;
 			}
 

@@ -84,11 +84,11 @@ public class ConfigurationFile {
 			writer.write("redis.expireTime=1000\n");
 			writer.newLine();
 			writer.write("#Lidar-Config\n");
-			writer.write("lidar.enabled=false\n");
+			writer.write("lidar.enabled=true\n");
 			writer.write("lidar.initCommand=gpio mode 1 pwm\n");
 			writer.write("lidar.startRotationCommand=gpio pwm 1 250\n");
 			writer.write("lidar.stopRotationCommand=gpio pwm 1 0\n");
-			writer.write("lidar.scanCommand=home/pi/vehicle/lidar/xv11test /dev/ttyAMA0\n");
+			writer.write("lidar.scanCommand=/home/pi/vehicle/lidar/xv11test /dev/ttyAMA0\n");
 			writer.write("lidar.periode=2000\n");
 			writer.write("lidar.cost=1500\n");
 			writer.write("lidar.deadline=1900\n");

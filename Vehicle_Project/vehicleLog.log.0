@@ -1,0 +1,182 @@
+[2019-07-01 21:45:32] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-01 21:45:32] [SEVERE ] Error while trying to connect to Redis-Server
+ redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to host localhost:32769 
+[2019-07-01 21:45:32] [SEVERE ] Error while trying to connect to Redis-Server
+ redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to host localhost:32769 
+[2019-07-01 21:45:32] [SEVERE ] Cannot connect to Redis-Server you might want to check the config file!
+ null 
+[2019-07-01 21:46:26] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-01 21:46:26] [INFO   ] --Application stared--
+ null 
+[2019-07-01 21:46:27] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-01 21:46:27] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-01 21:46:27] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-07-01 21:46:27] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:27] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:27] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:28] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:28] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:28] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:28] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:29] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-01 21:46:29] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:29] [INFO   ] Generated RANDOM lidarValues
+ null 
+[2019-07-01 21:46:29] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:29] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:30] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:30] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:30] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:30] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:31] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-01 21:46:31] [INFO   ] Generated RANDOM lidarValues
+ null 
+[2019-07-01 21:46:31] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:31] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:31] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:32] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:32] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:32] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:32] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:33] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-01 21:46:33] [INFO   ] Generated RANDOM lidarValues
+ null 
+[2019-07-01 21:46:33] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:33] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:33] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:34] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:34] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:34] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:34] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:35] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-01 21:46:35] [INFO   ] Generated RANDOM lidarValues
+ null 
+[2019-07-01 21:46:35] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:35] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:35] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:36] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:36] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:36] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:36] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:37] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-01 21:46:37] [INFO   ] Generated RANDOM lidarValues
+ null 
+[2019-07-01 21:46:37] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:37] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:37] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:38] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:38] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:38] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:38] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:39] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-01 21:46:39] [INFO   ] Generated RANDOM lidarValues
+ null 
+[2019-07-01 21:46:39] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:39] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:39] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:40] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:40] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:40] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:40] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:41] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-01 21:46:41] [INFO   ] Generated RANDOM lidarValues
+ null 
+[2019-07-01 21:46:41] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:41] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:41] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:46:42] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:50:03] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-01 21:50:04] [INFO   ] --Application stared--
+ null 
+[2019-07-01 21:50:04] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-01 21:50:04] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-01 21:50:04] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-07-01 21:50:04] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:50:04] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:50:05] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:50:05] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:50:05] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:50:05] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:50:06] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:50:06] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-01 21:50:06] [INFO   ] Queue was empty does nothing in here
+ null 
+[2019-07-01 21:50:06] [INFO   ] Generated RANDOM lidarValues
+ null 

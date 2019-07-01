@@ -49,20 +49,15 @@ curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/downlo
 curl -LJO https://raw.githubusercontent.com/DerZwergGimli/SysArchitecturProject/master/CommManager/config.properties;
 sudo systemctl enable communicationManager.service;
 
-
-
-
-
-
-
-
 echo "====> Install Node-Red";
-
+bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+sudo systemctl enable nodered.service
 
 
 echo "Start all!"
-sudo systemctl start communicationManager.service;
-sudo systemctl start vehicle.service;
-sudo systemctl start sensors.service;
-sudo systemctl start rfid_sensor.service;
+#sudo systemctl start communicationManager.service;
+#sudo systemctl start vehicle.service;
+#sudo systemctl start sensors.service;
+#sudo systemctl start rfid_sensor.service;
+sudo systemctl start nodered.service
 

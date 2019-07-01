@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=pi
 WorkingDirectory=/home/pi/vehicle/Sensors/RFID_Sensor
-ExecStart=/bin/sh -c 'cd /home/pi/vehicle/Sensors/RFID_Sensor && source Scripts/activate && python MFRC522-python/RFID.py'
+ExecStart=/bin/bash -c "cd /home/pi/vehicle/Sensors/RFID_Sensor && source Scripts/activate && python MFRC522-python/RFID.py"
 Restart=on-failure
 
 [Install]

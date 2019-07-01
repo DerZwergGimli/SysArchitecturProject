@@ -5,4 +5,12 @@ This is our version of a vehicle in Java RT Vehicle compiled with [JamaicaVM for
    
 More information you can find in our [wiki](https://github.com/DerZwergGimli/SysArchitecturProject/wiki).   
 
+### Installation
+
+1. `git clone https://github.com/DerZwergGimli/SysArchitecturProject.git`  
+2. `cd SysArchitecturProject/InstallScripts`  
+3. `chmod +x install.sh`  
+4. `./install.sh`  
+
+
 Enjoy   

@@ -2,7 +2,7 @@
     {
         "id": "fa0109b3.e47ed8",
         "type": "tab",
-        "label": "UI",
+        "label": "UI_SysMonitoring",
         "disabled": false,
         "info": ""
     },
@@ -14,17 +14,17 @@
         "info": ""
     },
     {
-        "id": "98123e0c.aea32",
+        "id": "6e40fab5.1057f4",
         "type": "tab",
-        "label": "DB_Emulator",
+        "label": "UI_Sensors",
         "disabled": false,
         "info": ""
     },
     {
-        "id": "b033b9b0.f9eff8",
+        "id": "98123e0c.aea32",
         "type": "tab",
-        "label": "ConsistantDB_Emulator",
-        "disabled": false,
+        "label": "DB_Emulator",
+        "disabled": true,
         "info": ""
     },
     {
@@ -307,11 +307,11 @@
         "id": "9d163dfc.a6bc9",
         "type": "ui_group",
         "z": "",
-        "name": "Logfile",
+        "name": "Vehicle Logfile",
         "tab": "574bc317.c025dc",
-        "order": 7,
+        "order": 10,
         "disp": true,
-        "width": "12",
+        "width": "10",
         "collapse": true
     },
     {
@@ -320,7 +320,7 @@
         "z": "",
         "name": "System Control",
         "icon": "settings",
-        "order": 2,
+        "order": 3,
         "disabled": false,
         "hidden": false
     },
@@ -499,103 +499,6 @@
         "collapse": false
     },
     {
-        "id": "bbee168d.a01018",
-        "type": "ui_base",
-        "theme": {
-            "name": "theme-dark",
-            "lightTheme": {
-                "default": "#0094CE",
-                "baseColor": "#0094CE",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "darkTheme": {
-                "default": "#097479",
-                "baseColor": "#0ec1ca",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": true,
-                "reset": false
-            },
-            "customTheme": {
-                "name": "Untitled Theme 1",
-                "default": "#4B7930",
-                "baseColor": "#4B7930",
-                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-            },
-            "themeState": {
-                "base-color": {
-                    "default": "#097479",
-                    "value": "#0ec1ca",
-                    "edited": true
-                },
-                "page-titlebar-backgroundColor": {
-                    "value": "#0ec1ca",
-                    "edited": false
-                },
-                "page-backgroundColor": {
-                    "value": "#111111",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#34e8f1",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#555555",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "widget-textColor": {
-                    "value": "#eeeeee",
-                    "edited": false
-                },
-                "widget-backgroundColor": {
-                    "value": "#0ec1ca",
-                    "edited": false
-                },
-                "widget-borderColor": {
-                    "value": "#333333",
-                    "edited": false
-                },
-                "base-font": {
-                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
-                }
-            },
-            "angularTheme": {
-                "primary": "indigo",
-                "accents": "blue",
-                "warn": "red",
-                "background": "grey"
-            }
-        },
-        "site": {
-            "name": "Dashboard",
-            "hideToolbar": "false",
-            "allowSwipe": "false",
-            "lockMenu": "true",
-            "allowTempTheme": "true",
-            "dateFormat": "DD/MM/YYYY",
-            "sizes": {
-                "sx": 48,
-                "sy": 48,
-                "gx": 6,
-                "gy": 6,
-                "cx": 6,
-                "cy": 6,
-                "px": 2,
-                "py": 2
-            }
-        }
-    },
-    {
         "id": "407586ed.d03ca8",
         "type": "ui_group",
         "z": "",
@@ -686,7 +589,7 @@
         "z": "",
         "name": "System Monitoring",
         "icon": "fa-bar-chart",
-        "order": 1,
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -826,27 +729,9 @@
         "z": "",
         "name": "Sensors",
         "icon": "dashboard",
-        "order": 2,
+        "order": 1,
         "disabled": false,
         "hidden": false
-    },
-    {
-        "id": "5a382a6.be362d4",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "47d3571c.f85b38",
-        "order": 2,
-        "width": 1,
-        "height": 1
-    },
-    {
-        "id": "64c969fa.bc8c68",
-        "type": "ui_spacer",
-        "name": "spacer",
-        "group": "3d0ea01d.7257a",
-        "order": 2,
-        "width": 1,
-        "height": 1
     },
     {
         "id": "9d2e3320.b8727",
@@ -929,7 +814,7 @@
         "z": "",
         "name": "Database Reader",
         "tab": "574bc317.c025dc",
-        "order": 5,
+        "order": 7,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -946,6 +831,70 @@
         "collapse": false
     },
     {
+        "id": "419b4bd8.b29e14",
+        "type": "ui_group",
+        "z": "",
+        "name": "Communication Services",
+        "tab": "574bc317.c025dc",
+        "order": 5,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "fb888fc.37a5b7",
+        "type": "ui_group",
+        "z": "",
+        "name": "Network",
+        "tab": "938c8911.ba5078",
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "bc6f2bde.c4d278",
+        "type": "ui_group",
+        "z": "",
+        "name": "Communication Logfile",
+        "tab": "574bc317.c025dc",
+        "order": 11,
+        "disp": true,
+        "width": "10",
+        "collapse": true
+    },
+    {
+        "id": "b6e57e50.aa2e5",
+        "type": "ui_group",
+        "z": "",
+        "name": "Gyro",
+        "tab": "9c7a0d5b.24eb7",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "28dc87b8.08d648",
+        "type": "ui_group",
+        "z": "",
+        "name": "Sensors",
+        "tab": "574bc317.c025dc",
+        "order": 8,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
+        "id": "7e81776d.48b858",
+        "type": "ui_group",
+        "z": "",
+        "name": "RFID",
+        "tab": "574bc317.c025dc",
+        "order": 9,
+        "disp": true,
+        "width": "10",
+        "collapse": false
+    },
+    {
         "id": "5b9c1d5f.a41454",
         "type": "redis-command",
         "z": "fa0109b3.e47ed8",
@@ -953,8 +902,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 520,
-        "y": 380,
+        "x": 516,
+        "y": 304,
         "wires": [
             [
                 "ea6c2495.293378"
@@ -969,8 +918,8 @@
         "func": "msg.payload = ['sensors:collsionAvoidance:timing:collionControllExecutionTime:diffTimeNano']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 322.5,
-        "y": 380,
+        "x": 318.5,
+        "y": 304,
         "wires": [
             [
                 "5b9c1d5f.a41454"
@@ -996,8 +945,6 @@
                 "93a30aaa.8eec28",
                 "80bb8da4.133cc",
                 "7d47a6db.e210c8",
-                "8a26aca1.3368d",
-                "96002f11.5977",
                 "45ce437a.eac58c",
                 "b2b8b748.558028",
                 "b3c4ba8c.910568",
@@ -1005,9 +952,12 @@
                 "36417470.97b7ec",
                 "634ab87.80f5948",
                 "dd1cc021.1e9df",
-                "f1aabfcf.c55d5",
-                "a0b73c77.72bee",
-                "3a2e8dd0.4096c2"
+                "b23b8b1f.ca0638",
+                "980e2db3.310dc",
+                "74305007.72692",
+                "59d0542e.7e024c",
+                "2688327e.4a7cbe",
+                "ad605ba4.3fece8"
             ]
         ]
     },
@@ -1056,7 +1006,7 @@
         "xformat": "ss",
         "interpolate": "linear",
         "nodata": "No Data is available for now",
-        "dot": true,
+        "dot": false,
         "ymin": "0",
         "ymax": "20",
         "removeOlder": "20",
@@ -1077,8 +1027,8 @@
         ],
         "useOldStyle": false,
         "outputs": 1,
-        "x": 691,
-        "y": 379,
+        "x": 687,
+        "y": 303,
         "wires": [
             []
         ]
@@ -1095,8 +1045,8 @@
         "label": "Driver ID",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 670,
-        "y": 95,
+        "x": 641,
+        "y": 90,
         "wires": []
     },
     {
@@ -1108,7 +1058,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 310,
-        "y": 96,
+        "y": 91,
         "wires": [
             [
                 "8ff49c47.e5edd"
@@ -1123,8 +1073,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 507.5,
-        "y": 96,
+        "x": 500.5,
+        "y": 89,
         "wires": [
             [
                 "1f8a81fd.a630ce"
@@ -1139,8 +1089,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 584,
-        "y": 646,
+        "x": 591,
+        "y": 547,
         "wires": [
             []
         ]
@@ -1153,8 +1103,8 @@
         "func": "var rand = Math.floor(Math.random() * 1000);\nmsg.payload = ['sensors:rfid:ID',rand]\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 359,
-        "y": 643,
+        "x": 400,
+        "y": 545,
         "wires": [
             [
                 "8cb7c361.833f6"
@@ -1173,8 +1123,8 @@
         "label": "Driver Firstname",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 690.5,
-        "y": 137,
+        "x": 661.5,
+        "y": 124,
         "wires": []
     },
     {
@@ -1186,7 +1136,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 340,
-        "y": 137,
+        "y": 124,
         "wires": [
             [
                 "bf2e06d5.2dbe58"
@@ -1201,8 +1151,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 507.5,
-        "y": 137,
+        "x": 500.5,
+        "y": 123,
         "wires": [
             [
                 "6bd19493.e635dc"
@@ -1218,7 +1168,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 340,
-        "y": 181,
+        "y": 158,
         "wires": [
             [
                 "abcad245.9ffdb"
@@ -1233,8 +1183,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 505.5,
-        "y": 180,
+        "x": 500.5,
+        "y": 158,
         "wires": [
             [
                 "11335b1a.603455"
@@ -1253,8 +1203,8 @@
         "label": "Driver Lastname",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 690.5,
-        "y": 180,
+        "x": 662.5,
+        "y": 158,
         "wires": []
     },
     {
@@ -1265,8 +1215,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 584,
-        "y": 680,
+        "x": 591,
+        "y": 580,
         "wires": [
             []
         ]
@@ -1279,8 +1229,8 @@
         "func": "msg.payload = ['Driver:firstName','Mouaad']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 364,
-        "y": 680,
+        "x": 409,
+        "y": 579,
         "wires": [
             [
                 "46e5a1f8.f2061"
@@ -1295,8 +1245,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 584,
-        "y": 720,
+        "x": 591,
+        "y": 614,
         "wires": [
             []
         ]
@@ -1309,8 +1259,8 @@
         "func": "msg.payload = ['Driver:lastName','Gssair']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 364,
-        "y": 720,
+        "x": 408,
+        "y": 613,
         "wires": [
             [
                 "68c82f31.bd5de"
@@ -1325,8 +1275,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 521,
-        "y": 422,
+        "x": 518,
+        "y": 338,
         "wires": [
             [
                 "207720f7.a260e"
@@ -1341,8 +1291,8 @@
         "func": "msg.payload = ['os:temperature:cpu0']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 342.5,
-        "y": 422,
+        "x": 339.5,
+        "y": 338,
         "wires": [
             [
                 "5c398b8d.c84c04"
@@ -1358,7 +1308,7 @@
         "name": "RedisSET",
         "topic": "",
         "x": 580,
-        "y": 120,
+        "y": 106,
         "wires": [
             []
         ]
@@ -1372,7 +1322,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 373,
-        "y": 120,
+        "y": 106,
         "wires": [
             [
                 "a749f4f7.efef78"
@@ -1401,25 +1351,9 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 701,
-        "y": 421,
+        "x": 698,
+        "y": 337,
         "wires": []
-    },
-    {
-        "id": "7f2141ef.249a3",
-        "type": "file",
-        "z": "98123e0c.aea32",
-        "name": "logFile",
-        "filename": "logFile.txt",
-        "appendNewline": true,
-        "createDir": false,
-        "overwriteFile": "false",
-        "encoding": "none",
-        "x": 790,
-        "y": 220,
-        "wires": [
-            []
-        ]
     },
     {
         "id": "df9de84b.7609c8",
@@ -1427,8 +1361,8 @@
         "z": "fa0109b3.e47ed8",
         "name": "User_rights",
         "info": "Check if the user is allowed to change the Settings is the Control",
-        "x": 88.5,
-        "y": 710,
+        "x": 100.5,
+        "y": 866,
         "wires": []
     },
     {
@@ -1439,8 +1373,8 @@
         "links": [
             "b84964d0.943428"
         ],
-        "x": 184.5,
-        "y": 718,
+        "x": 222.5,
+        "y": 620,
         "wires": [
             [
                 "aecf455b.6968a8",
@@ -1461,7 +1395,7 @@
             "85695666.1ffce8",
             "dd224f00.333a1"
         ],
-        "x": 355,
+        "x": 277,
         "y": 20,
         "wires": []
     },
@@ -1477,8 +1411,8 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 98.5,
-        "y": 34,
+        "x": 97.5,
+        "y": 126,
         "wires": [
             [
                 "b84964d0.943428",
@@ -1498,8 +1432,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 584,
-        "y": 760,
+        "x": 590,
+        "y": 647,
         "wires": [
             []
         ]
@@ -1512,8 +1446,8 @@
         "func": "msg.payload = ['Driver:authLevel','2']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 364,
-        "y": 760,
+        "x": 408,
+        "y": 647,
         "wires": [
             [
                 "5d1037c3.545ac8"
@@ -1529,7 +1463,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 340,
-        "y": 223,
+        "y": 193,
         "wires": [
             [
                 "cf473ea2.5a1ca"
@@ -1545,7 +1479,7 @@
         "name": "RedisGET",
         "topic": "",
         "x": 505.5,
-        "y": 222,
+        "y": 192,
         "wires": [
             [
                 "4e52d90e.f3fe68"
@@ -1565,7 +1499,7 @@
         "format": "{{msg.payload}}",
         "layout": "row-spread",
         "x": 690.5,
-        "y": 222,
+        "y": 192,
         "wires": []
     },
     {
@@ -1735,8 +1669,8 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 584,
-        "y": 800,
+        "x": 589,
+        "y": 688,
         "wires": [
             []
         ]
@@ -1749,26 +1683,12 @@
         "func": "msg.payload = ['sensors:rfid:present','true']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 364,
-        "y": 800,
+        "x": 409,
+        "y": 681,
         "wires": [
             [
                 "512ca52b.1739bc"
             ]
-        ]
-    },
-    {
-        "id": "fa94ff11.1942c",
-        "type": "redis-command",
-        "z": "98123e0c.aea32",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 584,
-        "y": 840,
-        "wires": [
-            []
         ]
     },
     {
@@ -1779,11 +1699,11 @@
         "func": "msg.payload = ['sensors:rfid:present','false']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 384,
-        "y": 840,
+        "x": 429,
+        "y": 716,
         "wires": [
             [
-                "fa94ff11.1942c"
+                "512ca52b.1739bc"
             ]
         ]
     },
@@ -1799,43 +1719,11 @@
         "crontab": "",
         "once": false,
         "onceDelay": 0.1,
-        "x": 204,
-        "y": 846,
+        "x": 245,
+        "y": 715,
         "wires": [
             [
                 "8ee672ae.f7eca"
-            ]
-        ]
-    },
-    {
-        "id": "cff014a9.6c82c8",
-        "type": "redis-command",
-        "z": "fa0109b3.e47ed8",
-        "server": "504b5bf5.bbe984",
-        "command": "get",
-        "name": "RedisGET",
-        "topic": "",
-        "x": 520,
-        "y": 540,
-        "wires": [
-            [
-                "5464c7.5fc54b38"
-            ]
-        ]
-    },
-    {
-        "id": "8a26aca1.3368d",
-        "type": "function",
-        "z": "fa0109b3.e47ed8",
-        "name": "LidarDistancesKey",
-        "func": "msg.payload = ['sensors:Lidar:distances']\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 352.5,
-        "y": 540,
-        "wires": [
-            [
-                "cff014a9.6c82c8"
             ]
         ]
     },
@@ -1848,7 +1736,7 @@
         "name": "RedisSET",
         "topic": "",
         "x": 580,
-        "y": 80,
+        "y": 73,
         "wires": [
             []
         ]
@@ -1862,7 +1750,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 384,
-        "y": 80,
+        "y": 73,
         "wires": [
             [
                 "be9a01f6.da9c6"
@@ -1878,7 +1766,7 @@
         "name": "RedisSET",
         "topic": "",
         "x": 580,
-        "y": 160,
+        "y": 139,
         "wires": [
             []
         ]
@@ -1892,7 +1780,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 403,
-        "y": 160,
+        "y": 139,
         "wires": [
             [
                 "b81a1678.c0d4f8"
@@ -1908,7 +1796,7 @@
         "name": "RedisSET",
         "topic": "",
         "x": 580,
-        "y": 200,
+        "y": 172,
         "wires": [
             []
         ]
@@ -1922,42 +1810,10 @@
         "outputs": 1,
         "noerr": 0,
         "x": 363,
-        "y": 200,
+        "y": 172,
         "wires": [
             [
                 "ae12521b.147b8"
-            ]
-        ]
-    },
-    {
-        "id": "131198f5.feb047",
-        "type": "redis-command",
-        "z": "98123e0c.aea32",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 580,
-        "y": 240,
-        "wires": [
-            [
-                "7f2141ef.249a3"
-            ]
-        ]
-    },
-    {
-        "id": "89f66cbb.4f0b5",
-        "type": "function",
-        "z": "98123e0c.aea32",
-        "name": "CPUactiveCores",
-        "func": "msg.payload = ['CPU:CPUactiveCores','4']\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 383,
-        "y": 240,
-        "wires": [
-            [
-                "131198f5.feb047"
             ]
         ]
     },
@@ -1999,8 +1855,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 521,
-        "y": 460,
+        "x": 517,
+        "y": 372,
         "wires": [
             [
                 "582a1878.18c4f8"
@@ -2015,85 +1871,11 @@
         "func": "msg.payload = ['os:top:cpu_idle']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 333.5,
-        "y": 460,
+        "x": 329.5,
+        "y": 372,
         "wires": [
             [
                 "d92c5213.d6478"
-            ]
-        ]
-    },
-    {
-        "id": "1e23ff75.728f21",
-        "type": "ui_chart",
-        "z": "fa0109b3.e47ed8",
-        "name": "LidarPolarChart",
-        "group": "cb3848a3.b24858",
-        "order": 2,
-        "width": "12",
-        "height": "5",
-        "label": "Distnaces in cm",
-        "chartType": "polar-area",
-        "legend": "true",
-        "xformat": "ss",
-        "interpolate": "linear",
-        "nodata": "Distances not available",
-        "dot": true,
-        "ymin": "",
-        "ymax": "",
-        "removeOlder": "20",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "1",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "useOldStyle": false,
-        "outputs": 1,
-        "x": 700,
-        "y": 580,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "5464c7.5fc54b38",
-        "type": "function",
-        "z": "fa0109b3.e47ed8",
-        "name": "ChartData",
-        "func": "\nvar dataArray = msg.payload.split(',')\nvar m = {};\n\nm.labels = ['0',\n        '45',\n        '90',\n        '135',\n        '180',\n        '225',\n        '270',\n        '315'];\nm.data = [dataArray];\nm.series = [\n        '0',\n        '45',\n        '90',\n        '135',\n        '180',\n        '225',\n        '270',\n        '315'];\nreturn {payload:[m],topic:msg.topic};",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 330,
-        "y": 580,
-        "wires": [
-            [
-                "1e23ff75.728f21"
-            ]
-        ]
-    },
-    {
-        "id": "96002f11.5977",
-        "type": "function",
-        "z": "fa0109b3.e47ed8",
-        "name": "ChartJsData",
-        "func": "var dataArray = Array.from({length: 8}, () => Math.floor(Math.random() * 40));\n\nvar dataset = new Array(8);\nfor (var i = 0; i < 8;i++) {\n    dataset[i] = {};\n    dataset[i].x = i.toString();\n    dataset[i].y = dataArray[i];\n}\nmsg.payload = {\n    \"channel\": \"Population\",\n    \"color\": flow.get('randomColorsArray'),\n    \"dataset\": dataset\n}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 331,
-        "y": 500,
-        "wires": [
-            [
-                "a3b9feb4.eb8ee"
             ]
         ]
     },
@@ -2102,30 +1884,11 @@
         "type": "function",
         "z": "fa0109b3.e47ed8",
         "name": "Setup",
-        "func": "function getRandomColor() {\n  var letters = '0123456789ABCDEF';\n  var color = '#';\n  for (var i = 0; i < 6; i++) {\n    color += letters[Math.floor(Math.random() * 16)];\n  }\n  return color;\n}\n// \"#\"+((1<<24)*Math.random()|0).toString(16)\nflow.set(\"randomColorsArray\",Array.from({length: 8}, () => getRandomColor()))\n\nflow.set('port','1881');\nflow.set('lidarUrl',\"http://0.0.0.0:1881/Lidar\")\n\nmsg.topic = 'colors'; \nmsg.payload = flow.get('lidarUrl');\nreturn msg;",
+        "func": "function getRandomColor() {\n  var letters = '0123456789ABCDEF';\n  var color = '#';\n  for (var i = 0; i < 6; i++) {\n    color += letters[Math.floor(Math.random() * 16)];\n  }\n  return color;\n}\n// \"#\"+((1<<24)*Math.random()|0).toString(16)\nflow.set(\"randomColorsArray\",Array.from({length: 8}, () => getRandomColor()))\n\nflow.set('port','1881');\nflow.set('lidarUrl',\"http://0.0.0.0:1881/Lidar\")\n\nglobal.set('numOfRTThreads',0);\n\nmsg.topic = 'colors'; \nmsg.payload = flow.get('lidarUrl');\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 300,
-        "y": 55,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "7003f2de.3ca97c",
-        "type": "ui_template",
-        "z": "fa0109b3.e47ed8",
-        "group": "cb3848a3.b24858",
-        "name": "OpenLidarWindow",
-        "order": 2,
-        "width": 0,
-        "height": 0,
-        "format": "<script>\n    var redirect = function(){\nwindow.open(\"http://0.0.0.0:1881/Lidar\",'_blank');\n}\n</script>\n\n<button onclick=\"redirect()\">Open Lidar plot</button>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "templateScope": "local",
-        "x": 710,
-        "y": 40,
+        "x": 310,
+        "y": 58,
         "wires": [
             []
         ]
@@ -2138,8 +1901,8 @@
         "func": "msg.payload = ['CPU:CPUactiveCores']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 340,
-        "y": 620,
+        "x": 339,
+        "y": 407,
         "wires": [
             [
                 "7ade865.b8d8778"
@@ -2154,8 +1917,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 520,
-        "y": 620,
+        "x": 519,
+        "y": 407,
         "wires": [
             [
                 "643fb64d.543908"
@@ -2174,8 +1937,8 @@
         "label": "CPU Active Cores :",
         "format": "{{msg.payload}}",
         "layout": "row-spread",
-        "x": 710,
-        "y": 620,
+        "x": 709,
+        "y": 407,
         "wires": []
     },
     {
@@ -2200,34 +1963,8 @@
         ],
         "seg1": "",
         "seg2": "",
-        "x": 700,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "bd04f102.657d5",
-        "type": "ui_gauge",
-        "z": "fa0109b3.e47ed8",
-        "name": "TempChart",
-        "group": "9d2e3320.b8727",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "gtype": "gage",
-        "title": "Temperature",
-        "label": "C°",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "60",
-        "colors": [
-            "#0bb5a7",
-            "#8be67a",
-            "#ca601a"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "x": 689,
-        "y": 700,
+        "x": 696,
+        "y": 372,
         "wires": []
     },
     {
@@ -2243,7 +1980,7 @@
         "topic": "",
         "name": "",
         "x": 710,
-        "y": 300,
+        "y": 268,
         "wires": []
     },
     {
@@ -2283,111 +2020,14 @@
         ]
     },
     {
-        "id": "8a37b22d.282bd",
-        "type": "comment",
-        "z": "fa0109b3.e47ed8",
-        "name": "ChartJs here",
-        "info": "Check if the user is allowed to change the Settings is the Control",
-        "x": 490,
-        "y": 500,
-        "wires": []
-    },
-    {
         "id": "d402320f.11948",
         "type": "comment",
         "z": "98123e0c.aea32",
         "name": "Temporary Emulation",
         "info": "Sensor Values that are emulated.\nshould be kept active!",
-        "x": 140,
-        "y": 200,
+        "x": 123,
+        "y": 127,
         "wires": []
-    },
-    {
-        "id": "7da50b4.d8251f4",
-        "type": "redis-command",
-        "z": "b033b9b0.f9eff8",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 640,
-        "y": 80,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1bc8a191.058cde",
-        "type": "function",
-        "z": "b033b9b0.f9eff8",
-        "name": "TempSensor",
-        "func": "var rand = Math.floor(Math.random() * 10 +30);\nmsg.payload = ['sensors:temperature:tempValue',rand]\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 433,
-        "y": 80,
-        "wires": [
-            [
-                "7da50b4.d8251f4"
-            ]
-        ]
-    },
-    {
-        "id": "a210757c.630428",
-        "type": "redis-command",
-        "z": "b033b9b0.f9eff8",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 640,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "aeacec2f.3a1b1",
-        "type": "function",
-        "z": "b033b9b0.f9eff8",
-        "name": "TempSensorTimestamp",
-        "func": "// https://stackoverflow.com/questions/2573521/how-do-i-output-an-iso-8601-formatted-string-in-javascript\nvar timestamp = new Date().toISOString();\nmsg.payload = ['sensors:temperature:timestamp',timestamp]\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 450,
-        "y": 120,
-        "wires": [
-            [
-                "a210757c.630428"
-            ]
-        ]
-    },
-    {
-        "id": "97c56537.5c2eb8",
-        "type": "comment",
-        "z": "b033b9b0.f9eff8",
-        "name": "Emulation",
-        "info": "Sensor Values that are emulated.\nshould be kept active!",
-        "x": 120,
-        "y": 100,
-        "wires": []
-    },
-    {
-        "id": "8179c570.9f2828",
-        "type": "link in",
-        "z": "b033b9b0.f9eff8",
-        "name": "ConsistDBemul",
-        "links": [
-            "b2b8b748.558028"
-        ],
-        "x": 275,
-        "y": 80,
-        "wires": [
-            [
-                "1bc8a191.058cde",
-                "aeacec2f.3a1b1"
-            ]
-        ]
     },
     {
         "id": "b2b8b748.558028",
@@ -2396,10 +2036,13 @@
         "name": "1sInterval",
         "links": [
             "8179c570.9f2828",
-            "7fd9cc98.b17504"
+            "7fd9cc98.b17504",
+            "557bbf55.53b04",
+            "5bc93362.01b05c",
+            "12cd451d.9bf3cb"
         ],
-        "x": 275,
-        "y": 340,
+        "x": 271,
+        "y": 268,
         "wires": []
     },
     {
@@ -2410,8 +2053,8 @@
         "links": [
             "b2b8b748.558028"
         ],
-        "x": 195,
-        "y": 160,
+        "x": 185,
+        "y": 249,
         "wires": [
             [
                 "b84080b.740128",
@@ -2419,12 +2062,14 @@
                 "fc5f95b7.5f9ec8",
                 "1b695334.82e2fd",
                 "c78b1ee6.18ff9",
-                "89f66cbb.4f0b5",
                 "c529ef2a.f3c28",
-                "4ce5be83.11ba2",
                 "d2f57dac.1d996",
-                "46a2a257.518c0c",
-                "f7aab076.cd91d"
+                "4ce5be83.11ba2",
+                "e2089dea.76b56",
+                "edc212a5.7a132",
+                "db640151.5676",
+                "da2f8e8e.2bccb",
+                "ff3515f3.9488e8"
             ]
         ]
     },
@@ -2437,7 +2082,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 330,
-        "y": 260,
+        "y": 228,
         "wires": [
             [
                 "ebe10492.5cd1e8"
@@ -2453,7 +2098,7 @@
         "name": "RedisGET",
         "topic": "",
         "x": 520,
-        "y": 260,
+        "y": 228,
         "wires": [
             [
                 "5ceec20c.1ae4ac"
@@ -2469,7 +2114,7 @@
         "outputs": 1,
         "noerr": 0,
         "x": 770,
-        "y": 260,
+        "y": 228,
         "wires": [
             [
                 "ed714010.d2467"
@@ -2487,7 +2132,7 @@
         "inout": "out",
         "property": "payload",
         "x": 650,
-        "y": 260,
+        "y": 228,
         "wires": [
             [
                 "1ca011ab.ff29fe"
@@ -2495,29 +2140,13 @@
         ]
     },
     {
-        "id": "a3b9feb4.eb8ee",
-        "type": "chartjs-polar",
-        "z": "fa0109b3.e47ed8",
-        "name": "Lidar",
-        "path": "Lidar",
-        "charttitle": "Lidar Distances",
-        "xaxis": "Distances in cm",
-        "yaxis": "Angles in Degree",
-        "x": 659,
-        "y": 528,
-        "wires": [
-            []
-        ],
-        "l": false
-    },
-    {
         "id": "57dbc008.71b",
         "type": "comment",
         "z": "fa0109b3.e47ed8",
         "name": "Driver Info",
         "info": "",
-        "x": 112,
-        "y": 165,
+        "x": 94,
+        "y": 172,
         "wires": []
     },
     {
@@ -2528,202 +2157,6 @@
         "info": "",
         "x": 109,
         "y": 460,
-        "wires": []
-    },
-    {
-        "id": "f1aabfcf.c55d5",
-        "type": "function",
-        "z": "fa0109b3.e47ed8",
-        "name": "TempKey",
-        "func": "msg.payload = ['sensors:temperature:tempValue']\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 320,
-        "y": 702,
-        "wires": [
-            [
-                "6bb971f4.56abe"
-            ]
-        ]
-    },
-    {
-        "id": "6bb971f4.56abe",
-        "type": "redis-command",
-        "z": "fa0109b3.e47ed8",
-        "server": "504b5bf5.bbe984",
-        "command": "get",
-        "name": "RedisGET",
-        "topic": "",
-        "x": 518.5,
-        "y": 702,
-        "wires": [
-            [
-                "bd04f102.657d5"
-            ]
-        ]
-    },
-    {
-        "id": "a0b73c77.72bee",
-        "type": "function",
-        "z": "fa0109b3.e47ed8",
-        "name": "PressureKey",
-        "func": "msg.payload = ['sensors:pressure:pressureValue']\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 331,
-        "y": 741,
-        "wires": [
-            [
-                "81f9b3a2.8901b"
-            ]
-        ]
-    },
-    {
-        "id": "81f9b3a2.8901b",
-        "type": "redis-command",
-        "z": "fa0109b3.e47ed8",
-        "server": "504b5bf5.bbe984",
-        "command": "get",
-        "name": "RedisGET",
-        "topic": "",
-        "x": 519.5,
-        "y": 741,
-        "wires": [
-            [
-                "634adf7a.caf44"
-            ]
-        ]
-    },
-    {
-        "id": "3a2e8dd0.4096c2",
-        "type": "function",
-        "z": "fa0109b3.e47ed8",
-        "name": "AccelerationKey",
-        "func": "msg.payload = ['sensors:acceleration:accelValue']\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 340,
-        "y": 781,
-        "wires": [
-            [
-                "8b860593.5b2118"
-            ]
-        ]
-    },
-    {
-        "id": "8b860593.5b2118",
-        "type": "redis-command",
-        "z": "fa0109b3.e47ed8",
-        "server": "504b5bf5.bbe984",
-        "command": "get",
-        "name": "RedisGET",
-        "topic": "",
-        "x": 518.5,
-        "y": 781,
-        "wires": [
-            [
-                "b3a0ea3f.afb5c8"
-            ]
-        ]
-    },
-    {
-        "id": "634adf7a.caf44",
-        "type": "ui_chart",
-        "z": "fa0109b3.e47ed8",
-        "name": "PressureChart",
-        "group": "bcf776d6.788ea8",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "Pressure in bar",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "ss",
-        "interpolate": "linear",
-        "nodata": "No Data is available for now",
-        "dot": true,
-        "ymin": "0",
-        "ymax": "20",
-        "removeOlder": "20",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "1",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "useOldStyle": false,
-        "outputs": 1,
-        "x": 697,
-        "y": 739,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "b3a0ea3f.afb5c8",
-        "type": "ui_chart",
-        "z": "fa0109b3.e47ed8",
-        "name": "AccelerationChart",
-        "group": "3e84c7f0.f4ccf8",
-        "order": 1,
-        "width": 0,
-        "height": 0,
-        "label": "Acceleration in m/s²",
-        "chartType": "line",
-        "legend": "true",
-        "xformat": "ss",
-        "interpolate": "linear",
-        "nodata": "No Data is available for now",
-        "dot": true,
-        "ymin": "0",
-        "ymax": "20",
-        "removeOlder": "20",
-        "removeOlderPoints": "",
-        "removeOlderUnit": "1",
-        "cutout": 0,
-        "useOneColor": false,
-        "colors": [
-            "#1f77b4",
-            "#aec7e8",
-            "#ff7f0e",
-            "#2ca02c",
-            "#98df8a",
-            "#d62728",
-            "#ff9896",
-            "#9467bd",
-            "#c5b0d5"
-        ],
-        "useOldStyle": false,
-        "outputs": 1,
-        "x": 708,
-        "y": 781,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "8a62ea72.213288",
-        "type": "ui_text",
-        "z": "995db953.1dbb18",
-        "group": "9b4ae6c0.9de688",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Vehicle Service",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 141,
-        "y": 106,
         "wires": []
     },
     {
@@ -2744,8 +2177,8 @@
         "payload": "start",
         "payloadType": "str",
         "topic": "",
-        "x": 305,
-        "y": 68,
+        "x": 73,
+        "y": 23,
         "wires": [
             [
                 "4240a8e4.db95a8"
@@ -2770,8 +2203,8 @@
         "payload": "stop",
         "payloadType": "str",
         "topic": "",
-        "x": 305.5,
-        "y": 105,
+        "x": 73.5,
+        "y": 60,
         "wires": [
             [
                 "4240a8e4.db95a8"
@@ -2796,8 +2229,8 @@
         "payload": "restart",
         "payloadType": "str",
         "topic": "",
-        "x": 315.5,
-        "y": 143,
+        "x": 83.5,
+        "y": 98,
         "wires": [
             [
                 "4240a8e4.db95a8"
@@ -2815,29 +2248,13 @@
         "timer": "",
         "oldrc": false,
         "name": "exec vehicle.service",
-        "x": 522,
-        "y": 104.5,
+        "x": 269,
+        "y": 60.5,
         "wires": [
             [],
             [],
             []
         ]
-    },
-    {
-        "id": "5d9038df.dafe48",
-        "type": "ui_text",
-        "z": "995db953.1dbb18",
-        "group": "39b37a15.35a9a6",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "Collision Avoidance Task",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 122.5,
-        "y": 200,
-        "wires": []
     },
     {
         "id": "c42785b8.2a0d58",
@@ -2857,8 +2274,8 @@
         "payload": "true",
         "payloadType": "str",
         "topic": "",
-        "x": 309.5,
-        "y": 199,
+        "x": 83.5,
+        "y": 208,
         "wires": [
             [
                 "f455594a.c8dc18"
@@ -2883,11 +2300,11 @@
         "payload": "false",
         "payloadType": "str",
         "topic": "",
-        "x": 309,
-        "y": 238,
+        "x": 83,
+        "y": 242,
         "wires": [
             [
-                "469e54dc.c946bc"
+                "f455594a.c8dc18"
             ]
         ]
     },
@@ -2898,14 +2315,14 @@
         "group": "9d163dfc.a6bc9",
         "name": "",
         "order": 2,
-        "width": "10",
+        "width": "8",
         "height": "4",
         "format": "<!--<div layout=\"row\" layout-align=\"space-between\">\n    <div id=”” style=”height: 250px; width:100%;overflow:scroll;”>\n        <p>{{msg.payload}}</p>\n    </div>\n</div>-->\n    <div ng-bind-html=\"msg.payload\" style=”height: 400px; width:100%;overflow:scroll;”></div>\n",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 391,
-        "y": 21,
+        "x": 865,
+        "y": 25,
         "wires": [
             []
         ]
@@ -2915,13 +2332,13 @@
         "type": "file in",
         "z": "995db953.1dbb18",
         "name": "logFile",
-        "filename": "logFile.txt",
+        "filename": "/home/pi/vehicke/armv7/vehicleLog.log.0",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 241,
-        "y": 21,
+        "x": 715,
+        "y": 25,
         "wires": [
             [
                 "28e11af7.9599b6"
@@ -2936,12 +2353,10 @@
         "links": [
             "b84964d0.943428"
         ],
-        "x": 86,
-        "y": 21,
+        "x": 601,
+        "y": 39,
         "wires": [
-            [
-                "75cb554e.b2202c"
-            ]
+            []
         ]
     },
     {
@@ -2952,8 +2367,8 @@
         "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:collisonAvoidanceRunnable',msg.payload]\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 446,
-        "y": 199,
+        "x": 213,
+        "y": 229,
         "wires": [
             [
                 "dccceb66.58f818"
@@ -2968,43 +2383,11 @@
         "command": "set",
         "name": "RedisSET",
         "topic": "",
-        "x": 638,
-        "y": 350,
+        "x": 415,
+        "y": 453,
         "wires": [
             []
         ]
-    },
-    {
-        "id": "469e54dc.c946bc",
-        "type": "function",
-        "z": "995db953.1dbb18",
-        "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:collisonAvoidanceRunnable',msg.payload]\nreturn newMsg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 444.5,
-        "y": 238,
-        "wires": [
-            [
-                "dccceb66.58f818"
-            ]
-        ]
-    },
-    {
-        "id": "b42dff52.3955",
-        "type": "ui_text",
-        "z": "995db953.1dbb18",
-        "group": "247ab503.19649a",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "lidar Data Collection Task",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 121,
-        "y": 295,
-        "wires": []
     },
     {
         "id": "7040e9d.667d918",
@@ -3024,8 +2407,8 @@
         "payload": "true",
         "payloadType": "str",
         "topic": "",
-        "x": 308,
-        "y": 294,
+        "x": 82,
+        "y": 275,
         "wires": [
             [
                 "36db7dfc.3374b2"
@@ -3050,11 +2433,11 @@
         "payload": "false",
         "payloadType": "str",
         "topic": "",
-        "x": 307.5,
-        "y": 333,
+        "x": 81.5,
+        "y": 308,
         "wires": [
             [
-                "c7c25772.b21aa8"
+                "36db7dfc.3374b2"
             ]
         ]
     },
@@ -3066,45 +2449,13 @@
         "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:lidarDataCollectionThreadRunnable',msg.payload]\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 444.5,
-        "y": 294,
+        "x": 212.5,
+        "y": 288,
         "wires": [
             [
                 "dccceb66.58f818"
             ]
         ]
-    },
-    {
-        "id": "c7c25772.b21aa8",
-        "type": "function",
-        "z": "995db953.1dbb18",
-        "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:lidarDataCollectionThreadRunnable',msg.payload]\nreturn newMsg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 443,
-        "y": 333,
-        "wires": [
-            [
-                "dccceb66.58f818"
-            ]
-        ]
-    },
-    {
-        "id": "628ebfdb.70195",
-        "type": "ui_text",
-        "z": "995db953.1dbb18",
-        "group": "3a14d7d1.c13988",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "database Reader Task",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 109,
-        "y": 384,
-        "wires": []
     },
     {
         "id": "de0552f6.b5cc7",
@@ -3124,8 +2475,8 @@
         "payload": "true",
         "payloadType": "str",
         "topic": "",
-        "x": 306,
-        "y": 383,
+        "x": 80,
+        "y": 342,
         "wires": [
             [
                 "4f4bdc33.116384"
@@ -3150,11 +2501,11 @@
         "payload": "false",
         "payloadType": "str",
         "topic": "",
-        "x": 305.5,
-        "y": 422,
+        "x": 79.5,
+        "y": 375,
         "wires": [
             [
-                "81f8e47d.806e58"
+                "4f4bdc33.116384"
             ]
         ]
     },
@@ -3166,45 +2517,13 @@
         "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:databaseReaderRunnable',msg.payload]\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 442.5,
-        "y": 383,
+        "x": 211.5,
+        "y": 358,
         "wires": [
             [
                 "dccceb66.58f818"
             ]
         ]
-    },
-    {
-        "id": "81f8e47d.806e58",
-        "type": "function",
-        "z": "995db953.1dbb18",
-        "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:databaseReaderRunnable',msg.payload]\nreturn newMsg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 441,
-        "y": 422,
-        "wires": [
-            [
-                "dccceb66.58f818"
-            ]
-        ]
-    },
-    {
-        "id": "957c8bc9.d689a8",
-        "type": "ui_text",
-        "z": "995db953.1dbb18",
-        "group": "e17bcb26.ca04d8",
-        "order": 4,
-        "width": 0,
-        "height": 0,
-        "name": "",
-        "label": "database Writer Task",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 110,
-        "y": 466,
-        "wires": []
     },
     {
         "id": "7e8ef0d4.969b1",
@@ -3224,8 +2543,8 @@
         "payload": "true",
         "payloadType": "str",
         "topic": "",
-        "x": 307,
-        "y": 465,
+        "x": 79,
+        "y": 409,
         "wires": [
             [
                 "acfe9c7d.bfbcd"
@@ -3250,11 +2569,11 @@
         "payload": "false",
         "payloadType": "str",
         "topic": "",
-        "x": 306.5,
-        "y": 504,
+        "x": 78.5,
+        "y": 443,
         "wires": [
             [
-                "3a6ebe3d.e9cc52"
+                "acfe9c7d.bfbcd"
             ]
         ]
     },
@@ -3266,148 +2585,12 @@
         "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:databaseWriterRunnable',msg.payload]\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 443.5,
-        "y": 465,
+        "x": 211.5,
+        "y": 422,
         "wires": [
             [
                 "dccceb66.58f818"
             ]
-        ]
-    },
-    {
-        "id": "3a6ebe3d.e9cc52",
-        "type": "function",
-        "z": "995db953.1dbb18",
-        "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:databaseWriterRunnable',msg.payload]\nreturn newMsg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 442,
-        "y": 504,
-        "wires": [
-            [
-                "dccceb66.58f818"
-            ]
-        ]
-    },
-    {
-        "id": "e99f81d8.12ea2",
-        "type": "redis-command",
-        "z": "98123e0c.aea32",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 577,
-        "y": 368,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "d2f57dac.1d996",
-        "type": "function",
-        "z": "98123e0c.aea32",
-        "name": "PressureTimestamp",
-        "func": "// https://stackoverflow.com/questions/2573521/how-do-i-output-an-iso-8601-formatted-string-in-javascript\nvar timestamp = new Date().toISOString();\nmsg.payload = ['sensors:pressure:timestamp',timestamp]\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 400,
-        "y": 408,
-        "wires": [
-            [
-                "74d732a0.06cf8c"
-            ]
-        ]
-    },
-    {
-        "id": "74d732a0.06cf8c",
-        "type": "redis-command",
-        "z": "98123e0c.aea32",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 577,
-        "y": 408,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "4ce5be83.11ba2",
-        "type": "function",
-        "z": "98123e0c.aea32",
-        "name": "PressureKey",
-        "func": "var rand = Math.floor(Math.random() * 20 +30);\nmsg.payload = ['sensors:pressure:pressureValue', rand]\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 370,
-        "y": 366,
-        "wires": [
-            [
-                "e99f81d8.12ea2"
-            ]
-        ]
-    },
-    {
-        "id": "46a2a257.518c0c",
-        "type": "function",
-        "z": "98123e0c.aea32",
-        "name": "AccelerationKey",
-        "func": "var rand = Math.floor(Math.random() * 20 +30);\nmsg.payload = ['sensors:acceleration:accelValue', rand]\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 380,
-        "y": 452,
-        "wires": [
-            [
-                "781966d5.28a8a8"
-            ]
-        ]
-    },
-    {
-        "id": "781966d5.28a8a8",
-        "type": "redis-command",
-        "z": "98123e0c.aea32",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 577,
-        "y": 452,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "f7aab076.cd91d",
-        "type": "function",
-        "z": "98123e0c.aea32",
-        "name": "AccelTimestamp",
-        "func": "// https://stackoverflow.com/questions/2573521/how-do-i-output-an-iso-8601-formatted-string-in-javascript\nvar timestamp = new Date().toISOString();\nmsg.payload = ['sensors:acceleration:timestamp',timestamp]\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 391,
-        "y": 490,
-        "wires": [
-            [
-                "c808bf3b.11398"
-            ]
-        ]
-    },
-    {
-        "id": "c808bf3b.11398",
-        "type": "redis-command",
-        "z": "98123e0c.aea32",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 576,
-        "y": 491,
-        "wires": [
-            []
         ]
     },
     {
@@ -3597,5 +2780,2048 @@
                 "5a2ddc37.a4e4e4"
             ]
         ]
+    },
+    {
+        "id": "697fda16.b248b4",
+        "type": "ui_led",
+        "z": "995db953.1dbb18",
+        "group": "39b37a15.35a9a6",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "State",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "str"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "str"
+            }
+        ],
+        "name": "",
+        "x": 572.5,
+        "y": 492,
+        "wires": []
+    },
+    {
+        "id": "df8f36b9.986178",
+        "type": "redis-command",
+        "z": "995db953.1dbb18",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 375,
+        "y": 492,
+        "wires": [
+            [
+                "697fda16.b248b4",
+                "7e11aa91.7fa2c4"
+            ]
+        ]
+    },
+    {
+        "id": "5fb0737f.ff874c",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "CollisionAvoidanceKey",
+        "func": "msg.payload = ['management:threads:collisonAvoidanceRunnable']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 193.5,
+        "y": 491,
+        "wires": [
+            [
+                "df8f36b9.986178"
+            ]
+        ]
+    },
+    {
+        "id": "98d57f9e.ad06b",
+        "type": "ui_led",
+        "z": "995db953.1dbb18",
+        "group": "247ab503.19649a",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "State",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "str"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "str"
+            }
+        ],
+        "name": "",
+        "x": 574,
+        "y": 530,
+        "wires": []
+    },
+    {
+        "id": "2ed092ef.f939ce",
+        "type": "redis-command",
+        "z": "995db953.1dbb18",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 376.5,
+        "y": 530,
+        "wires": [
+            [
+                "98d57f9e.ad06b",
+                "7e11aa91.7fa2c4"
+            ]
+        ]
+    },
+    {
+        "id": "32c0910a.578e4e",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "LidarStateKey",
+        "func": "msg.payload = ['management:threads:lidarDataCollectionThreadRunnable']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 175,
+        "y": 529,
+        "wires": [
+            [
+                "2ed092ef.f939ce"
+            ]
+        ]
+    },
+    {
+        "id": "9d178502.71fa38",
+        "type": "ui_led",
+        "z": "995db953.1dbb18",
+        "group": "3a14d7d1.c13988",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "State",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "str"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "str"
+            }
+        ],
+        "name": "",
+        "x": 577,
+        "y": 569,
+        "wires": []
+    },
+    {
+        "id": "38a52d2f.ac38a2",
+        "type": "redis-command",
+        "z": "995db953.1dbb18",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 375.5,
+        "y": 568,
+        "wires": [
+            [
+                "9d178502.71fa38",
+                "7e11aa91.7fa2c4"
+            ]
+        ]
+    },
+    {
+        "id": "79b307b8.8a4778",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "DBReaderKey",
+        "func": "msg.payload = ['management:threads:databaseReaderRunnable']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 174,
+        "y": 568,
+        "wires": [
+            [
+                "38a52d2f.ac38a2"
+            ]
+        ]
+    },
+    {
+        "id": "9f9179bd.6f55f8",
+        "type": "ui_led",
+        "z": "995db953.1dbb18",
+        "group": "e17bcb26.ca04d8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "State",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "str"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "str"
+            }
+        ],
+        "name": "",
+        "x": 576,
+        "y": 608,
+        "wires": []
+    },
+    {
+        "id": "e7606002.9d7a",
+        "type": "redis-command",
+        "z": "995db953.1dbb18",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 377.5,
+        "y": 608,
+        "wires": [
+            [
+                "9f9179bd.6f55f8",
+                "7e11aa91.7fa2c4"
+            ]
+        ]
+    },
+    {
+        "id": "1857c8c2.3582a7",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "DBWriterKey",
+        "func": "msg.payload = ['management:threads:databaseWriterRunnable']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 168,
+        "y": 607,
+        "wires": [
+            [
+                "e7606002.9d7a"
+            ]
+        ]
+    },
+    {
+        "id": "557bbf55.53b04",
+        "type": "link in",
+        "z": "995db953.1dbb18",
+        "name": "logFile",
+        "links": [
+            "b2b8b748.558028"
+        ],
+        "x": 20,
+        "y": 549,
+        "wires": [
+            [
+                "5fb0737f.ff874c",
+                "32c0910a.578e4e",
+                "79b307b8.8a4778",
+                "1857c8c2.3582a7"
+            ]
+        ]
+    },
+    {
+        "id": "e99f81d8.12ea2",
+        "type": "redis-command",
+        "z": "98123e0c.aea32",
+        "server": "504b5bf5.bbe984",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 580,
+        "y": 353,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d2f57dac.1d996",
+        "type": "function",
+        "z": "98123e0c.aea32",
+        "name": "PressureTimestamp",
+        "func": "// https://stackoverflow.com/questions/2573521/how-do-i-output-an-iso-8601-formatted-string-in-javascript\nvar timestamp = new Date().toISOString();\nmsg.payload = ['sensors:barometer:timestamp',timestamp]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 400,
+        "y": 388,
+        "wires": [
+            [
+                "74d732a0.06cf8c"
+            ]
+        ]
+    },
+    {
+        "id": "74d732a0.06cf8c",
+        "type": "redis-command",
+        "z": "98123e0c.aea32",
+        "server": "504b5bf5.bbe984",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 581,
+        "y": 388,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4ce5be83.11ba2",
+        "type": "function",
+        "z": "98123e0c.aea32",
+        "name": "PressureKey",
+        "func": "var rand = Math.floor(Math.random() * 20 +30);\nmsg.payload = ['sensors:barometer:data', rand]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 370,
+        "y": 353,
+        "wires": [
+            [
+                "e99f81d8.12ea2"
+            ]
+        ]
+    },
+    {
+        "id": "781966d5.28a8a8",
+        "type": "redis-command",
+        "z": "98123e0c.aea32",
+        "server": "504b5bf5.bbe984",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 581,
+        "y": 422,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c808bf3b.11398",
+        "type": "redis-command",
+        "z": "98123e0c.aea32",
+        "server": "504b5bf5.bbe984",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 581,
+        "y": 456,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9893a9fa.869818",
+        "type": "comment",
+        "z": "995db953.1dbb18",
+        "name": "first State ??",
+        "info": "be careful to init the first state of the threads in the application\n",
+        "x": 734.5,
+        "y": 531,
+        "wires": []
+    },
+    {
+        "id": "7e11aa91.7fa2c4",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "SetNumOfRTThreads",
+        "func": "var temp = global.get('numOfRTThreads')\nif (msg.payload == 'true'){\n    global.set('numOfRTThreads',temp + 1)\n} else {\n    global.set('numOfRTThreads',temp - 1)\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 603.5,
+        "y": 646,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1b413750.822de9",
+        "type": "ui_gauge",
+        "z": "6e40fab5.1057f4",
+        "name": "TempChart",
+        "group": "9d2e3320.b8727",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "C°",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "60",
+        "colors": [
+            "#0bb5a7",
+            "#8be67a",
+            "#ca601a"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 691,
+        "y": 111,
+        "wires": []
+    },
+    {
+        "id": "42fdff36.f472c",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "TempKey",
+        "func": "msg.payload = ['sensors:temperature:data']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 322,
+        "y": 113,
+        "wires": [
+            [
+                "e662797f.d6d918"
+            ]
+        ]
+    },
+    {
+        "id": "e662797f.d6d918",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 520.5,
+        "y": 113,
+        "wires": [
+            [
+                "1b413750.822de9"
+            ]
+        ]
+    },
+    {
+        "id": "56b3144.e45fbec",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "PressureKey",
+        "func": "msg.payload = ['sensors:barometer:data']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 333,
+        "y": 152,
+        "wires": [
+            [
+                "43c74942.591aa8"
+            ]
+        ]
+    },
+    {
+        "id": "43c74942.591aa8",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 521.5,
+        "y": 152,
+        "wires": [
+            [
+                "870a3b5a.c51e78"
+            ]
+        ]
+    },
+    {
+        "id": "27c5f6c3.ab950a",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "AccelerationKey",
+        "func": "msg.topic = 'x'\nmsg.payload = ['sensors:accelerometer:accelerometer_x']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 342,
+        "y": 192,
+        "wires": [
+            [
+                "de9ccd4.c898e3"
+            ]
+        ]
+    },
+    {
+        "id": "de9ccd4.c898e3",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 520.5,
+        "y": 192,
+        "wires": [
+            [
+                "e0ab96d4.af9c78"
+            ]
+        ]
+    },
+    {
+        "id": "870a3b5a.c51e78",
+        "type": "ui_chart",
+        "z": "6e40fab5.1057f4",
+        "name": "PressureChart",
+        "group": "bcf776d6.788ea8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Pressure in hPa",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "ss",
+        "interpolate": "linear",
+        "nodata": "No Data is available for now",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "20",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 699,
+        "y": 150,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e0ab96d4.af9c78",
+        "type": "ui_chart",
+        "z": "6e40fab5.1057f4",
+        "name": "AccelerationChart",
+        "group": "3e84c7f0.f4ccf8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Acceleration in m/s²",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "ss",
+        "interpolate": "linear",
+        "nodata": "No Data is available for now",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 752,
+        "y": 226,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "97d8ed6d.8ac93",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "LidarDistancesKey",
+        "func": "msg.payload = ['sensors:Lidar:distances']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 351,
+        "y": 467,
+        "wires": [
+            [
+                "23ead285.23627e"
+            ]
+        ]
+    },
+    {
+        "id": "23ead285.23627e",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 518.5,
+        "y": 467,
+        "wires": [
+            [
+                "ab45363f.436248"
+            ]
+        ]
+    },
+    {
+        "id": "ab45363f.436248",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "ChartData",
+        "func": "\nvar dataArray = msg.payload.split(',')\nvar m = {};\n// '0','45','90','135','180','225','270', '315'\nm.labels = [];\nm.data = [dataArray];\nm.series = [];\nreturn {payload:[m],topic:msg.topic};",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 328.5,
+        "y": 507,
+        "wires": [
+            [
+                "dbcbdd75.b0ba"
+            ]
+        ]
+    },
+    {
+        "id": "cb5ac288.1f69c",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "ChartJsData",
+        "func": "var dataArray = Array.from({length: 8}, () => Math.floor(Math.random() * 40));\n\nvar dataset = new Array(8);\nfor (var i = 0; i < 8;i++) {\n    dataset[i] = {};\n    dataset[i].x = i.toString();\n    dataset[i].y = dataArray[i];\n}\nmsg.payload = {\n    \"channel\": \"Population\",\n    \"color\": flow.get('randomColorsArray'),\n    \"dataset\": dataset\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 329.5,
+        "y": 427,
+        "wires": [
+            [
+                "4f6b8c5f.992624"
+            ]
+        ]
+    },
+    {
+        "id": "4f6b8c5f.992624",
+        "type": "chartjs-polar",
+        "z": "6e40fab5.1057f4",
+        "name": "Lidar",
+        "path": "Lidar",
+        "charttitle": "Lidar Distances",
+        "xaxis": "Distances in cm",
+        "yaxis": "Angles in Degree",
+        "x": 468.5,
+        "y": 426,
+        "wires": [
+            []
+        ],
+        "l": false
+    },
+    {
+        "id": "2e662355.7ff8dc",
+        "type": "comment",
+        "z": "6e40fab5.1057f4",
+        "name": "ChartJs here",
+        "info": "Check if the user is allowed to change the Settings is the Control",
+        "x": 577.5,
+        "y": 427,
+        "wires": []
+    },
+    {
+        "id": "dbcbdd75.b0ba",
+        "type": "ui_chart",
+        "z": "6e40fab5.1057f4",
+        "name": "LidarPolarChart",
+        "group": "cb3848a3.b24858",
+        "order": 2,
+        "width": "12",
+        "height": "5",
+        "label": "Distnaces in cm",
+        "chartType": "polar-area",
+        "legend": "true",
+        "xformat": "ss",
+        "interpolate": "linear",
+        "nodata": "Distances not available",
+        "dot": true,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 698.5,
+        "y": 507,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5bc93362.01b05c",
+        "type": "link in",
+        "z": "6e40fab5.1057f4",
+        "name": "ConsistDBemul",
+        "links": [
+            "b2b8b748.558028"
+        ],
+        "x": 165,
+        "y": 219,
+        "wires": [
+            [
+                "42fdff36.f472c",
+                "56b3144.e45fbec",
+                "27c5f6c3.ab950a",
+                "cb5ac288.1f69c",
+                "97d8ed6d.8ac93",
+                "f8b6f466.fa2f38",
+                "33b6ead8.5745d6",
+                "d6d55800.947688",
+                "ea1830aa.9117c",
+                "73608d14.ed2904"
+            ]
+        ]
+    },
+    {
+        "id": "899daca.65d765",
+        "type": "ui_button",
+        "z": "995db953.1dbb18",
+        "name": "Start",
+        "group": "419b4bd8.b29e14",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "start",
+        "payloadType": "str",
+        "topic": "",
+        "x": 403,
+        "y": 105,
+        "wires": [
+            [
+                "fcc8ae9c.9a1cb"
+            ]
+        ]
+    },
+    {
+        "id": "dcec4802.f8fec8",
+        "type": "ui_button",
+        "z": "995db953.1dbb18",
+        "name": "Stop",
+        "group": "419b4bd8.b29e14",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Stop",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "stop",
+        "payloadType": "str",
+        "topic": "",
+        "x": 403.5,
+        "y": 142,
+        "wires": [
+            [
+                "fcc8ae9c.9a1cb"
+            ]
+        ]
+    },
+    {
+        "id": "6e6fcd74.c5fb94",
+        "type": "ui_button",
+        "z": "995db953.1dbb18",
+        "name": "Restart",
+        "group": "419b4bd8.b29e14",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Restart",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "restart",
+        "payloadType": "str",
+        "topic": "",
+        "x": 413.5,
+        "y": 180,
+        "wires": [
+            [
+                "fcc8ae9c.9a1cb"
+            ]
+        ]
+    },
+    {
+        "id": "fcc8ae9c.9a1cb",
+        "type": "exec",
+        "z": "995db953.1dbb18",
+        "command": "sudo systemctl",
+        "addpay": true,
+        "append": "communicationManager.service",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "exec communicationManager.service",
+        "x": 644,
+        "y": 133.5,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "80443972.695528",
+        "type": "exec",
+        "z": "995db953.1dbb18",
+        "command": "sudo systemctl is-active vehicle.service",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "exec vehicle.service",
+        "x": 255,
+        "y": 697,
+        "wires": [
+            [
+                "eb4c54c0.0f89b8",
+                "ab2a8a72.bffe28"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "eb4c54c0.0f89b8",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "",
+        "func": "if (msg.payload == 'active'){\n    msg.payload = 'true'\n} else if (msg.payload == 'failed'){\n    msg.payload = 'false'\n}\nreturn msg.payload;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 694,
+        "wires": [
+            [
+                "f9deb7e.67ff248"
+            ]
+        ]
+    },
+    {
+        "id": "f9deb7e.67ff248",
+        "type": "ui_led",
+        "z": "995db953.1dbb18",
+        "group": "9b4ae6c0.9de688",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "State",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "str"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "str"
+            }
+        ],
+        "name": "",
+        "x": 655,
+        "y": 694,
+        "wires": []
+    },
+    {
+        "id": "ab2a8a72.bffe28",
+        "type": "ui_toast",
+        "z": "995db953.1dbb18",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "topic": "",
+        "name": "",
+        "x": 577.5,
+        "y": 888,
+        "wires": []
+    },
+    {
+        "id": "4fa1a7b5.350b28",
+        "type": "exec",
+        "z": "995db953.1dbb18",
+        "command": "sudo systemctl is-active communicationManager.service",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "exec comManager.service",
+        "x": 265,
+        "y": 748,
+        "wires": [
+            [
+                "78db1cda.8b0264",
+                "ab2a8a72.bffe28"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "78db1cda.8b0264",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "",
+        "func": "if (msg.payload == 'active'){\n    msg.payload = 'true'\n} else if (msg.payload == 'failed'){\n    msg.payload = 'false'\n}\nreturn msg.payload;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 539,
+        "y": 749,
+        "wires": [
+            [
+                "769b0884.4cb588"
+            ]
+        ]
+    },
+    {
+        "id": "769b0884.4cb588",
+        "type": "ui_led",
+        "z": "995db953.1dbb18",
+        "group": "419b4bd8.b29e14",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "State",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "str"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "str"
+            }
+        ],
+        "name": "",
+        "x": 657,
+        "y": 748,
+        "wires": []
+    },
+    {
+        "id": "223f290c.548f36",
+        "type": "redis-command",
+        "z": "fa0109b3.e47ed8",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 515.5,
+        "y": 455,
+        "wires": [
+            [
+                "8b551237.189b"
+            ]
+        ]
+    },
+    {
+        "id": "b23b8b1f.ca0638",
+        "type": "function",
+        "z": "fa0109b3.e47ed8",
+        "name": "RxBytesKey",
+        "func": "msg.topic = 'Bytes'\nmsg.payload = ['sensors:os:network:eth0:rx_bytes']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 328,
+        "y": 455,
+        "wires": [
+            [
+                "223f290c.548f36"
+            ]
+        ]
+    },
+    {
+        "id": "8b551237.189b",
+        "type": "ui_chart",
+        "z": "fa0109b3.e47ed8",
+        "name": "RxChart",
+        "group": "fb888fc.37a5b7",
+        "order": 1,
+        "width": "6",
+        "height": "5",
+        "label": "Network Received Data",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "ss",
+        "interpolate": "linear",
+        "nodata": "No Data is available for now",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "20",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 671.5,
+        "y": 495,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3c633a97.8eb246",
+        "type": "redis-command",
+        "z": "fa0109b3.e47ed8",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 515,
+        "y": 488,
+        "wires": [
+            [
+                "8b551237.189b"
+            ]
+        ]
+    },
+    {
+        "id": "980e2db3.310dc",
+        "type": "function",
+        "z": "fa0109b3.e47ed8",
+        "name": "RxPackagesKey",
+        "func": "msg.topic = 'Packages'\nmsg.payload = ['sensors:os:network:eth0:rx_packages']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 338.5,
+        "y": 488,
+        "wires": [
+            [
+                "3c633a97.8eb246"
+            ]
+        ]
+    },
+    {
+        "id": "ef4d0a96.515238",
+        "type": "redis-command",
+        "z": "fa0109b3.e47ed8",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 515,
+        "y": 521,
+        "wires": [
+            [
+                "8b551237.189b"
+            ]
+        ]
+    },
+    {
+        "id": "74305007.72692",
+        "type": "function",
+        "z": "fa0109b3.e47ed8",
+        "name": "RxErrorsKey",
+        "func": "msg.topic = 'Errors'\nmsg.payload = ['sensors:os:network:eth0:rx_errors']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 327.5,
+        "y": 521,
+        "wires": [
+            [
+                "ef4d0a96.515238"
+            ]
+        ]
+    },
+    {
+        "id": "fee3b1bd.ef816",
+        "type": "redis-command",
+        "z": "fa0109b3.e47ed8",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 515,
+        "y": 555,
+        "wires": [
+            [
+                "f755e0a0.d5579"
+            ]
+        ]
+    },
+    {
+        "id": "59d0542e.7e024c",
+        "type": "function",
+        "z": "fa0109b3.e47ed8",
+        "name": "TxBytesKey",
+        "func": "msg.topic = 'Bytes'\nmsg.payload = ['sensors:os:network:eth0:tx_bytes']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 327.5,
+        "y": 555,
+        "wires": [
+            [
+                "fee3b1bd.ef816"
+            ]
+        ]
+    },
+    {
+        "id": "f755e0a0.d5579",
+        "type": "ui_chart",
+        "z": "fa0109b3.e47ed8",
+        "name": "TxChart",
+        "group": "fb888fc.37a5b7",
+        "order": 1,
+        "width": "6",
+        "height": "5",
+        "label": "Network Transmitted Data",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "ss",
+        "interpolate": "linear",
+        "nodata": "No Data is available for now",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "20",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 671,
+        "y": 595,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef655c83.d2198",
+        "type": "redis-command",
+        "z": "fa0109b3.e47ed8",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 514.5,
+        "y": 588,
+        "wires": [
+            [
+                "f755e0a0.d5579"
+            ]
+        ]
+    },
+    {
+        "id": "2688327e.4a7cbe",
+        "type": "function",
+        "z": "fa0109b3.e47ed8",
+        "name": "TxPackagesKey",
+        "func": "msg.topic = 'Packages'\nmsg.payload = ['sensors:os:network:eth0:tx_packages']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 338,
+        "y": 588,
+        "wires": [
+            [
+                "ef655c83.d2198"
+            ]
+        ]
+    },
+    {
+        "id": "5a1ef128.8dd75",
+        "type": "redis-command",
+        "z": "fa0109b3.e47ed8",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 514.5,
+        "y": 621,
+        "wires": [
+            [
+                "f755e0a0.d5579"
+            ]
+        ]
+    },
+    {
+        "id": "ad605ba4.3fece8",
+        "type": "function",
+        "z": "fa0109b3.e47ed8",
+        "name": "TxErrorsKey",
+        "func": "msg.topic = 'Errors'\nmsg.payload = ['sensors:os:network:eth0:tx_errors']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 327,
+        "y": 621,
+        "wires": [
+            [
+                "5a1ef128.8dd75"
+            ]
+        ]
+    },
+    {
+        "id": "f8b6f466.fa2f38",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "AccelerationKey",
+        "func": "msg.topic = 'y'\nmsg.payload = ['sensors:accelerometer:accelerometer_y']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 342,
+        "y": 228,
+        "wires": [
+            [
+                "a0c54cc5.704b7"
+            ]
+        ]
+    },
+    {
+        "id": "a0c54cc5.704b7",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 520.5,
+        "y": 228,
+        "wires": [
+            [
+                "e0ab96d4.af9c78"
+            ]
+        ]
+    },
+    {
+        "id": "33b6ead8.5745d6",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "AccelerationKey",
+        "func": "msg.topic = 'z'\nmsg.payload = ['sensors:accelerometer:accelerometer_z']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 343,
+        "y": 262,
+        "wires": [
+            [
+                "1d0c6d1d.e1f903"
+            ]
+        ]
+    },
+    {
+        "id": "1d0c6d1d.e1f903",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "z",
+        "x": 521.5,
+        "y": 262,
+        "wires": [
+            [
+                "e0ab96d4.af9c78"
+            ]
+        ]
+    },
+    {
+        "id": "e2089dea.76b56",
+        "type": "function",
+        "z": "98123e0c.aea32",
+        "name": "AccelerationKey",
+        "func": "var rand = Math.floor(Math.random() * 20 +30);\nmsg.payload = ['sensors:accelerometer:accelerometer_x',rand]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 381,
+        "y": 422,
+        "wires": [
+            [
+                "781966d5.28a8a8"
+            ]
+        ]
+    },
+    {
+        "id": "edc212a5.7a132",
+        "type": "function",
+        "z": "98123e0c.aea32",
+        "name": "AccelerationKey",
+        "func": "var rand = Math.floor(Math.random() * 20 +30);\nmsg.payload = ['sensors:accelerometer:accelerometer_y',rand]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 381,
+        "y": 455,
+        "wires": [
+            [
+                "c808bf3b.11398"
+            ]
+        ]
+    },
+    {
+        "id": "db640151.5676",
+        "type": "function",
+        "z": "98123e0c.aea32",
+        "name": "AccelerationKey",
+        "func": "var rand = Math.floor(Math.random() * 20 +30);\nmsg.payload = ['sensors:accelerometer:accelerometer_z',rand]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 380,
+        "y": 488,
+        "wires": [
+            [
+                "27591008.c9647"
+            ]
+        ]
+    },
+    {
+        "id": "27591008.c9647",
+        "type": "redis-command",
+        "z": "98123e0c.aea32",
+        "server": "504b5bf5.bbe984",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 581,
+        "y": 489,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "565d4699.6b37d8",
+        "type": "ui_template",
+        "z": "995db953.1dbb18",
+        "group": "bc6f2bde.c4d278",
+        "name": "",
+        "order": 2,
+        "width": "8",
+        "height": "4",
+        "format": "<!--<div layout=\"row\" layout-align=\"space-between\">\n    <div id=”” style=”height: 250px; width:100%;overflow:scroll;”>\n        <p>{{msg.payload}}</p>\n    </div>\n</div>-->\n    <div ng-bind-html=\"msg.payload\" style=”height: 400px; width:100%;overflow:scroll;”></div>\n",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "templateScope": "local",
+        "x": 864,
+        "y": 59,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "59031c7c.be58e4",
+        "type": "file in",
+        "z": "995db953.1dbb18",
+        "name": "logFile",
+        "filename": "/home/pi/vehicke/communicationManager/ComLog.log.0",
+        "format": "utf8",
+        "chunk": false,
+        "sendError": false,
+        "encoding": "none",
+        "x": 714,
+        "y": 59,
+        "wires": [
+            [
+                "565d4699.6b37d8"
+            ]
+        ]
+    },
+    {
+        "id": "d6d55800.947688",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "GyroKey",
+        "func": "msg.topic = 'x'\nmsg.payload = ['sensors:gyro:gyro_x']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 323,
+        "y": 298,
+        "wires": [
+            [
+                "a860c613.ee93c8"
+            ]
+        ]
+    },
+    {
+        "id": "a860c613.ee93c8",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 521.5,
+        "y": 298,
+        "wires": [
+            [
+                "17453ed4.c9fa21"
+            ]
+        ]
+    },
+    {
+        "id": "17453ed4.c9fa21",
+        "type": "ui_chart",
+        "z": "6e40fab5.1057f4",
+        "name": "GyroChart",
+        "group": "b6e57e50.aa2e5",
+        "order": 1,
+        "width": "6",
+        "height": "5",
+        "label": "Gyro in grad/s",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "ss",
+        "interpolate": "linear",
+        "nodata": "No Data is available for now",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "",
+        "removeOlder": "20",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "1",
+        "cutout": 0,
+        "useOneColor": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 737,
+        "y": 330,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ea1830aa.9117c",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "GyroKey",
+        "func": "msg.topic = 'y'\nmsg.payload = ['sensors:gyro:gyro_y']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 323,
+        "y": 334,
+        "wires": [
+            [
+                "134885dd.18a1da"
+            ]
+        ]
+    },
+    {
+        "id": "134885dd.18a1da",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "",
+        "x": 521.5,
+        "y": 334,
+        "wires": [
+            [
+                "17453ed4.c9fa21"
+            ]
+        ]
+    },
+    {
+        "id": "73608d14.ed2904",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "GyroKey",
+        "func": "msg.topic = 'z'\nmsg.payload = ['sensors:gyro:gyro_z']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 324,
+        "y": 368,
+        "wires": [
+            [
+                "3f4928bf.82d7c8"
+            ]
+        ]
+    },
+    {
+        "id": "3f4928bf.82d7c8",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "get",
+        "name": "RedisGET",
+        "topic": "z",
+        "x": 522.5,
+        "y": 368,
+        "wires": [
+            [
+                "17453ed4.c9fa21"
+            ]
+        ]
+    },
+    {
+        "id": "9efa1ff2.b0eda",
+        "type": "redis-command",
+        "z": "98123e0c.aea32",
+        "server": "504b5bf5.bbe984",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 599,
+        "y": 211,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "da2f8e8e.2bccb",
+        "type": "function",
+        "z": "98123e0c.aea32",
+        "name": "TempSensor",
+        "func": "var rand = Math.floor(Math.random() * 10 +30);\nmsg.payload = ['sensors:temperature:data',rand]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 369,
+        "y": 212,
+        "wires": [
+            [
+                "9efa1ff2.b0eda"
+            ]
+        ]
+    },
+    {
+        "id": "dcd34730.3114d8",
+        "type": "redis-command",
+        "z": "98123e0c.aea32",
+        "server": "504b5bf5.bbe984",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 599,
+        "y": 244,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ff3515f3.9488e8",
+        "type": "function",
+        "z": "98123e0c.aea32",
+        "name": "TempSensorTimestamp",
+        "func": "// https://stackoverflow.com/questions/2573521/how-do-i-output-an-iso-8601-formatted-string-in-javascript\nvar timestamp = new Date().toISOString();\nmsg.payload = ['sensors:temperature:timestamp',timestamp]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 410,
+        "y": 246,
+        "wires": [
+            [
+                "dcd34730.3114d8"
+            ]
+        ]
+    },
+    {
+        "id": "9133259c.4ffaf8",
+        "type": "comment",
+        "z": "6e40fab5.1057f4",
+        "name": "Emulation",
+        "info": "Sensor Values that are emulated.\nshould be kept active!",
+        "x": 84,
+        "y": 44,
+        "wires": []
+    },
+    {
+        "id": "12cd451d.9bf3cb",
+        "type": "link in",
+        "z": "6e40fab5.1057f4",
+        "name": "ConsistDBemul",
+        "links": [
+            "b2b8b748.558028"
+        ],
+        "x": 219,
+        "y": 39,
+        "wires": [
+            [
+                "3e6ee17b.e3111e",
+                "79bf8039.6f673"
+            ]
+        ]
+    },
+    {
+        "id": "3e6ee17b.e3111e",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "CPUactiveCores",
+        "func": "msg.payload = ['CPU:CPUactiveCores','4']\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 351,
+        "y": 20,
+        "wires": [
+            [
+                "5ba5c0ee.b13fe"
+            ]
+        ]
+    },
+    {
+        "id": "5ba5c0ee.b13fe",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 570,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "79bf8039.6f673",
+        "type": "function",
+        "z": "6e40fab5.1057f4",
+        "name": "numOfRTThreads",
+        "func": "var temp = global.get('numOfRTThreads')\nmsg.payload = ['RT:numOfRTThreads',temp]\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 360,
+        "y": 55,
+        "wires": [
+            [
+                "b3af7123.b6925"
+            ]
+        ]
+    },
+    {
+        "id": "b3af7123.b6925",
+        "type": "redis-command",
+        "z": "6e40fab5.1057f4",
+        "server": "504b5bf5.bbe984",
+        "command": "set",
+        "name": "RedisSET",
+        "topic": "",
+        "x": 570,
+        "y": 56,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2b0cf572.32698a",
+        "type": "ui_button",
+        "z": "995db953.1dbb18",
+        "name": "Start",
+        "group": "28dc87b8.08d648",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "start",
+        "payloadType": "str",
+        "topic": "",
+        "x": 402,
+        "y": 215,
+        "wires": [
+            [
+                "10e89fc7.274ed"
+            ]
+        ]
+    },
+    {
+        "id": "5efa8e1a.7978d",
+        "type": "ui_button",
+        "z": "995db953.1dbb18",
+        "name": "Stop",
+        "group": "28dc87b8.08d648",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Stop",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "stop",
+        "payloadType": "str",
+        "topic": "",
+        "x": 402.5,
+        "y": 252,
+        "wires": [
+            [
+                "10e89fc7.274ed"
+            ]
+        ]
+    },
+    {
+        "id": "ad0e73b2.4355f",
+        "type": "ui_button",
+        "z": "995db953.1dbb18",
+        "name": "Restart",
+        "group": "28dc87b8.08d648",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Restart",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "restart",
+        "payloadType": "str",
+        "topic": "",
+        "x": 412.5,
+        "y": 290,
+        "wires": [
+            [
+                "10e89fc7.274ed"
+            ]
+        ]
+    },
+    {
+        "id": "10e89fc7.274ed",
+        "type": "exec",
+        "z": "995db953.1dbb18",
+        "command": "sudo systemctl",
+        "addpay": true,
+        "append": "sensors.service",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "exec Sensors.service",
+        "x": 593,
+        "y": 243.5,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "19eb55b2.7798ba",
+        "type": "ui_button",
+        "z": "995db953.1dbb18",
+        "name": "Start",
+        "group": "7e81776d.48b858",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Start",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "start",
+        "payloadType": "str",
+        "topic": "",
+        "x": 400,
+        "y": 325,
+        "wires": [
+            [
+                "839c3dfc.1e4c5"
+            ]
+        ]
+    },
+    {
+        "id": "f621f47c.0d3808",
+        "type": "ui_button",
+        "z": "995db953.1dbb18",
+        "name": "Stop",
+        "group": "7e81776d.48b858",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Stop",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "stop",
+        "payloadType": "str",
+        "topic": "",
+        "x": 400.5,
+        "y": 362,
+        "wires": [
+            [
+                "839c3dfc.1e4c5"
+            ]
+        ]
+    },
+    {
+        "id": "886d02cf.c73cb",
+        "type": "ui_button",
+        "z": "995db953.1dbb18",
+        "name": "Restart",
+        "group": "7e81776d.48b858",
+        "order": 5,
+        "width": "2",
+        "height": "1",
+        "passthru": false,
+        "label": "Restart",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "restart",
+        "payloadType": "str",
+        "topic": "",
+        "x": 410.5,
+        "y": 400,
+        "wires": [
+            [
+                "839c3dfc.1e4c5"
+            ]
+        ]
+    },
+    {
+        "id": "839c3dfc.1e4c5",
+        "type": "exec",
+        "z": "995db953.1dbb18",
+        "command": "sudo systemctl",
+        "addpay": true,
+        "append": "rfid_sensor.service",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "exec rfid_sensor.service",
+        "x": 601,
+        "y": 353.5,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "77f027f.83b6ed8",
+        "type": "exec",
+        "z": "995db953.1dbb18",
+        "command": "sudo systemctl is-active sensors.service",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "exec sensors.service",
+        "x": 255,
+        "y": 800,
+        "wires": [
+            [
+                "9440e835.5bf778",
+                "ab2a8a72.bffe28"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "9440e835.5bf778",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "",
+        "func": "if (msg.payload == 'active'){\n    msg.payload = 'true'\n} else if (msg.payload == 'failed'){\n    msg.payload = 'false'\n}\nreturn msg.payload;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 797,
+        "wires": [
+            [
+                "990b0414.d044b8"
+            ]
+        ]
+    },
+    {
+        "id": "990b0414.d044b8",
+        "type": "ui_led",
+        "z": "995db953.1dbb18",
+        "group": "28dc87b8.08d648",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "State",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "str"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "str"
+            }
+        ],
+        "name": "",
+        "x": 655,
+        "y": 797,
+        "wires": []
+    },
+    {
+        "id": "19265c22.2f6574",
+        "type": "exec",
+        "z": "995db953.1dbb18",
+        "command": "sudo systemctl is-active rfid_sensor.service",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "exec rfid_sensor.service",
+        "x": 265,
+        "y": 851,
+        "wires": [
+            [
+                "f72a8efd.13f3d",
+                "ab2a8a72.bffe28"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "f72a8efd.13f3d",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "",
+        "func": "if (msg.payload == 'active'){\n    msg.payload = 'true'\n} else if (msg.payload == 'failed'){\n    msg.payload = 'false'\n}\nreturn msg.payload;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 540,
+        "y": 848,
+        "wires": [
+            [
+                "678b8713.a6ba58"
+            ]
+        ]
+    },
+    {
+        "id": "678b8713.a6ba58",
+        "type": "ui_led",
+        "z": "995db953.1dbb18",
+        "group": "7e81776d.48b858",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "label": "State",
+        "labelPlacement": "left",
+        "labelAlignment": "left",
+        "colorForValue": [
+            {
+                "color": "red",
+                "value": "false",
+                "valueType": "str"
+            },
+            {
+                "color": "green",
+                "value": "true",
+                "valueType": "str"
+            }
+        ],
+        "name": "",
+        "x": 655,
+        "y": 848,
+        "wires": []
+    },
+    {
+        "id": "6095cbda.c481c4",
+        "type": "comment",
+        "z": "995db953.1dbb18",
+        "name": "needs routing here!",
+        "info": "",
+        "x": 132,
+        "y": 655,
+        "wires": []
     }
 ]

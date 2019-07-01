@@ -1,0 +1,8 @@
+[2019-07-01 20:04:51] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-01 20:04:51] [INFO   ] Initiating the Instances
+ null 
+[2019-07-01 20:04:51] [INFO   ] DBController Initiating Jedis Controller on: localhost:6379
+ null 
+[2019-07-01 20:04:51] [INFO   ] DBController Jedis Controller exists
+ null 

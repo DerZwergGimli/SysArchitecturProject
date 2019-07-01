@@ -66,7 +66,7 @@ public class Manager {
     }
 
     private static void readPropertiesFile() {
-        try (InputStream input = new FileInputStream("config.properties")) {
+        try (InputStream input = new FileInputStream("config_CommManager.properties")) {
             Properties properties = new Properties();
             properties.load(input);
 
@@ -86,7 +86,7 @@ public class Manager {
     }
 
     private static Boolean checkForConfigExistance() {
-        File f = new File("config.properties");
+        File f = new File("config_CommManager.properties");
         if (f.exists() && !f.isDirectory()) {
             return true;
         }

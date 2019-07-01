@@ -1,6 +1,6 @@
 #!/bin/bash
-Install_Redis="./installRedis.sh"
-Install_NodeRed="./installNodeRed.sh"
+gitDir=`pwd`;
+HOSTNAME_SHORT=`hostname -s`;
 
 echo "This will now install all the dependecies that are needed!";
 sleep 3;
@@ -31,7 +31,7 @@ mkdir /home/pi/vehicle/lidar;
 git clone https://github.com/bmegli/xv11lidar-test.git /home/pi/vehicle/lidar;
 cd /home/pi/vehicle/lidar;
 make;
-cd /home/pi/SysArchitecturProject/InstallationScripts;
+cd $gitDir;
 
 
 
@@ -50,14 +50,24 @@ curl -LJO https://raw.githubusercontent.com/DerZwergGimli/SysArchitecturProject/
 sudo systemctl enable communicationManager.service;
 
 echo "====> Install Node-Red";
-bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered)
+bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered);
+cd $gitDir;
+cd ../UI-NodeRed;
+chmod 750 flow.json;
+cp flow.json /home/pi/.node-red/flows_$HOSTNAME_SHORT.json
+cd /home/pi/.node-red;
+npm install node-red-contrib-redis;
+npm install node-red-dashboard;
+npm install node-red-contrib-chartjs;
+npm install node-red-contrib-ui-led;
+npm audit fix;
 sudo systemctl enable nodered.service
 
 
 echo "Start all!"
-#sudo systemctl start communicationManager.service;
-#sudo systemctl start vehicle.service;
-#sudo systemctl start sensors.service;
-#sudo systemctl start rfid_sensor.service;
+sudo systemctl start communicationManager.service;
+sudo systemctl start vehicle.service;
+sudo systemctl start sensors.service;
+sudo systemctl start rfid_sensor.service;
 sudo systemctl start nodered.service
 

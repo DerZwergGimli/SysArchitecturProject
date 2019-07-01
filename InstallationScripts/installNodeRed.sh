@@ -14,6 +14,7 @@ nodeRedInstall(){
    npm install node-red-contrib-redis;
    npm install node-red-dashboard;
    npm install node-red-contrib-chartjs;
+   npm install node-red-contrib-ui-led; 
 }
 
 

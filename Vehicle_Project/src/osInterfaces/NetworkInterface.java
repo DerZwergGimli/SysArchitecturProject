@@ -68,26 +68,29 @@ public class NetworkInterface implements INetworkInterface {
 				int exitCode = process.waitFor();
 
 				if (exitCode == 0) {
+					if (!lines[0].contains("does not exist")) {
+						String delims = "[ ]+";
+						String[] rx_tokens = lines[1].split(delims);
+						String[] tx_tokens = lines[3].split(delims);
 
-					String delims = "[ ]+";
-					String[] rx_tokens = lines[1].split(delims);
-					String[] tx_tokens = lines[3].split(delims);
+						this.rx_bytes = Long.parseLong(rx_tokens[1]);
+						this.rx_packages = Long.parseLong(rx_tokens[2]);
+						this.rx_errors = Long.parseLong(rx_tokens[3]);
+						this.rx_dropped = Long.parseLong(rx_tokens[4]);
+						this.rx_overrun = Long.parseLong(rx_tokens[5]);
+						this.rx_mcast = Long.parseLong(rx_tokens[6]);
 
-					this.rx_bytes = Long.parseLong(rx_tokens[1]);
-					this.rx_packages = Long.parseLong(rx_tokens[2]);
-					this.rx_errors = Long.parseLong(rx_tokens[3]);
-					this.rx_dropped = Long.parseLong(rx_tokens[4]);
-					this.rx_overrun = Long.parseLong(rx_tokens[5]);
-					this.rx_mcast = Long.parseLong(rx_tokens[6]);
+						this.tx_bytes = Long.parseLong(tx_tokens[1]);
+						this.tx_packages = Long.parseLong(tx_tokens[2]);
+						this.tx_errors = Long.parseLong(tx_tokens[3]);
+						this.tx_dropped = Long.parseLong(tx_tokens[4]);
+						this.tx_carrier = Long.parseLong(tx_tokens[5]);
+						this.tx_collsns = Long.parseLong(tx_tokens[6]);
 
-					this.tx_bytes = Long.parseLong(tx_tokens[1]);
-					this.tx_packages = Long.parseLong(tx_tokens[2]);
-					this.tx_errors = Long.parseLong(tx_tokens[3]);
-					this.tx_dropped = Long.parseLong(tx_tokens[4]);
-					this.tx_carrier = Long.parseLong(tx_tokens[5]);
-					this.tx_collsns = Long.parseLong(tx_tokens[6]);
+						generateTimestamp();
 
-					generateTimestamp();
+					}
+
 				}
 
 			} catch (IOException e) {

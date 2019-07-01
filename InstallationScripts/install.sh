@@ -46,15 +46,15 @@ echo "====> Install communicationManager";
 mkdir /home/pi/vehicle/commManager;
 cd /home/pi/vehicle/commManager;
 curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/CommManager.jar;
-curl -LJO https://raw.githubusercontent.com/DerZwergGimli/SysArchitecturProject/master/CommManager/config.properties;
+curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/config_CommManager.properties;
 sudo systemctl enable communicationManager.service;
 
 echo "====> Install Node-Red";
 bash <(curl -sL https://raw.githubusercontent.com/node-red/raspbian-deb-package/master/resources/update-nodejs-and-nodered);
 cd $gitDir;
 cd ../UI-NodeRed;
-chmod 750 flow.json;
-cp flow.json /home/pi/.node-red/flows_$HOSTNAME_SHORT.json
+chmod 750 flows.json;
+cp flows.json /home/pi/.node-red/flows_$HOSTNAME_SHORT.json
 cd /home/pi/.node-red;
 npm install node-red-contrib-redis;
 npm install node-red-dashboard;

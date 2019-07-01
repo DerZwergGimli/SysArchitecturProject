@@ -60,7 +60,7 @@ public class TopInterface implements ITopInterface {
 			ProcessBuilder processBuilder = new ProcessBuilder();
 			String bashString = "top -b -n 1 | head -5";
 
-			processBuilder.command("/bin/sh", "-c", bashString);
+			processBuilder.command("/bin/bash", "-c", bashString);
 
 			String[] lines = new String[5];
 

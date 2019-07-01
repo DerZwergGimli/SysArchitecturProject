@@ -30,9 +30,9 @@ public class SensorsInterface implements ISensorsInterface {
 		if (enabled) {
 
 			ProcessBuilder processBuilder = new ProcessBuilder();
-			String bashString = "cat /sys/class/thermal/thermal_zone0/temp ";
+			String bashString = "cat /sys/class/thermal/thermal_zone0/temp";
 
-			processBuilder.command("bash", "-c", bashString);
+			processBuilder.command("/bin/bash", "-c", bashString);
 
 			String[] lines = new String[1];
 

@@ -121,7 +121,7 @@ public class ManagementThread extends Thread {
         // check cyclically if the driver is pressent
         String isPresentResponse = dbController.get("sensors:rfid:present");
         // string is true if the string is not a null and equal to true (ignoring case).
-        if ((isPresentResponse != null) && !isPresentResponse.isEmpty() && Boolean.valueOf(isPresentResponse)) {
+        if ((isPresentResponse != null) && !isPresentResponse.isEmpty() && (Boolean.valueOf(isPresentResponse) || isDriverPresent.equals("1"))) {
             isDriverPresent = true;
             logger.log(Level.INFO, "Driver is present");
             return true;

@@ -24,7 +24,7 @@
         "id": "98123e0c.aea32",
         "type": "tab",
         "label": "DB_Emulator",
-        "disabled": false,
+        "disabled": true,
         "info": ""
     },
     {
@@ -1382,8 +1382,7 @@
         "name": "injectData",
         "links": [
             "ff2da66.5b6ea58",
-            "85695666.1ffce8",
-            "dd224f00.333a1"
+            "85695666.1ffce8"
         ],
         "x": 277,
         "y": 20,
@@ -1670,7 +1669,7 @@
         "type": "function",
         "z": "98123e0c.aea32",
         "name": "isPresent",
-        "func": "msg.payload = ['sensors:rfid:present','true']\nreturn msg;",
+        "func": "msg.payload = ['sensors:rfid:present','1']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 409,
@@ -1686,7 +1685,7 @@
         "type": "function",
         "z": "98123e0c.aea32",
         "name": "isPresentFalse",
-        "func": "msg.payload = ['sensors:rfid:present','false']\nreturn msg;",
+        "func": "msg.payload = ['sensors:rfid:present','0']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 429,
@@ -1826,7 +1825,7 @@
         "type": "function",
         "z": "98123e0c.aea32",
         "name": "LidarDistances",
-        "func": "msg.payload = ['sensors:Lidar:distances',msg.payload]\nreturn msg;",
+        "func": "msg.payload = ['sensors:lidar:distances',msg.payload]\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 380,
@@ -2029,10 +2028,11 @@
             "7fd9cc98.b17504",
             "557bbf55.53b04",
             "5bc93362.01b05c",
-            "12cd451d.9bf3cb"
+            "12cd451d.9bf3cb",
+            "dd224f00.333a1"
         ],
-        "x": 271,
-        "y": 268,
+        "x": 51,
+        "y": 379,
         "wires": []
     },
     {
@@ -2100,7 +2100,7 @@
         "type": "function",
         "z": "fa0109b3.e47ed8",
         "name": "",
-        "func": "if(msg.payload == 'true'){\n    msg.payload = 'New user is present'\n} else {\n    msg.payload = 'user logged out'\n}\nreturn msg;",
+        "func": "if(msg.payload == '1'){\n    msg.payload = 'New user is present'\n} else {\n    msg.payload = 'user logged out'\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 770,
@@ -2311,8 +2311,8 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 865,
-        "y": 25,
+        "x": 448,
+        "y": 649,
         "wires": [
             []
         ]
@@ -2322,31 +2322,17 @@
         "type": "file in",
         "z": "995db953.1dbb18",
         "name": "logFile",
-        "filename": "/home/pi/vehicke/armv7/vehicleLog.log.0",
+        "filename": "/home/pi/vehicle/armv7/vehicleLog.log.0",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 715,
-        "y": 25,
+        "x": 302,
+        "y": 653,
         "wires": [
             [
                 "28e11af7.9599b6"
             ]
-        ]
-    },
-    {
-        "id": "dd224f00.333a1",
-        "type": "link in",
-        "z": "995db953.1dbb18",
-        "name": "logFile",
-        "links": [
-            "b84964d0.943428"
-        ],
-        "x": 601,
-        "y": 39,
-        "wires": [
-            []
         ]
     },
     {
@@ -2795,8 +2781,8 @@
             }
         ],
         "name": "",
-        "x": 572.5,
-        "y": 492,
+        "x": 730.5,
+        "y": 487,
         "wires": []
     },
     {
@@ -2807,8 +2793,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 375,
-        "y": 492,
+        "x": 533,
+        "y": 487,
         "wires": [
             [
                 "697fda16.b248b4",
@@ -2824,8 +2810,8 @@
         "func": "msg.payload = ['management:threads:collisonAvoidanceRunnable']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 193.5,
-        "y": 491,
+        "x": 351.5,
+        "y": 486,
         "wires": [
             [
                 "df8f36b9.986178"
@@ -2856,8 +2842,8 @@
             }
         ],
         "name": "",
-        "x": 574,
-        "y": 530,
+        "x": 732,
+        "y": 525,
         "wires": []
     },
     {
@@ -2868,8 +2854,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 376.5,
-        "y": 530,
+        "x": 534.5,
+        "y": 525,
         "wires": [
             [
                 "98d57f9e.ad06b",
@@ -2885,8 +2871,8 @@
         "func": "msg.payload = ['management:threads:lidarDataCollectionThreadRunnable']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 175,
-        "y": 529,
+        "x": 333,
+        "y": 524,
         "wires": [
             [
                 "2ed092ef.f939ce"
@@ -2917,8 +2903,8 @@
             }
         ],
         "name": "",
-        "x": 577,
-        "y": 569,
+        "x": 735,
+        "y": 564,
         "wires": []
     },
     {
@@ -2929,8 +2915,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 375.5,
-        "y": 568,
+        "x": 533.5,
+        "y": 563,
         "wires": [
             [
                 "9d178502.71fa38",
@@ -2946,8 +2932,8 @@
         "func": "msg.payload = ['management:threads:databaseReaderRunnable']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 174,
-        "y": 568,
+        "x": 332,
+        "y": 563,
         "wires": [
             [
                 "38a52d2f.ac38a2"
@@ -2978,8 +2964,8 @@
             }
         ],
         "name": "",
-        "x": 576,
-        "y": 608,
+        "x": 734,
+        "y": 603,
         "wires": []
     },
     {
@@ -2990,8 +2976,8 @@
         "command": "get",
         "name": "RedisGET",
         "topic": "",
-        "x": 377.5,
-        "y": 608,
+        "x": 535.5,
+        "y": 603,
         "wires": [
             [
                 "9f9179bd.6f55f8",
@@ -3007,8 +2993,8 @@
         "func": "msg.payload = ['management:threads:databaseWriterRunnable']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 168,
-        "y": 607,
+        "x": 326,
+        "y": 602,
         "wires": [
             [
                 "e7606002.9d7a"
@@ -3023,8 +3009,8 @@
         "links": [
             "b2b8b748.558028"
         ],
-        "x": 20,
-        "y": 549,
+        "x": 191,
+        "y": 545,
         "wires": [
             [
                 "5fb0737f.ff874c",
@@ -3128,8 +3114,8 @@
         "z": "995db953.1dbb18",
         "name": "first State ??",
         "info": "be careful to init the first state of the threads in the application\n",
-        "x": 734.5,
-        "y": 531,
+        "x": 675.5,
+        "y": 450,
         "wires": []
     },
     {
@@ -3140,8 +3126,8 @@
         "func": "var temp = global.get('numOfRTThreads')\nif (msg.payload == 'true'){\n    global.set('numOfRTThreads',temp + 1)\n} else {\n    global.set('numOfRTThreads',temp - 1)\n}\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
-        "x": 603.5,
-        "y": 646,
+        "x": 761.5,
+        "y": 641,
         "wires": [
             []
         ]
@@ -3284,8 +3270,8 @@
         "interpolate": "linear",
         "nodata": "No Data is available for now",
         "dot": false,
-        "ymin": "0",
-        "ymax": "20",
+        "ymin": "",
+        "ymax": "",
         "removeOlder": "20",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
@@ -3326,7 +3312,7 @@
         "interpolate": "linear",
         "nodata": "No Data is available for now",
         "dot": false,
-        "ymin": "0",
+        "ymin": "",
         "ymax": "",
         "removeOlder": "20",
         "removeOlderPoints": "",
@@ -3357,7 +3343,7 @@
         "type": "function",
         "z": "6e40fab5.1057f4",
         "name": "LidarDistancesKey",
-        "func": "msg.payload = ['sensors:Lidar:distances']\nreturn msg;",
+        "func": "msg.payload = ['sensors:lidar:distances']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 354,
@@ -3574,31 +3560,14 @@
         "timer": "",
         "oldrc": false,
         "name": "exec vehicle.service",
-        "x": 255,
-        "y": 697,
-        "wires": [
-            [
-                "eb4c54c0.0f89b8",
-                "ab2a8a72.bffe28"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "eb4c54c0.0f89b8",
-        "type": "function",
-        "z": "995db953.1dbb18",
-        "name": "",
-        "func": "if (msg.payload == 'active'){\n    msg.payload = 'true'\n} else if (msg.payload == 'failed'){\n    msg.payload = 'false'\n}\nreturn msg.payload;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 540,
-        "y": 694,
+        "x": 352,
+        "y": 759,
         "wires": [
             [
                 "f9deb7e.67ff248"
-            ]
+            ],
+            [],
+            []
         ]
     },
     {
@@ -3615,34 +3584,18 @@
         "colorForValue": [
             {
                 "color": "red",
-                "value": "false",
+                "value": "failed",
                 "valueType": "str"
             },
             {
                 "color": "green",
-                "value": "true",
+                "value": "active",
                 "valueType": "str"
             }
         ],
         "name": "",
-        "x": 655,
-        "y": 694,
-        "wires": []
-    },
-    {
-        "id": "ab2a8a72.bffe28",
-        "type": "ui_toast",
-        "z": "995db953.1dbb18",
-        "position": "top right",
-        "displayTime": "3",
-        "highlight": "",
-        "outputs": 0,
-        "ok": "OK",
-        "cancel": "",
-        "topic": "",
-        "name": "",
-        "x": 577.5,
-        "y": 888,
+        "x": 752,
+        "y": 756,
         "wires": []
     },
     {
@@ -3656,31 +3609,14 @@
         "timer": "",
         "oldrc": false,
         "name": "exec comManager.service",
-        "x": 265,
-        "y": 748,
-        "wires": [
-            [
-                "78db1cda.8b0264",
-                "ab2a8a72.bffe28"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "78db1cda.8b0264",
-        "type": "function",
-        "z": "995db953.1dbb18",
-        "name": "",
-        "func": "if (msg.payload == 'active'){\n    msg.payload = 'true'\n} else if (msg.payload == 'failed'){\n    msg.payload = 'false'\n}\nreturn msg.payload;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 539,
-        "y": 749,
+        "x": 362,
+        "y": 810,
         "wires": [
             [
                 "769b0884.4cb588"
-            ]
+            ],
+            [],
+            []
         ]
     },
     {
@@ -3697,18 +3633,18 @@
         "colorForValue": [
             {
                 "color": "red",
-                "value": "false",
+                "value": "failed",
                 "valueType": "str"
             },
             {
                 "color": "green",
-                "value": "true",
+                "value": "active",
                 "valueType": "str"
             }
         ],
         "name": "",
-        "x": 657,
-        "y": 748,
+        "x": 754,
+        "y": 810,
         "wires": []
     },
     {
@@ -3723,7 +3659,7 @@
         "y": 455,
         "wires": [
             [
-                "8b551237.189b"
+                "c5e97334.c1271"
             ]
         ]
     },
@@ -3759,8 +3695,8 @@
         "interpolate": "linear",
         "nodata": "No Data is available for now",
         "dot": false,
-        "ymin": "0",
-        "ymax": "20",
+        "ymin": "",
+        "ymax": "",
         "removeOlder": "20",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
@@ -3779,8 +3715,8 @@
         ],
         "useOldStyle": false,
         "outputs": 1,
-        "x": 671.5,
-        "y": 495,
+        "x": 806.5,
+        "y": 497,
         "wires": [
             []
         ]
@@ -3861,7 +3797,7 @@
         "y": 555,
         "wires": [
             [
-                "f755e0a0.d5579"
+                "72ded6f6.510a58"
             ]
         ]
     },
@@ -3897,8 +3833,8 @@
         "interpolate": "linear",
         "nodata": "No Data is available for now",
         "dot": false,
-        "ymin": "0",
-        "ymax": "20",
+        "ymin": "",
+        "ymax": "",
         "removeOlder": "20",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
@@ -3917,8 +3853,8 @@
         ],
         "useOldStyle": false,
         "outputs": 1,
-        "x": 671,
-        "y": 595,
+        "x": 763,
+        "y": 590,
         "wires": [
             []
         ]
@@ -4126,8 +4062,8 @@
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 864,
-        "y": 59,
+        "x": 447,
+        "y": 683,
         "wires": [
             []
         ]
@@ -4142,8 +4078,8 @@
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 714,
-        "y": 59,
+        "x": 301,
+        "y": 687,
         "wires": [
             [
                 "565d4699.6b37d8"
@@ -4198,7 +4134,7 @@
         "interpolate": "linear",
         "nodata": "No Data is available for now",
         "dot": false,
-        "ymin": "0",
+        "ymin": "",
         "ymax": "",
         "removeOlder": "20",
         "removeOlderPoints": "",
@@ -4640,31 +4576,14 @@
         "timer": "",
         "oldrc": false,
         "name": "exec sensors.service",
-        "x": 255,
-        "y": 800,
-        "wires": [
-            [
-                "9440e835.5bf778",
-                "ab2a8a72.bffe28"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "9440e835.5bf778",
-        "type": "function",
-        "z": "995db953.1dbb18",
-        "name": "",
-        "func": "if (msg.payload == 'active'){\n    msg.payload = 'true'\n} else if (msg.payload == 'failed'){\n    msg.payload = 'false'\n}\nreturn msg.payload;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 540,
-        "y": 797,
+        "x": 352,
+        "y": 862,
         "wires": [
             [
                 "990b0414.d044b8"
-            ]
+            ],
+            [],
+            []
         ]
     },
     {
@@ -4681,18 +4600,18 @@
         "colorForValue": [
             {
                 "color": "red",
-                "value": "false",
+                "value": "failed",
                 "valueType": "str"
             },
             {
                 "color": "green",
-                "value": "true",
+                "value": "active",
                 "valueType": "str"
             }
         ],
         "name": "",
-        "x": 655,
-        "y": 797,
+        "x": 752,
+        "y": 859,
         "wires": []
     },
     {
@@ -4706,31 +4625,14 @@
         "timer": "",
         "oldrc": false,
         "name": "exec rfid_sensor.service",
-        "x": 265,
-        "y": 851,
-        "wires": [
-            [
-                "f72a8efd.13f3d",
-                "ab2a8a72.bffe28"
-            ],
-            [],
-            []
-        ]
-    },
-    {
-        "id": "f72a8efd.13f3d",
-        "type": "function",
-        "z": "995db953.1dbb18",
-        "name": "",
-        "func": "if (msg.payload == 'active'){\n    msg.payload = 'true'\n} else if (msg.payload == 'failed'){\n    msg.payload = 'false'\n}\nreturn msg.payload;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 540,
-        "y": 848,
+        "x": 362,
+        "y": 913,
         "wires": [
             [
                 "678b8713.a6ba58"
-            ]
+            ],
+            [],
+            []
         ]
     },
     {
@@ -4747,18 +4649,18 @@
         "colorForValue": [
             {
                 "color": "red",
-                "value": "false",
+                "value": "failed",
                 "valueType": "str"
             },
             {
                 "color": "green",
-                "value": "true",
+                "value": "active",
                 "valueType": "str"
             }
         ],
         "name": "",
-        "x": 655,
-        "y": 848,
+        "x": 752,
+        "y": 910,
         "wires": []
     },
     {
@@ -4767,8 +4669,8 @@
         "z": "995db953.1dbb18",
         "name": "needs routing here!",
         "info": "",
-        "x": 132,
-        "y": 655,
+        "x": 111,
+        "y": 759,
         "wires": []
     },
     {
@@ -4817,5 +4719,37 @@
         "x": 306.5,
         "y": 392,
         "wires": []
+    },
+    {
+        "id": "c5e97334.c1271",
+        "type": "function",
+        "z": "fa0109b3.e47ed8",
+        "name": "",
+        "func": "msg.payload = msg.payload / 1024;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 659.5,
+        "y": 459,
+        "wires": [
+            [
+                "8b551237.189b"
+            ]
+        ]
+    },
+    {
+        "id": "72ded6f6.510a58",
+        "type": "function",
+        "z": "fa0109b3.e47ed8",
+        "name": "",
+        "func": "msg.payload = msg.payload / 1024;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 644,
+        "y": 554,
+        "wires": [
+            [
+                "f755e0a0.d5579"
+            ]
+        ]
     }
 ]

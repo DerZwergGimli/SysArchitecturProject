@@ -55,8 +55,8 @@ while True:
     r.set('sensors:barometer:metersinheight:timestamp', timestamp )
     r.set('sensors:barometer:metersinheight:unit', "m")
 
-    r.set('sensors:temperatur:celsius', imu.getTemperatureCelsius())
-    r.set('sensors:temperatur:timestamp', timestamp )
-    r.set('sensors:temperatur:unit', "degrees Celsius")
+    r.set('sensors:temperature:data', imu.getTemperatureCelsius())
+    r.set('sensors:temperature:timestamp', timestamp )
+    r.set('sensors:temperature:unit', "degrees Celsius")
 
     sleep(1)

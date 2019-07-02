@@ -6,6 +6,7 @@ This is our version of a vehicle in Java RT Vehicle compiled with [JamaicaVM for
 More information you can find in our [wiki](https://github.com/DerZwergGimli/SysArchitecturProject/wiki).   
 
 ### Installation
+Make sure you have a rapberry pi with raspbian installed and internet connection (you may need to install git!).
 
 1. `git clone https://github.com/DerZwergGimli/SysArchitecturProject.git`  
 2. `cd SysArchitecturProject/InstallationScripts`  

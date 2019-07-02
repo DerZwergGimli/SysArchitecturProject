@@ -9,6 +9,9 @@ echo "===> Check for updates";
 #sudo apt upgrade -y;
 sudo apt install curl redis-server -y;
 
+echo "====> Copy conig file";
+sudo cp config.txt /boot/config.txt
+
 echo "====> Copy Sytem Services for SystemCTL"
 sudo cp vehicle.service /etc/systemd/system/vehicle.service;
 sudo cp communicationManager.service /etc/systemd/system/communicationManager.service;

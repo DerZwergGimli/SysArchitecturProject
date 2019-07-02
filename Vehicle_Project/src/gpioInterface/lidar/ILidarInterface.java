@@ -6,6 +6,10 @@ package gpioInterface.lidar;
  * @author yannick
  *
  */
+/**
+ * @author yannick
+ *
+ */
 public interface ILidarInterface {
 
 	/**
@@ -42,5 +46,12 @@ public interface ILidarInterface {
 	 * @return
 	 */
 	public int[] scan();
+
+	/**
+	 * This will generate random values
+	 * 
+	 * @return
+	 */
+	public int[] generateRandomDistances();
 
 }

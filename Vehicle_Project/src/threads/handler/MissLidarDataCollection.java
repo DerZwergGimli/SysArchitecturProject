@@ -17,11 +17,16 @@ import gpioInterface.lidar.ILidarInterface;
  * @author yannick
  *
  */
+/**
+ * @author yannick
+ *
+ */
 public class MissLidarDataCollection extends AsyncEventHandler implements IMissHandler {
-	private AsynchronouslyInterruptedException asInterruptedException;
-	private RealtimeThread realtimeThread;
-	private static int priorityParameters = PriorityScheduler.instance().getMinPriority() + 11;
-	private Logger logger;
+
+	AsynchronouslyInterruptedException asInterruptedException;
+	RealtimeThread realtimeThread;
+	static int priorityParameters = PriorityScheduler.instance().getMinPriority() + 11;
+	Logger logger;
 	ILidarInterface lidarController;
 
 	@Override
@@ -40,10 +45,6 @@ public class MissLidarDataCollection extends AsyncEventHandler implements IMissH
 		this.logger = logger;
 	}
 
-	public void setLidarController(ILidarInterface lidarController) {
-		this.lidarController = lidarController;
-	}
-
 	/**
 	 * Constructor for a MissHandler for lidarDataCollection
 	 * 
@@ -60,20 +61,11 @@ public class MissLidarDataCollection extends AsyncEventHandler implements IMissH
 		logger.log(Level.SEVERE,
 				"Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!");
 
-		// logger.info("Trying to stop lidar rotation");
-		// stopLidarRotaion();
-
-		realtimeThread.schedulePeriodic();
+		realtimeThread.deschedulePeriodic();
 
 		if (!asInterruptedException.fire())
 			System.out.println("Fire returened false");
 
 	}
 
-	private void stopLidarRotaion() {
-
-		if (lidarController.isEnabled()) {
-			lidarController.stopRotation();
-		}
-	}
 }

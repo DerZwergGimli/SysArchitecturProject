@@ -54,7 +54,7 @@ logger.fileName=VehicleLog.log
 logger.maxFileSize=10000
 logger.maxNumberOfFiles=3
 logger.appendFiles=true
-logger.debugLevel=ALL
+logger.debugLevel=INFO
 
 #NetworkInterface
 networkInterface.enabled=true

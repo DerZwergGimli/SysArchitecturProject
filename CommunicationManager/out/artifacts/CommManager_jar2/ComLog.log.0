@@ -1,0 +1,104 @@
+[2019-07-01 22:24:24] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-01 22:24:24] [INFO   ] Initiating the Instances
+ null 
+[2019-07-01 22:24:24] [INFO   ] DBController Initiating Jedis Controller on: localhost:6379
+ null 
+[2019-07-01 22:24:25] [INFO   ] DBController Jedis Controller exists
+ null 
+[2019-07-01 22:24:25] [INFO   ] Starting the Threads
+ null 
+[2019-07-01 22:24:25] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:24:25] [INFO   ] DBController Connecting again...
+ null 
+[2019-07-01 22:24:25] [FINER  ] RETURN
+ null 
+[2019-07-01 22:24:26] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:24:26] [FINER  ] RETURN
+ null 
+[2019-07-01 22:24:36] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:24:36] [FINER  ] RETURN
+ null 
+[2019-07-01 22:24:36] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:24:36] [FINER  ] RETURN
+ null 
+[2019-07-01 22:24:46] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:24:46] [FINER  ] RETURN
+ null 
+[2019-07-01 22:24:46] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:24:46] [FINER  ] RETURN
+ null 
+[2019-07-01 22:24:54] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-01 22:24:54] [INFO   ] Initiating the Instances
+ null 
+[2019-07-01 22:24:54] [INFO   ] DBController Initiating Jedis Controller on: localhost:6379
+ null 
+[2019-07-01 22:24:54] [INFO   ] DBController Jedis Controller exists
+ null 
+[2019-07-01 22:24:54] [INFO   ] Starting the Threads
+ null 
+[2019-07-01 22:24:54] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:24:54] [INFO   ] DBController Connecting again...
+ null 
+[2019-07-01 22:24:54] [FINER  ] RETURN
+ null 
+[2019-07-01 22:24:55] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:24:55] [FINER  ] RETURN
+ null 
+[2019-07-01 22:31:05] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-01 22:31:05] [INFO   ] Initiating the Instances
+ null 
+[2019-07-01 22:31:05] [INFO   ] DBController Initiating Jedis Controller on: localhost:6379
+ null 
+[2019-07-01 22:31:05] [INFO   ] DBController Jedis Controller exists
+ null 
+[2019-07-01 22:31:06] [INFO   ] Starting the Threads
+ null 
+[2019-07-01 22:31:06] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:31:06] [INFO   ] DBController Connecting again...
+ null 
+[2019-07-01 22:31:06] [FINER  ] RETURN
+ null 
+[2019-07-01 22:31:07] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:31:07] [FINER  ] RETURN
+ null 
+[2019-07-01 22:31:17] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:31:17] [FINER  ] RETURN
+ null 
+[2019-07-01 22:31:17] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:31:17] [FINER  ] RETURN
+ null 
+[2019-07-01 22:46:45] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-01 22:46:45] [INFO   ] Initiating the Instances
+ null 
+[2019-07-01 22:46:45] [INFO   ] DBController Initiating Jedis Controller on: localhost:6379
+ null 
+[2019-07-01 22:46:46] [INFO   ] DBController Jedis Controller exists
+ null 
+[2019-07-01 22:46:47] [INFO   ] Starting the Threads
+ null 
+[2019-07-01 22:46:47] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:46:47] [INFO   ] DBController Connecting again...
+ null 
+[2019-07-01 22:46:47] [FINER  ] RETURN
+ null 
+[2019-07-01 22:46:48] [FINER  ] ENTRY
+ null 
+[2019-07-01 22:46:48] [FINER  ] RETURN
+ null 

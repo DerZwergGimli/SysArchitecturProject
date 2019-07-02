@@ -38,19 +38,19 @@ public class LidarInterface implements ILidarInterface {
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		processBuilder.command("/bin/sh", "-c", lidarInitCommand);
 
-		String[] lines = new String[2];
+//		String[] lines = new String[2];
 		try {
 			Process process = processBuilder.start();
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-			String line;
-			int i = 0;
-
-			while ((line = reader.readLine()) != null) {
-				lines[i] = line;
-				i++;
-			}
+//			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//
+//			String line;
+//			int i = 0;
+//
+//			while ((line = reader.readLine()) != null) {
+//				lines[i] = line;
+//				i++;
+//			}
 
 			int exitCode = process.waitFor();
 
@@ -74,20 +74,20 @@ public class LidarInterface implements ILidarInterface {
 
 		ProcessBuilder processBuilder = new ProcessBuilder();
 		processBuilder.command("/bin/sh", "-c", lidarStartRotationCommand);
-		String[] lines = new String[4];
+//		String[] lines = new String[4];
 
 		try {
 			Process process = processBuilder.start();
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-			String line;
-			int i = 0;
-
-			while ((line = reader.readLine()) != null) {
-				lines[i] = line;
-				i++;
-			}
+//			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//
+//			String line;
+//			int i = 0;
+//
+//			while ((line = reader.readLine()) != null) {
+//				lines[i] = line;
+//				i++;
+//			}
 
 			int exitCode = process.waitFor();
 
@@ -110,20 +110,20 @@ public class LidarInterface implements ILidarInterface {
 
 		processBuilder.command("/bin/sh", "-c", lidarStopRotationCommand);
 
-		String[] lines = new String[4];
+//		String[] lines = new String[4];
 
 		try {
 			Process process = processBuilder.start();
 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-
-			String line;
-			int i = 0;
-
-			while ((line = reader.readLine()) != null) {
-				lines[i] = line;
-				i++;
-			}
+//			BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//
+//			String line;
+//			int i = 0;
+//
+//			while ((line = reader.readLine()) != null) {
+//				lines[i] = line;
+//				i++;
+//			}
 
 			int exitCode = process.waitFor();
 
@@ -165,13 +165,12 @@ public class LidarInterface implements ILidarInterface {
 
 			if (exitCode == 0) {
 
-				// TODO: Needed Code here to parse the lidar Sensor Data
-
 				String valuesString[] = lines[1].split(";");
 				int valuesInt[] = new int[360];
 				for (int j = 0; j < valuesString.length - 1; j++) {
 					valuesInt[j] = Integer.valueOf(valuesString[j]);
 				}
+
 				return valuesInt;
 			}
 
@@ -181,6 +180,14 @@ public class LidarInterface implements ILidarInterface {
 			e.printStackTrace();
 		}
 		return new int[0];
+	}
+
+	public int[] generateRandomDistances() {
+		int[] distances = new int[360];
+		for (int i = 0; i < distances.length; i++) {
+			distances[i] = (int) ((Math.random() * 10) + 1);
+		}
+		return distances;
 	}
 
 	private void readPropertiesFile() {

@@ -78,7 +78,9 @@ public class InterruptibleWriterDB implements Interruptible {
 				lidarSensor.writeToDB(redis);
 				stopWatch.writeToDB(redis);
 				collisionAvoidance.writeToDB(redis);
+
 			}
+
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			logger.log(Level.SEVERE, "Error while trying to get sensorLidarValues form Queue and writing it to the DB",

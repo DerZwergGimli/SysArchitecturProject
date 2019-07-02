@@ -1,104 +1,127 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project basedir="." default="build_main.Main" name="main.Main">
-          
+            
+  
   
   
   
   <!-- aicas GmbH, Karlsruhe -->
-          
+            
+  
   
   
   
   <!-- Jamaica Buildfile for application 'main.Main' -->
-          
+            
+  
   
   
   
   <!-- JAMAICA_ANT_EDITOR_VERSION=1.4.1.201903191203 -->
-          
+    
+  <property name="jamaica.cpu_mhz" value="1200.0"/>
+            
+  
   
   
   
   <property environment="env"/>
-          
+            
+  
   
   
   
   <condition property="jamaica" value="${env.JAMAICA}">
-                    
+                        
+    
     
     
     
     <isset property="env.JAMAICA"/>
-                  
+                      
+  
   
   
   
   </condition>
-          
+            
+  
   
   
   
   <fail message="Please set the JAMAICA environment variable to a Jamaica installation!" unless="jamaica"/>
-          
+            
+  
   
   
   
   <taskdef classname="com.aicas.jamaica.tools.ant.JamaicaTask" classpath="${jamaica}/lib/JamaicaTools.jar" name="jamaicabuilder"/>
-          
+            
+  
   
   
   
   <taskdef classname="com.aicas.jamaica.tools.ant.JamaicahTask" classpath="${jamaica}/lib/JamaicaTools.jar" name="jamaicah"/>
-          
+            
+  
   
   
   
   
   
   <target name="build_main.Main" unless="jamaica.executable_of_build_main.Main_available">
-                    
+                        
+    
     
     
     
     <jamaicabuilder jamaica="${jamaica}">
-                              
+                                    
+      
       
       
       
       <option append="false" enabled="true" name="target" value="linux-x86_64"/>
-                              
+                                    
+      
       
       
       
       <option append="false" enabled="true" name="main" value="main.Main"/>
-                              
+                                    
+      
       
       
       
       <option append="false" enabled="true" name="tmpdir" value="tmp"/>
-                              
+                                    
+      
       
       
       
       <option append="false" enabled="true" name="interpret" value="true"/>
-                              
+                                    
+      
       
       
       
       <option append="true" enabled="true" name="classpath" value="bin:libs/jedis-3.1.0-m1.jar"/>
-                        
+                              
+      
       
       
       <option append="false" enabled="true" name="scopedMemorySize" value="1000M"/>
-            
+                  
+      
       <option append="false" enabled="true" name="destination" value="build/linux-x86_64/SysArchVehicle_x86_64"/>
-                            
+                                  
+    
     
     
     
     </jamaicabuilder>
-                    
+                        
+    
     
     
     
@@ -107,65 +130,83 @@
         /home/yannick/eclipse-workspace/SysArchitecturProject/Vehicle_Project/build/linux-x86_64/SysArchVehicle_x86_64
       You can launch it using the "Overview" page in this editor.
     </echo>
-                  
+                      
+  
   
   
   
   </target>
-          
+            
+  
   
   
   
   
   <target name="launch_main.Main">
-                    
+                        
+    
     
     
     
     <available file="build/linux-x86_64/SysArchVehicle_x86_64" property="jamaica.executable_of_build_main.Main_available"/>
-                    
+                        
+    
     
     
     
     <antcall target="build_main.Main"/>
-                    
+                        
+    
     
     
     
     <exec executable="build/linux-x86_64/SysArchVehicle_x86_64" resolveexecutable="true"/>
-                  
+                      
+  
   
   
   
   </target>
-      
+        
+  
   
   <target depends="" name="ARM-Build-PI">
-        
+            
+    
     <jamaicabuilder jamaica="${jamaica}">
-            
+                  
+      
       <option append="false" enabled="true" name="target" value="linux-armv7-le"/>
-            
+                  
+      
       <option append="false" enabled="true" name="main" value="main.Main"/>
-            
+                  
+      
       <option append="true" enabled="true" name="classpath" value="bin:libs/jedis-3.1.0-m1.jar"/>
-            
+                  
+      
       <option append="false" enabled="true" name="tmpdir" value="tmp"/>
-            
+                  
+      
       <option append="false" enabled="true" name="interpret" value="true"/>
-            
+                  
+      
       <option append="false" enabled="true" name="destination" value="build/armv7/SysArchVehicle_armv7"/>
-          
+                
+    
     </jamaicabuilder>
-        
+            
+    
     <echo>
       The executable has been created successfully:
         /home/yannick/eclipse-workspace/SysArchitecturProject/Vehicle_Project/build/armv7/SysArchVehicle_armv7
       Please transfer it to your target device manually.
     </echo>
-      
-  </target>
           
+  
+  </target>
+            
+
 
 
 

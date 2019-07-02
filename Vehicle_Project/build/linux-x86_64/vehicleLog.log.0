@@ -1,0 +1,1750 @@
+[2019-07-02 03:15:05] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-02 03:15:05] [INFO   ] --Application stared--
+ null 
+[2019-07-02 03:15:06] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:15:06] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:15:06] [INFO   ] Creating InterruptableWriterDB
+ null 
+[2019-07-02 03:15:06] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:06] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:06] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:06] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:06] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:06] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:06] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:07] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:07] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:07] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:07] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:07] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:07] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:07] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:08] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:08] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:08] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:08] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:08] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:08] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:09] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:09] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:09] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:09] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:09] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:09] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:09] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:09] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:09] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:10] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:10] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:10] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:10] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:10] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:10] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:10] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:11] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:11] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:11] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:11] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:11] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:11] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:12] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:12] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:12] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:12] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:12] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:12] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:12] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:12] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:12] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:13] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:13] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:13] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:13] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:13] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:13] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:13] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:14] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:14] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:14] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:14] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:14] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:14] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:15] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:15] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:15] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:15] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:15] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:15] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:15] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:15] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:15] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:16] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:16] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:16] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:16] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:16] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:16] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:16] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:17] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:17] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:17] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:17] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:17] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:17] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:18] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:18] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:18] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:18] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:18] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:18] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:18] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:18] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:18] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:19] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:19] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:19] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:19] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:19] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:19] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:15:19] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:15:19] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:19] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:20] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:20] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:15:20] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:15:20] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:20] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:20] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:20] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:20] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:21] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:21] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:21] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:21] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:21] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:21] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:21] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:21] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:21] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:22] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:22] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:22] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:22] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:22] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:22] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:22] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:23] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:23] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:23] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:23] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:23] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:23] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:24] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:24] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:24] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:24] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:24] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:24] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:24] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:24] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:24] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:25] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:25] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:25] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:25] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:25] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:25] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:26] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:26] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:26] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:26] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:26] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:26] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:26] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:27] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:27] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:27] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:27] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:27] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:15:27] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:15:27] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:15:27] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:15:27] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:27] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:28] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:28] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:28] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:28] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:28] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:28] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:28] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:28] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:29] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:29] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:29] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:29] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:29] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:29] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:29] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:30] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:30] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:30] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:30] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:30] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:30] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:30] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:31] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:31] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:31] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:31] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:31] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:31] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:31] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:31] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:32] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:32] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:32] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:32] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:32] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:32] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:32] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:33] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:33] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:33] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:33] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:33] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:33] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:33] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:34] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:34] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:34] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:34] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:34] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:34] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:34] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:34] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:35] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:35] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:35] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:35] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:35] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:35] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:35] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:36] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:36] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:36] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:36] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:36] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:36] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:36] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:37] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:37] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:37] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:37] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:37] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:37] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:37] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:37] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:38] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:38] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:38] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:38] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:38] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:38] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:38] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:39] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:39] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:39] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:39] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:39] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:39] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:39] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:40] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:40] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:40] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:40] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:40] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:40] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:40] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:40] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:41] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:41] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:15:41] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:15:41] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:41] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:41] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:41] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:41] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:41] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:42] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:42] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:42] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:42] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:15:42] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:15:42] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:42] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:42] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:15:42] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:42] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:43] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:43] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:43] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:43] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:43] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:43] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:43] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:43] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:43] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:44] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:44] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:44] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:44] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:44] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:44] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:45] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:45] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:15:45] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:15:45] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:45] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:45] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:15:45] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:45] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:45] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:45] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:46] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:46] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:46] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:46] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:46] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:15:46] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:15:46] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:15:46] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:15:46] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:46] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:46] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:46] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:47] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:47] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:47] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:47] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:47] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:47] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:48] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:48] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:48] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:48] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:48] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:48] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:48] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:49] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:49] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:49] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:49] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:49] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:49] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:49] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:49] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:49] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:50] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:50] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:50] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:50] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:50] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:50] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:51] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:51] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:51] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:51] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:51] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:51] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:51] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:52] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:52] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:52] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:52] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:52] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:52] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:52] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:52] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:52] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:53] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:53] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:53] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:53] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:53] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:53] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:54] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:54] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:54] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:54] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:54] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:54] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:54] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:55] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:55] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:15:55] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:15:55] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:55] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:55] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:55] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:55] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:55] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:55] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:55] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:56] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:56] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:56] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:56] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:56] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:56] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:57] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:57] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:57] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:57] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:57] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:57] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:57] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:58] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:58] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:58] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:58] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:15:58] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:15:58] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:15:58] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:58] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:58] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:58] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:58] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:59] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:59] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:59] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:59] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:15:59] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:15:59] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:15:59] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:00] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:00] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:00] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:00] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:00] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:00] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:01] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:01] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:01] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:01] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:01] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:01] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:01] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:01] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:01] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:02] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:02] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:02] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:02] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:02] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:02] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:02] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:03] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:03] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:03] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:03] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:03] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:03] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:04] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:04] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:04] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:04] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:04] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:04] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:04] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:04] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:04] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:16:04] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:16:05] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:05] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:05] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:05] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:05] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:05] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:05] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:05] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:06] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:06] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:06] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:06] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:06] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:06] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:07] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:07] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:07] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:07] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:07] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:07] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:07] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:07] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:07] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:08] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:08] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:08] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:08] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:08] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:08] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:08] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:09] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:09] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:09] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:09] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:09] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:09] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:10] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:10] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:10] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:10] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:10] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:10] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:10] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:10] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:10] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:11] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:11] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:11] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:11] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:11] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:11] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:11] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:12] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:12] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:12] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:12] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:12] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:12] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:13] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:13] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:13] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:13] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:13] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:13] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:13] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:13] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:13] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:14] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:14] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:14] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:14] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:14] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:14] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:14] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:15] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:15] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:15] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:15] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:15] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:15] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:16] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:16] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:16] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:16] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:16] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:16] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:16:16] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:16] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:16] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:16] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:16] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:16] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:17] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:17] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:16:17] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:16:17] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:17] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:17] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:17] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:17] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:17] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:18] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:18] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:18] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:18] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:18] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:18] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:19] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:19] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:19] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:19] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:19] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:19] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:19] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:19] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:19] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:20] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:20] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:20] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:20] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:20] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:20] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:20] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:21] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:21] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:21] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:21] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:21] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:21] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:22] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:22] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:22] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:22] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:22] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:22] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:22] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:22] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:22] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:23] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:23] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:23] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:23] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:23] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:23] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:23] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:24] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:24] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:24] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:24] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:24] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:24] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:25] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:25] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:25] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:25] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:25] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:25] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:25] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:25] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:25] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:26] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:26] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:26] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:26] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:26] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:26] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:26] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:27] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:27] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:27] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:27] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:27] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:27] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:28] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:28] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:28] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:28] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:28] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:28] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:28] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:28] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:28] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:29] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:29] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:29] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:29] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:29] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:29] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:29] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:29] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:29] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:30] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:30] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:30] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:30] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:30] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:30] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:30] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:31] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:31] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:31] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:31] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:31] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:16:31] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:31] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:31] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:31] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:31] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:31] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:32] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:32] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:32] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:32] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:32] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:32] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:16:32] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:32] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:32] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:32] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:33] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:33] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:33] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:33] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:16:33] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:16:33] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:33] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:33] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:34] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:34] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:34] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:34] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:34] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:34] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:34] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:34] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:34] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:35] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:35] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:35] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:35] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:35] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:35] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:35] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:36] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:36] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:36] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:36] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:36] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:36] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:37] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:37] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:37] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:37] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:37] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:37] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:37] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:37] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:37] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:38] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:38] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:38] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:38] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:38] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:38] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:38] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:39] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:39] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:39] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:39] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:39] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:39] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:40] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:40] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:40] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:40] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:40] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:40] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:40] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:40] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:40] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:41] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:41] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:41] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:41] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:41] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:41] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:41] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:42] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:42] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:42] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:42] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:42] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:42] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:42] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:42] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:43] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:43] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:43] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:43] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:16:43] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:43] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:43] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:43] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:43] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:43] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:44] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:44] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:44] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:44] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:44] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:44] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:44] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:45] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:45] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:45] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:45] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:45] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:45] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:45] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:46] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:46] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:46] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:46] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:46] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:46] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:46] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:46] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:47] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:47] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:47] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:47] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:47] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:47] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:16:47] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:47] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:47] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:47] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:48] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:48] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:48] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:48] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:48] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:48] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:48] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:48] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:48] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:48] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:16:49] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:49] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:49] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:49] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:49] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:49] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:49] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:49] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:49] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:50] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:50] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:50] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:50] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:50] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:50] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:51] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:51] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:51] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:51] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:51] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:51] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:51] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:51] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:16:51] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:51] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:52] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:52] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:52] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:52] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:52] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:52] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:52] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:52] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:52] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:52] [WARNING] Could not write into queue
+ null 
+[2019-07-02 03:16:52] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:52] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:53] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:53] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:53] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:53] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:53] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:53] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:54] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:54] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:16:54] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:16:54] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:16:54] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:16:54] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:16:54] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:54] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:54] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:54] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:55] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:55] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:55] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:55] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:55] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:55] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:55] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:16:55] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:55] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:56] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:56] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:56] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:56] [INFO   ] !!--Generating random lidar values--!! 
+ null 
+[2019-07-02 03:16:56] [INFO   ] Lidar sensor disabled but thread started!
+ null 
+[2019-07-02 03:16:56] [INFO   ] !!--Generating random lidar values--!! 
+ null 

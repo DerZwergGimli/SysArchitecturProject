@@ -51,7 +51,7 @@ public class Manager {
         logger.info("Initiating the Instances");
         DBController.init(redisHost, redisPort, 100, logger);
 
-        ComController comController = new ComController("ea-pc165.ei.htwg-konstanz.de", "8883", "Autonom-V1");
+        ComController comController = new ComController("ea-pc165.ei.htwg-konstanz.de", "8883", "AutonomV1");
 
         DataPersistanceThread dataPersistanceThread = new DataPersistanceThread(5000, comController, logger);
         dataPersistanceThread.initProperties();

@@ -59,24 +59,25 @@ public class InterruptibleCollisionAvoidance implements Interruptible {
 	public void run(AsynchronouslyInterruptedException exception) throws AsynchronouslyInterruptedException {
 
 		while (management.isCollisonAvoidanceThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
-			readFromQueue();
+			readSensorAndSendQueue();
+
 		}
 		logger.log(Level.WARNING, "CollisionAvoidance was exited!");
 	}
 
-	private void readFromQueue() {
+	private void readSensorAndSendQueue() {
 		QLidarBuffer lidarBuffer = null;
 		try {
 			lidarBuffer = (QLidarBuffer) qLidarBuffer.poll(10, TimeUnit.MILLISECONDS);
 		} catch (Exception e) {
-			logger.log(Level.WARNING, "Failed to read from queue - lidrSensor!", e);
+			logger.log(Level.WARNING, "Failed to read from queue - lidrSensor in CollisionAvoidance!", e);
 		}
 		if (lidarBuffer != null) {
 			CollisionAvoidance collisionAvoidance = new CollisionAvoidance(lidarBuffer.getLidarSensor(), logger);
 			collisionAvoidance.checkAllSections();
 			sendInQueue(lidarBuffer.getLidarSensor(), collisionAvoidance, lidarBuffer.getStopWatch());
 		} else {
-			logger.log(Level.INFO, "Queue was empty does nothing in here");
+			logger.log(Level.FINER, "Queue was empty does nothing in here");
 		}
 	}
 

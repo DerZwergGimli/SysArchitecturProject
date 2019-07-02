@@ -2,31 +2,6 @@
 
 using JamaicaVM - Java Realtime
 
-#### Links to helpful webseites
-
-* JamaicaVM - [API](http://www.aicas.com/jamaica/8.2/doc/jamaica_api/index.html)
-* JamaicaVM - [MANUAL](https://www.aicas.com/cms/sites/default/files/JamaicaVM-8.2-manual-web.pdf)
-* Redis - [Jedis](https://www.javadoc.io/doc/redis.clients/jedis/3.1.0-m1)
-
-Some info about memory and GBC in JVM
-http://www.aicas.com/jamaica/3.2/doc/html/x3672.html
-
--- SomeNiceSlides
-https://slideplayer.com/slide/12774547/
-
-
-
---RT Java Book (Google)
-[Book](https://books.google.de/books?id=jzfhQ8Pb_k8C&pg=PP175&lpg=PP175&dq=ReleaseParameters+and+threads&source=bl&ots=d0hKz3xj2K&sig=ACfU3U1uLlaudSQ16nrQvaBtLA-eELlZQg&hl=de&sa=X&ved=2ahUKEwj-34zn1tTiAhXEUlAKHdpwCl8Q6AEwB3oECAYQAQ#v=onepage&q=overrun&f=false)
-
-
-
-## MQTT public HTWG server
-
-- user: 
-- password:
-
-
 
 
 

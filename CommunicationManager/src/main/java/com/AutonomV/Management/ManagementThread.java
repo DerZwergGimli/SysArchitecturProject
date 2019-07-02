@@ -24,6 +24,7 @@ public class ManagementThread extends Thread {
     private Boolean isDriverPresent;
     private static Driver driver = null;
     private static boolean isDriverAllowed;
+    private static int authTrialCount = 0;
 
     private static int state;
     public static final int NO_DRIVER = 0;
@@ -55,6 +56,10 @@ public class ManagementThread extends Thread {
                         if (authenticate()) {
                             state = IS_LOGGED_IN;
                         }
+                        if (authTrialCount == 5) {
+                            authTrialCount = 0;
+                            state = NO_DRIVER;
+                        }
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -83,10 +88,12 @@ public class ManagementThread extends Thread {
     }
 
     private boolean authenticate() throws InterruptedException {
+        authTrialCount++;
         // Send ID to the Management System
         // Get Driver ID and the timestamp of the Login from DB
         DriverAuth driverAut = new DriverAuth(dbController.get("sensors:rfid:ID"), dbController.get("sensors:rfid:timestamp"));  // TODO dbController.get("Driver:timeStamp")
         String authRequest = Converter.pojo2json(driverAut);
+        System.out.println("Sending Request for " + authRequest);
         comController.publish("/SysArch/V1/Driver/AuthRequest/", authRequest, 2);
         /* Small Delay for Authentication Response*/
         Thread.sleep(1000);
@@ -121,8 +128,9 @@ public class ManagementThread extends Thread {
         // check cyclically if the driver is pressent
         String isPresentResponse = dbController.get("sensors:rfid:present");
         // string is true if the string is not a null and equal to true (ignoring case).
-        if ((isPresentResponse != null) && !isPresentResponse.isEmpty() && (Boolean.valueOf(isPresentResponse) || isDriverPresent.equals("1"))) {
+        if ((isPresentResponse != null) && !isPresentResponse.isEmpty() && (Boolean.valueOf(isPresentResponse) || isPresentResponse.equals("1"))) {
             isDriverPresent = true;
+            System.out.println("Driver is present");
             logger.log(Level.INFO, "Driver is present");
             return true;
         } else {

@@ -7,7 +7,9 @@ Type=simple
 User=pi
 WorkingDirectory=/home/pi/vehicle/Sensors/RFID_Sensor
 ExecStart=/bin/bash -c "cd /home/pi/vehicle/Sensors/RFID_Sensor && source Scripts/activate && python MFRC522-python/RFID.py"
-Restart=on-failure
+
+WatchdogSec=10
+Restart=always
 
 [Install]
 WantedBy=multi-user.target

@@ -33,7 +33,10 @@ public class ClientCallback implements MqttCallback {
             System.out.println("Driver Json: " + driverMsg);
             allowedDriver = (Driver) Converter.json2pojo(driverMsg, allowedDriver);
             System.out.println("Driver: " + allowedDriver);
-            ManagementThread.updateDriver(true, allowedDriver);
+            if (!allowedDriver.getFirstName().isEmpty()){
+                ManagementThread.updateDriver(true, allowedDriver);
+            }
+
         }
 
 

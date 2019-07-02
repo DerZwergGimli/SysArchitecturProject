@@ -41,15 +41,15 @@ cd $gitDir;
 echo "====> Install vehicle";
 mkdir /home/pi/vehicle/armv7;
 cd /home/pi/vehicle/armv7;
-curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/SysArchVehicle_armv7;
+curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.3/SysArchVehicle_armv7;
 chmod +x /home/pi/vehicle/armv7/SysArchVehicle_armv7;
 sudo systemctl enable vehicle;
 
 echo "====> Install communicationManager";
 mkdir /home/pi/vehicle/commManager;
 cd /home/pi/vehicle/commManager;
-curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/CommManager.jar;
-curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.2/config_CommManager.properties;
+curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.3/CommManager.jar
+curl -LJO https://github.com/DerZwergGimli/SysArchitecturProject/releases/download/v0.9.3/config_CommManager.properties;
 sudo systemctl enable communicationManager.service;
 
 echo "====> Install Node-Red";

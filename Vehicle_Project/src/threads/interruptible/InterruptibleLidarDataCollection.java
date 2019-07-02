@@ -54,9 +54,6 @@ public class InterruptibleLidarDataCollection implements Interruptible {
 			lidarController.startRotation();
 		}
 
-		int bound = 0;
-		double f = 0;
-		int ct = 0;
 		while (management.isLidarDataCollectionThreadRunnable() && RealtimeThread.waitForNextPeriod()) {
 			IStopWatch stopWatch = new StopWatch();
 			stopWatch.init();
@@ -67,13 +64,6 @@ public class InterruptibleLidarDataCollection implements Interruptible {
 			stopWatch.stopAndCalulate();
 
 			sendDataToQueue(lidarData, stopWatch);
-
-			if (++ct > 2000)
-				return;
-			for (f = 0.0; f < bound; f += 1.0)
-				;
-			bound += 100000;
-			System.out.println("DING! " + bound);
 		}
 
 	}

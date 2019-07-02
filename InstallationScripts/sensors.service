@@ -1,5 +1,5 @@
 [Unit]
-Description=RFID_Sensor_Reader
+Description=SensorALTMU_Reader
 After=network.target
 
 [Service]

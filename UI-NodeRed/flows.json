@@ -35,13 +35,6 @@
         "info": ""
     },
     {
-        "id": "56a5114c.9568b",
-        "type": "tab",
-        "label": "TestFlows",
-        "disabled": true,
-        "info": ""
-    },
-    {
         "id": "5cdf40c6.8d85a",
         "type": "redis-config",
         "z": "",
@@ -293,25 +286,14 @@
         "collapse": true
     },
     {
-        "id": "41d6287a.f9f658",
-        "type": "ui_group",
-        "z": "",
-        "name": "System Control",
-        "tab": "574bc317.c025dc",
-        "order": 1,
-        "disp": true,
-        "width": "6",
-        "collapse": false
-    },
-    {
         "id": "9d163dfc.a6bc9",
         "type": "ui_group",
         "z": "",
         "name": "Vehicle Logfile",
         "tab": "574bc317.c025dc",
-        "order": 10,
+        "order": 11,
         "disp": true,
-        "width": "10",
+        "width": "20",
         "collapse": true
     },
     {
@@ -579,7 +561,7 @@
         "z": "",
         "name": "System Monitoring",
         "icon": "fa-bar-chart",
-        "order": 2,
+        "order": 1,
         "disabled": false,
         "hidden": false
     },
@@ -719,7 +701,7 @@
         "z": "",
         "name": "Sensors",
         "icon": "dashboard",
-        "order": 1,
+        "order": 2,
         "disabled": false,
         "hidden": false
     },
@@ -780,11 +762,11 @@
         "id": "9b4ae6c0.9de688",
         "type": "ui_group",
         "z": "",
-        "name": "Vehicle Services",
+        "name": "Vehicle [Service]",
         "tab": "574bc317.c025dc",
         "order": 2,
         "disp": true,
-        "width": "10",
+        "width": "12",
         "collapse": false
     },
     {
@@ -804,7 +786,7 @@
         "z": "",
         "name": "Database Reader",
         "tab": "574bc317.c025dc",
-        "order": 7,
+        "order": 8,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -815,7 +797,7 @@
         "z": "",
         "name": "Database Writer",
         "tab": "574bc317.c025dc",
-        "order": 6,
+        "order": 7,
         "disp": true,
         "width": "6",
         "collapse": false
@@ -824,11 +806,11 @@
         "id": "419b4bd8.b29e14",
         "type": "ui_group",
         "z": "",
-        "name": "Communication Services",
+        "name": "Communication [Service]",
         "tab": "574bc317.c025dc",
         "order": 5,
         "disp": true,
-        "width": "10",
+        "width": "12",
         "collapse": false
     },
     {
@@ -847,9 +829,9 @@
         "z": "",
         "name": "Communication Logfile",
         "tab": "574bc317.c025dc",
-        "order": 11,
+        "order": 12,
         "disp": true,
-        "width": "10",
+        "width": "20",
         "collapse": true
     },
     {
@@ -866,23 +848,68 @@
         "id": "28dc87b8.08d648",
         "type": "ui_group",
         "z": "",
-        "name": "Sensors",
+        "name": "Sensors [Service]",
         "tab": "574bc317.c025dc",
-        "order": 8,
+        "order": 9,
         "disp": true,
-        "width": "10",
+        "width": "12",
         "collapse": false
     },
     {
         "id": "7e81776d.48b858",
         "type": "ui_group",
         "z": "",
-        "name": "RFID",
+        "name": "RFID [Service]",
         "tab": "574bc317.c025dc",
-        "order": 9,
+        "order": 10,
         "disp": true,
-        "width": "10",
+        "width": "12",
         "collapse": false
+    },
+    {
+        "id": "acbc1ff7.33c06",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "27a36bb1.e5d85c",
+        "order": 12,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "f95f71ea.e58e48",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "41d6287a.f9f658",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a240c6a3.26cc",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "41d6287a.f9f658",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "5b3d8871.b6d268",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "41d6287a.f9f658",
+        "order": 1,
+        "width": 1,
+        "height": 1
+    },
+    {
+        "id": "a5f4ed5c.dd2f4",
+        "type": "ui_spacer",
+        "name": "spacer",
+        "group": "5ac5b974.053468",
+        "order": 12,
+        "width": "0",
+        "height": "0"
     },
     {
         "id": "5b9c1d5f.a41454",
@@ -905,7 +932,7 @@
         "type": "function",
         "z": "fa0109b3.e47ed8",
         "name": "JitterKey",
-        "func": "msg.payload = ['sensors:collsionAvoidance:timing:collionControllExecutionTime:diffTimeNano']\nreturn msg;",
+        "func": "msg.payload = ['sensors:lidar:timing:diffTimeNano']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 318.5,
@@ -990,15 +1017,15 @@
         "order": 1,
         "width": 0,
         "height": 0,
-        "label": "Jitter in ms",
+        "label": "Jitter in nano",
         "chartType": "line",
         "legend": "true",
         "xformat": "ss",
         "interpolate": "linear",
         "nodata": "No Data is available for now",
         "dot": false,
-        "ymin": "0",
-        "ymax": "20",
+        "ymin": "",
+        "ymax": "",
         "removeOlder": "20",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
@@ -1278,7 +1305,7 @@
         "type": "function",
         "z": "fa0109b3.e47ed8",
         "name": "CpuTempKey",
-        "func": "msg.payload = ['os:temperature:cpu0']\nreturn msg;",
+        "func": "msg.payload = ['sensors:os:temperature:cpu0']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 339.5,
@@ -1333,7 +1360,7 @@
         "label": "C°",
         "format": "{{value}}",
         "min": 0,
-        "max": "60",
+        "max": "90",
         "colors": [
             "#00b500",
             "#e6e600",
@@ -1857,7 +1884,7 @@
         "type": "function",
         "z": "fa0109b3.e47ed8",
         "name": "CpuLoadKey",
-        "func": "msg.payload = ['os:top:cpu_idle']\nreturn msg;",
+        "func": "msg.payload = ['sensors:os:top:cpu_idle']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 329.5,
@@ -2307,12 +2334,12 @@
         "order": 2,
         "width": "8",
         "height": "4",
-        "format": "<!--<div layout=\"row\" layout-align=\"space-between\">\n    <div id=”” style=”height: 250px; width:100%;overflow:scroll;”>\n        <p>{{msg.payload}}</p>\n    </div>\n</div>-->\n    <div ng-bind-html=\"msg.payload\" style=”height: 400px; width:100%;overflow:scroll;”></div>\n",
+        "format": "<!--<div layout=\"row\" layout-align=\"space-between\">\n    <div id=”” style=”height: 250px; width:100%;overflow:scroll;”>\n        <p>{{msg.payload}}</p>\n    </div>\n</div>-->\n    <div ng-bind-html=\"msg.payload\" style=”height: 100%; width:100%;overflow:scroll;”></div>\n",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 448,
-        "y": 649,
+        "x": 580,
+        "y": 680,
         "wires": [
             []
         ]
@@ -2327,12 +2354,10 @@
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 302,
-        "y": 653,
+        "x": 1070,
+        "y": 480,
         "wires": [
-            [
-                "28e11af7.9599b6"
-            ]
+            []
         ]
     },
     {
@@ -2340,7 +2365,7 @@
         "type": "function",
         "z": "995db953.1dbb18",
         "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:collisonAvoidanceRunnable',msg.payload]\nreturn newMsg;",
+        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:collisonAvoidanceThreadRunnable',msg.payload]\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
         "x": 213,
@@ -2490,7 +2515,7 @@
         "type": "function",
         "z": "995db953.1dbb18",
         "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:databaseReaderRunnable',msg.payload]\nreturn newMsg;",
+        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:databaseReaderThreadRunnable',msg.payload]\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
         "x": 211.5,
@@ -2558,7 +2583,7 @@
         "type": "function",
         "z": "995db953.1dbb18",
         "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:databaseWriterRunnable',msg.payload]\nreturn newMsg;",
+        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['management:threads:databaseWriterThreadRunnable',msg.payload]\nreturn newMsg;",
         "outputs": 1,
         "noerr": 0,
         "x": 211.5,
@@ -2566,194 +2591,6 @@
         "wires": [
             [
                 "dccceb66.58f818"
-            ]
-        ]
-    },
-    {
-        "id": "4c7beecb.bfe0b",
-        "type": "ui_switch",
-        "z": "56a5114c.9568b",
-        "name": "LidarSensorSwitch",
-        "label": "switch",
-        "tooltip": "",
-        "group": "41d6287a.f9f658",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "decouple": "false",
-        "topic": "",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 164,
-        "y": 162,
-        "wires": [
-            [
-                "ce70b51e.9a3b38",
-                "61dd16b7.f95208"
-            ]
-        ]
-    },
-    {
-        "id": "ce70b51e.9a3b38",
-        "type": "function",
-        "z": "56a5114c.9568b",
-        "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['LidarSensorState',msg.payload]\nreturn newMsg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 478.5,
-        "y": 109,
-        "wires": [
-            [
-                "19450f37.82e691"
-            ]
-        ]
-    },
-    {
-        "id": "19450f37.82e691",
-        "type": "redis-command",
-        "z": "56a5114c.9568b",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 630.5,
-        "y": 109,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "63515d69.65c854",
-        "type": "ui_text",
-        "z": "56a5114c.9568b",
-        "group": "41d6287a.f9f658",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "name": "LidarSensorState",
-        "label": "Lidar Sensor is ",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 661.5,
-        "y": 248,
-        "wires": []
-    },
-    {
-        "id": "18ad0ec6.5a1601",
-        "type": "ui_text",
-        "z": "56a5114c.9568b",
-        "group": "41d6287a.f9f658",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "name": "CPUTempState",
-        "label": "CPU Temperature Monitor is ",
-        "format": "{{msg.payload}}",
-        "layout": "row-spread",
-        "x": 651,
-        "y": 283,
-        "wires": []
-    },
-    {
-        "id": "61dd16b7.f95208",
-        "type": "function",
-        "z": "56a5114c.9568b",
-        "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nif(msg.payload){\n    newMsg.payload = 'ON'\n}\nelse{\n    newMsg.payload = 'OFF'\n}\nreturn newMsg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 479.5,
-        "y": 248,
-        "wires": [
-            [
-                "63515d69.65c854"
-            ]
-        ]
-    },
-    {
-        "id": "5a2ddc37.a4e4e4",
-        "type": "function",
-        "z": "56a5114c.9568b",
-        "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nif(msg.payload){\n    newMsg.payload = 'ON'\n}\nelse{\n    newMsg.payload = 'OFF'\n}\nreturn newMsg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 478.5,
-        "y": 283,
-        "wires": [
-            [
-                "18ad0ec6.5a1601"
-            ]
-        ]
-    },
-    {
-        "id": "df1d29c9.fce018",
-        "type": "redis-command",
-        "z": "56a5114c.9568b",
-        "server": "504b5bf5.bbe984",
-        "command": "set",
-        "name": "RedisSET",
-        "topic": "",
-        "x": 633,
-        "y": 144,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "46d2b188.7d3af",
-        "type": "function",
-        "z": "56a5114c.9568b",
-        "name": "",
-        "func": "var newMsg = {payload: msg.payload,topic:msg.topic};\nnewMsg.payload = ['CPUTempState',msg.payload]\nreturn newMsg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 479,
-        "y": 144,
-        "wires": [
-            [
-                "df1d29c9.fce018"
-            ]
-        ]
-    },
-    {
-        "id": "ed4294e9.2d3e08",
-        "type": "ui_switch",
-        "z": "56a5114c.9568b",
-        "name": "CPUTempSwitch",
-        "label": "switch",
-        "tooltip": "",
-        "group": "41d6287a.f9f658",
-        "order": 0,
-        "width": 0,
-        "height": 0,
-        "passthru": false,
-        "decouple": "false",
-        "topic": "",
-        "style": "",
-        "onvalue": "true",
-        "onvalueType": "bool",
-        "onicon": "",
-        "oncolor": "",
-        "offvalue": "false",
-        "offvalueType": "bool",
-        "officon": "",
-        "offcolor": "",
-        "x": 162.5,
-        "y": 196,
-        "wires": [
-            [
-                "46d2b188.7d3af",
-                "5a2ddc37.a4e4e4"
             ]
         ]
     },
@@ -2807,7 +2644,7 @@
         "type": "function",
         "z": "995db953.1dbb18",
         "name": "CollisionAvoidanceKey",
-        "func": "msg.payload = ['management:threads:collisonAvoidanceRunnable']\nreturn msg;",
+        "func": "msg.payload = ['management:threads:collisonAvoidanceThreadRunnable']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 351.5,
@@ -2929,7 +2766,7 @@
         "type": "function",
         "z": "995db953.1dbb18",
         "name": "DBReaderKey",
-        "func": "msg.payload = ['management:threads:databaseReaderRunnable']\nreturn msg;",
+        "func": "msg.payload = ['management:threads:databaseReaderThreadRunnable']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 332,
@@ -2990,7 +2827,7 @@
         "type": "function",
         "z": "995db953.1dbb18",
         "name": "DBWriterKey",
-        "func": "msg.payload = ['management:threads:databaseWriterRunnable']\nreturn msg;",
+        "func": "msg.payload = ['management:threads:databaseWriterThreadRunnable']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 326,
@@ -3009,14 +2846,20 @@
         "links": [
             "b2b8b748.558028"
         ],
-        "x": 191,
-        "y": 545,
+        "x": 115,
+        "y": 540,
         "wires": [
             [
+                "80443972.695528",
+                "4fa1a7b5.350b28",
+                "77f027f.83b6ed8",
+                "19265c22.2f6574",
                 "5fb0737f.ff874c",
                 "32c0910a.578e4e",
                 "79b307b8.8a4778",
-                "1857c8c2.3582a7"
+                "1857c8c2.3582a7",
+                "4a869d59.f13b7c",
+                "389e7998.adc266"
             ]
         ]
     },
@@ -3195,7 +3038,7 @@
         "type": "function",
         "z": "6e40fab5.1057f4",
         "name": "PressureKey",
-        "func": "msg.payload = ['sensors:barometer:data']\nreturn msg;",
+        "func": "msg.payload = ['sensors:barometer:pressure:data']\nreturn msg;",
         "outputs": 1,
         "noerr": 0,
         "x": 333,
@@ -3375,7 +3218,7 @@
         "type": "function",
         "z": "6e40fab5.1057f4",
         "name": "ChartData",
-        "func": "\nvar dataArray = msg.payload.split(',')\nvar m = {};\n// '0','45','90','135','180','225','270', '315'\nm.labels = [];\nm.data = [dataArray];\nm.series = [];\nreturn {payload:[m],topic:msg.topic};",
+        "func": "\nvar dataArray = msg.payload.split(';')\nvar m = {};\n// '0','45','90','135','180','225','270', '315'\nm.labels = [];\nm.data = [dataArray];\nm.series = [];\nreturn {payload:[m],topic:msg.topic};",
         "outputs": 1,
         "noerr": 0,
         "x": 331.5,
@@ -3560,11 +3403,11 @@
         "timer": "",
         "oldrc": false,
         "name": "exec vehicle.service",
-        "x": 352,
-        "y": 759,
+        "x": 340,
+        "y": 900,
         "wires": [
             [
-                "f9deb7e.67ff248"
+                "59ed89c5.71225"
             ],
             [],
             []
@@ -3591,11 +3434,16 @@
                 "color": "green",
                 "value": "active",
                 "valueType": "str"
+            },
+            {
+                "color": "yellow",
+                "value": "inactive",
+                "valueType": "str"
             }
         ],
         "name": "",
-        "x": 752,
-        "y": 756,
+        "x": 740,
+        "y": 897,
         "wires": []
     },
     {
@@ -3609,11 +3457,11 @@
         "timer": "",
         "oldrc": false,
         "name": "exec comManager.service",
-        "x": 362,
-        "y": 810,
+        "x": 350,
+        "y": 951,
         "wires": [
             [
-                "769b0884.4cb588"
+                "9b7973f1.649e5"
             ],
             [],
             []
@@ -3640,11 +3488,16 @@
                 "color": "green",
                 "value": "active",
                 "valueType": "str"
+            },
+            {
+                "color": "yellow",
+                "value": "inactive",
+                "valueType": "str"
             }
         ],
         "name": "",
-        "x": 754,
-        "y": 810,
+        "x": 742,
+        "y": 951,
         "wires": []
     },
     {
@@ -3715,8 +3568,8 @@
         ],
         "useOldStyle": false,
         "outputs": 1,
-        "x": 806.5,
-        "y": 497,
+        "x": 920,
+        "y": 500,
         "wires": [
             []
         ]
@@ -3853,8 +3706,8 @@
         ],
         "useOldStyle": false,
         "outputs": 1,
-        "x": 763,
-        "y": 590,
+        "x": 900,
+        "y": 560,
         "wires": [
             []
         ]
@@ -4058,12 +3911,12 @@
         "order": 2,
         "width": "8",
         "height": "4",
-        "format": "<!--<div layout=\"row\" layout-align=\"space-between\">\n    <div id=”” style=”height: 250px; width:100%;overflow:scroll;”>\n        <p>{{msg.payload}}</p>\n    </div>\n</div>-->\n    <div ng-bind-html=\"msg.payload\" style=”height: 400px; width:100%;overflow:scroll;”></div>\n",
+        "format": "<!--<div layout=\"row\" layout-align=\"space-between\">\n    <div id=”” style=”height: 250px; width:100%;overflow:scroll;”>\n        <p>{{msg.payload}}</p>\n    </div>\n</div>-->\n    <div ng-bind-html=\"msg.payload\" style=”height: 100%; width:100%;overflow:scroll;”></div>\n",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "templateScope": "local",
-        "x": 447,
-        "y": 683,
+        "x": 580,
+        "y": 760,
         "wires": [
             []
         ]
@@ -4073,17 +3926,15 @@
         "type": "file in",
         "z": "995db953.1dbb18",
         "name": "logFile",
-        "filename": "/home/pi/vehicke/communicationManager/ComLog.log.0",
+        "filename": "/home/pi/vehicle/commManager/ComLog.log.0",
         "format": "utf8",
         "chunk": false,
         "sendError": false,
         "encoding": "none",
-        "x": 301,
-        "y": 687,
+        "x": 1030,
+        "y": 360,
         "wires": [
-            [
-                "565d4699.6b37d8"
-            ]
+            []
         ]
     },
     {
@@ -4136,7 +3987,7 @@
         "dot": false,
         "ymin": "",
         "ymax": "",
-        "removeOlder": "20",
+        "removeOlder": "10",
         "removeOlderPoints": "",
         "removeOlderUnit": "1",
         "cutout": 0,
@@ -4576,11 +4427,11 @@
         "timer": "",
         "oldrc": false,
         "name": "exec sensors.service",
-        "x": 352,
-        "y": 862,
+        "x": 340,
+        "y": 1003,
         "wires": [
             [
-                "990b0414.d044b8"
+                "7b38973e.d0835"
             ],
             [],
             []
@@ -4607,11 +4458,16 @@
                 "color": "green",
                 "value": "active",
                 "valueType": "str"
+            },
+            {
+                "color": "purple",
+                "value": "inactive",
+                "valueType": "str"
             }
         ],
         "name": "",
-        "x": 752,
-        "y": 859,
+        "x": 740,
+        "y": 1000,
         "wires": []
     },
     {
@@ -4625,11 +4481,11 @@
         "timer": "",
         "oldrc": false,
         "name": "exec rfid_sensor.service",
-        "x": 362,
-        "y": 913,
+        "x": 350,
+        "y": 1054,
         "wires": [
             [
-                "678b8713.a6ba58"
+                "e7d40d02.0a3458"
             ],
             [],
             []
@@ -4648,19 +4504,24 @@
         "labelAlignment": "left",
         "colorForValue": [
             {
-                "color": "red",
-                "value": "failed",
+                "color": "purple",
+                "value": "inactive",
                 "valueType": "str"
             },
             {
                 "color": "green",
                 "value": "active",
                 "valueType": "str"
+            },
+            {
+                "color": "red",
+                "value": "failed",
+                "valueType": "str"
             }
         ],
         "name": "",
-        "x": 752,
-        "y": 910,
+        "x": 740,
+        "y": 1051,
         "wires": []
     },
     {
@@ -4669,55 +4530,8 @@
         "z": "995db953.1dbb18",
         "name": "needs routing here!",
         "info": "",
-        "x": 111,
-        "y": 759,
-        "wires": []
-    },
-    {
-        "id": "c9738e7.36d827",
-        "type": "function",
-        "z": "56a5114c.9568b",
-        "name": "ChartJsData",
-        "func": "var dataArray = msg.payload[0].data[0]\nvar dataset = new Array(360);\nfor (var i = 0; i < 360;i++) {\n    dataset[i] = {};\n    dataset[i].x = i.toString();\n    dataset[i].y = dataArray[i];\n}\nmsg.payload = {\n    \"channel\": \"Population\",\n    \"color\": flow.get('randomColorsArray'),\n    \"dataset\": dataset\n}\nreturn msg;",
-        "outputs": 1,
-        "noerr": 0,
-        "x": 112,
-        "y": 342,
-        "wires": [
-            [
-                "1b0517b7.fc6818",
-                "67c6a0e1.41425"
-            ]
-        ]
-    },
-    {
-        "id": "1b0517b7.fc6818",
-        "type": "chartjs-polar",
-        "z": "56a5114c.9568b",
-        "name": "Lidar",
-        "path": "Lidar",
-        "charttitle": "Lidar Distances",
-        "xaxis": "Distances in cm",
-        "yaxis": "Angles in Degree",
-        "x": 286,
-        "y": 341,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "67c6a0e1.41425",
-        "type": "debug",
-        "z": "56a5114c.9568b",
-        "name": "",
-        "active": false,
-        "tosidebar": true,
-        "console": false,
-        "tostatus": false,
-        "complete": "payload",
-        "targetType": "msg",
-        "x": 306.5,
-        "y": 392,
+        "x": 99,
+        "y": 900,
         "wires": []
     },
     {
@@ -4750,6 +4564,112 @@
             [
                 "f755e0a0.d5579"
             ]
+        ]
+    },
+    {
+        "id": "59ed89c5.71225",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "",
+        "func": "var newMsg = {payload: msg.payload.slice(0, -1)};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 598,
+        "y": 881,
+        "wires": [
+            [
+                "f9deb7e.67ff248"
+            ]
+        ]
+    },
+    {
+        "id": "9b7973f1.649e5",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "",
+        "func": "var newMsg = {payload: msg.payload.slice(0, -1)};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 578,
+        "y": 941,
+        "wires": [
+            [
+                "769b0884.4cb588"
+            ]
+        ]
+    },
+    {
+        "id": "7b38973e.d0835",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "",
+        "func": "var newMsg = {payload: msg.payload.slice(0, -1)};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 578,
+        "y": 1001,
+        "wires": [
+            [
+                "990b0414.d044b8"
+            ]
+        ]
+    },
+    {
+        "id": "e7d40d02.0a3458",
+        "type": "function",
+        "z": "995db953.1dbb18",
+        "name": "",
+        "func": "var newMsg = {payload: msg.payload.slice(0, -1)};\nreturn newMsg;\n",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 558,
+        "y": 1061,
+        "wires": [
+            [
+                "678b8713.a6ba58"
+            ]
+        ]
+    },
+    {
+        "id": "4a869d59.f13b7c",
+        "type": "exec",
+        "z": "995db953.1dbb18",
+        "command": "tail -10 /home/pi/vehicle/armv7/vehicleLog.log.0 | grep '\\['",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "get last n lines of log",
+        "x": 360,
+        "y": 680,
+        "wires": [
+            [
+                "28e11af7.9599b6"
+            ],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "389e7998.adc266",
+        "type": "exec",
+        "z": "995db953.1dbb18",
+        "command": "tail -10 /home/pi/vehicle/commManager/ComLog.log.0 | grep '\\['",
+        "addpay": false,
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "oldrc": false,
+        "name": "get last n lines of log",
+        "x": 360,
+        "y": 760,
+        "wires": [
+            [
+                "565d4699.6b37d8"
+            ],
+            [],
+            []
         ]
     }
 ]

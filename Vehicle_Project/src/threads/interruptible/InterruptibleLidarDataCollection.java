@@ -39,9 +39,9 @@ public class InterruptibleLidarDataCollection implements Interruptible {
 
 	@Override
 	public void interruptAction(AsynchronouslyInterruptedException exception) {
-		if (lidarController.isEnabled()) {
-			lidarController.stopRotation();
-		}
+//		if (lidarController.isEnabled()) {
+//			lidarController.stopRotation();
+//		}
 
 		logger.log(Level.SEVERE, "Lidar-Data-Collection thread was interrupted in its execution");
 

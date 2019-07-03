@@ -102,3 +102,151 @@
  null 
 [2019-07-01 22:46:48] [FINER  ] RETURN
  null 
+[2019-07-02 16:44:49] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-02 16:44:49] [INFO   ] Initiating the Instances
+ null 
+[2019-07-02 16:44:49] [INFO   ] DBController Initiating Jedis Controller on: localhost:6379
+ null 
+[2019-07-02 16:44:49] [INFO   ] DBController Jedis Controller exists
+ null 
+[2019-07-02 16:44:50] [INFO   ] Starting the Threads
+ null 
+[2019-07-02 16:44:50] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:44:50] [INFO   ] DBController Connecting again...
+ null 
+[2019-07-02 16:44:50] [FINER  ] RETURN
+ null 
+[2019-07-02 16:44:51] [INFO   ] Driver is present
+ null 
+[2019-07-02 16:44:51] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:44:51] [FINER  ] RETURN
+ null 
+[2019-07-02 16:44:52] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:44:53] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:44:54] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:44:55] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:44:56] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:44:56] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:44:56] [FINER  ] RETURN
+ null 
+[2019-07-02 16:44:56] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:44:56] [FINER  ] RETURN
+ null 
+[2019-07-02 16:44:57] [INFO   ] Driver is present
+ null 
+[2019-07-02 16:44:58] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:44:59] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:45:00] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:45:01] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:45:02] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:45:03] [INFO   ] Driver is present
+ null 
+[2019-07-02 16:45:04] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:45:05] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:45:06] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:45:06] [FINER  ] RETURN
+ null 
+[2019-07-02 16:45:06] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:45:06] [FINER  ] RETURN
+ null 
+[2019-07-02 16:45:06] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:45:07] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:45:08] [INFO   ] Driver is not allowed
+ null 
+[2019-07-02 16:45:11] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:45:11] [FINER  ] RETURN
+ null 
+[2019-07-02 16:45:11] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:45:11] [FINER  ] RETURN
+ null 
+[2019-07-02 16:46:52] [INFO   ] -- LOGGER stated --
+ null 
+[2019-07-02 16:46:53] [INFO   ] Initiating the Instances
+ null 
+[2019-07-02 16:46:53] [INFO   ] DBController Initiating Jedis Controller on: localhost:6379
+ null 
+[2019-07-02 16:46:53] [INFO   ] DBController Jedis Controller exists
+ null 
+[2019-07-02 16:46:53] [INFO   ] Starting the Threads
+ null 
+[2019-07-02 16:46:53] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:46:53] [INFO   ] DBController Connecting again...
+ null 
+[2019-07-02 16:46:53] [FINER  ] RETURN
+ null 
+[2019-07-02 16:46:54] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:46:54] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:04] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:04] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:04] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:04] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:15] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:15] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:15] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:15] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:25] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:25] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:25] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:25] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:35] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:35] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:35] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:35] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:45] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:45] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:45] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:45] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:55] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:55] [FINER  ] RETURN
+ null 
+[2019-07-02 16:47:55] [FINER  ] ENTRY
+ null 
+[2019-07-02 16:47:55] [FINER  ] RETURN
+ null 

@@ -91,10 +91,13 @@ public class LidarSensor implements ILidarSensor {
 	@Override
 	public void writeToDB(IRedisDBInterface redis) {
 		String parentTopic = "sensors:lidar:";
-
-		redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
-		redis.setAndExpire(parentTopic + "distances", distancesToString(), expireTimeRedis);
-		redis.setAndExpire(parentTopic + "angles", anglesToString(), expireTimeRedis);
+		String distancesString = distancesToString();
+		String anglesString = anglesToString();
+		if (!distancesString.isEmpty()) {
+			redis.setAndExpire(parentTopic + "timestamp", timestamp, expireTimeRedis);
+			redis.setAndExpire(parentTopic + "distances", distancesToString(), expireTimeRedis);
+			redis.setAndExpire(parentTopic + "angles", anglesToString(), expireTimeRedis);
+		}
 	}
 
 	private String distancesToString() {

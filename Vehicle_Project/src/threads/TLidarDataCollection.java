@@ -88,7 +88,6 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 
 	@Override
 	public void run() {
-		startLidarRotation();
 		try {
 			logger.info("Creating LidarDataCollectionThread");
 			AsynchronouslyInterruptedException asInterruptedException = new AsynchronouslyInterruptedException();
@@ -96,11 +95,10 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 			InterruptibleLidarDataCollection inLidarDataCollection = new InterruptibleLidarDataCollection(logger,
 					management, lidarController, qLidarBuffer);
 			asInterruptedException.doInterruptible(inLidarDataCollection);
-
 		} catch (Exception e) {
 			logger.log(Level.SEVERE, "Error occured while creating InterruptableLidarDataCollection", e);
+
 		}
-		lidarController.stopRotation();
 
 	}
 
@@ -108,6 +106,12 @@ public class TLidarDataCollection extends RealtimeThread implements IHandableThr
 		if (lidarController.isEnabled()) {
 			lidarController.init();
 			lidarController.startRotation();
+		}
+	}
+
+	private void stopLidarRotation() {
+		if (lidarController.isEnabled()) {
+			lidarController.stopRotation();
 		}
 	}
 

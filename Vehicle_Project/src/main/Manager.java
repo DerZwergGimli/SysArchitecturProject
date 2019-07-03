@@ -84,7 +84,6 @@ public class Manager {
 			try {
 				Thread.sleep(1);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 
@@ -161,7 +160,7 @@ public class Manager {
 			threadLidarDataCollection = new TLidarDataCollection(logger, management, lidarController,
 					missLidarDataCollection, qLidarBuffer);
 			missLidarDataCollection.setThread(threadLidarDataCollection);
-			missLidarDataCollection.setLidarController(lidarController);
+			// missLidarDataCollection.setLidarController(lidarController);
 		}
 
 		if (threadLidarDataCollection != null) {
@@ -180,7 +179,7 @@ public class Manager {
 					threadLidarDataCollection = new TLidarDataCollection(logger, management, lidarController,
 							missLidarDataCollection, qLidarBuffer);
 					missLidarDataCollection.setThread(threadLidarDataCollection);
-					missLidarDataCollection.setLidarController(lidarController);
+					// missLidarDataCollection.setLidarController(lidarController);
 				}
 			}
 			if (Thread.State.TIMED_WAITING == threadLidarDataCollection.getState()) {

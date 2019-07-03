@@ -1,182 +1,1030 @@
-[2019-07-01 21:45:32] [INFO   ] -- LOGGER stated --
+[2019-07-02 03:20:50] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:45:32] [SEVERE ] Error while trying to connect to Redis-Server
- redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to host localhost:32769 
-[2019-07-01 21:45:32] [SEVERE ] Error while trying to connect to Redis-Server
- redis.clients.jedis.exceptions.JedisConnectionException: Failed connecting to host localhost:32769 
-[2019-07-01 21:45:32] [SEVERE ] Cannot connect to Redis-Server you might want to check the config file!
+[2019-07-02 03:20:50] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:26] [INFO   ] -- LOGGER stated --
+[2019-07-02 03:20:50] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:26] [INFO   ] --Application stared--
+[2019-07-02 03:20:50] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:27] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-07-02 03:20:50] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:27] [INFO   ] Creating LidarDataCollectionThread
+[2019-07-02 03:20:50] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:27] [INFO   ] Creating InterruptableWriterDB
+[2019-07-02 03:20:50] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:27] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:50] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:27] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:50] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:27] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:50] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:28] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:50] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:28] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:51] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:28] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:51] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:28] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:51] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:29] [INFO   ] Lidar sensor disabled but thread started!
+[2019-07-02 03:20:51] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:29] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:51] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:29] [INFO   ] Generated RANDOM lidarValues
+[2019-07-02 03:20:51] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:29] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:51] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:29] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:51] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:30] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:51] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:30] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:51] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:30] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:52] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:30] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:52] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:31] [INFO   ] Lidar sensor disabled but thread started!
+[2019-07-02 03:20:52] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:31] [INFO   ] Generated RANDOM lidarValues
+[2019-07-02 03:20:52] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:31] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:52] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:31] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:52] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:31] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:52] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:32] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:52] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:32] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:52] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:32] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:52] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:32] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:53] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:33] [INFO   ] Lidar sensor disabled but thread started!
+[2019-07-02 03:20:53] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:33] [INFO   ] Generated RANDOM lidarValues
+[2019-07-02 03:20:53] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:33] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:53] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:33] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:53] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:33] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:53] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:34] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:53] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:34] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:53] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:34] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:53] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:34] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:53] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:35] [INFO   ] Lidar sensor disabled but thread started!
+[2019-07-02 03:20:53] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:35] [INFO   ] Generated RANDOM lidarValues
+[2019-07-02 03:20:53] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:35] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:54] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:35] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:54] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:35] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:54] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:36] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:54] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:36] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:54] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:36] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:54] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:36] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:54] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:37] [INFO   ] Lidar sensor disabled but thread started!
+[2019-07-02 03:20:54] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:37] [INFO   ] Generated RANDOM lidarValues
+[2019-07-02 03:20:54] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:37] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:54] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:37] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:55] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:37] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:55] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:38] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:55] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:38] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:55] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:38] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:55] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:38] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:55] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:39] [INFO   ] Lidar sensor disabled but thread started!
+[2019-07-02 03:20:55] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:39] [INFO   ] Generated RANDOM lidarValues
+[2019-07-02 03:20:55] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:39] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:55] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:39] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:55] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:39] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:56] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:40] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:56] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:40] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:56] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:40] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:56] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:40] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:56] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:41] [INFO   ] Lidar sensor disabled but thread started!
+[2019-07-02 03:20:56] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:41] [INFO   ] Generated RANDOM lidarValues
+[2019-07-02 03:20:56] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:41] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:56] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:46:41] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:56] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:46:41] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:56] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:46:42] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:56] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:50:03] [INFO   ] -- LOGGER stated --
+[2019-07-02 03:20:57] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:50:04] [INFO   ] --Application stared--
+[2019-07-02 03:20:57] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:50:04] [INFO   ] Creating InterruptableCollisionAvoidance
+[2019-07-02 03:20:57] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:50:04] [INFO   ] Creating LidarDataCollectionThread
+[2019-07-02 03:20:57] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:50:04] [INFO   ] Creating InterruptableWriterDB
+[2019-07-02 03:20:57] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:50:04] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:57] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:50:04] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:57] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:50:05] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:57] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:50:05] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:57] [WARNING] Lidar distance array is zero.
  null 
-[2019-07-01 21:50:05] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:57] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
  null 
-[2019-07-01 21:50:05] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:58] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
  null 
-[2019-07-01 21:50:06] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:58] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
  null 
-[2019-07-01 21:50:06] [INFO   ] Lidar sensor disabled but thread started!
+[2019-07-02 03:20:58] [FINER  ] Queue was empty does nothing in here
  null 
-[2019-07-01 21:50:06] [INFO   ] Queue was empty does nothing in here
+[2019-07-02 03:20:58] [INFO   ] Creating LidarDataCollectionThread
  null 
-[2019-07-01 21:50:06] [INFO   ] Generated RANDOM lidarValues
+[2019-07-02 03:20:58] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:20:58] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:20:58] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:20:58] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:20:58] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:20:58] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:20:58] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:20:58] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:20:59] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:20:59] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:20:59] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:20:59] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:20:59] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:20:59] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:20:59] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:20:59] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:20:59] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:20:59] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:20:59] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:20:59] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:00] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:00] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:00] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:00] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:00] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:00] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:00] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:00] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:00] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:00] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:01] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:01] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:01] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:01] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:01] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:01] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:01] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:01] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:01] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:01] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:02] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:02] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:02] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:02] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:02] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:02] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:02] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:02] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:02] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:02] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:02] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:03] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:03] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:03] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:03] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:03] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:03] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:03] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:03] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:03] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:03] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:03] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:04] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:04] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:04] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:04] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:04] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:04] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:04] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:04] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:04] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:04] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:05] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:05] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:05] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:05] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:05] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:05] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:05] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:05] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:05] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:05] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:05] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:06] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:06] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:06] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:06] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:06] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:06] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:06] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:06] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:06] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:06] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:07] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:07] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:07] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:07] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:07] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:07] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:07] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:07] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:07] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:07] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:07] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:08] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:08] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:08] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:08] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:08] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:08] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:08] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:08] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:08] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:08] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:08] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:09] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:21:09] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:21:09] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:21:09] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:09] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:09] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:09] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:09] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:09] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:09] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:09] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:10] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:10] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:10] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:10] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:10] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:10] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:10] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:10] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:10] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:10] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:10] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:11] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:11] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:11] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:11] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:11] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:11] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:11] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:11] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:11] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:11] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:11] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:12] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:21:12] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:21:12] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:21:12] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:21:12] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:21:12] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:21:12] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:12] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:12] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:12] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:12] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:12] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:12] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:13] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:13] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:13] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:13] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:13] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:13] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:13] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:13] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:13] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:13] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:14] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:14] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:14] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:14] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:14] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:14] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:14] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:14] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:14] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:14] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:14] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:14] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:15] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:15] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:15] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:15] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:15] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:15] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:15] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:15] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:15] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:15] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:16] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:16] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:16] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:16] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:16] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:16] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:16] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:16] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:16] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:16] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:17] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:17] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:17] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:17] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:17] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:17] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:17] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:17] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:17] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:17] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:17] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:18] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:18] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:18] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:18] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:18] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:18] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:18] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:18] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:18] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:18] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:18] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:19] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:19] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:19] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:19] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:19] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:19] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:19] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:19] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:19] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:21:19] [WARNING] Failed to read from queue - lidrSensor in CollisionAvoidance!
+ javax.realtime.AsynchronouslyInterruptedException 
+[2019-07-02 03:21:19] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:19] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:21:19] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:21:20] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:20] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:20] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:20] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:20] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:20] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:20] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:20] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:20] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:20] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:20] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:21] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:21] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:21] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:21] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:21] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:21] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:21] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:21] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:21] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:21] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:21] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:22] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:22] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:22] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:22] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:22] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:22] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:21:22] [WARNING] Failed to read from queue - lidrSensor in CollisionAvoidance!
+ javax.realtime.AsynchronouslyInterruptedException 
+[2019-07-02 03:21:22] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:22] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:21:22] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:21:22] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:22] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:22] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:23] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:23] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:23] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:23] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:23] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:23] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:23] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:23] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:23] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:21:23] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:21:23] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:21:23] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:23] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:24] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:21:24] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:21:24] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:24] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:21:24] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:24] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:24] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:24] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:24] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:24] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:24] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:25] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:25] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:25] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:25] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:25] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:25] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:25] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:25] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:25] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:25] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:26] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:26] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:26] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:26] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:26] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:26] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:26] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:26] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:26] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:26] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:26] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:26] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:27] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:27] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:27] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:27] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:27] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:27] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:27] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:27] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:27] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:27] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:28] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:28] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:28] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:28] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:28] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:28] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:28] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:28] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:28] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:28] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:29] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:29] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:29] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:29] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:29] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:29] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:29] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:29] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:29] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:29] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:29] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:29] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:30] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:30] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:30] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:30] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:30] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:30] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:30] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:30] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:30] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:31] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:31] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:31] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:31] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:31] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:31] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:31] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:31] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:31] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:31] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:31] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:32] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:32] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:32] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:32] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:32] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:32] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:32] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:32] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:32] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:32] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:32] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:32] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:33] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:33] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:33] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:33] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:33] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:33] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:33] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:33] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:33] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:34] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:34] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:34] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:34] [SEVERE ] Critical the RT Collision Avoidance Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:21:34] [SEVERE ] Critical the RT Lidar Data Collection Thread was conuming to much time it will be canceld!
+ null 
+[2019-07-02 03:21:34] [SEVERE ] CollisonAvoidance was interrupted in its execution
+ null 
+[2019-07-02 03:21:34] [SEVERE ] Lidar-Data-Collection thread was interrupted in its execution
+ null 
+[2019-07-02 03:21:34] [INFO   ] Creating InterruptableCollisionAvoidance
+ null 
+[2019-07-02 03:21:34] [INFO   ] Creating LidarDataCollectionThread
+ null 
+[2019-07-02 03:21:34] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:34] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:34] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:34] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:35] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:35] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:35] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:35] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:35] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:35] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:35] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:35] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:35] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:35] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:35] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:35] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:36] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:36] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:36] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:36] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:36] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:36] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:36] [FINER  ] Queue was empty does nothing in here
+ null 
+[2019-07-02 03:21:36] [WARNING] Lidar distance array is zero.
+ null 
+[2019-07-02 03:21:36] [INFO   ] No values were genertaed and send to QUEUE by lidarSensorThread
+ null 
+[2019-07-02 03:21:36] [FINER  ] Queue was empty does nothing in here
  null 

@@ -110,10 +110,10 @@ public class DataPersistanceThread extends Thread {
                 "On",
                 dbController.get("sensors:temperature:timestamp"));
         Sensor pressureSensor = new Sensor("Pressure",
-                dbController.get("sensors:barometer:data"),
-                dbController.get("sensors:barometer:unit"),
-                dbController.exists("sensors:temperature:data"),
-                dbController.get("sensors:barometer:timestamp"));
+                dbController.get("sensors:barometer:pressure:data"),
+                dbController.get("sensors:barometer:pressure:unit"),
+                dbController.exists("sensors:barometer:pressure:data"),
+                dbController.get("sensors:barometer:pressure:timestamp"));
         Sensor heightSensor = new Sensor("Height",
                 dbController.get("sensors:barometer:metersinheight:data"),
                 dbController.get("sensors:barometer:metersinheight:unit"),

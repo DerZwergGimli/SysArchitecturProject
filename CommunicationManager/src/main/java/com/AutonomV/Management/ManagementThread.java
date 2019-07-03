@@ -73,10 +73,17 @@ public class ManagementThread extends Thread {
                     break;
                 case LOGOUT:
                     isDriverPresent = false;
-                    ManagementThread.updateDriver(false, null);
+
                     // Send Logout Notification to the Management Server
-                    // Change instead the variable isPresent in the passengers json
+                    DriverAuth driverAut = new DriverAuth(dbController.get("sensors:rfid:ID"), dbController.get("sensors:rfid:timestamp"));
+                    String logoutRequest = Converter.pojo2json(driverAut);
+                    System.out.println("Sending Request for " + logoutRequest);
+                    comController.publish("/SysArch/V1/Driver/LogoutRequest/", logoutRequest, 2);
+
+                    // Change  the variable isPresent in the passengers json
                     // =>This is done automatically by the RFID interface.
+                    ManagementThread.updateDriver(false, null);
+
                     state = NO_DRIVER;
                     break;
                 default:
@@ -91,7 +98,7 @@ public class ManagementThread extends Thread {
         authTrialCount++;
         // Send ID to the Management System
         // Get Driver ID and the timestamp of the Login from DB
-        DriverAuth driverAut = new DriverAuth(dbController.get("sensors:rfid:ID"), dbController.get("sensors:rfid:timestamp"));  // TODO dbController.get("Driver:timeStamp")
+        DriverAuth driverAut = new DriverAuth(dbController.get("sensors:rfid:ID"), dbController.get("sensors:rfid:timestamp"));
         String authRequest = Converter.pojo2json(driverAut);
         System.out.println("Sending Request for " + authRequest);
         comController.publish("/SysArch/V1/Driver/AuthRequest/", authRequest, 2);

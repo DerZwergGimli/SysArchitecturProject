@@ -5,8 +5,8 @@ HOSTNAME_SHORT=`hostname -s`;
 echo "This will now install all the dependecies that are needed!";
 sleep 3;
 echo "===> Check for updates";
-#sudo apt update;
-#sudo apt upgrade -y;
+sudo apt update;
+sudo apt upgrade -y;
 sudo apt install curl redis-server -y;
 
 echo "====> Copy conig file";

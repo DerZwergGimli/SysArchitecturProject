@@ -11,6 +11,7 @@ sudo apt install curl redis-server -y;
 
 echo "====> Copy conig file";
 sudo cp config.txt /boot/config.txt
+sudo cp cmdline.txt /boot/cmdline.txt
 
 echo "====> Copy Sytem Services for SystemCTL"
 sudo cp vehicle.service /etc/systemd/system/vehicle.service;
